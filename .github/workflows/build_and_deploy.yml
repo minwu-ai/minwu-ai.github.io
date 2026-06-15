@@ -1,5 +1,8 @@
 name: Build and deploy site
 
+# Runs whenever you push changes (e.g. after approving a draft),
+# builds the site, and publishes it to GitHub Pages.
+
 on:
   push:
     branches: [main]

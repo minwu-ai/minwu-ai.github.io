@@ -1,9 +1,13 @@
 name: Daily draft pipeline
 
+# Runs the pipeline on a schedule to draft new articles.
+# New posts are saved as DRAFTS (published: false) and committed to the repo.
+# They stay hidden on the site until you review and approve them.
+
 on:
   schedule:
-    - cron: '0 12 * * 1-5'
-  workflow_dispatch:
+    - cron: '0 12 * * 1-5'   # weekdays at 12:00 UTC (~8am ET)
+  workflow_dispatch:           # also lets you run it manually anytime
 
 permissions:
   contents: write
@@ -31,5 +35,5 @@ jobs:
           git config user.name "Draft Bot"
           git config user.email "bot@users.noreply.github.com"
           git add posts/
-          git commit -m "Daily drafts" || echo "No new drafts"
+          git commit -m "Daily drafts $(date +%Y-%m-%d)" || echo "No new drafts"
           git push

@@ -1,67 +1,95 @@
 """
-pipeline.py — finds topics, drafts articles, and saves them as markdown posts.
+pipeline.py — surfaces AI topics, researches them, and drafts articles as markdown.
 
-It uses the Claude API to (1) discover trending AI topics and (2) write articles.
-Each finished article is saved into posts/ as a markdown file, ready for the site
-builder to pick up. New posts are saved as DRAFTS (published: false) so you review
-them before they go live.
+It uses the Claude API to (1) discover topics and (2) write articles with web search.
+Every article is saved into posts/ as a DRAFT (published: false) so you review it
+before it goes live. It works two ways:
 
-Run it with:  python pipeline.py
+  SCHEDULED (auto-discover trending topics and draft a few):
+      python pipeline.py
+      python pipeline.py --count 3
+
+  ON DEMAND (you found something and want a draft about it):
+      python pipeline.py --topic "OpenAI's new agent framework" --type analysis
+      python pipeline.py --url "https://example.com/some-article"
+      python pipeline.py --from-file notes.txt
+      python pipeline.py --interactive          # paste/describe it at the prompt
+
+Requires ANTHROPIC_API_KEY in the environment.
 """
 
 import os
+import sys
 import json
+import argparse
 import datetime
 import re
 
 import anthropic
 
 client = anthropic.Anthropic()   # reads ANTHROPIC_API_KEY from the environment
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 POSTS_DIR = os.path.join(os.path.dirname(__file__), "posts")
 
-HOW_MANY = 2   # how many articles to draft per run
+WEB_SEARCH = {"type": "web_search_20250305", "name": "web_search"}
+
+DRAFT_SYSTEM = (
+    "You are an AI industry analyst writing for a professional audience of risk, "
+    "governance, and applied-AI practitioners. Voice: clear, authoritative, "
+    "grounded, never hype. Length: 700-1000 words. Use markdown: ## for section "
+    "headings, normal paragraphs, occasional bullet lists; do NOT include an H1 "
+    "(the title is rendered separately). Where you make factual claims about recent "
+    "events, ground them with web search. Return ONLY a JSON object, no markdown "
+    'fences:\n{"title": "...", "excerpt": "one-sentence summary", '
+    '"tag": "News|Analysis|Opinion|Governance", "body_markdown": "..."}'
+)
 
 
-def discover_topics():
+def _extract_json(text):
+    """Pull a JSON object/array out of a model response, tolerating stray fences."""
+    text = text.strip()
+    if text.startswith("```"):
+        text = re.sub(r"^```[a-zA-Z]*\n?", "", text)
+        text = re.sub(r"\n?```$", "", text).strip()
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        m = re.search(r"(\{.*\}|\[.*\])", text, re.DOTALL)
+        if not m:
+            raise
+        return json.loads(m.group(1))
+
+
+def _text_of(resp):
+    return "".join(b.text for b in resp.content if b.type == "text").strip()
+
+
+def discover_topics(count):
     resp = client.messages.create(
         model=MODEL,
-        max_tokens=1000,
-        tools=[{"type": "web_search_20250305", "name": "web_search"}],
+        max_tokens=1200,
+        tools=[WEB_SEARCH],
         messages=[{"role": "user", "content": (
-            "Search for the most discussed AI topics from the last 48 hours. "
-            "Focus on model releases, regulation, research, and enterprise AI. "
-            "Return ONLY a JSON array, no markdown:\n"
+            f"Search for the {count} most discussed AI topics from the last 48 hours. "
+            "Favor model releases, regulation/governance, notable research, and "
+            "enterprise AI. Return ONLY a JSON array, no markdown:\n"
             '[{"topic": "...", "angle": "...", "type": "news|analysis|opinion"}]'
         )}],
     )
-    text = next(b.text for b in resp.content if b.type == "text")
-    text = text.strip().strip("`")
-    if text.startswith("json"):
-        text = text[4:]
-    return json.loads(text)
+    topics = _extract_json(_text_of(resp))
+    return topics[:count]
 
 
-def draft_article(topic, angle, article_type):
+def draft_article(instruction):
+    """instruction: a natural-language brief describing what to write."""
     resp = client.messages.create(
         model=MODEL,
-        max_tokens=2500,
-        tools=[{"type": "web_search_20250305", "name": "web_search"}],
-        system=(
-            "You are an AI industry analyst writing for a professional audience. "
-            "Tone: clear, authoritative, accessible. Length: 600-900 words. "
-            "Use markdown: ## for section headings, normal paragraphs, no H1 "
-            "(the title is added separately). Return ONLY JSON, no markdown fences:\n"
-            '{"title": "...", "excerpt": "one sentence", "body_markdown": "..."}'
-        ),
-        messages=[{"role": "user", "content":
-                   f"Write a {article_type} piece about: {topic}. Angle: {angle}"}],
+        max_tokens=3000,
+        tools=[WEB_SEARCH],
+        system=DRAFT_SYSTEM,
+        messages=[{"role": "user", "content": instruction}],
     )
-    text = next(b.text for b in resp.content if b.type == "text")
-    text = text.strip().strip("`")
-    if text.startswith("json"):
-        text = text[4:]
-    return json.loads(text)
+    return _extract_json(_text_of(resp))
 
 
 def slugify(title):
@@ -69,35 +97,113 @@ def slugify(title):
     return s[:60]
 
 
-def save_post(article, article_type):
+def save_post(article, default_tag="Analysis"):
     today = datetime.date.today().isoformat()
     slug = slugify(article["title"])
     path = os.path.join(POSTS_DIR, f"{slug}.md")
-    body = article["body_markdown"].replace('"', '\\"')
+    title = article["title"].replace('"', "'")
+    excerpt = article.get("excerpt", "").replace('"', "'")
+    tag = article.get("tag") or default_tag
     frontmatter = (
         "---\n"
-        f'title: "{article["title"]}"\n'
+        f'title: "{title}"\n'
         f"date: {today}\n"
         f"slug: {slug}\n"
-        f"tag: {article_type.capitalize()}\n"
-        f'excerpt: "{article["excerpt"]}"\n'
+        f"tag: {tag}\n"
+        f'excerpt: "{excerpt}"\n'
         "published: false\n"        # <-- review gate: flip to true to publish
         "---\n\n"
     )
     with open(path, "w") as f:
-        f.write(frontmatter + article["body_markdown"] + "\n")
+        f.write(frontmatter + article["body_markdown"].strip() + "\n")
     print(f"  saved draft: posts/{slug}.md")
+    return path
 
 
-def run():
-    print("Discovering topics...")
-    topics = discover_topics()
-    for t in topics[:HOW_MANY]:
+# ---- Mode: scheduled (auto-discover) -------------------------------------
+
+def run_scheduled(count):
+    print(f"Discovering {count} topic(s)...")
+    topics = discover_topics(count)
+    for t in topics:
         print(f"Drafting: {t['topic']}")
-        article = draft_article(t["topic"], t["angle"], t["type"])
-        save_post(article, t["type"])
+        instruction = (
+            f"Write a {t.get('type', 'analysis')} piece about: {t['topic']}. "
+            f"Angle: {t.get('angle', '')}. Research it with web search first."
+        )
+        article = draft_article(instruction)
+        save_post(article, default_tag=t.get("type", "Analysis").capitalize())
     print("Done. Review the new drafts, then flip 'published: false' to true.")
 
 
+# ---- Mode: on demand -----------------------------------------------------
+
+def run_ondemand(topic=None, url=None, text=None, article_type=None, angle=None):
+    parts = []
+    kind = article_type or "analysis"
+    if url:
+        parts.append(f"Read and analyze this source, then write a {kind} piece about "
+                     f"it (use web search to fetch and verify): {url}")
+    if topic:
+        parts.append(f"Write a {kind} piece about: {topic}.")
+    if text:
+        parts.append(
+            "Here is something I found / my notes. Research it as needed with web "
+            f"search, then write a polished {kind} piece based on it:\n\n{text}")
+    if angle:
+        parts.append(f"Angle / emphasis: {angle}")
+    if not parts:
+        raise SystemExit("Nothing to write about. Provide --topic, --url, --from-file, "
+                         "or use --interactive.")
+    instruction = "\n\n".join(parts)
+    print("Researching and drafting...")
+    article = draft_article(instruction)
+    save_post(article, default_tag=kind.capitalize())
+    print("Done. Review the draft, then flip 'published: false' to true.")
+
+
+def run_interactive():
+    print("On-demand draft. Paste a link, describe a finding, or paste notes.")
+    print("Finish your input with Ctrl-D (Mac/Linux) on a new line.\n")
+    text = sys.stdin.read().strip()
+    if not text:
+        raise SystemExit("No input received.")
+    # If it's just a URL, treat it as a source; otherwise as notes/topic.
+    if re.match(r"^https?://\S+$", text):
+        run_ondemand(url=text)
+    else:
+        run_ondemand(text=text)
+
+
+def main():
+    p = argparse.ArgumentParser(description="Draft AI blog posts (scheduled or on demand).")
+    p.add_argument("--count", type=int, default=2,
+                   help="scheduled mode: how many topics to draft (default 2)")
+    p.add_argument("--topic", help="on demand: a topic/headline to write about")
+    p.add_argument("--url", help="on demand: a source URL to read and analyze")
+    p.add_argument("--from-file", dest="from_file",
+                   help="on demand: path to a file with notes/pasted text")
+    p.add_argument("--type", dest="article_type",
+                   choices=["news", "analysis", "opinion", "governance"],
+                   help="article type (on demand)")
+    p.add_argument("--angle", help="on demand: angle/emphasis for the piece")
+    p.add_argument("--interactive", "-i", action="store_true",
+                   help="on demand: paste/describe a finding at the prompt")
+    args = p.parse_args()
+
+    text = None
+    if args.from_file:
+        with open(args.from_file) as f:
+            text = f.read().strip()
+
+    if args.interactive:
+        run_interactive()
+    elif args.topic or args.url or text:
+        run_ondemand(topic=args.topic, url=args.url, text=text,
+                     article_type=args.article_type, angle=args.angle)
+    else:
+        run_scheduled(args.count)
+
+
 if __name__ == "__main__":
-    run()
+    main()
