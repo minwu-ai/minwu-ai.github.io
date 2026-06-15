@@ -1,0 +1,7 @@
+# Site builder
+markdown
+python-frontmatter
+jinja2
+
+# Content pipeline
+anthropic
