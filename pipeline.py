@@ -114,7 +114,9 @@ DRAFT_SYSTEM = (
     "Return the article in EXACTLY this format, and nothing else (no code fences):\n"
     "TITLE: <the title on a single line>\n"
     "EXCERPT: <one-sentence summary on a single line>\n"
-    "TAG: <one of: News, Analysis, Opinion, Governance>\n"
+    "TAG: <the single best-fit subject category, chosen from EXACTLY this list: "
+    "AI Governance, AI Safety, Alignment, Evaluation, Agentic AI, "
+    "Regulation & Policy, Industry>\n"
     "BODY:\n"
     "<the full markdown body; may span many lines>"
 )
@@ -271,7 +273,7 @@ def run_scheduled(count, focus=None, dry_run=False):
             f"Angle: {t.get('angle', '')}. Research it with web search first."
         )
         article = draft_article(instruction)
-        save_post(article, default_tag=t.get("type", "Analysis").capitalize())
+        save_post(article, default_tag="Industry")
     print("Done. Review the new drafts, then flip 'published: false' to true.")
 
 
@@ -309,7 +311,7 @@ def run_ondemand(topic=None, url=None, text=None, article_type=None, angle=None,
         return
     print("Researching and drafting...")
     article = draft_article(instruction)
-    save_post(article, default_tag=kind.capitalize())
+    save_post(article, default_tag="Industry")
     print("Done. Review the draft, then flip 'published: false' to true.")
 
 

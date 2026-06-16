@@ -24,13 +24,27 @@ from jinja2 import Template
 SITE_NAME = "Min Wu"
 SITE_NAME_HTML = 'Min<span> Wu</span>'   # the <span> part shows in the accent color
 AUTHOR = "Min Wu"
-SITE_DESCRIPTION = "Analysis and commentary on AI, model risk, and governance."
+SITE_DESCRIPTION = "Analysis and commentary on AI safety, alignment, evaluation, and governance."
 SITE_URL = "https://minwu-ai.github.io"
+
+# Curated topics shown on the Topics page (in this order), even when empty.
+# A post joins a topic when its `tag` matches the topic name. Edit freely.
+TOPICS = [
+    ("AI Governance", "Frameworks, model risk, and accountability for AI systems."),
+    ("AI Safety", "Keeping increasingly capable systems controllable and secure."),
+    ("Alignment", "Making AI systems pursue what we actually intend."),
+    ("Evaluation", "Measuring capability, safety, and reliability of models."),
+    ("Agentic AI", "Systems that take actions, not just generate text."),
+    ("Regulation & Policy", "Laws, standards, and the politics shaping AI."),
+    ("Industry", "Model releases, labs, and the business of AI."),
+    ("Life", "Notes and photos from outside the work."),
+]
 # ----------------------------------------------------------------------
 
 ROOT = Path(__file__).parent
 POSTS_DIR = ROOT / "posts"
 PAGES_DIR = ROOT / "pages"
+ASSETS_DIR = ROOT / "assets"
 PUBLIC_DIR = ROOT / "public"
 TEMPLATE = Template((ROOT / "templates" / "base.html").read_text())
 
@@ -160,6 +174,10 @@ def build():
     # ---- RSS feed ----
     build_rss(posts)
 
+    # ---- Static assets (images, etc.) copied through to /assets ----
+    if ASSETS_DIR.exists():
+        shutil.copytree(ASSETS_DIR, PUBLIC_DIR / "assets")
+
     # ---- 404 ----
     nf = ('<div class="eyebrow">404</div><h1 class="page">Page not found</h1>'
           '<p class="lede">That page doesn\'t exist. <a href="/">Back to home</a>.</p>')
@@ -171,49 +189,57 @@ def build():
 
 
 def build_topics(posts):
-    tags = {}
+    # Group published posts by their tag (matched to a curated topic name).
+    by_name = {}
     for p in posts:
-        if not p["tag"]:
-            continue
-        tags.setdefault(p["tag_slug"], {"name": p["tag"], "posts": []})
-        tags[p["tag_slug"]]["posts"].append(p)
+        if p["tag"]:
+            by_name.setdefault(p["tag"], []).append(p)
 
-    # Topics index
-    cards = ['<div class="eyebrow">Browse</div>',
-             '<h1 class="page">Topics</h1>',
-             '<p class="lede">Writing grouped by theme.</p>']
-    if tags:
-        cards.append('<ul class="topic-grid">')
-        for ts, data in sorted(tags.items(), key=lambda kv: kv[1]["name"].lower()):
-            n = len(data["posts"])
-            cards.append(
-                '<li class="topic-card"><a href="/topics/{ts}/">{name}</a>'
-                '<span class="count">{n} post{s}</span></li>'.format(
-                    ts=ts, name=data["name"], n=n, s="" if n == 1 else "s"))
-        cards.append('</ul>')
-    else:
-        cards.append('<p>No topics yet.</p>')
     topics_dir = PUBLIC_DIR / "topics"
     topics_dir.mkdir(exist_ok=True)
+
+    # Topics index — every curated topic appears, even with zero posts.
+    cards = ['<div class="eyebrow">Browse</div>',
+             '<h1 class="page">Topics</h1>',
+             '<p class="lede">Writing grouped by theme.</p>',
+             '<ul class="topic-grid">']
+    for name, desc in TOPICS:
+        ts = slugify(name)
+        items = by_name.get(name, [])
+        n = len(items)
+        count = "{} post{}".format(n, "" if n == 1 else "s") if n else "Coming soon"
+        cards.append(
+            '<li class="topic-card"><a href="/topics/{ts}/">{name}</a>'
+            '<span class="desc">{desc}</span>'
+            '<span class="count">{count}</span></li>'.format(
+                ts=ts, name=name, desc=desc, count=count))
+    cards.append('</ul>')
     (topics_dir / "index.html").write_text(
         render_page("Topics — " + SITE_NAME, "Browse writing by topic",
                     "\n".join(cards), nav_active="topics", canonical_path="/topics/"))
 
-    # Per-tag pages
-    for ts, data in tags.items():
-        n = len(data["posts"])
+    # One page per curated topic.
+    for name, desc in TOPICS:
+        ts = slugify(name)
+        items = by_name.get(name, [])
+        n = len(items)
+        if items:
+            body = '<p class="lede">{n} post{s} on {name}.</p>{listing}'.format(
+                n=n, s="" if n == 1 else "s", name=name,
+                listing=post_list_html(items))
+        else:
+            body = ('<p class="lede">{desc}</p>'
+                    '<p>No posts here yet — check back soon.</p>').format(desc=desc)
         inner = (
             '<a class="back" href="/topics/">← All topics</a>'
             '<div class="eyebrow">Topic</div>'
-            '<h1 class="page">{name}</h1>'
-            '<p class="lede">{n} post{s} on {name}.</p>{listing}'
-        ).format(name=data["name"], n=n, s="" if n == 1 else "s",
-                 listing=post_list_html(data["posts"]))
+            '<h1 class="page">{name}</h1>{body}'
+        ).format(name=name, body=body)
         d = topics_dir / ts
         d.mkdir(exist_ok=True)
         (d / "index.html").write_text(
-            render_page("{} — {}".format(data["name"], SITE_NAME),
-                        "Posts on " + data["name"], inner,
+            render_page("{} — {}".format(name, SITE_NAME),
+                        desc, inner,
                         nav_active="topics", canonical_path="/topics/{}/".format(ts)))
 
 

@@ -2,7 +2,7 @@
 title: "Agentic AI Has Outrun the Governance Playbook"
 date: 2026-06-15
 slug: agentic-ai-and-the-governance-gap
-tag: Governance
+tag: AI Governance
 excerpt: "Enterprise model risk frameworks were built to validate systems that predict. Agentic AI acts — and that single shift breaks most of the assumptions our controls quietly depend on."
 published: true
 ---

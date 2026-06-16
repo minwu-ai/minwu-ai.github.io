@@ -2,19 +2,21 @@
 title: "About"
 ---
 
-I'm Min Wu. I work in **model risk management** — the discipline of validating, governing, and monitoring the quantitative models that institutions rely on to make decisions.
+<img class="portrait" src="/assets/headshot.jpg" alt="Min Wu" width="200" height="300">
 
-This site is where I think out loud about artificial intelligence from that vantage point. My interest is less in the demos and benchmarks and more in the harder question underneath them: as these systems move from prototypes into production, how do organizations actually govern them, validate them, and stay accountable for what they do?
+I'm Min Wu. I work at the intersection of **AI safety, alignment, evaluation, and governance** — the disciplines concerned with making increasingly capable AI systems controllable, measurable, and accountable as they move into the real world.
 
-## What I write about
+My background is in **model risk management**: validating, governing, and monitoring the quantitative models institutions depend on. That lens shapes how I think about modern AI — less about the demos, more about the harder questions underneath them: How do we know a system is safe? How do we evaluate what it can really do? Who is accountable when it acts?
 
-- **Model risk & validation** — how established frameworks like SR 11-7 and SR 26-2 hold up (or don't) against modern AI.
-- **Agentic AI** — systems that take actions, not just generate text, and what that means for oversight.
-- **Governance & regulation** — the gap between what AI can do and the controls meant to contain it.
-- **Applied AI in the enterprise** — what changes when these tools meet real risk, audit, and accountability structures.
+## What I focus on
+
+- **AI safety** — keeping powerful systems controllable, secure, and resistant to misuse.
+- **Alignment** — making models pursue what we actually intend, not just what we literally specify.
+- **Evaluation** — measuring capability, reliability, and safety in ways that hold up to scrutiny.
+- **Governance** — frameworks, model risk, and accountability for AI systems, including how established guidance (SR 11-7, SR 26-2) holds up against agentic AI.
 
 ## How this site works
 
-Posts here are surfaced and drafted with an automated AI pipeline, then reviewed and edited by me before anything is published. The goal is consistency: clear, useful analysis published regularly rather than occasionally. Nothing goes live without my review.
+Posts here are surfaced and drafted with an automated AI pipeline, then reviewed, fact-checked, and edited by me before anything is published. The goal is consistency: clear, useful analysis published regularly rather than occasionally. Nothing goes live without my review.
 
 You can follow along via [RSS](/feed.xml). Views here are my own.
