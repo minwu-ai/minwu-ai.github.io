@@ -24,11 +24,11 @@ from jinja2 import Template
 SITE_NAME = "Min Wu"
 SITE_NAME_HTML = 'Min<span> Wu</span>'   # the <span> part shows in the accent color
 AUTHOR = "Min Wu"
-SITE_DESCRIPTION = "Analysis and commentary on AI safety, alignment, evaluation, and governance."
+SITE_DESCRIPTION = "Analysis and commentary on Frontier AI safety, alignment, evaluation, and governance."
 SITE_URL = "https://minwu-ai.github.io"
 
 # Small kicker shown above your name on the home page (was a duplicate "Min Wu").
-HOME_EYEBROW = "Frontier AI Safety, Evaluation & Governance"
+HOME_EYEBROW = "Home"
 # Epigraph under the home lede: (quote, attribution). Set HOME_QUOTE = None to hide.
 HOME_QUOTE = (
     "Uncertainty is the only certainty there is, and knowing how to live with "
