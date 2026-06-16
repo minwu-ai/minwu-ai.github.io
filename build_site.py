@@ -27,6 +27,15 @@ AUTHOR = "Min Wu"
 SITE_DESCRIPTION = "Analysis and commentary on AI safety, alignment, evaluation, and governance."
 SITE_URL = "https://minwu-ai.github.io"
 
+# Small kicker shown above your name on the home page (was a duplicate "Min Wu").
+HOME_EYEBROW = "Model risk management"
+# Epigraph under the home lede: (quote, attribution). Set HOME_QUOTE = None to hide.
+HOME_QUOTE = (
+    "Uncertainty is the only certainty there is, and knowing how to live with "
+    "insecurity is the only security.",
+    "John Allen Paulos",
+)
+
 # Curated topics shown on the Topics page (in this order), even when empty.
 # A post joins a topic when its `tag` matches the topic name. Edit freely.
 TOPICS = [
@@ -182,15 +191,23 @@ def build():
         listing = post_list_html(posts)
     else:
         listing = '<p class="lede">No posts published yet — drafts are awaiting review.</p>'
+    quote_html = ""
+    if HOME_QUOTE:
+        quote_html = (
+            '<figure class="epigraph"><blockquote>“{q}”</blockquote>'
+            '<figcaption>— {a}</figcaption></figure>'
+        ).format(q=HOME_QUOTE[0], a=HOME_QUOTE[1])
     home = (
         '<section class="hero">'
-        '<div class="eyebrow">Min Wu</div>'
+        '<div class="eyebrow">{eyebrow}</div>'
         '<h1>{name}</h1>'
         '<p class="lede">{desc}</p>'
+        '{quote}'
         '</section>'
         '<div class="eyebrow">Latest writing</div>'
         '{listing}'
-    ).format(name=SITE_NAME, desc=SITE_DESCRIPTION, listing=listing)
+    ).format(eyebrow=HOME_EYEBROW, name=SITE_NAME, desc=SITE_DESCRIPTION,
+             quote=quote_html, listing=listing)
     (PUBLIC_DIR / "index.html").write_text(
         render_page(SITE_NAME, SITE_DESCRIPTION, home,
                     nav_active="home", canonical_path="/", wide=True)
