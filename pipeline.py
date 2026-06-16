@@ -316,16 +316,38 @@ def has_sources(article):
     return "](http" in body[m.end():]
 
 
-def draft_with_sourcing(instruction):
-    """Draft, and if the result lacks a real Sources section, retry once harder."""
-    article = draft_article(instruction)
-    if has_sources(article):
+def trim_to_length(article):
+    """Prompt-based limits don't hold, so enforce length with a dedicated trim pass."""
+    body = article.get("body_markdown", "")
+    if len(body.split()) <= MAX_WORDS:
         return article
-    article = draft_article(
-        instruction + "\n\nYOUR PREVIOUS DRAFT FAILED: it had no proper '## Sources' "
-        "section with real links. Either ground this in real, citable sources that meet "
-        "the corroboration bar and include a '## Sources' list of working links, or — if "
-        "the story cannot be corroborated — say so plainly rather than writing it.")
+    resp = get_client().messages.create(
+        model=MODEL,
+        max_tokens=1500,
+        system=("You are a ruthless editor. Cut the following article body to UNDER "
+                f"{MAX_WORDS} words (aim ~600). Preserve the core analysis "
+                "(cross-references, historical parallel, prediction) and KEEP the "
+                "'## Sources' section with ALL its links intact. Keep markdown headings. "
+                "Return ONLY the tightened markdown body, nothing else."),
+        messages=[{"role": "user", "content": body}],
+    )
+    new = _strip_fences(_text_of(resp))
+    if new and "](http" in new and len(new.split()) < len(body.split()):
+        article["body_markdown"] = new
+    return article
+
+
+def draft_with_sourcing(instruction):
+    """Draft; ensure a real Sources section (retry once); then enforce length."""
+    article = draft_article(instruction)
+    if not has_sources(article):
+        article = draft_article(
+            instruction + "\n\nYOUR PREVIOUS DRAFT FAILED: it had no proper '## Sources' "
+            "section with real links. Either ground this in real, citable sources that "
+            "meet the corroboration bar and include a '## Sources' list of working links, "
+            "or — if the story cannot be corroborated — say so plainly rather than writing it.")
+    if has_sources(article):
+        article = trim_to_length(article)
     return article
 
 
