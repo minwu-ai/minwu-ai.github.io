@@ -27,9 +27,30 @@ import re
 
 import anthropic
 
-client = anthropic.Anthropic()   # reads ANTHROPIC_API_KEY from the environment
+_client = None
+
+
+def get_client():
+    """Lazily create the Anthropic client (reads ANTHROPIC_API_KEY from the env)."""
+    global _client
+    if _client is None:
+        _client = anthropic.Anthropic()
+    return _client
+
+
 MODEL = "claude-sonnet-4-6"
 POSTS_DIR = os.path.join(os.path.dirname(__file__), "posts")
+
+# Topics the scheduled run should prioritize when surfacing the day's news.
+# Edit this list freely. Override for a single run with --focus "a, b, c".
+FOCUS_TOPICS = [
+    "AI safety and alignment",
+    "model risk management and AI governance (SR 11-7 / SR 26-2)",
+    "agentic AI and autonomous systems",
+    "AI regulation and policy",
+    "enterprise AI adoption and risk",
+    "notable frontier model releases",
+]
 
 WEB_SEARCH = {"type": "web_search_20250305", "name": "web_search"}
 
@@ -64,15 +85,18 @@ def _text_of(resp):
     return "".join(b.text for b in resp.content if b.type == "text").strip()
 
 
-def discover_topics(count):
-    resp = client.messages.create(
+def discover_topics(count, focus=None):
+    areas = focus or FOCUS_TOPICS
+    focus_line = "; ".join(areas)
+    resp = get_client().messages.create(
         model=MODEL,
         max_tokens=1200,
         tools=[WEB_SEARCH],
         messages=[{"role": "user", "content": (
-            f"Search for the {count} most discussed AI topics from the last 48 hours. "
-            "Favor model releases, regulation/governance, notable research, and "
-            "enterprise AI. Return ONLY a JSON array, no markdown:\n"
+            f"Search the web for the {count} most significant, recent AI developments "
+            f"(roughly the last 48 hours), giving STRONG PRIORITY to these focus areas: "
+            f"{focus_line}. Prefer concrete news (releases, regulation, research, "
+            "incidents) over evergreen topics. Return ONLY a JSON array, no markdown:\n"
             '[{"topic": "...", "angle": "...", "type": "news|analysis|opinion"}]'
         )}],
     )
@@ -82,7 +106,7 @@ def discover_topics(count):
 
 def draft_article(instruction):
     """instruction: a natural-language brief describing what to write."""
-    resp = client.messages.create(
+    resp = get_client().messages.create(
         model=MODEL,
         max_tokens=3000,
         tools=[WEB_SEARCH],
@@ -122,9 +146,9 @@ def save_post(article, default_tag="Analysis"):
 
 # ---- Mode: scheduled (auto-discover) -------------------------------------
 
-def run_scheduled(count):
+def run_scheduled(count, focus=None):
     print(f"Discovering {count} topic(s)...")
-    topics = discover_topics(count)
+    topics = discover_topics(count, focus=focus)
     for t in topics:
         print(f"Drafting: {t['topic']}")
         instruction = (
@@ -179,6 +203,9 @@ def main():
     p = argparse.ArgumentParser(description="Draft AI blog posts (scheduled or on demand).")
     p.add_argument("--count", type=int, default=2,
                    help="scheduled mode: how many topics to draft (default 2)")
+    p.add_argument("--focus",
+                   help="scheduled mode: comma-separated focus topics for this run "
+                        "(overrides the FOCUS_TOPICS list)")
     p.add_argument("--topic", help="on demand: a topic/headline to write about")
     p.add_argument("--url", help="on demand: a source URL to read and analyze")
     p.add_argument("--from-file", dest="from_file",
@@ -202,7 +229,8 @@ def main():
         run_ondemand(topic=args.topic, url=args.url, text=text,
                      article_type=args.article_type, angle=args.angle)
     else:
-        run_scheduled(args.count)
+        focus = [t.strip() for t in args.focus.split(",")] if args.focus else None
+        run_scheduled(args.count, focus=focus)
 
 
 if __name__ == "__main__":
