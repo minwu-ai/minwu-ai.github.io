@@ -37,6 +37,43 @@ python pipeline.py --interactive     # paste a link or notes, end with Ctrl-D
 Every draft lands in `posts/` with `published: false`, so nothing goes live until
 you approve it.
 
+### The standard manual workflow (no need to repeat instructions)
+
+When you recommend a document, you only supply the document — the **house style,
+length, structure, output format, and source preferences are all fixed** in
+`pipeline.py`, so you never retype them. The pipeline turns your document into an
+*original analysis in this publication's voice* (it won't just summarize):
+
+```
+# 1. paste the article/notes into a file (e.g. from a WSJ piece you read)...
+python pipeline.py --from-file my-doc.txt
+
+# ...or paste it inline:
+python pipeline.py --interactive          # paste, then Ctrl-D
+
+# optional knobs:
+python pipeline.py --from-file my-doc.txt --type governance --angle "what this means for MRM"
+```
+
+That's the whole process: feed the document → review the draft → approve.
+
+## Tuning what the pipeline writes
+
+Two editable lists at the top of `pipeline.py` control the automated run — change
+them anytime:
+
+- **`FOCUS_TOPICS`** — themes the scheduled run prioritizes when surfacing news
+  (AI safety, model risk/governance, agentic AI, regulation, …). Per-run override:
+  `python pipeline.py --focus "AI safety, interpretability"`.
+- **`PREFERRED_SOURCES`** — credible outlets to prioritize and cite (WSJ, NYT,
+  Bloomberg, FT, Reuters, official AI-lab and regulator sources). Search still
+  covers the whole web; these are simply preferred. This applies to **both** the
+  scheduled run and your manual recommendations.
+
+> Note on paywalled sources (e.g. WSJ): web search can prefer and cite them, but
+> can't read full paywalled text. For an article you've read as a subscriber, use
+> the manual `--from-file` / `--interactive` flow to feed the content yourself.
+
 ## Your review routine
 
 1. Open the newest file in `posts/`.

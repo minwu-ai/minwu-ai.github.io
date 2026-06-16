@@ -54,6 +54,31 @@ FOCUS_TOPICS = [
 
 WEB_SEARCH = {"type": "web_search_20250305", "name": "web_search"}
 
+# Credible, top-tier sources to PRIORITIZE when researching and citing.
+# Search still covers the whole web — these are simply preferred and cited where
+# available. Edit this list freely.
+PREFERRED_SOURCES = [
+    "The Wall Street Journal (wsj.com)",
+    "The New York Times (nytimes.com)",
+    "Bloomberg (bloomberg.com)",
+    "Financial Times (ft.com)",
+    "Reuters (reuters.com)",
+    "The Economist (economist.com)",
+    "official AI labs: OpenAI (openai.com), Anthropic (anthropic.com), "
+    "Google DeepMind (deepmind.google), Microsoft, Meta AI",
+    "primary/official: arXiv, NIST, the Federal Reserve, OCC, the EU Commission",
+]
+
+
+def _sources_preference():
+    return (
+        "Prioritize credible, top-tier sources when researching and citing. "
+        "Prefer, in roughly this order of trust: " + "; ".join(PREFERRED_SOURCES)
+        + ". You may use other sources when needed, but prefer these, and include "
+        "links to the primary source for any factual claim."
+    )
+
+
 DRAFT_SYSTEM = (
     "You are an AI industry analyst writing for a professional audience of risk, "
     "governance, and applied-AI practitioners. Voice: clear, authoritative, "
@@ -61,6 +86,7 @@ DRAFT_SYSTEM = (
     "headings, normal paragraphs, occasional bullet lists; do NOT include an H1 "
     "(the title is rendered separately). Where you make factual claims about recent "
     "events, ground them with web search.\n\n"
+    + _sources_preference() + "\n\n"
     "Return the article in EXACTLY this format, and nothing else (no code fences):\n"
     "TITLE: <the title on a single line>\n"
     "EXCERPT: <one-sentence summary on a single line>\n"
@@ -139,7 +165,8 @@ def discover_topics(count, focus=None):
             f"Search the web for the {count} most significant, recent AI developments "
             f"(roughly the last 48 hours), giving STRONG PRIORITY to these focus areas: "
             f"{focus_line}. Prefer concrete news (releases, regulation, research, "
-            "incidents) over evergreen topics. Return ONLY a JSON array, no markdown:\n"
+            "incidents) over evergreen topics. " + _sources_preference() + " "
+            "Return ONLY a JSON array, no markdown:\n"
             '[{"topic": "...", "angle": "...", "type": "news|analysis|opinion"}]'
         )}],
     )
@@ -215,8 +242,12 @@ def run_ondemand(topic=None, url=None, text=None, article_type=None, angle=None)
         parts.append(f"Write a {kind} piece about: {topic}.")
     if text:
         parts.append(
-            "Here is something I found / my notes. Research it as needed with web "
-            f"search, then write a polished {kind} piece based on it:\n\n{text}")
+            "Below is a source document / link / notes I'm recommending as the basis "
+            f"for a post. Write an original {kind} piece in the house style that "
+            "engages with it: lead with the most important insight, add context and "
+            "verification via web search, quote sparingly, and bring the risk-, "
+            "governance-, and applied-AI lens of this publication. Do NOT merely "
+            "summarize the source.\n\n--- SOURCE ---\n" + text)
     if angle:
         parts.append(f"Angle / emphasis: {angle}")
     if not parts:
