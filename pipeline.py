@@ -60,25 +60,68 @@ DRAFT_SYSTEM = (
     "grounded, never hype. Length: 700-1000 words. Use markdown: ## for section "
     "headings, normal paragraphs, occasional bullet lists; do NOT include an H1 "
     "(the title is rendered separately). Where you make factual claims about recent "
-    "events, ground them with web search. Return ONLY a JSON object, no markdown "
-    'fences:\n{"title": "...", "excerpt": "one-sentence summary", '
-    '"tag": "News|Analysis|Opinion|Governance", "body_markdown": "..."}'
+    "events, ground them with web search.\n\n"
+    "Return the article in EXACTLY this format, and nothing else (no code fences):\n"
+    "TITLE: <the title on a single line>\n"
+    "EXCERPT: <one-sentence summary on a single line>\n"
+    "TAG: <one of: News, Analysis, Opinion, Governance>\n"
+    "BODY:\n"
+    "<the full markdown body; may span many lines>"
 )
 
 
-def _extract_json(text):
-    """Pull a JSON object/array out of a model response, tolerating stray fences."""
+def _strip_fences(text):
     text = text.strip()
     if text.startswith("```"):
         text = re.sub(r"^```[a-zA-Z]*\n?", "", text)
         text = re.sub(r"\n?```$", "", text).strip()
+    return text
+
+
+def _extract_json(text):
+    """Pull a JSON object/array out of a model response, tolerating stray fences."""
+    text = _strip_fences(text)
     try:
-        return json.loads(text)
+        return json.loads(text, strict=False)
     except json.JSONDecodeError:
         m = re.search(r"(\{.*\}|\[.*\])", text, re.DOTALL)
         if not m:
             raise
-        return json.loads(m.group(1))
+        return json.loads(m.group(1), strict=False)
+
+
+def parse_article(text):
+    """Parse the delimited TITLE/EXCERPT/TAG/BODY format into an article dict.
+
+    Robust by design: the body is taken verbatim after the BODY: marker, so it can
+    contain quotes, newlines, and arbitrary markdown without any escaping.
+    """
+    text = _strip_fences(text)
+    meta = {"title": "", "excerpt": "", "tag": "", "body_markdown": ""}
+    lines = text.splitlines()
+    body_idx = None
+    for i, line in enumerate(lines):
+        up = line.lstrip().upper()
+        if up.startswith("BODY:"):
+            body_idx = i
+            trailing = line.split(":", 1)[1].strip()
+            break
+        for key in ("TITLE", "EXCERPT", "TAG"):
+            if up.startswith(key + ":"):
+                meta[key.lower()] = line.split(":", 1)[1].strip()
+                break
+    if body_idx is not None:
+        rest = lines[body_idx + 1:]
+        body = (trailing + "\n" if trailing else "") + "\n".join(rest)
+        meta["body_markdown"] = body.strip()
+    else:
+        # No BODY marker found — treat the whole thing as the body.
+        meta["body_markdown"] = text.strip()
+    if not meta["title"]:
+        raise ValueError("Could not parse a title from the model output.")
+    if not meta["body_markdown"]:
+        raise ValueError("Model returned an empty body.")
+    return meta
 
 
 def _text_of(resp):
@@ -113,7 +156,7 @@ def draft_article(instruction):
         system=DRAFT_SYSTEM,
         messages=[{"role": "user", "content": instruction}],
     )
-    return _extract_json(_text_of(resp))
+    return parse_article(_text_of(resp))
 
 
 def slugify(title):
