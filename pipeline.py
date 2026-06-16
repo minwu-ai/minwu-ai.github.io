@@ -154,21 +154,24 @@ def _text_of(resp):
     return "".join(b.text for b in resp.content if b.type == "text").strip()
 
 
+def _discovery_prompt(count, focus=None):
+    focus_line = "; ".join(focus or FOCUS_TOPICS)
+    return (
+        f"Search the web for the {count} most significant, recent AI developments "
+        f"(roughly the last 48 hours), giving STRONG PRIORITY to these focus areas: "
+        f"{focus_line}. Prefer concrete news (releases, regulation, research, "
+        "incidents) over evergreen topics. " + _sources_preference() + " "
+        "Return ONLY a JSON array, no markdown:\n"
+        '[{"topic": "...", "angle": "...", "type": "news|analysis|opinion"}]'
+    )
+
+
 def discover_topics(count, focus=None):
-    areas = focus or FOCUS_TOPICS
-    focus_line = "; ".join(areas)
     resp = get_client().messages.create(
         model=MODEL,
         max_tokens=1200,
         tools=[WEB_SEARCH],
-        messages=[{"role": "user", "content": (
-            f"Search the web for the {count} most significant, recent AI developments "
-            f"(roughly the last 48 hours), giving STRONG PRIORITY to these focus areas: "
-            f"{focus_line}. Prefer concrete news (releases, regulation, research, "
-            "incidents) over evergreen topics. " + _sources_preference() + " "
-            "Return ONLY a JSON array, no markdown:\n"
-            '[{"topic": "...", "angle": "...", "type": "news|analysis|opinion"}]'
-        )}],
+        messages=[{"role": "user", "content": _discovery_prompt(count, focus)}],
     )
     topics = _extract_json(_text_of(resp))
     return topics[:count]
@@ -216,7 +219,25 @@ def save_post(article, default_tag="Analysis"):
 
 # ---- Mode: scheduled (auto-discover) -------------------------------------
 
-def run_scheduled(count, focus=None):
+def _dump_prompt(label, instruction):
+    print("=" * 70)
+    print("[DRY RUN] " + label)
+    print("=" * 70)
+    print("\n--- SYSTEM PROMPT ---\n" + DRAFT_SYSTEM)
+    print("\n--- USER INSTRUCTION ---\n" + instruction)
+    print("\n[dry-run] No API call made and no file written.\n")
+
+
+def run_scheduled(count, focus=None, dry_run=False):
+    if dry_run:
+        print("=" * 70)
+        print("[DRY RUN] scheduled mode")
+        print("=" * 70)
+        print("\n--- TOPIC-DISCOVERY PROMPT ---\n" + _discovery_prompt(count, focus))
+        print("\n--- then each topic is drafted with this SYSTEM PROMPT ---\n"
+              + DRAFT_SYSTEM)
+        print("\n[dry-run] No API call made and no file written.\n")
+        return
     print(f"Discovering {count} topic(s)...")
     topics = discover_topics(count, focus=focus)
     for t in topics:
@@ -232,7 +253,7 @@ def run_scheduled(count, focus=None):
 
 # ---- Mode: on demand -----------------------------------------------------
 
-def run_ondemand(topic=None, url=None, text=None, article_type=None, angle=None):
+def _ondemand_instruction(topic=None, url=None, text=None, article_type=None, angle=None):
     parts = []
     kind = article_type or "analysis"
     if url:
@@ -253,14 +274,22 @@ def run_ondemand(topic=None, url=None, text=None, article_type=None, angle=None)
     if not parts:
         raise SystemExit("Nothing to write about. Provide --topic, --url, --from-file, "
                          "or use --interactive.")
-    instruction = "\n\n".join(parts)
+    return "\n\n".join(parts), kind
+
+
+def run_ondemand(topic=None, url=None, text=None, article_type=None, angle=None,
+                 dry_run=False):
+    instruction, kind = _ondemand_instruction(topic, url, text, article_type, angle)
+    if dry_run:
+        _dump_prompt("on-demand mode", instruction)
+        return
     print("Researching and drafting...")
     article = draft_article(instruction)
     save_post(article, default_tag=kind.capitalize())
     print("Done. Review the draft, then flip 'published: false' to true.")
 
 
-def run_interactive():
+def run_interactive(dry_run=False):
     print("On-demand draft. Paste a link, describe a finding, or paste notes.")
     print("Finish your input with Ctrl-D (Mac/Linux) on a new line.\n")
     text = sys.stdin.read().strip()
@@ -268,9 +297,9 @@ def run_interactive():
         raise SystemExit("No input received.")
     # If it's just a URL, treat it as a source; otherwise as notes/topic.
     if re.match(r"^https?://\S+$", text):
-        run_ondemand(url=text)
+        run_ondemand(url=text, dry_run=dry_run)
     else:
-        run_ondemand(text=text)
+        run_ondemand(text=text, dry_run=dry_run)
 
 
 def main():
@@ -290,6 +319,9 @@ def main():
     p.add_argument("--angle", help="on demand: angle/emphasis for the piece")
     p.add_argument("--interactive", "-i", action="store_true",
                    help="on demand: paste/describe a finding at the prompt")
+    p.add_argument("--dry-run", dest="dry_run", action="store_true",
+                   help="show the exact prompts that would be sent; no API call, "
+                        "no file written")
     args = p.parse_args()
 
     text = None
@@ -298,13 +330,14 @@ def main():
             text = f.read().strip()
 
     if args.interactive:
-        run_interactive()
+        run_interactive(dry_run=args.dry_run)
     elif args.topic or args.url or text:
         run_ondemand(topic=args.topic, url=args.url, text=text,
-                     article_type=args.article_type, angle=args.angle)
+                     article_type=args.article_type, angle=args.angle,
+                     dry_run=args.dry_run)
     else:
         focus = [t.strip() for t in args.focus.split(",")] if args.focus else None
-        run_scheduled(args.count, focus=focus)
+        run_scheduled(args.count, focus=focus, dry_run=args.dry_run)
 
 
 if __name__ == "__main__":
