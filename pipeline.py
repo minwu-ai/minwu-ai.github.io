@@ -99,14 +99,23 @@ def _sources_preference():
     )
 
 
+# Corroboration bar — what counts as trustworthy enough to write about.
+CORROBORATION_RULE = (
+    "CORROBORATION BAR (required): treat a development as established fact ONLY if "
+    "EITHER (a) it is reported by at least ONE source on the priority list above, OR "
+    "(b) it is independently reported by at least TWO credible sources OUTSIDE the "
+    "priority list. If a story clears NEITHER bar, do not build a post around it — omit "
+    "it, or clearly label the specific unconfirmed claims as unverified/rumored. Never "
+    "present an uncorroborated story as established fact."
+)
+
 # ---- Draft length & formatting (edit these to taste) ----
-MAX_WORDS = 800   # hard cap; the model aims for ~600-800
+MAX_WORDS = 700   # hard cap; the model targets ~500-600
 
 FORMAT_GUIDE = (
-    f"LENGTH (STRICT): the BODY must be {MAX_WORDS} words or fewer — aim for 600-700. "
-    f"This is a hard limit. Before you finish, count the words and, if over {MAX_WORDS}, "
-    "cut and tighten until it fits. Open with the single most important point in the "
-    "first two sentences.\n"
+    f"LENGTH (STRICT): target 500-600 words; absolute maximum {MAX_WORDS}. Brevity is a "
+    "feature — count the words and trim before finishing; never exceed the maximum. "
+    "Open with the single most important point in the first two sentences.\n"
     "STRUCTURE for skimmability: use ## section headings, short paragraphs "
     "(2-4 sentences), and bullet lists where they help. Use a blockquote (>) for a "
     "key quote or takeaway, and a small markdown table when comparing things. Do NOT "
@@ -148,6 +157,7 @@ DRAFT_SYSTEM = (
     + ANALYSIS_GUIDE + "\n\n"
     + FORMAT_GUIDE + "\n\n"
     + _sources_preference() + "\n\n"
+    + CORROBORATION_RULE + "\n\n"
     "Return the article in EXACTLY this format, and nothing else (no code fences):\n"
     "TITLE: <the title on a single line>\n"
     "EXCERPT: <one-sentence summary on a single line>\n"
@@ -234,6 +244,7 @@ def _discovery_prompt(count, focus=None):
         "whichever is most newsworthy that day: AI Governance, Alignment, Evaluation, "
         "Agentic AI, Regulation & Policy, Industry. Vary them; don't repeat a category.\n\n"
         + _sources_preference() + "\n\n"
+        + CORROBORATION_RULE + " Only propose topics that clear this bar.\n\n"
         "For each topic, set 'category' to the best-fit category name (the first topic's "
         "category is normally 'AI Safety'). Return ONLY a JSON array, no markdown:\n"
         '[{"topic": "...", "angle": "...", "category": "..."}]'
@@ -296,6 +307,28 @@ def draft_article(instruction):
     return parse_article(_text_of(resp))
 
 
+def has_sources(article):
+    """True if the draft has a ## Sources section with at least one real link."""
+    body = article.get("body_markdown", "")
+    m = re.search(r"#+\s*Sources", body, re.IGNORECASE)
+    if not m:
+        return False
+    return "](http" in body[m.end():]
+
+
+def draft_with_sourcing(instruction):
+    """Draft, and if the result lacks a real Sources section, retry once harder."""
+    article = draft_article(instruction)
+    if has_sources(article):
+        return article
+    article = draft_article(
+        instruction + "\n\nYOUR PREVIOUS DRAFT FAILED: it had no proper '## Sources' "
+        "section with real links. Either ground this in real, citable sources that meet "
+        "the corroboration bar and include a '## Sources' list of working links, or — if "
+        "the story cannot be corroborated — say so plainly rather than writing it.")
+    return article
+
+
 def slugify(title):
     s = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
     return s[:60]
@@ -349,6 +382,7 @@ def run_scheduled(count, focus=None, dry_run=False):
         return
     print(f"Discovering {count} topic(s)...")
     topics = discover_topics(count, focus=focus)
+    saved = 0
     for t in topics:
         print(f"Drafting: {t['topic']}")
         cat = t.get("category", "").strip()
@@ -358,9 +392,13 @@ def run_scheduled(count, focus=None, dry_run=False):
             + (f"This belongs in the '{cat}' category; set TAG accordingly. " if cat else "")
             + "Research it with web search first, cross-referencing multiple sources."
         )
-        article = draft_article(instruction)
+        article = draft_with_sourcing(instruction)
+        if not has_sources(article):
+            print("  SKIPPED — could not corroborate/cite this topic.")
+            continue
         save_post(article, default_tag=cat or "Industry")
-    print("Done. Review the new drafts, then flip 'published: false' to true.")
+        saved += 1
+    print(f"Done — saved {saved} draft(s). Review, then flip 'published: false' to true.")
 
 
 # ---- Mode: on demand -----------------------------------------------------
@@ -396,8 +434,10 @@ def run_ondemand(topic=None, url=None, text=None, article_type=None, angle=None,
         _dump_prompt("on-demand mode", instruction)
         return
     print("Researching and drafting...")
-    article = draft_article(instruction)
-    save_post(article, default_tag="Industry")
+    article = draft_with_sourcing(instruction)
+    if not has_sources(article):
+        print("  ⚠ note: this draft has no '## Sources' section — verify it before publishing.")
+    save_post(article, default_tag=kind.capitalize())
     print("Done. Review the draft, then flip 'published: false' to true.")
 
 
