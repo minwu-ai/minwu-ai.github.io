@@ -20,6 +20,7 @@ Requires ANTHROPIC_API_KEY in the environment.
 
 import os
 import sys
+import glob
 import json
 import argparse
 import datetime
@@ -57,25 +58,40 @@ WEB_SEARCH = {"type": "web_search_20250305", "name": "web_search"}
 # Credible, top-tier sources to PRIORITIZE when researching and citing.
 # Search still covers the whole web — these are simply preferred and cited where
 # available. Edit this list freely.
+# Priority research sources (name, URL), in order of trust. The pipeline checks and
+# cites these first; it may still use other reputable sources. Edit freely.
 PREFERRED_SOURCES = [
-    "The Wall Street Journal (wsj.com)",
-    "The New York Times (nytimes.com)",
-    "Bloomberg (bloomberg.com)",
-    "Financial Times (ft.com)",
-    "Reuters (reuters.com)",
-    "The Economist (economist.com)",
-    "official AI labs: OpenAI (openai.com), Anthropic (anthropic.com), "
-    "Google DeepMind (deepmind.google), Microsoft, Meta AI",
-    "primary/official: arXiv, NIST, the Federal Reserve, OCC, the EU Commission",
+    ("Anthropic Research", "https://www.anthropic.com/research"),
+    ("OpenAI Research", "https://openai.com/research"),
+    ("Google DeepMind Blog", "https://deepmind.google/discover/blog/"),
+    ("METR (Model Evaluation & Threat Research)", "https://metr.org/blog/"),
+    ("Apollo Research", "https://www.apolloresearch.ai/research"),
+    ("UK AI Security Institute", "https://www.aisi.gov.uk/research"),
+    ("US AI Safety Institute (NIST)", "https://www.nist.gov/aisi"),
+    ("Transformer Circuits", "https://transformer-circuits.pub/"),
+    ("Neel Nanda's blog", "https://www.neelnanda.io/"),
+    ("Centre for the Governance of AI (GovAI)", "https://www.governance.ai/research"),
+    ("Center for AI Safety (CAIS)", "https://www.safe.ai/research"),
+    ("RAND Technology & Security Policy Center", "https://www.rand.org/tspc.html"),
+    ("NIST AI Risk Management Framework", "https://www.nist.gov/itl/ai-risk-management-framework"),
+    ("OECD AI Policy Observatory", "https://oecd.ai/en/"),
+    ("European AI Office", "https://digital-strategy.ec.europa.eu/en/policies/european-ai-office"),
+    ("Bank for International Settlements (BIS) — FinTech & AI", "https://www.bis.org/topic/fintech.htm"),
+    ("Alignment Forum", "https://www.alignmentforum.org/"),
+    ("LessWrong — AI Alignment", "https://www.lesswrong.com/tag/ai-alignment"),
+    ("arXiv — AI safety", "https://arxiv.org/search/?query=AI+safety&searchtype=all"),
+    ("arXiv — AI alignment", "https://arxiv.org/search/?query=AI+alignment&searchtype=all"),
+    ("The Wall Street Journal", "https://www.wsj.com/"),
 ]
 
 
 def _sources_preference():
+    src = "; ".join("{} ({})".format(n, u) for n, u in PREFERRED_SOURCES)
     return (
-        "Prioritize credible, top-tier sources when researching and citing. "
-        "Prefer, in roughly this order of trust: " + "; ".join(PREFERRED_SOURCES)
-        + ". You may use other sources when needed, but prefer these, and include "
-        "links to the primary source for any factual claim."
+        "When researching, PRIORITIZE these trusted sources — check them first and cite "
+        "them where relevant (in roughly this order of trust): " + src + ". You may use "
+        "other reputable sources too, but lead with these, and include a link to the "
+        "primary source for every factual claim."
     )
 
 
@@ -104,11 +120,28 @@ FORMAT_GUIDE = (
     "citation. The Sources section does not count toward the word limit."
 )
 
+# What makes a post worth publishing — analysis, not summary.
+ANALYSIS_GUIDE = (
+    "INSIGHT IS THE POINT — do NOT just restate what a source reported. A summary is a "
+    "failure. Every post must add genuine analytical value by doing several of these:\n"
+    "- CROSS-REFERENCE: pull from multiple sources on the same event and surface where "
+    "they AGREE vs. DISAGREE, or where they frame it differently.\n"
+    "- HISTORICAL PARALLEL: compare the development to a relevant past event/precedent "
+    "and draw the lesson it suggests.\n"
+    "- PREDICTION: offer a clearly-labeled, reasoned forecast (e.g. a 'What to watch' or "
+    "'My read' line) — specific but appropriately hedged, never overconfident.\n"
+    "- CONNECT: when relevant, reference and LINK to a prior post on this site (a list is "
+    "provided in the user message) using its /slug/ path, to build a throughline.\n"
+    "Always apply a model-risk, safety, and governance lens. Be the analyst a busy "
+    "practitioner reads BECAUSE it tells them something the original source didn't."
+)
+
 DRAFT_SYSTEM = (
     "You are an AI industry analyst writing for a professional audience of risk, "
     "governance, and applied-AI practitioners. Voice: clear, authoritative, "
     "grounded, never hype. Where you make factual claims about recent events, ground "
     "them with web search.\n\n"
+    + ANALYSIS_GUIDE + "\n\n"
     + FORMAT_GUIDE + "\n\n"
     + _sources_preference() + "\n\n"
     "Return the article in EXACTLY this format, and nothing else (no code fences):\n"
@@ -117,6 +150,8 @@ DRAFT_SYSTEM = (
     "TAG: <the single best-fit subject category, chosen from EXACTLY this list: "
     "AI Governance, AI Safety, Alignment, Evaluation, Agentic AI, "
     "Regulation & Policy, Industry>\n"
+    "TAKEAWAY: <a '1-minute takeaway' in 1-2 sentences — the single most important "
+    "point, specific and plainly stated>\n"
     "BODY:\n"
     "<the full markdown body; may span many lines>"
 )
@@ -149,7 +184,7 @@ def parse_article(text):
     contain quotes, newlines, and arbitrary markdown without any escaping.
     """
     text = _strip_fences(text)
-    meta = {"title": "", "excerpt": "", "tag": "", "body_markdown": ""}
+    meta = {"title": "", "excerpt": "", "tag": "", "takeaway": "", "body_markdown": ""}
     lines = text.splitlines()
     body_idx = None
     for i, line in enumerate(lines):
@@ -158,7 +193,7 @@ def parse_article(text):
             body_idx = i
             trailing = line.split(":", 1)[1].strip()
             break
-        for key in ("TITLE", "EXCERPT", "TAG"):
+        for key in ("TITLE", "EXCERPT", "TAG", "TAKEAWAY"):
             if up.startswith(key + ":"):
                 meta[key.lower()] = line.split(":", 1)[1].strip()
                 break
@@ -203,6 +238,39 @@ def discover_topics(count, focus=None):
     return topics[:count]
 
 
+def _read_frontmatter(path):
+    """Lightweight frontmatter reader (no extra deps) for the pipeline step."""
+    meta = {}
+    with open(path) as f:
+        text = f.read()
+    if text.startswith("---"):
+        parts = text.split("---", 2)
+        if len(parts) >= 3:
+            for line in parts[1].splitlines():
+                if ":" in line:
+                    k, v = line.split(":", 1)
+                    meta[k.strip()] = v.strip().strip('"').strip("'")
+    return meta
+
+
+def published_posts_context(limit=25):
+    """A list of already-published posts the model can reference and link."""
+    items = []
+    for path in sorted(glob.glob(os.path.join(POSTS_DIR, "*.md"))):
+        meta = _read_frontmatter(path)
+        if str(meta.get("published", "true")).lower() == "false":
+            continue
+        title = meta.get("title", "")
+        slug = meta.get("slug") or os.path.basename(path)[:-3]
+        if title:
+            items.append("- [{}](/{}/) — {}".format(title, slug, meta.get("excerpt", "")))
+    if not items:
+        return ""
+    return ("\n\nAlready published on this site — reference and LINK any that are "
+            "relevant (use the /slug/ path) to build a throughline:\n"
+            + "\n".join(items[:limit]))
+
+
 def draft_article(instruction):
     """instruction: a natural-language brief describing what to write."""
     resp = get_client().messages.create(
@@ -210,7 +278,7 @@ def draft_article(instruction):
         max_tokens=2000,
         tools=[WEB_SEARCH],
         system=DRAFT_SYSTEM,
-        messages=[{"role": "user", "content": instruction}],
+        messages=[{"role": "user", "content": instruction + published_posts_context()}],
     )
     return parse_article(_text_of(resp))
 
@@ -226,6 +294,7 @@ def save_post(article, default_tag="Analysis"):
     path = os.path.join(POSTS_DIR, f"{slug}.md")
     title = article["title"].replace('"', "'")
     excerpt = article.get("excerpt", "").replace('"', "'")
+    takeaway = article.get("takeaway", "").replace('"', "'")
     tag = article.get("tag") or default_tag
     frontmatter = (
         "---\n"
@@ -234,6 +303,7 @@ def save_post(article, default_tag="Analysis"):
         f"slug: {slug}\n"
         f"tag: {tag}\n"
         f'excerpt: "{excerpt}"\n'
+        f'takeaway: "{takeaway}"\n'
         "published: false\n"        # <-- review gate: flip to true to publish
         "---\n\n"
     )

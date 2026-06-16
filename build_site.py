@@ -151,11 +151,12 @@ def load_posts():
         slug = post.get("slug", path.stem)
         excerpt = post.get("excerpt", "")
         tag = post.get("tag", "")
+        takeaway = post.get("takeaway", "")
         md.reset()
         body_html = md.convert(post.content)
         posts.append({
             "title": title, "date": date, "date_str": date.strftime("%b %d, %Y"),
-            "slug": slug, "excerpt": excerpt, "tag": tag,
+            "slug": slug, "excerpt": excerpt, "tag": tag, "takeaway": takeaway,
             "tag_slug": slugify(tag) if tag else "", "body_html": body_html,
         })
     posts.sort(key=lambda p: p["date"], reverse=True)
@@ -218,17 +219,22 @@ def build():
         tag_link = ('<a class="tag" href="/topics/{ts}/">{t}</a>'.format(ts=p["tag_slug"], t=p["tag"])
                     if p["tag"] else "general")
         post_url = "{}/{}/".format(SITE_URL, p["slug"])
+        takeaway_html = ""
+        if p["takeaway"]:
+            takeaway_html = (
+                '<div class="takeaway"><span class="takeaway-label">1-minute takeaway</span>'
+                '<p>{}</p></div>').format(p["takeaway"])
         inner = (
             '<a class="back" href="/">← All posts</a>'
             '<article class="post">'
             '<div class="meta">{date} · {tag}</div>'
-            '<h1>{title}</h1>{body}'
+            '<h1>{title}</h1>{takeaway}{body}'
             '<div class="post-footer"><span>Written by {author}. Filed under {tag_link}.</span>'
             '{share}</div>'
             '</article>'
         ).format(date=p["date_str"], tag=p["tag"] or "Article",
-                 title=p["title"], body=p["body_html"], author=AUTHOR,
-                 tag_link=tag_link, share=share_button(post_url))
+                 title=p["title"], takeaway=takeaway_html, body=p["body_html"],
+                 author=AUTHOR, tag_link=tag_link, share=share_button(post_url))
         post_dir = PUBLIC_DIR / p["slug"]
         post_dir.mkdir(exist_ok=True)
         (post_dir / "index.html").write_text(
