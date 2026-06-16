@@ -28,7 +28,7 @@ SITE_DESCRIPTION = "Analysis and commentary on AI safety, alignment, evaluation,
 SITE_URL = "https://minwu-ai.github.io"
 
 # Small kicker shown above your name on the home page (was a duplicate "Min Wu").
-HOME_EYEBROW = "Frontier Safety"
+HOME_EYEBROW = "Frontier AI Safety, Evaluation & Governance"
 # Epigraph under the home lede: (quote, attribution). Set HOME_QUOTE = None to hide.
 HOME_QUOTE = (
     "Uncertainty is the only certainty there is, and knowing how to live with "
