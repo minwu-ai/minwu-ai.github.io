@@ -4,7 +4,7 @@ date: 2026-06-16
 slug: eu-publishes-final-ai-act-code-of-practice-on-labelling-ai-g
 tag: Governance
 excerpt: "The European Commission's June 10 Code of Practice gives generative AI providers a structured but time-pressured compliance path for Article 50 transparency obligations that become enforceable on August 2, 2026."
-published: false
+published: true
 ---
 
 The European Commission has handed the AI industry its most operationally detailed instruction yet on content provenance — and the clock is running. The final Code of Practice on marking and labelling of AI-generated content was published on June 10, arriving roughly seven weeks before Article 50 transparency obligations begin applying on August 2, 2026.
