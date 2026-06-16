@@ -95,7 +95,13 @@ FORMAT_GUIDE = (
     "heading (at most one per heading); never mid-sentence, and omit emoji entirely "
     "if the topic is serious (incidents, harm, regulation enforcement).\n"
     "VISUALS: do NOT embed external images (link rot / licensing); rely on text "
-    "formatting for visual structure. The author may add images during review."
+    "formatting for visual structure. The author may add images during review.\n"
+    "CITATIONS (required): support every factual claim with an inline markdown link "
+    "to its primary source, and end the piece with a '## Sources' section listing the "
+    "key references as markdown links (title + URL). Cite ONLY real URLs you actually "
+    "retrieved via web search — never invent or guess a link. If you could not verify "
+    "a claim with a real source, soften it or leave it out rather than fabricate a "
+    "citation. The Sources section does not count toward the word limit."
 )
 
 DRAFT_SYSTEM = (
