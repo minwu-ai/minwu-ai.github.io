@@ -88,7 +88,7 @@ md = markdown.Markdown(extensions=["extra", "smarty", "sane_lists"])
 
 
 def render_page(page_title, page_description, inner_html,
-                nav_active="", canonical_path="/", og_type="website"):
+                nav_active="", canonical_path="/", og_type="website", wide=False):
     return TEMPLATE.render(
         page_title=page_title,
         page_description=page_description,
@@ -101,7 +101,24 @@ def render_page(page_title, page_description, inner_html,
         nav_active=nav_active,
         canonical_path=canonical_path,
         og_type=og_type,
+        wide=wide,
     )
+
+
+# Small "copy link / share" control (wired up by JS in the template).
+SHARE_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+              'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+              '<path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>'
+              '<polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>')
+
+
+def share_button(url, label="Copy link", icon_only=False):
+    cls = "share-btn icon-only" if icon_only else "share-btn"
+    text = "" if icon_only else '<span>{}</span>'.format(label)
+    aria = "Share or copy link"
+    return ('<button class="{cls}" type="button" data-share-url="{url}" '
+            'aria-label="{aria}" title="{aria}">{icon}{text}</button>').format(
+                cls=cls, url=url, aria=aria, icon=SHARE_ICON, text=text)
 
 
 def slugify(value):
@@ -176,23 +193,25 @@ def build():
     ).format(name=SITE_NAME, desc=SITE_DESCRIPTION, listing=listing)
     (PUBLIC_DIR / "index.html").write_text(
         render_page(SITE_NAME, SITE_DESCRIPTION, home,
-                    nav_active="home", canonical_path="/")
+                    nav_active="home", canonical_path="/", wide=True)
     )
 
     # ---- Individual post pages ----
     for p in posts:
         tag_link = ('<a class="tag" href="/topics/{ts}/">{t}</a>'.format(ts=p["tag_slug"], t=p["tag"])
                     if p["tag"] else "general")
+        post_url = "{}/{}/".format(SITE_URL, p["slug"])
         inner = (
             '<a class="back" href="/">← All posts</a>'
             '<article class="post">'
             '<div class="meta">{date} · {tag}</div>'
             '<h1>{title}</h1>{body}'
-            '<div class="post-footer">Written by {author}. Filed under {tag_link}.</div>'
+            '<div class="post-footer"><span>Written by {author}. Filed under {tag_link}.</span>'
+            '{share}</div>'
             '</article>'
         ).format(date=p["date_str"], tag=p["tag"] or "Article",
                  title=p["title"], body=p["body_html"], author=AUTHOR,
-                 tag_link=tag_link)
+                 tag_link=tag_link, share=share_button(post_url))
         post_dir = PUBLIC_DIR / p["slug"]
         post_dir.mkdir(exist_ok=True)
         (post_dir / "index.html").write_text(
@@ -248,14 +267,16 @@ def build_topics(posts):
         n = len(items)
         count = "{} post{}".format(n, "" if n == 1 else "s") if n else "Coming soon"
         cards.append(
-            '<li class="topic-card"><a href="/topics/{ts}/">{name}</a>'
+            '<li class="topic-card"><a href="/topics/{ts}/">'
+            '<span class="topic-name">{name}</span>'
             '<span class="desc">{desc}</span>'
-            '<span class="count">{count}</span></li>'.format(
+            '<span class="count">{count}</span></a></li>'.format(
                 ts=ts, name=name, desc=desc, count=count))
     cards.append('</ul>')
     (topics_dir / "index.html").write_text(
         render_page("Topics — " + SITE_NAME, "Browse writing by topic",
-                    "\n".join(cards), nav_active="topics", canonical_path="/topics/"))
+                    "\n".join(cards), nav_active="topics", canonical_path="/topics/",
+                    wide=True))
 
     # One page per curated topic.
     for name, desc in TOPICS:
@@ -283,26 +304,36 @@ def build_topics(posts):
 
 
 def build_projects():
-    cards = ['<div class="eyebrow">Building</div>',
-             '<h1 class="page">Projects</h1>',
-             '<p class="lede">Open-source tools I build around AI safety, evaluation, '
-             'and governance. Each links to its repository.</p>',
-             '<ul class="project-grid">']
+    head = (
+        '<div class="page-head">'
+        '<div class="page-head-text">'
+        '<div class="eyebrow">Building</div>'
+        '<h1 class="page">Projects</h1>'
+        '<p class="lede">Open-source tools I build around AI safety, evaluation, and '
+        'governance. Each links to its repository.</p>'
+        '</div>'
+        '<img class="page-logo" src="{avatar}" alt="Axiom" width="80" height="80">'
+        '</div>'
+    ).format(avatar=PROJECT_AVATAR)
+    cards = [head, '<ul class="project-grid">']
     for name, desc, url in PROJECTS:
         cards.append(
-            '<li class="project-card"><a href="{url}" target="_blank" rel="noopener">'
-            '<img class="project-avatar" src="{avatar}" alt="" width="40" height="40">'
+            '<li class="project-card">'
+            '<a class="card-link" href="{url}" target="_blank" rel="noopener">'
             '<div class="project-body"><span class="project-name">{name} '
             '<span class="project-arrow">↗</span></span>'
-            '<span class="project-desc">{desc}</span></div>'
-            '</a></li>'.format(url=url, avatar=PROJECT_AVATAR, name=name, desc=desc))
+            '<span class="project-desc">{desc}</span></div></a>'
+            '{share}'
+            '</li>'.format(url=url, name=name, desc=desc,
+                           share=share_button(url, icon_only=True)))
     cards.append('</ul>')
     d = PUBLIC_DIR / "projects"
     d.mkdir(exist_ok=True)
     (d / "index.html").write_text(
         render_page("Projects — " + SITE_NAME,
                     "Open-source AI safety, evaluation, and governance tools by " + AUTHOR,
-                    "\n".join(cards), nav_active="projects", canonical_path="/projects/"))
+                    "\n".join(cards), nav_active="projects", canonical_path="/projects/",
+                    wide=True))
 
 
 def build_about():
