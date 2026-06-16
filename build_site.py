@@ -329,7 +329,7 @@ def build_projects():
         '<p class="lede">Open-source tools I build around AI safety, evaluation, and '
         'governance. Each links to its repository.</p>'
         '</div>'
-        '<img class="page-logo" src="{avatar}" alt="Axiom" width="80" height="80">'
+        '<img class="page-logo" src="{avatar}" alt="Axiom" width="120" height="120">'
         '</div>'
     ).format(avatar=PROJECT_AVATAR)
     cards = [head, '<ul class="project-grid">']
