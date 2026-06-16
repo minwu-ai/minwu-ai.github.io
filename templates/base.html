@@ -107,6 +107,19 @@ a.tag:hover{filter:brightness(.97)}
 .topic-card .count{display:block; font-family:var(--mono); color:var(--accent); font-size:11.5px;
   letter-spacing:0.04em; margin-top:12px}
 
+/* Projects */
+.project-grid{list-style:none; display:grid; gap:14px; margin-top:10px}
+.project-card{border:1px solid var(--line); border-radius:12px; background:var(--surface);
+  transition:border-color .15s, transform .15s; box-shadow:0 1px 2px var(--shadow)}
+.project-card:hover{border-color:var(--accent); transform:translateY(-2px)}
+.project-card a{display:flex; gap:16px; align-items:flex-start; padding:20px; text-decoration:none}
+.project-avatar{width:40px; height:40px; border-radius:9px; flex:0 0 auto; margin-top:2px}
+.project-body{display:flex; flex-direction:column}
+.project-name{font-family:var(--serif); font-weight:600; font-size:18px; color:var(--ink)}
+.project-arrow{color:var(--muted); font-size:14px}
+.project-card:hover .project-arrow{color:var(--accent)}
+.project-desc{color:var(--muted); font-size:14.5px; line-height:1.5; margin-top:5px}
+
 /* Article */
 article.post .meta{font-family:var(--mono); font-size:12.5px; color:var(--muted); margin-bottom:16px; letter-spacing:0.04em}
 article.post h1{font-family:var(--serif); font-weight:600; font-size:38px; line-height:1.12;
@@ -163,6 +176,7 @@ footer.site a{color:var(--muted)}
     <div class="nav">
       <a href="/"{{ ' class="active"' if nav_active == 'home' else '' }}>Home</a>
       <a href="/topics/"{{ ' class="active"' if nav_active == 'topics' else '' }}>Topics</a>
+      <a href="/projects/"{{ ' class="active"' if nav_active == 'projects' else '' }}>Projects</a>
       <a href="/about/"{{ ' class="active"' if nav_active == 'about' else '' }}>About</a>
       <a href="/feed.xml">RSS</a>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">

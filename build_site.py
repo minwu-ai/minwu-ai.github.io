@@ -39,6 +39,42 @@ TOPICS = [
     ("Industry", "Model releases, labs, and the business of AI."),
     ("Life", "Notes and photos from outside the work."),
 ]
+
+# Projects shown on the Projects page. Each links to its repo. Edit freely.
+# (name, short description, repo URL). The shared avatar is assets/axiom-avatar.svg.
+PROJECT_AVATAR = "/assets/axiom-avatar.svg"
+PROJECTS = [
+    ("Regulus",
+     "AI governance standards lookup powered by RAG and knowledge graphs — retrieves "
+     "applicable risks and cross-referenced guidance across NIST AI RMF, SR 26-2, the "
+     "EU AI Act, and more.",
+     "https://github.com/minw0607/Regulus"),
+    ("LLM Red Teaming",
+     "A modular toolkit for red teaming LLMs — adversarial attacks, jailbreak "
+     "evaluation (JailbreakBench), and prompt injection, with pluggable targets and "
+     "automated judges. Built for AI safety practitioners.",
+     "https://github.com/minw0607/llm_red_teaming"),
+    ("GenAI Capability Bench",
+     "A modular benchmark suite evaluating GenAI across accuracy, truthfulness, "
+     "instruction following, reasoning, RAG, tool use, and agentic task completion.",
+     "https://github.com/minw0607/genai_capability_bench"),
+    ("Multi-Agent OTel Eval",
+     "Enterprise-grade GenAI observability and evaluation using OpenTelemetry "
+     "conventions, with multi-agent orchestration tested on the Mind2Web benchmark.",
+     "https://github.com/minw0607/multi_agent_otel_eval"),
+    ("RAG Eval Framework",
+     "Provider-agnostic RAG evaluation benchmarked on HotpotQA — 13 metrics, "
+     "multi-prompt comparison, failure diagnosis, and an auto-generated audit report.",
+     "https://github.com/minw0607/rag_eval_framework"),
+    ("Geometric Knowledge Network",
+     "A lightweight geometric knowledge network that augments vector RAG with "
+     "document-grounded graph structure, hybrid retrieval, and evaluation.",
+     "https://github.com/minw0607/geometric_knowledge_network"),
+    ("ML Validation Framework",
+     "Interactive ML model validation — explainability, weak spots, robustness, and "
+     "fairness — widget-driven, no-code demo.",
+     "https://github.com/minw0607/ml_validation_framework"),
+]
 # ----------------------------------------------------------------------
 
 ROOT = Path(__file__).parent
@@ -168,6 +204,9 @@ def build():
     # ---- Topics: index + one page per tag ----
     build_topics(posts)
 
+    # ---- Projects page ----
+    build_projects()
+
     # ---- About page (from pages/about.md if present) ----
     build_about()
 
@@ -241,6 +280,29 @@ def build_topics(posts):
             render_page("{} — {}".format(name, SITE_NAME),
                         desc, inner,
                         nav_active="topics", canonical_path="/topics/{}/".format(ts)))
+
+
+def build_projects():
+    cards = ['<div class="eyebrow">Building</div>',
+             '<h1 class="page">Projects</h1>',
+             '<p class="lede">Open-source tools I build around AI safety, evaluation, '
+             'and governance. Each links to its repository.</p>',
+             '<ul class="project-grid">']
+    for name, desc, url in PROJECTS:
+        cards.append(
+            '<li class="project-card"><a href="{url}" target="_blank" rel="noopener">'
+            '<img class="project-avatar" src="{avatar}" alt="" width="40" height="40">'
+            '<div class="project-body"><span class="project-name">{name} '
+            '<span class="project-arrow">↗</span></span>'
+            '<span class="project-desc">{desc}</span></div>'
+            '</a></li>'.format(url=url, avatar=PROJECT_AVATAR, name=name, desc=desc))
+    cards.append('</ul>')
+    d = PUBLIC_DIR / "projects"
+    d.mkdir(exist_ok=True)
+    (d / "index.html").write_text(
+        render_page("Projects — " + SITE_NAME,
+                    "Open-source AI safety, evaluation, and governance tools by " + AUTHOR,
+                    "\n".join(cards), nav_active="projects", canonical_path="/projects/"))
 
 
 def build_about():
