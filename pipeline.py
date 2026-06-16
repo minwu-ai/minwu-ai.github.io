@@ -83,8 +83,10 @@ def _sources_preference():
 MAX_WORDS = 800   # hard cap; the model aims for ~600-800
 
 FORMAT_GUIDE = (
-    f"LENGTH: {MAX_WORDS} words maximum (aim 600-800). Open with the single most "
-    "important point in the first two sentences.\n"
+    f"LENGTH (STRICT): the BODY must be {MAX_WORDS} words or fewer — aim for 600-700. "
+    f"This is a hard limit. Before you finish, count the words and, if over {MAX_WORDS}, "
+    "cut and tighten until it fits. Open with the single most important point in the "
+    "first two sentences.\n"
     "STRUCTURE for skimmability: use ## section headings, short paragraphs "
     "(2-4 sentences), and bullet lists where they help. Use a blockquote (>) for a "
     "key quote or takeaway, and a small markdown table when comparing things. Do NOT "
@@ -197,7 +199,7 @@ def draft_article(instruction):
     """instruction: a natural-language brief describing what to write."""
     resp = get_client().messages.create(
         model=MODEL,
-        max_tokens=3000,
+        max_tokens=2000,
         tools=[WEB_SEARCH],
         system=DRAFT_SYSTEM,
         messages=[{"role": "user", "content": instruction}],
