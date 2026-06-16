@@ -79,13 +79,29 @@ def _sources_preference():
     )
 
 
+# ---- Draft length & formatting (edit these to taste) ----
+MAX_WORDS = 800   # hard cap; the model aims for ~600-800
+
+FORMAT_GUIDE = (
+    f"LENGTH: {MAX_WORDS} words maximum (aim 600-800). Open with the single most "
+    "important point in the first two sentences.\n"
+    "STRUCTURE for skimmability: use ## section headings, short paragraphs "
+    "(2-4 sentences), and bullet lists where they help. Use a blockquote (>) for a "
+    "key quote or takeaway, and a small markdown table when comparing things. Do NOT "
+    "include an H1 (the title is rendered separately).\n"
+    "EMOJI: you MAY use one tasteful emoji as a signpost at the start of a section "
+    "heading (at most one per heading); never mid-sentence, and omit emoji entirely "
+    "if the topic is serious (incidents, harm, regulation enforcement).\n"
+    "VISUALS: do NOT embed external images (link rot / licensing); rely on text "
+    "formatting for visual structure. The author may add images during review."
+)
+
 DRAFT_SYSTEM = (
     "You are an AI industry analyst writing for a professional audience of risk, "
     "governance, and applied-AI practitioners. Voice: clear, authoritative, "
-    "grounded, never hype. Length: 700-1000 words. Use markdown: ## for section "
-    "headings, normal paragraphs, occasional bullet lists; do NOT include an H1 "
-    "(the title is rendered separately). Where you make factual claims about recent "
-    "events, ground them with web search.\n\n"
+    "grounded, never hype. Where you make factual claims about recent events, ground "
+    "them with web search.\n\n"
+    + FORMAT_GUIDE + "\n\n"
     + _sources_preference() + "\n\n"
     "Return the article in EXACTLY this format, and nothing else (no code fences):\n"
     "TITLE: <the title on a single line>\n"

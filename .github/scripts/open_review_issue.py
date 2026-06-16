@@ -62,6 +62,9 @@ def main():
     payload = {
         "title": f"\U0001F4DD {len(drafts)} new draft(s) to review — {today}",
         "body": "\n".join(lines),
+        # Assigning you triggers a GitHub email/mobile notification.
+        # Override by setting the REVIEW_ASSIGNEE repo/Actions variable.
+        "assignees": [os.environ.get("REVIEW_ASSIGNEE", "minw0607")],
     }
     req = urllib.request.Request(
         f"https://api.github.com/repos/{repo}/issues",
