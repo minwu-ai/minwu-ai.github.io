@@ -6,7 +6,8 @@ name: Daily draft pipeline
 
 on:
   schedule:
-    - cron: '0 12 * * 1-5'   # weekdays at 12:00 UTC (~8am ET)
+    - cron: '17 12 * * 1-5'  # weekdays ~12:17 UTC (~8:17am ET); off-peak minute is
+                             # more reliable than :00, which GitHub often delays/skips
   workflow_dispatch:           # also lets you run it manually anytime
 
 permissions:
