@@ -43,8 +43,17 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Daily drafts $(date +%Y-%m-%d)"
-            git push
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            # Resilient push: rebase onto any concurrent changes, retry a few times.
+            pushed=false
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin main && git push && { pushed=true; break; }
+              echo "push attempt $i failed; retrying..."; sleep 5
+            done
+            if [ "$pushed" = true ]; then
+              echo "changed=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "::error::could not push drafts after retries"; exit 1
+            fi
           fi
 
       - name: Open review issue
