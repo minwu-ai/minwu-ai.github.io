@@ -88,10 +88,14 @@ PREFERRED_SOURCES = [
 def _sources_preference():
     src = "; ".join("{} ({})".format(n, u) for n, u in PREFERRED_SOURCES)
     return (
-        "When researching, PRIORITIZE these trusted sources — check them first and cite "
-        "them where relevant (in roughly this order of trust): " + src + ". You may use "
-        "other reputable sources too, but lead with these, and include a link to the "
-        "primary source for every factual claim."
+        "SEARCH THE OPEN WEB BROADLY AND INDEPENDENTLY — you are NOT restricted to any "
+        "fixed list. The following is a RECOMMENDED set of trusted, high-signal sources "
+        "to keep in mind, not a limit. Workflow: discover what's genuinely notable from "
+        "across the web; then, for anything you find circulating, CHECK whether these "
+        "trusted sources cover it and report what they say (or note their silence / a "
+        "differing take). Prefer and cite these when they're relevant, and always link "
+        "the primary source for a factual claim. Recommended sources (rough priority): "
+        + src + "."
     )
 
 
@@ -218,12 +222,21 @@ def _text_of(resp):
 def _discovery_prompt(count, focus=None):
     focus_line = "; ".join(focus or FOCUS_TOPICS)
     return (
-        f"Search the web for the {count} most significant, recent AI developments "
-        f"(roughly the last 48 hours), giving STRONG PRIORITY to these focus areas: "
-        f"{focus_line}. Prefer concrete news (releases, regulation, research, "
-        "incidents) over evergreen topics. " + _sources_preference() + " "
-        "Return ONLY a JSON array, no markdown:\n"
-        '[{"topic": "...", "angle": "...", "type": "news|analysis|opinion"}]'
+        f"Find the {count} most significant, recent AI developments (roughly the last "
+        "48 hours) worth writing about. Prefer concrete news (releases, regulation, "
+        "research, incidents) over evergreen topics. General areas of interest: "
+        f"{focus_line}.\n\n"
+        "REQUIRED MIX:\n"
+        "- The FIRST topic MUST be squarely about AI SAFETY (e.g. alignment, dangerous "
+        "capabilities, evaluations/red-teaming, oversight, control, security of AI "
+        "systems, safety policy).\n"
+        "- Each REMAINING topic should come from a DIFFERENT one of these categories, "
+        "whichever is most newsworthy that day: AI Governance, Alignment, Evaluation, "
+        "Agentic AI, Regulation & Policy, Industry. Vary them; don't repeat a category.\n\n"
+        + _sources_preference() + "\n\n"
+        "For each topic, set 'category' to the best-fit category name (the first topic's "
+        "category is normally 'AI Safety'). Return ONLY a JSON array, no markdown:\n"
+        '[{"topic": "...", "angle": "...", "category": "..."}]'
     )
 
 
@@ -338,12 +351,15 @@ def run_scheduled(count, focus=None, dry_run=False):
     topics = discover_topics(count, focus=focus)
     for t in topics:
         print(f"Drafting: {t['topic']}")
+        cat = t.get("category", "").strip()
         instruction = (
-            f"Write a {t.get('type', 'analysis')} piece about: {t['topic']}. "
-            f"Angle: {t.get('angle', '')}. Research it with web search first."
+            f"Write an analytical piece about: {t['topic']}. "
+            f"Angle: {t.get('angle', '')}. "
+            + (f"This belongs in the '{cat}' category; set TAG accordingly. " if cat else "")
+            + "Research it with web search first, cross-referencing multiple sources."
         )
         article = draft_article(instruction)
-        save_post(article, default_tag="Industry")
+        save_post(article, default_tag=cat or "Industry")
     print("Done. Review the new drafts, then flip 'published: false' to true.")
 
 
