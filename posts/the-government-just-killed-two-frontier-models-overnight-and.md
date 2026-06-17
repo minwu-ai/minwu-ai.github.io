@@ -4,7 +4,7 @@ date: 2026-06-16
 slug: the-government-just-killed-two-frontier-models-overnight-and
 tag: AI Safety
 takeaway: "On June 12, 2026, a U.S. export control directive forced Anthropic to pull Claude Fable 5 and Mythos 5 globally within hours of receipt, exposing catastrophic supply-chain blind spots and setting a legal precedent that every AI-dependent enterprise must now reckon with."
-published: false
+published: true
 ---
 
 The U.S. government's ability to instantly switch off a frontier AI model — for every customer, everywhere, without notice — is no longer hypothetical. It happened on June 12, 2026, and the reverberations extend far beyond one company.
