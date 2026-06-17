@@ -37,16 +37,47 @@ def title_of(path):
     return os.path.basename(path)
 
 
+def _open_issue(title, body):
+    repo = os.environ["GITHUB_REPOSITORY"]
+    token = os.environ["GH_TOKEN"]
+    payload = {
+        "title": title,
+        "body": body,
+        # Assigning you triggers a GitHub email/mobile notification.
+        "assignees": [os.environ.get("REVIEW_ASSIGNEE", "minw0607")],
+    }
+    req = urllib.request.Request(
+        f"https://api.github.com/repos/{repo}/issues",
+        data=json.dumps(payload).encode(), method="POST",
+    )
+    req.add_header("Authorization", f"token {token}")
+    req.add_header("Accept", "application/vnd.github+json")
+    with urllib.request.urlopen(req) as r:
+        return json.load(r)
+
+
 def main():
+    repo = os.environ["GITHUB_REPOSITORY"]
+    server = os.environ.get("GITHUB_SERVER_URL", "https://github.com")
+    today = datetime.date.today().isoformat()
+
+    # Empty-run mode: the pipeline saved no drafts — notify so it never goes silent.
+    if os.environ.get("REVIEW_EMPTY") == "1":
+        body = (
+            "Today's pipeline ran but published **no new drafts** — it didn't find a "
+            "topic it could corroborate against the trusted-source bar (≥1 priority "
+            "source, or ≥2 outside sources). No action needed; this is the guardrail "
+            "working. You can run it again from the "
+            f"[Actions tab]({server}/{repo}/actions/workflows/daily_pipeline.yml) if "
+            "you'd like to retry.")
+        issue = _open_issue(f"ℹ️ No corroborated topics today — {today}", body)
+        print(f"Opened empty-run notice #{issue['number']}: {issue['html_url']}")
+        return
+
     drafts = added_drafts()
     if not drafts:
         print("No new drafts; not opening an issue.")
         return
-
-    repo = os.environ["GITHUB_REPOSITORY"]
-    token = os.environ["GH_TOKEN"]
-    server = os.environ.get("GITHUB_SERVER_URL", "https://github.com")
-    today = datetime.date.today().isoformat()
 
     lines = [
         f"The daily pipeline drafted **{len(drafts)} new post(s)** for your review. "
@@ -59,21 +90,8 @@ def main():
         view = f"{server}/{repo}/blob/main/{path}"
         lines.append(f"- [ ] **{title_of(path)}** — [edit]({edit}) · [view]({view}) · `{path}`")
 
-    payload = {
-        "title": f"\U0001F4DD {len(drafts)} new draft(s) to review — {today}",
-        "body": "\n".join(lines),
-        # Assigning you triggers a GitHub email/mobile notification.
-        # Override by setting the REVIEW_ASSIGNEE repo/Actions variable.
-        "assignees": [os.environ.get("REVIEW_ASSIGNEE", "minw0607")],
-    }
-    req = urllib.request.Request(
-        f"https://api.github.com/repos/{repo}/issues",
-        data=json.dumps(payload).encode(), method="POST",
-    )
-    req.add_header("Authorization", f"token {token}")
-    req.add_header("Accept", "application/vnd.github+json")
-    with urllib.request.urlopen(req) as r:
-        issue = json.load(r)
+    issue = _open_issue(
+        f"\U0001F4DD {len(drafts)} new draft(s) to review — {today}", "\n".join(lines))
     print(f"Opened review issue #{issue['number']}: {issue['html_url']}")
 
 

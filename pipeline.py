@@ -236,13 +236,14 @@ def _discovery_prompt(count, focus=None):
         "48 hours) worth writing about. Prefer concrete news (releases, regulation, "
         "research, incidents) over evergreen topics. General areas of interest: "
         f"{focus_line}.\n\n"
-        "REQUIRED MIX:\n"
-        "- The FIRST topic MUST be squarely about AI SAFETY (e.g. alignment, dangerous "
-        "capabilities, evaluations/red-teaming, oversight, control, security of AI "
-        "systems, safety policy).\n"
-        "- Each REMAINING topic should come from a DIFFERENT one of these categories, "
-        "whichever is most newsworthy that day: AI Governance, Alignment, Evaluation, "
-        "Agentic AI, Regulation & Policy, Industry. Vary them; don't repeat a category.\n\n"
+        "REQUIRED MIX (this is a candidate list; extras are backups in case some can't "
+        "be corroborated):\n"
+        "- The FIRST TWO topics MUST each be squarely about AI SAFETY (e.g. alignment, "
+        "dangerous capabilities, evaluations/red-teaming, oversight, control, security "
+        "of AI systems, safety policy) — distinct stories.\n"
+        "- The REMAINING topics should span DIFFERENT categories, whichever are most "
+        "newsworthy: AI Governance, Alignment, Evaluation, Agentic AI, Regulation & "
+        "Policy, Industry. Vary them. Order them best-first.\n\n"
         + _sources_preference() + "\n\n"
         + CORROBORATION_RULE + " Only propose topics that clear this bar.\n\n"
         "For each topic, set 'category' to the best-fit category name (the first topic's "
@@ -308,12 +309,16 @@ def draft_article(instruction):
 
 
 def has_sources(article):
-    """True if the draft has a ## Sources section with at least one real link."""
+    """True if the draft has a Sources section containing at least one URL.
+
+    Lenient on purpose: accepts a '## Sources' heading OR a 'Sources:' label, and
+    counts ANY http(s) URL after it — markdown links, bare URLs, or numbered refs.
+    """
     body = article.get("body_markdown", "")
-    m = re.search(r"#+\s*Sources", body, re.IGNORECASE)
+    m = re.search(r"(?:^|\n)\s*(?:#{1,6}\s*|\*{0,2})sources\b\*{0,2}\s*:?", body, re.IGNORECASE)
     if not m:
         return False
-    return "](http" in body[m.end():]
+    return bool(re.search(r"https?://", body[m.end():]))
 
 
 def trim_to_length(article):
@@ -332,7 +337,7 @@ def trim_to_length(article):
         messages=[{"role": "user", "content": body}],
     )
     new = _strip_fences(_text_of(resp))
-    if new and "](http" in new and len(new.split()) < len(body.split()):
+    if new and re.search(r"https?://", new) and len(new.split()) < len(body.split()):
         article["body_markdown"] = new
     return article
 
@@ -402,10 +407,14 @@ def run_scheduled(count, focus=None, dry_run=False):
               + DRAFT_SYSTEM)
         print("\n[dry-run] No API call made and no file written.\n")
         return
-    print(f"Discovering {count} topic(s)...")
-    topics = discover_topics(count, focus=focus)
+    target = count
+    print(f"Discovering candidate topics (target {target})...")
+    # Over-fetch so we can backfill when a topic can't be corroborated/cited.
+    candidates = discover_topics(target + 4, focus=focus)
     saved = 0
-    for t in topics:
+    for t in candidates:
+        if saved >= target:
+            break
         print(f"Drafting: {t['topic']}")
         cat = t.get("category", "").strip()
         instruction = (
@@ -416,11 +425,11 @@ def run_scheduled(count, focus=None, dry_run=False):
         )
         article = draft_with_sourcing(instruction)
         if not has_sources(article):
-            print("  SKIPPED — could not corroborate/cite this topic.")
+            print("  skipped (couldn't corroborate/cite) — trying the next candidate.")
             continue
         save_post(article, default_tag=cat or "Industry")
         saved += 1
-    print(f"Done — saved {saved} draft(s). Review, then flip 'published: false' to true.")
+    print(f"Done — saved {saved} of {target} target draft(s).")
 
 
 # ---- Mode: on demand -----------------------------------------------------
