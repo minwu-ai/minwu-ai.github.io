@@ -76,14 +76,14 @@ My view: organizations that treat voluntary-code adherence as their entire compl
 
 ## Sources
 
-- European Commission — Final Code of Practice on Transparency of AI-Generated Content  
-  https://digital-strategy.ec.europa.eu/en/news/commission-publishes-code-practice-marking-and-labelling-ai-generated-content
+- [European Commission — Final Code of Practice on Transparency of AI-Generated Content]
+  (https://digital-strategy.ec.europa.eu/en/news/commission-publishes-code-practice-marking-and-labelling-ai-generated-content)
 
-- European Commission — FAQ: Signing the Code of Practice on Transparency of AI-Generated Content  
-  https://digital-strategy.ec.europa.eu/en/faqs/signing-code-practice-transparency-ai-generated-content
+- [European Commission — FAQ: Signing the Code of Practice on Transparency of AI-Generated Content] 
+  (https://digital-strategy.ec.europa.eu/en/faqs/signing-code-practice-transparency-ai-generated-content)
 
-- European Commission — FAQ: Code of Practice on Transparency of AI-Generated Content  
-  https://digital-strategy.ec.europa.eu/en/faqs/code-practice-transparency-ai-generated-content
+- [European Commission — FAQ: Code of Practice on Transparency of AI-Generated Content]  
+  (https://digital-strategy.ec.europa.eu/en/faqs/code-practice-transparency-ai-generated-content)
 
 - EU AI Act — Article 50 (Transparency Obligations)
 
