@@ -189,8 +189,20 @@ def _extract_json(text):
     start = next((i for i, ch in enumerate(text) if ch in "[{"), None)
     if start is None:
         return json.loads(text, strict=False)  # no JSON found -> raise informative error
-    obj, _ = json.JSONDecoder(strict=False).raw_decode(text[start:])
-    return obj
+    try:
+        obj, _ = json.JSONDecoder(strict=False).raw_decode(text[start:])
+        return obj
+    except json.JSONDecodeError:
+        # Salvage: if the array was truncated, keep the complete {...} entries.
+        objs = []
+        for m in re.finditer(r"\{[^{}]*\}", text[start:], re.DOTALL):
+            try:
+                objs.append(json.loads(m.group(0), strict=False))
+            except json.JSONDecodeError:
+                pass
+        if objs:
+            return objs
+        raise
 
 
 def parse_article(text):
@@ -257,7 +269,7 @@ def _discovery_prompt(count, focus=None):
 def discover_topics(count, focus=None):
     resp = get_client().messages.create(
         model=MODEL,
-        max_tokens=1200,
+        max_tokens=3000,   # room for web-search rounds + the full candidate JSON
         tools=[WEB_SEARCH],
         messages=[{"role": "user", "content": _discovery_prompt(count, focus)}],
     )
