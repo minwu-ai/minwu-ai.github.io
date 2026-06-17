@@ -185,6 +185,8 @@ article.post hr{border:none; border-top:1px solid var(--line); margin:40px 0}
 footer.site{border-top:1px solid var(--hair); padding:30px 0; color:var(--muted); font-size:13px}
 footer.site .inner{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:960px; margin:0 auto; padding:0 26px}
 footer.site a{color:var(--muted)}
+.copyright{display:inline-flex; align-items:center; gap:8px}
+.us-flag{width:22px; height:15px; border-radius:2px; border:1px solid var(--line); vertical-align:middle; flex:0 0 auto}
 
 @media(max-width:600px){
   body{font-size:16px}
@@ -222,7 +224,7 @@ footer.site a{color:var(--muted)}
 </main>
 <footer class="site">
   <div class="inner">
-    <span>© {{ year }} {{ author }}</span>
+    <span class="copyright"><img class="us-flag" src="/assets/us-flag.svg" alt="United States" width="22" height="15">© {{ year }} {{ author }} · All rights reserved</span>
     <span>Built automatically · <a href="/feed.xml">RSS</a></span>
   </div>
 </footer>
