@@ -180,15 +180,17 @@ def _strip_fences(text):
 
 
 def _extract_json(text):
-    """Pull a JSON object/array out of a model response, tolerating stray fences."""
+    """Parse the first JSON value in a model response, ignoring any surrounding prose.
+
+    Uses raw_decode so trailing commentary after the array/object (a common model
+    habit) doesn't cause an 'Extra data' error.
+    """
     text = _strip_fences(text)
-    try:
-        return json.loads(text, strict=False)
-    except json.JSONDecodeError:
-        m = re.search(r"(\{.*\}|\[.*\])", text, re.DOTALL)
-        if not m:
-            raise
-        return json.loads(m.group(1), strict=False)
+    start = next((i for i, ch in enumerate(text) if ch in "[{"), None)
+    if start is None:
+        return json.loads(text, strict=False)  # no JSON found -> raise informative error
+    obj, _ = json.JSONDecoder(strict=False).raw_decode(text[start:])
+    return obj
 
 
 def parse_article(text):
