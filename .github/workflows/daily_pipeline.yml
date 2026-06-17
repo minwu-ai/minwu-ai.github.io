@@ -6,8 +6,12 @@ name: Daily draft pipeline
 
 on:
   schedule:
-    - cron: '17 12 * * 1-5'  # weekdays ~12:17 UTC (~8:17am ET); off-peak minute is
-                             # more reliable than :00, which GitHub often delays/skips
+    # GitHub cron is best-effort and often drops a slot, so we try several off-peak
+    # times each weekday. A same-day guard (below) ensures only the FIRST one that
+    # actually fires produces drafts — the rest no-op, so no duplicate posts.
+    - cron: '17 12 * * 1-5'  # ~08:17 ET
+    - cron: '41 13 * * 1-5'  # backup ~09:41 ET
+    - cron: '29 15 * * 1-5'  # backup ~11:29 ET
   workflow_dispatch:           # also lets you run it manually anytime
 
 permissions:
@@ -19,21 +23,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so the same-day guard's git log works
+
+      - name: Skip if already drafted today (scheduled runs only)
+        id: guard
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && \
+             git log --oneline --grep="Daily drafts $(date -u +%Y-%m-%d)" | grep -q .; then
+            echo "Already drafted today — this backup slot will no-op."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - uses: actions/setup-python@v5
+        if: steps.guard.outputs.skip != 'true'
         with:
           python-version: '3.11'
 
       - name: Install dependencies
+        if: steps.guard.outputs.skip != 'true'
         run: pip install anthropic
 
       - name: Run pipeline
+        if: steps.guard.outputs.skip != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python pipeline.py
 
       - name: Commit new drafts
         id: commit
+        if: steps.guard.outputs.skip != 'true'
         run: |
           git config user.name "Draft Bot"
           git config user.email "bot@users.noreply.github.com"
