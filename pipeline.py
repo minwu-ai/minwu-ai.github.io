@@ -425,25 +425,58 @@ def run_scheduled(count, focus=None, dry_run=False):
     print(f"Discovering candidate topics (target {target})...")
     # Over-fetch so we can backfill when a topic can't be corroborated/cited.
     candidates = discover_topics(target + 4, focus=focus)
-    saved = 0
-    for t in candidates:
-        if saved >= target:
-            break
-        print(f"Drafting: {t['topic']}")
-        cat = t.get("category", "").strip()
+    saved = _select_and_draft(candidates, target)
+    print(f"Done — saved {saved} of {target} target draft(s).")
+
+
+def _is_safety(cand):
+    s = (cand.get("category", "") + " " + cand.get("topic", "")).lower()
+    return "ai safety" in s or "safety" in cand.get("category", "").lower()
+
+
+def _select_and_draft(candidates, target):
+    """Save `target` drafts: one guaranteed AI-safety post, the rest distinct
+    categories. Skips topics that can't be cited; backfills from the remainder."""
+    safety = [c for c in candidates if _is_safety(c)]
+    others = [c for c in candidates if not _is_safety(c)]
+    saved, used_cats = 0, set()
+
+    def attempt(cand):
+        nonlocal saved
+        cat = cand.get("category", "").strip() or "Industry"
+        print(f"Drafting: {cand['topic']}")
         instruction = (
-            f"Write an analytical piece about: {t['topic']}. "
-            f"Angle: {t.get('angle', '')}. "
-            + (f"This belongs in the '{cat}' category; set TAG accordingly. " if cat else "")
-            + "Research it with web search first, cross-referencing multiple sources."
+            f"Write an analytical piece about: {cand['topic']}. "
+            f"Angle: {cand.get('angle', '')}. "
+            f"This belongs in the '{cat}' category; set TAG accordingly. "
+            "Research it with web search first, cross-referencing multiple sources."
         )
         article = draft_with_sourcing(instruction)
         if not has_sources(article):
             print("  skipped (couldn't corroborate/cite) — trying the next candidate.")
-            continue
-        save_post(article, default_tag=cat or "Industry")
+            return
+        save_post(article, default_tag=cat)
+        used_cats.add(cat)
         saved += 1
-    print(f"Done — saved {saved} of {target} target draft(s).")
+
+    # 1) Guarantee one AI-safety post.
+    for c in safety:
+        if saved >= 1:
+            break
+        attempt(c)
+    # 2) Fill remaining slots with DISTINCT categories from the rest.
+    for c in others:
+        if saved >= target:
+            break
+        if (c.get("category", "").strip() or "Industry") in used_cats:
+            continue
+        attempt(c)
+    # 3) Backfill anything still short (extra safety / repeat categories).
+    for c in safety[1:] + others:
+        if saved >= target:
+            break
+        attempt(c)
+    return saved
 
 
 # ---- Mode: on demand -----------------------------------------------------
