@@ -76,17 +76,16 @@ My view: organizations that treat voluntary-code adherence as their entire compl
 
 ## Sources
 
-- [European Commission — Final Code of Practice on Transparency of AI-Generated Content]
-  (https://digital-strategy.ec.europa.eu/en/news/commission-publishes-code-practice-marking-and-labelling-ai-generated-content)
+- [European Commission — Final Code of Practice on Transparency of AI-Generated Content](https://digital-strategy.ec.europa.eu/en/news/commission-publishes-code-practice-marking-and-labelling-ai-generated-content)
 
-- [European Commission — FAQ: Signing the Code of Practice on Transparency of AI-Generated Content] 
-  (https://digital-strategy.ec.europa.eu/en/faqs/signing-code-practice-transparency-ai-generated-content)
+- [European Commission — FAQ: Signing the Code of Practice on Transparency of AI-Generated Content](https://digital-strategy.ec.europa.eu/en/faqs/signing-code-practice-transparency-ai-generated-content)
 
-- [European Commission — FAQ: Code of Practice on Transparency of AI-Generated Content]  
-  (https://digital-strategy.ec.europa.eu/en/faqs/code-practice-transparency-ai-generated-content)
+- [European Commission — FAQ: Code of Practice on Transparency of AI-Generated Content](https://digital-strategy.ec.europa.eu/en/faqs/code-practice-transparency-ai-generated-content)
 
-- EU AI Act — Article 50 (Transparency Obligations)
+- [EU AI Act (Consolidated Text)](https://artificialintelligenceact.eu/the-act/)
 
-- EU AI Act — Article 99 (Administrative Fines)
+- [EU AI Act — Article 50 (Transparency Obligations)](https://artificialintelligenceact.eu/article/50/)
 
-- European Commission — AI Omnibus Package (May 2026)
+- [EU AI Act — Article 99 (Administrative Fines)](https://artificialintelligenceact.eu/article/99/)
+
+- [European Commission — EU Agrees to Simplify AI Rules and Boost Innovation (AI Omnibus Package)](https://digital-strategy.ec.europa.eu/en/news/eu-agrees-simplify-ai-rules-boost-innovation-and-ban-nudification-apps-protect-citizens)
