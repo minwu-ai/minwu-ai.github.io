@@ -2,8 +2,8 @@
 title: "The Government Just Killed Two Frontier Models Overnight — and Enterprise AI Will Never Be the Same"
 date: 2026-06-16
 slug: the-government-just-killed-two-frontier-models-overnight-and
-tag: AI Governance
-takaway: "On June 12, 2026, a U.S. export control directive forced Anthropic to pull Claude Fable 5 and Mythos 5 globally within hours of receipt, exposing catastrophic supply-chain blind spots and setting a legal precedent that every AI-dependent enterprise must now reckon with."
+tag: AI Safety
+takeaway: "On June 12, 2026, a U.S. export control directive forced Anthropic to pull Claude Fable 5 and Mythos 5 globally within hours of receipt, exposing catastrophic supply-chain blind spots and setting a legal precedent that every AI-dependent enterprise must now reckon with."
 published: false
 ---
 
