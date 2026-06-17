@@ -5,7 +5,7 @@ slug: microsoft-s-mai-family-is-a-vendor-risk-hedge-disguised-as-a
 tag: Industry
 excerpt: "By building seven in-house models on clean, commercially licensed data with zero third-party distillation, Microsoft is quietly restructuring the AI supply chain — and handing enterprise risk teams a new due-diligence framework in the process."
 takeaway: "The MAI launch is less about benchmark supremacy and more about data-provenance sovereignty: Microsoft is telling regulated enterprises that a model's training lineage is now a governance asset — and that asset is what competitors cannot easily replicate."
-published: false
+published: true
 ---
 
 ## 🏗️ What Was Actually Announced
