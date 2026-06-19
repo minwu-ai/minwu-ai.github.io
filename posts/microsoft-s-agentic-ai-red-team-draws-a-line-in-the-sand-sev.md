@@ -5,7 +5,7 @@ slug: microsoft-s-agentic-ai-red-team-draws-a-line-in-the-sand-sev
 tag: Agentic AI
 excerpt: "Microsoft's Taxonomy of Failure Modes in Agentic AI Systems v2.0 is the first public framework grounded in empirical red-team engagements against live agentic systems — and its seven new categories expose how far enterprise governance has already fallen behind."
 takeaway: "For the first time, a major AI security taxonomy is built on observed attacks rather than threat modeling — and the seven new failure modes Microsoft identified map directly onto gaps most enterprise AI governance programs have not yet addressed."
-published: false
+published: true
 ---
 
 ## The signal in v2.0 is not the categories themselves — it's the word *empirical*.
