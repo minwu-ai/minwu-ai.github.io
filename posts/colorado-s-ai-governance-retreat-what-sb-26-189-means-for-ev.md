@@ -1,53 +1,86 @@
 ---
-title: "Colorado's AI Governance Retreat: What SB 26-189 Means for Every Enterprise Compliance Program"
+title: "Colorado's AI Governance Retreat: What SB 26-189 Means for Enterprise Compliance Programs"
 date: 2026-06-19
 slug: colorado-s-ai-governance-retreat-what-sb-26-189-means-for-ev
 tag: AI Governance
-excerpt: "Colorado repealed its landmark risk-based AI Act before it ever took effect, replacing it with a disclosure-only regime — a clear signal that SR 11-7-style model governance mandates cannot survive in the current US federal-preemption environment."
-takeaway: "The most ambitious state-level attempt to impose substantive model risk governance on private-sector AI has been dismantled under combined industry and federal pressure. Compliance teams anchoring programs to any single state AI framework now have concrete evidence that those anchors can be pulled without warning."
-published: false
+excerpt: "Colorado repealed and replaced its landmark risk-based AI Act before it ever took effect, narrowing it into a lighter ADMT transparency, documentation, and consumer-rights regime — a signal that broad state-level AI governance mandates remain politically and legally fragile amid growing federal pressure."
+takeaway: "The most ambitious state-level attempt to impose substantive AI governance obligations on private-sector organizations has been substantially scaled back before implementation. Compliance teams building programs around state AI laws should treat regulatory requirements as moving targets rather than fixed anchors."
+published: true
 ---
 
-## What Was Lost in the Rewrite
+## ⚖️ What Was Lost in the Rewrite
 
-The strongest AI governance law in the United States never governed anything. Colorado's 2024 AI Act (SB 24-205) never took effect; Governor Polis signed SB 26-189 on May 14, 2026, reenacting the rules as a narrower transparency and disclosure regime with substantive compliance landing January 1, 2027. For practitioners who spent two years modeling compliance programs around that law, the lesson is structural, not incidental.
 
-When Colorado enacted the first comprehensive state AI law in 2024, it imported the EU AI Act's conceptual architecture: a risk-based regime built on duties of care, risk management programs, and impact assessments — mapping cleanly onto SR 11-7's model risk management logic. The new law strips all of that in favor of a pre-use notice, a post-adverse-outcome disclosure, and limited consumer rights tied to "covered ADMT."
+The strongest AI governance law in the United States never governed anything.
+
+Colorado's 2024 AI Act (SB 24-205) never took effect. Instead, Governor Polis signed SB 26-189 on May 14, 2026, repealing and reenacting the framework as a substantially narrower regime centered on transparency, documentation, and consumer rights, with most substantive obligations taking effect on January 1, 2027.
+
+For practitioners who spent the past two years modeling compliance programs around the original law, the lesson is structural rather than procedural.
+
+When Colorado enacted SB 24-205 in 2024, it adopted many of the concepts found in the EU AI Act: risk-based obligations, duties of care, risk management programs, impact assessments, and affirmative governance requirements for high-risk AI systems. For financial-services professionals, the architecture looked familiar because it mirrored many of the same principles underlying model risk management frameworks such as SR 26-2.
+
+SB 26-189 removes most of those governance obligations and replaces them with requirements focused on notice, transparency, documentation, and consumer rights relating to covered Automated Decision-Making Technologies (ADMTs).
 
 | SB 24-205 (2024) | SB 26-189 (2026) |
 |---|---|
-| Duty of reasonable care | No duty of care |
-| Mandatory risk management program | No risk management requirement |
-| Pre-deployment impact assessments | No impact assessment |
-| Discrimination self-reporting to AG | No self-reporting |
-| Pre-use notice | Pre-use notice ✓ |
-| — | Post-adverse-outcome explanation (30 days) |
-| — | Data correction rights / meaningful human review |
+| Duty of reasonable care | Removed |
+| Mandatory risk management program | Removed |
+| Pre-deployment impact assessments | Removed |
+| Discrimination self-reporting to AG | Removed |
+| Pre-use notice | Retained |
+| Developer documentation requirements | Added/Expanded |
+| Record retention requirements | Added |
+| Data correction rights | Added |
+| Human review / reconsideration rights | Added |
+| Adverse decision explanation rights | Added |
 
-The delta is not a refinement — it is the difference between governance and disclosure. Enforcement falls exclusively to the Colorado AG under the Consumer Protection Act; violations are deemed deceptive trade practices, but there is no private right of action.
+The difference is significant. The original law focused on governing how organizations develop and manage AI systems. The replacement law focuses primarily on what organizations must disclose, document, and provide to affected individuals.
 
-## How It Happened: Industry Pressure Meets Federal Preemption Threat
+Enforcement remains exclusively with the Colorado Attorney General under the Colorado Consumer Protection Act. Violations are treated as deceptive trade practices, and the statute does not provide a private right of action.
 
-When Polis signed SB 24-205 in 2024, he did so with public reservations, inviting the legislature to refine the approach — setting in motion roughly six months of structured stakeholder consultation. That internal process then collided with external federal pressure. On December 11, 2025, President Trump signed an executive order establishing an AI Litigation Task Force to challenge state AI laws and threatening funding cuts over "onerous" statutes. On April 9, 2026, xAI sued in the US District Court for the District of Colorado, arguing the law was unconstitutionally vague, violated the First Amendment through compelled speech, and offended the Dormant Commerce Clause. The DOJ intervened on April 24 — the first time the federal government sought to invalidate a state AI law.
+## 🏛️ How It Happened: State Ambition Meets Federal Resistance
 
-The xAI litigation remains technically active. The enforcement stay applies to SB 26-189 as well, and xAI's preliminary injunction motion must be filed within 28 days of the state finalizing rulemaking — meaning enforcement is contingent on rulemaking, which is currently subject to a court stay.
+When Governor Polis signed SB 24-205 in 2024, he simultaneously expressed concerns about the law's complexity and invited further legislative refinement. Over the following year, lawmakers, industry groups, civil-society organizations, and regulators engaged in extensive negotiations over implementation.
 
-## The Historical Parallel Worth Noting
+Those discussions later collided with a rapidly changing federal environment.
 
-This trajectory mirrors the Gramm-Leach-Bliley privacy provisions of the late 1990s, where a strong state baseline was disciplined by federal preemption threats until a federal floor emerged. The difference here: no federal floor exists, and the December 2025 EO explicitly aims to keep it as low as possible. The Commerce Department has yet to publicly release its evaluation of existing state AI statutes, but other state laws may be next on the DOJ's list.
+In December 2025, the Trump Administration issued an executive order directing federal agencies to examine state AI regulations and challenge laws viewed as unnecessarily burdensome to innovation. Several state AI laws subsequently became targets of heightened legal and political scrutiny.
 
-## What Remains — and Why It Still Matters
+The most direct challenge came in Colorado. In April 2026, xAI filed suit in federal court seeking to block implementation of the Colorado AI Act, arguing that portions of the law were constitutionally defective and imposed unlawful burdens on interstate commerce.
 
-SB 26-189 is both narrower in scope and broader in reach than the law it replaces: it eliminates the most demanding compliance obligations but pulls employees and job applicants into a notice-and-rights regime that the Colorado Privacy Act expressly excludes. It also voids contract clauses purporting to indemnify a party for its own discriminatory ADMT-related acts — demanding immediate review of AI vendor contracts.
+The litigation remains active. A court-approved stay currently pauses implementation efforts, including rulemaking activities associated with the replacement legislation. As a result, the practical enforcement timeline remains uncertain even though the statutory effective date is January 1, 2027.
 
-That vendor-contract implication connects directly to the supply-chain risk logic explored in [Microsoft's MAI Family piece](/microsoft-s-mai-family-is-a-vendor-risk-hedge-disguised-as-a/): when indemnification clauses for algorithmic discrimination become void as against public policy, deployers own the liability gap their vendor contracts previously papered over. As [agentic AI compounds that exposure](/agentic-ai-and-the-governance-gap/), the absence of a risk management mandate removes the compliance forcing function that would have surfaced it — not the underlying risk.
+## 📋 What Remains — and Why It Still Matters
 
-> **My read:** The January 1, 2027 effective date is the operative planning horizon, but the litigation stay means enforcement may slip. Build to the statute's text now and treat the stay as a timing hedge, not an exemption.
 
-Two signals will determine whether the disclosure-only model holds: whether xAI files a renewed injunction motion against SB 26-189 specifically, and whether the Commerce Department releases its list of "onerous" state laws — likely triggering a broader DOJ campaign. For teams tracking the EU's parallel trajectory, [Europe's Article 50 enforcement clock](/europe-s-ai-labelling-clock-is-ticking-what-the-final-conten/) is accelerating while the US's most ambitious state regime just decelerated. That divergence is now a material compliance design constraint.
+Although SB 26-189 is significantly narrower than its predecessor, it should not be mistaken for a purely disclosure-based law.
 
-## Sources
+Organizations deploying covered ADMTs must still provide notices, maintain documentation, preserve records, respond to consumer requests, support data correction processes, and offer meaningful opportunities for human review in certain circumstances. These obligations create operational and governance requirements even in the absence of formal risk-management mandates.
+
+The law is also broader in one important respect: it extends protections to employees and job applicants, groups that are generally outside the scope of the Colorado Privacy Act.
+
+Another provision deserves particular attention from procurement and legal teams. SB 26-189 invalidates contractual provisions that attempt to indemnify a party for its own discriminatory conduct involving covered ADMTs. Organizations relying heavily on vendor contracts to allocate AI-related liability should review those arrangements carefully.
+
+That issue connects directly to a broader vendor-risk challenge. When contractual risk transfer becomes less reliable, organizations retain greater responsibility for understanding how third-party AI systems affect consequential decisions. Removing formal risk-management requirements does not remove the underlying risk.
+
+## 🔭 The Broader Governance Lesson
+
+
+The most important lesson from Colorado is not that AI regulation is disappearing. It is that state-level AI governance frameworks remain highly vulnerable to political, legal, and economic pressure.
+
+Two years ago, Colorado appeared poised to become the closest U.S. analogue to the EU's risk-based AI governance model. Today, that framework has been substantially narrowed before taking effect.
+
+For compliance leaders, this is a reminder that regulatory strategies built around any single state AI law may require rapid adjustment. The challenge is no longer simply tracking new requirements. It is anticipating how quickly those requirements can change.
+
+The January 1, 2027 effective date remains the key planning horizon. However, the ongoing litigation means implementation timelines may continue to evolve. Organizations should prepare for compliance with the statute as written while recognizing that further legal developments could alter the landscape yet again.
+
+Meanwhile, the transatlantic divergence continues to widen. As Europe accelerates toward enforcement of increasingly detailed AI governance obligations, Colorado's experience suggests the United States may be moving toward a more limited transparency-and-rights-based approach, at least for now.
+
+That divergence is becoming a material design constraint for organizations operating across jurisdictions.
+
+## 📚 Sources
 
 - [Colorado Enacts Artificial Intelligence Replacement Law — Seyfarth Shaw](https://www.seyfarth.com/news-insights/colorado-enacts-artificial-intelligence-replacement-law.html)
 - [Colorado Governor Signs SB 189 — Holland & Knight](https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189)
 - [Colorado AI Act Repealed and Replaced — Davis Wright Tremaine](https://www.dwt.com/blogs/privacy--security-law-blog/2026/05/colorado-ai-act-repeal-new-transparency-law)
+- [Colorado SB 26-189 Text](https://leg.colorado.gov/bills/sb26-189)
