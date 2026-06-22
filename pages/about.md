@@ -15,8 +15,5 @@ My background is in **mathematics**. I hold a Ph.D. in mathematics from the **Un
 - **Evaluation** — measuring capability, reliability, and safety in ways that hold up to scrutiny.
 - **Governance** — frameworks, model risk, and accountability for AI systems, including how current model-risk guidance (SR 26-2) holds up against agentic AI.
 
-## How this site works
-
-Posts here are surfaced and drafted with an automated AI pipeline, then reviewed, fact-checked, and edited by me before anything is published. The goal is consistency: clear, useful analysis published regularly rather than occasionally. Nothing goes live without my review.
 
 You can follow along via [RSS](/feed.xml). Views here are my own.
