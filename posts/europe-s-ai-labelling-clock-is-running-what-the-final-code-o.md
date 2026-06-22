@@ -37,7 +37,7 @@ On technical standards, C2PA is the Code's recommended pathway for machine-reada
 
 The stakes are material. Non-compliance with Article 50 transparency obligations is subject to administrative fines of up to €15,000,000 or, if the offender is an undertaking, up to 3% of its total worldwide annual turnover for the preceding financial year, whichever is higher.
 
-Provenance metadata that proves whether content is authentic will become both a compliance artifact and evidence — a point of direct relevance to model risk teams already managing documentation trails under frameworks analogous to SR 11-7.
+Provenance metadata that proves whether content is authentic will become both a compliance artifact and evidence — a point of direct relevance to model risk teams already managing documentation trails under frameworks analogous to SR 26-2.
 
 Note one live legislative wrinkle: the AI Omnibus provisional agreement of May 2026 would grant generative AI systems already on the market before August 2, 2026 until December 2, 2026 to meet the machine-readable marking requirement under Article 50(2). That carve-out applies only to legacy systems and is not yet formally adopted; new deployments after August 2 carry no such buffer.
 

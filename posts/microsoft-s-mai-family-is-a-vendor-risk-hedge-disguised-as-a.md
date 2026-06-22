@@ -45,4 +45,3 @@ The MAI family also introduces governance considerations beyond procurement. New
 - [Microsoft AI: Building a hill-climbing machine — Launching seven new MAI models](https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/)
 - [Microsoft AI: Introducing MAI-Thinking-1](https://microsoft.ai/news/introducing-mai-thinking-1/)
 - [GeekWire: Microsoft unveils seven homegrown AI models in new bid for 'long term self-sufficiency'](https://www.geekwire.com/2026/microsoft-unveils-seven-homegrown-ai-models-in-new-bid-for-long-term-self-sufficiency/)
-- [VentureBeat: Microsoft AI chief says company was "set free" from OpenAI to pursue superintelligence](https://venturebeat.com/technology/microsoft-ai-chief-says-company-was-set-free-from-)

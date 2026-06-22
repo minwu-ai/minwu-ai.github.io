@@ -60,4 +60,3 @@ For risk, legal, and GRC practitioners, the immediate takeaways are stark: multi
 - [CNBC — Anthropic disables access to Fable 5 and Mythos 5 to comply with government directive](https://www.cnbc.com/2026/06/12/anthropic-disables-access-to-fable-5-and-mythos-5-to-comply-with-government-directive.html)
 - [CNBC — Anthropic to meet with Trump administration over Mythos dispute](https://www.cnbc.com/2026/06/15/anthropic-mythos-trump-ai.html)
 - [Axios — Trump admin blocks foreign access to Anthropic's most powerful AI](https://www.axios.com/2026/06/12/anthropic-trump-mythos-fable-national-security)
-- [Fortune — Anthropic confidentially files for IPO at

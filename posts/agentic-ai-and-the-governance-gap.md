@@ -4,11 +4,11 @@ date: 2026-06-15
 slug: agentic-ai-and-the-governance-gap
 tag: AI Governance, AI Safety
 excerpt: "Enterprise model risk frameworks were built to validate systems that predict. Agentic AI acts — and that single shift breaks most of the assumptions our controls quietly depend on."
-takeaway: "Agentic AI breaks the core assumption behind SR 11-7-era model risk — that a model is a function you can bound. Govern the agent as a system, not the model as a function, before an incident forces the issue."
+takeaway: "Agentic AI breaks the core assumption beneath model-risk management — that a model is a function you can bound. The 2026 refresh, SR 26-2, even leaves agentic AI out of scope. Govern the agent as a system, not the model as a function, before an incident forces the issue."
 published: true
 ---
 
-For most of the last decade, model risk management had a workable mental model of what it was governing. A model took an input, produced an output, and the job of validation was to interrogate the space in between: Is the methodology sound? Is the data representative? Are the outputs stable, explainable, and monitored for drift? The discipline that grew up around [SR 11-7](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm) — model definition, independent validation, ongoing monitoring, effective challenge — was designed around that shape. A model was, fundamentally, a function. You could bound it.
+For most of the last decade, model risk management had a workable mental model of what it was governing. A model took an input, produced an output, and the job of validation was to interrogate the space in between: Is the methodology sound? Is the data representative? Are the outputs stable, explainable, and monitored for drift? The discipline of model risk management — model definition, independent validation, ongoing monitoring, effective challenge, principles now carried forward in [SR 26-2](https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm) — was designed around that shape. A model was, fundamentally, a function. You could bound it.
 
 Agentic AI breaks the shape. An agent does not just return a prediction; it pursues a goal. It decides which tools to call, in what order, retries when something fails, and chains those steps into outcomes its designers never explicitly enumerated. The "output" is no longer a number you can backtest against a holdout sample — it is a sequence of *actions* in live systems: a query run, a record updated, an email sent, a ticket escalated, a payment queued. That is a different category of thing, and our control frameworks have not caught up to it.
 
@@ -24,7 +24,7 @@ flowchart LR
 
 ## Where the existing controls quietly assume a function
 
-The gap is easiest to see by walking through the SR 11-7 pillars and asking what each one silently assumed.
+The gap is easiest to see by walking through the core model-risk pillars and asking what each one silently assumed.
 
 **Model definition.** The classic definition is a quantitative method that turns inputs into outputs. An agent is better described as a *policy* operating over an environment — it has memory, it has tools, and its behavior depends on state that didn't exist when validation was performed. The moment you can't fully enumerate the action space, the "model boundary" stops being a clean line and becomes a negotiation.
 
@@ -52,6 +52,11 @@ The teams getting ahead of this are not waiting for perfect guidance. A few move
 - **Log trajectories, not just outputs.** Effective challenge and incident response both depend on being able to reconstruct what the agent did, step by step.
 - **Treat autonomy as a risk tier.** An agent that drafts text for a human is not the same risk object as one that executes transactions. Controls should scale with how much the system can do without a person in the loop.
 
-None of this requires throwing out SR 11-7. The principles — clear ownership, independent challenge, proportional controls, monitoring across the lifecycle — are the right principles. What's missing is the translation layer: the concrete validation methods, inventory definitions, and monitoring signals for systems that act rather than predict.
+None of this requires throwing out SR 26-2. The principles — clear ownership, independent challenge, proportional controls, monitoring across the lifecycle — are the right principles. What's missing is the translation layer: the concrete validation methods, inventory definitions, and monitoring signals for systems that act rather than predict.
 
 The capability curve isn't waiting for that translation to be finished. Agents are being deployed now, against frameworks written for a quieter kind of model. Closing that gap — deliberately, before an incident forces the issue — is the most useful thing model risk teams can be doing this year.
+
+## Sources
+
+- [Federal Reserve — SR 26-2: Revised Guidance on Model Risk Management (April 17, 2026)](https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm)
+- [OWASP Top 10 for Agentic Applications (2026)](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)

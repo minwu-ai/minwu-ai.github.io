@@ -46,7 +46,7 @@ POSTS_DIR = os.path.join(os.path.dirname(__file__), "posts")
 # Edit this list freely. Override for a single run with --focus "a, b, c".
 FOCUS_TOPICS = [
     "AI safety and alignment",
-    "model risk management and AI governance (SR 11-7 / SR 26-2)",
+    "model risk management and AI governance (SR 26-2)",
     "agentic AI and autonomous systems",
     "AI regulation and policy",
     "enterprise AI adoption and risk",

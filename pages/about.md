@@ -13,7 +13,7 @@ My background is in **mathematics**. I hold a Ph.D. in mathematics from the **Un
 - **AI safety** — keeping powerful systems controllable, secure, and resistant to misuse.
 - **Alignment** — making models pursue what we actually intend, not just what we literally specify.
 - **Evaluation** — measuring capability, reliability, and safety in ways that hold up to scrutiny.
-- **Governance** — frameworks, model risk, and accountability for AI systems, including how established guidance (SR 11-7, SR 26-2) holds up against agentic AI.
+- **Governance** — frameworks, model risk, and accountability for AI systems, including how current model-risk guidance (SR 26-2) holds up against agentic AI.
 
 ## How this site works
 

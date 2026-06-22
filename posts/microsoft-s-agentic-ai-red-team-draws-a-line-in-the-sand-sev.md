@@ -51,4 +51,6 @@ This connects to the governance gap I've written about before — [enterprise mo
 - [Microsoft Security Blog — Updating the Taxonomy of Failure Modes in Agentic AI Systems (June 4, 2026)](https://www.microsoft.com/en-us/security/blog/2026/06/04/updating-taxonomy-failure-modes-agentic-ai-systems-year-red-teaming-taught-us/)
 - [Microsoft Security Blog — Original Taxonomy Whitepaper (April 2025)](https://www.microsoft.com/en-us/security/blog/2025/04/24/new-whitepaper-outlines-the-taxonomy-of-failure-modes-in-ai-agents/)
 - [GitHub — requie/AI-Red-Teaming-Guide](https://github.com/requie/AI-Red-Teaming-Guide)
+- [OWASP Top 10 for Agentic Applications (2026) — OWASP Gen AI Security Project](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
+- [NIST IR 8596 — Cybersecurity Framework Profile for Artificial Intelligence (Cyber AI Profile)](https://csrc.nist.gov/pubs/ir/8596/iprd)
 
