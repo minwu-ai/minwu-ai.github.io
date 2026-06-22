@@ -2,7 +2,7 @@
 title: "Agentic AI Has Outrun the Governance Playbook"
 date: 2026-06-15
 slug: agentic-ai-and-the-governance-gap
-tag: AI Governance
+tag: AI Governance, AI Safety
 excerpt: "Enterprise model risk frameworks were built to validate systems that predict. Agentic AI acts — and that single shift breaks most of the assumptions our controls quietly depend on."
 takeaway: "Agentic AI breaks the core assumption behind SR 11-7-era model risk — that a model is a function you can bound. Govern the agent as a system, not the model as a function, before an incident forces the issue."
 published: true
@@ -11,6 +11,16 @@ published: true
 For most of the last decade, model risk management had a workable mental model of what it was governing. A model took an input, produced an output, and the job of validation was to interrogate the space in between: Is the methodology sound? Is the data representative? Are the outputs stable, explainable, and monitored for drift? The discipline that grew up around [SR 11-7](https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm) — model definition, independent validation, ongoing monitoring, effective challenge — was designed around that shape. A model was, fundamentally, a function. You could bound it.
 
 Agentic AI breaks the shape. An agent does not just return a prediction; it pursues a goal. It decides which tools to call, in what order, retries when something fails, and chains those steps into outcomes its designers never explicitly enumerated. The "output" is no longer a number you can backtest against a holdout sample — it is a sequence of *actions* in live systems: a query run, a record updated, an email sent, a ticket escalated, a payment queued. That is a different category of thing, and our control frameworks have not caught up to it.
+
+```mermaid
+flowchart LR
+  A[Goal] --> B{Plan a step}
+  B --> C[Call a tool]
+  C --> D[Act on a live system]
+  D --> E{Goal met?}
+  E -- no --> B
+  E -- yes --> F[Outcome]
+```
 
 ## Where the existing controls quietly assume a function
 

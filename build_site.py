@@ -10,6 +10,7 @@ HTML into public/. Posts with "published: false" are skipped (the review gate).
 
 import os
 import re
+import html
 import shutil
 import datetime
 from pathlib import Path
@@ -119,6 +120,7 @@ def render_page(page_title, page_description, inner_html,
         og_type=og_type,
         wide=wide,
         social_html=social_links_html(),
+        needs_mermaid=('class="mermaid"' in inner_html),
     )
 
 
@@ -162,6 +164,54 @@ def slugify(value):
     return re.sub(r"[^a-z0-9]+", "-", str(value).lower()).strip("-")
 
 
+_TOPIC_BY_LOWER = {name.lower(): name for name, _ in TOPICS}
+
+
+def normalize_tags(raw):
+    """A post's `tag` may be one value, a comma-separated string, or a YAML list.
+    Return a de-duped list of tag names (mapped to the curated topic casing)."""
+    if not raw:
+        return []
+    values = raw if isinstance(raw, list) else str(raw).split(",")
+    out = []
+    for v in values:
+        v = str(v).strip()
+        if not v:
+            continue
+        canon = _TOPIC_BY_LOWER.get(v.lower(), v)
+        if canon not in out:
+            out.append(canon)
+    return out
+
+
+def tag_pills(tags):
+    return "".join(
+        '<a class="tag" href="/topics/{ts}/">{t}</a>'.format(ts=slugify(t), t=t)
+        for t in tags)
+
+
+# ---- Markdown rendering with Mermaid diagram support --------------------
+_MERMAID_RE = re.compile(r"```mermaid\s*\n(.*?)```", re.DOTALL)
+
+
+def render_markdown(text):
+    """Convert markdown to HTML, turning ```mermaid blocks into <pre class="mermaid">
+    elements (rendered client-side by mermaid.js in the template)."""
+    blocks = []
+
+    def stash(m):
+        blocks.append(m.group(1).strip())
+        return "\n\nMERMAIDBLOCK{}END\n\n".format(len(blocks) - 1)
+
+    md.reset()
+    out = md.convert(_MERMAID_RE.sub(stash, text))
+    for i, diagram in enumerate(blocks):
+        token = "MERMAIDBLOCK{}END".format(i)
+        pre = '<pre class="mermaid">{}</pre>'.format(html.escape(diagram))
+        out = out.replace("<p>{}</p>".format(token), pre).replace(token, pre)
+    return out
+
+
 def load_posts():
     posts = []
     for path in sorted(POSTS_DIR.glob("*.md")):
@@ -178,14 +228,13 @@ def load_posts():
             date = datetime.date.today()
         slug = post.get("slug", path.stem)
         excerpt = post.get("excerpt", "")
-        tag = post.get("tag", "")
+        tags = normalize_tags(post.get("tag", ""))
         takeaway = post.get("takeaway", "")
-        md.reset()
-        body_html = md.convert(post.content)
+        body_html = render_markdown(post.content)
         posts.append({
             "title": title, "date": date, "date_str": date.strftime("%b %d, %Y"),
-            "slug": slug, "excerpt": excerpt, "tag": tag, "takeaway": takeaway,
-            "tag_slug": slugify(tag) if tag else "", "body_html": body_html,
+            "slug": slug, "excerpt": excerpt, "tags": tags, "takeaway": takeaway,
+            "body_html": body_html,
         })
     posts.sort(key=lambda p: p["date"], reverse=True)
     return posts
@@ -194,15 +243,15 @@ def load_posts():
 def post_list_html(posts):
     items = ['<ul class="post-list">']
     for p in posts:
-        tag_html = ('<a class="tag" href="/topics/{ts}/">{t}</a>'.format(ts=p["tag_slug"], t=p["tag"])
-                    if p["tag"] else "")
+        tags_html = ('<div class="tags">{}</div>'.format(tag_pills(p["tags"]))
+                     if p["tags"] else "")
         items.append(
             '<li class="post-item">'
             '<div class="date">{date}</div>'
             '<h2><a href="/{slug}/">{title}</a></h2>'
-            '<p>{excerpt}</p>{tag}'
+            '<p>{excerpt}</p>{tags}'
             '</li>'.format(date=p["date_str"], slug=p["slug"],
-                           title=p["title"], excerpt=p["excerpt"], tag=tag_html)
+                           title=p["title"], excerpt=p["excerpt"], tags=tags_html)
         )
     items.append("</ul>")
     return "\n".join(items)
@@ -245,8 +294,8 @@ def build():
 
     # ---- Individual post pages ----
     for p in posts:
-        tag_link = ('<a class="tag" href="/topics/{ts}/">{t}</a>'.format(ts=p["tag_slug"], t=p["tag"])
-                    if p["tag"] else "general")
+        filed = tag_pills(p["tags"]) if p["tags"] else "general"
+        meta_tags = " · ".join(p["tags"]) if p["tags"] else "Article"
         post_url = "{}/{}/".format(SITE_URL, p["slug"])
         takeaway_html = ""
         if p["takeaway"]:
@@ -256,14 +305,14 @@ def build():
         inner = (
             '<a class="back" href="/">← All posts</a>'
             '<article class="post">'
-            '<div class="meta">{date} · {tag}</div>'
+            '<div class="meta">{date} · {tags}</div>'
             '<h1>{title}</h1>{takeaway}{body}'
-            '<div class="post-footer"><span>Written by {author}. Filed under {tag_link}.</span>'
+            '<div class="post-footer"><span>Written by {author}. Filed under {filed}.</span>'
             '{share}</div>'
             '</article>'
-        ).format(date=p["date_str"], tag=p["tag"] or "Article",
+        ).format(date=p["date_str"], tags=meta_tags,
                  title=p["title"], takeaway=takeaway_html, body=p["body_html"],
-                 author=AUTHOR, tag_link=tag_link, share=share_button(post_url))
+                 author=AUTHOR, filed=filed, share=share_button(post_url))
         post_dir = PUBLIC_DIR / p["slug"]
         post_dir.mkdir(exist_ok=True)
         (post_dir / "index.html").write_text(
@@ -299,11 +348,11 @@ def build():
 
 
 def build_topics(posts):
-    # Group published posts by their tag (matched to a curated topic name).
+    # Group published posts by their tags (a post can appear under several topics).
     by_name = {}
     for p in posts:
-        if p["tag"]:
-            by_name.setdefault(p["tag"], []).append(p)
+        for t in p["tags"]:
+            by_name.setdefault(t, []).append(p)
 
     topics_dir = PUBLIC_DIR / "topics"
     topics_dir.mkdir(exist_ok=True)

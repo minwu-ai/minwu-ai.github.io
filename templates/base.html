@@ -162,6 +162,9 @@ article.post blockquote{border-left:2px solid var(--accent); padding:2px 0 2px 2
 article.post code{font-family:var(--mono); font-size:0.88em; background:var(--code-bg); padding:1px 5px; border-radius:4px}
 article.post pre{background:var(--pre-bg); color:var(--pre-ink); padding:18px; border-radius:8px; overflow-x:auto; margin:0 0 22px}
 article.post pre code{background:none; color:inherit; padding:0}
+article.post pre.mermaid{background:transparent; color:inherit; padding:0; margin:26px 0; text-align:center; overflow:visible}
+.tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
+.tags .tag{margin-top:0}
 article.post table{width:100%; border-collapse:collapse; margin:0 0 22px; font-size:15px}
 article.post th,article.post td{border:1px solid var(--line); padding:8px 12px; text-align:left}
 article.post th{background:var(--accent-soft); font-weight:600}
@@ -264,5 +267,14 @@ footer.site a{color:var(--muted)}
   });
 })();
 </script>
+{% if needs_mermaid %}
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  var t = document.documentElement.getAttribute('data-theme')
+          || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  mermaid.initialize({ startOnLoad: true, securityLevel: 'strict',
+    theme: t === 'dark' ? 'dark' : 'neutral', fontFamily: 'inherit' });
+</script>
+{% endif %}
 </body>
 </html>
