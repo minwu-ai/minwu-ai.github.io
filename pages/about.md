@@ -6,7 +6,7 @@ title: "About"
 
 I'm Min Wu. I work at the intersection of **AI safety, alignment, evaluation, and governance** — the disciplines concerned with making increasingly capable AI systems controllable, measurable, and accountable as they move into the real world.
 
-My background is in **model risk management**: validating, governing, and monitoring the quantitative models institutions depend on. That lens shapes how I think about modern AI — less about the demos, more about the harder questions underneath them: How do we know a system is safe? How do we evaluate what it can really do? Who is accountable when it acts?
+My background is in **mathematics**. I hold a Ph.D. in mathematics from the **University of Washington**, where my research was in representation theory and noncommutative algebraic geometry. I'm also a **CFA charterholder** and a member of the **CFA Society New York**. That combination — abstract mathematical structure on one side, the discipline of financial risk on the other — is how I approach AI: rigorously, and with a bias toward the harder questions underneath the demos. How do we *know* a system is safe? How do we evaluate what it can really do? Who is accountable when it acts?
 
 ## What I focus on
 

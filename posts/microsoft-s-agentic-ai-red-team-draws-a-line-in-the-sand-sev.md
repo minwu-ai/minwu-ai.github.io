@@ -50,4 +50,5 @@ This connects to the governance gap I've written about before — [enterprise mo
 
 - [Microsoft Security Blog — Updating the Taxonomy of Failure Modes in Agentic AI Systems (June 4, 2026)](https://www.microsoft.com/en-us/security/blog/2026/06/04/updating-taxonomy-failure-modes-agentic-ai-systems-year-red-teaming-taught-us/)
 - [Microsoft Security Blog — Original Taxonomy Whitepaper (April 2025)](https://www.microsoft.com/en-us/security/blog/2025/04/24/new-whitepaper-outlines-the-taxonomy-of-failure-modes-in-ai-agents/)
-- [GitHub — AI Red Teaming Guide (requie)](https
+- [GitHub — requie/AI-Red-Teaming-Guide](https://github.com/requie/AI-Red-Teaming-Guide)
+
