@@ -143,8 +143,9 @@ ANALYSIS_GUIDE = (
     "and draw the lesson it suggests.\n"
     "- PREDICTION: offer a clearly-labeled, reasoned forecast (e.g. a 'What to watch' or "
     "'My read' line) — specific but appropriately hedged, never overconfident.\n"
-    "- CONNECT: when relevant, reference and LINK to a prior post on this site (a list is "
-    "provided in the user message) using its /slug/ path, to build a throughline.\n"
+    "- CONNECT: a list of already-published posts is provided in the user message. If "
+    "this story overlaps one, do NOT rehash it — focus on what is NEW, and LINK the "
+    "prior post (use its /slug/ path) so readers get the throughline.\n"
     "Always apply a model-risk, safety, and governance lens. Be the analyst a busy "
     "practitioner reads BECAUSE it tells them something the original source didn't."
 )
@@ -260,6 +261,10 @@ def _discovery_prompt(count, focus=None):
         "Policy, Industry. Vary them. Order them best-first.\n\n"
         + _sources_preference() + "\n\n"
         + CORROBORATION_RULE + " Only propose topics that clear this bar.\n\n"
+        "AVOID REDUNDANCY: a list of posts already published on this site is provided "
+        "below. Do NOT propose a topic that merely repeats one of them. Revisiting a "
+        "topic is fine ONLY if there's a genuine new development or new angle — if so, "
+        "note in the angle what's new and which prior post it follows up.\n\n"
         "For each topic, set 'category' to the best-fit category name (the first topic's "
         "category is normally 'AI Safety'). Return ONLY a JSON array, no markdown:\n"
         '[{"topic": "...", "angle": "...", "category": "..."}]'
@@ -271,7 +276,8 @@ def discover_topics(count, focus=None):
         model=MODEL,
         max_tokens=3000,   # room for web-search rounds + the full candidate JSON
         tools=[WEB_SEARCH],
-        messages=[{"role": "user", "content": _discovery_prompt(count, focus)}],
+        messages=[{"role": "user",
+                   "content": _discovery_prompt(count, focus) + published_posts_context()}],
     )
     topics = _extract_json(_text_of(resp))
     return topics[:count]
