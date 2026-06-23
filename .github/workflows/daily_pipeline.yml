@@ -9,9 +9,9 @@ on:
     # GitHub cron is best-effort and often drops a slot, so we try several off-peak
     # times each weekday. A same-day guard (below) ensures only the FIRST one that
     # actually fires produces drafts — the rest no-op, so no duplicate posts.
-    - cron: '17 12 * * 1-5'  # ~08:17 ET
-    - cron: '41 13 * * 1-5'  # backup ~09:41 ET
-    - cron: '29 15 * * 1-5'  # backup ~11:29 ET
+    - cron: '7 6 * * 1-5'    # ~02:07 ET — early so GitHub's delays still land by morning
+    - cron: '43 7 * * 1-5'   # backup ~03:43 ET
+    - cron: '23 9 * * 1-5'   # backup ~05:23 ET
   workflow_dispatch:           # also lets you run it manually anytime
 
 permissions:
