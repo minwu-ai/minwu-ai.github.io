@@ -1,5 +1,6 @@
 ---
 title: "Three-Quarters of Enterprises Are Chasing Agentic AI. Few Have Built the Control Plane"
+date: 2026-06-24
 slug: three-quarters-of-enterprises-are-chasing-agentic-ai-a-small
 tag: Agentic AI
 excerpt: "Forrester's State of Agentic AI, 2026 and ISACA's 2026 AI Pulse Poll together provide one of the clearest snapshots yet of enterprise AI readiness—and the gap between adoption and operational maturity remains striking."
