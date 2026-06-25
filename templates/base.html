@@ -76,7 +76,10 @@ main{padding:60px 0 80px; min-height:62vh}
   color:var(--accent); margin-bottom:16px}
 
 /* Hero */
-.hero{padding:6px 0 44px; border-bottom:1px solid var(--line); margin-bottom:48px}
+.hero{padding:6px 0 44px; border-bottom:1px solid var(--line); margin-bottom:48px;
+  display:flex; align-items:center; gap:40px}
+.hero-text{flex:1 1 auto; min-width:0}
+.hero-anim{flex:0 0 auto; width:300px; height:300px; opacity:.9}
 .hero h1{font-family:var(--serif); font-weight:600; font-size:44px; line-height:1.08;
   letter-spacing:-0.015em; margin-bottom:18px}
 .hero .lede{color:var(--muted); font-size:19px; line-height:1.6; max-width:44ch}
@@ -198,6 +201,10 @@ footer.site a{color:var(--muted)}
 .hero-social svg{width:22px; height:22px}
 .us-flag{width:22px; height:15px; border-radius:2px; border:1px solid var(--line); vertical-align:middle; flex:0 0 auto}
 
+@media(max-width:760px){
+  .hero{gap:0}
+  .hero-anim{display:none}
+}
 @media(max-width:600px){
   body{font-size:16px}
   .hero h1{font-size:34px} h1.page{font-size:28px} article.post h1{font-size:29px}

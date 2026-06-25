@@ -144,6 +144,40 @@ def social_links_html(extra_class=""):
     return '<div class="{cls}">{items}</div>'.format(cls=cls, items="".join(items))
 
 
+# Home hero animation: a drifting "neural constellation" — nodes wander with random
+# jitter (never settling), thin links fade as they drift apart. Abstract nod to AI +
+# the uncertainty quote. Dependency-free canvas; respects prefers-reduced-motion.
+HERO_ANIM = """<canvas class="hero-anim" id="heroAnim" aria-hidden="true"></canvas>
+<script>
+(function(){
+  var c=document.getElementById('heroAnim'); if(!c) return;
+  var ctx=c.getContext('2d'), DPR=Math.max(1,window.devicePixelRatio||1), S=300, N=18, LINK=94;
+  function accent(){var v=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();return v||'#2f5d50';}
+  function rgb(h){h=h.replace('#','');if(h.length===3)h=h.replace(/(.)/g,'$1$1');var n=parseInt(h,16);return [(n>>16)&255,(n>>8)&255,n&255];}
+  c.width=S*DPR; c.height=S*DPR; c.style.width=S+'px'; c.style.height=S+'px'; ctx.setTransform(DPR,0,0,DPR,0,0);
+  var p=[],i,j; for(i=0;i<N;i++)p.push({x:Math.random()*S,y:Math.random()*S,vx:(Math.random()-0.5)*0.35,vy:(Math.random()-0.5)*0.35});
+  var col=rgb(accent()), f=0;
+  function draw(){
+    if(f%150===0)col=rgb(accent());
+    ctx.clearRect(0,0,S,S);
+    for(i=0;i<N;i++){var a=p[i];
+      a.vx+=(Math.random()-0.5)*0.05; a.vy+=(Math.random()-0.5)*0.05;
+      a.vx=Math.max(-0.6,Math.min(0.6,a.vx)); a.vy=Math.max(-0.6,Math.min(0.6,a.vy));
+      a.x+=a.vx; a.y+=a.vy;
+      if(a.x<2||a.x>S-2)a.vx*=-1; if(a.y<2||a.y>S-2)a.vy*=-1;
+      a.x=Math.max(2,Math.min(S-2,a.x)); a.y=Math.max(2,Math.min(S-2,a.y));
+    }
+    for(i=0;i<N;i++)for(j=i+1;j<N;j++){var dx=p[i].x-p[j].x,dy=p[i].y-p[j].y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<LINK){ctx.strokeStyle='rgba('+col[0]+','+col[1]+','+col[2]+','+(1-d/LINK)*0.4+')';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(p[i].x,p[i].y);ctx.lineTo(p[j].x,p[j].y);ctx.stroke();}}
+    for(i=0;i<N;i++){ctx.fillStyle='rgba('+col[0]+','+col[1]+','+col[2]+',0.75)';ctx.beginPath();ctx.arc(p[i].x,p[i].y,2,0,6.2832);ctx.fill();}
+    f++;
+  }
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){draw();return;}
+  (function loop(){draw();requestAnimationFrame(loop);})();
+})();
+</script>"""
+
+
 # Small "copy link / share" control (wired up by JS in the template).
 SHARE_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" '
               'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
@@ -277,16 +311,20 @@ def build():
         ).format(q=HOME_QUOTE[0], a=HOME_QUOTE[1])
     home = (
         '<section class="hero">'
+        '<div class="hero-text">'
         '<div class="eyebrow">{eyebrow}</div>'
         '<h1>{name}</h1>'
         '<p class="lede">{desc}</p>'
         '{quote}'
         '{social}'
+        '</div>'
+        '{anim}'
         '</section>'
         '<div class="eyebrow">Latest writing</div>'
         '{listing}'
     ).format(eyebrow=HOME_EYEBROW, name=SITE_NAME, desc=SITE_DESCRIPTION,
-             quote=quote_html, social=social_links_html("hero-social"), listing=listing)
+             quote=quote_html, social=social_links_html("hero-social"),
+             anim=HERO_ANIM, listing=listing)
     (PUBLIC_DIR / "index.html").write_text(
         render_page(SITE_NAME, SITE_DESCRIPTION, home,
                     nav_active="home", canonical_path="/", wide=True)
