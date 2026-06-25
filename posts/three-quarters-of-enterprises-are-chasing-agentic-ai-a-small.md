@@ -1,56 +1,89 @@
 ---
-title: "Three-Quarters of Enterprises Are Chasing Agentic AI. A Small Minority Are Catching It."
-date: 2026-06-25
+title: "Three-Quarters of Enterprises Are Chasing Agentic AI. Few Have Built the Control Plane"
 slug: three-quarters-of-enterprises-are-chasing-agentic-ai-a-small
 tag: Agentic AI
-excerpt: "Forrester's State of Agentic AI, 2026 and ISACA's 2026 AI Pulse Poll together deliver the most candid enterprise readiness snapshot yet — and the gap between claimed adoption and actual production scale is damning."
-takeaway: "The core problem is not model capability — it is that enterprises are deploying autonomous systems faster than they can instrument, govern, or audit them, and the NIST AI RMF, however well-intentioned, cannot close that gap alone because a policy document cannot control a tool-invoking agent at runtime."
-published: false
+excerpt: "Forrester's State of Agentic AI, 2026 and ISACA's 2026 AI Pulse Poll together provide one of the clearest snapshots yet of enterprise AI readiness—and the gap between adoption and operational maturity remains striking."
+takeaway: "The evidence suggests the primary bottleneck is no longer model capability but enterprise operationalization. Organizations are deploying autonomous systems faster than they can instrument, govern, and monitor them, making runtime controls increasingly important alongside traditional governance frameworks."
+published: true
 ---
 
 ## 📊 What the Data Actually Shows
 
-Three-quarters of enterprise leaders tell Forrester they are adopting agentic AI, yet only a small minority have it running in meaningful production. Meanwhile, 90% of organizations believe employees are using AI, but only 22% say AI ROI has met or exceeded expectations, according to ISACA's 2026 AI Pulse Poll of more than 3,400 digital trust professionals. Near-universal usage plus near-universal ROI disappointment is not a technology problem. It is an operationalization problem.
+Forrester reports that three-quarters of enterprise leaders are adopting agentic AI, yet only a small minority have deployed it in meaningful production beyond isolated pilots or "agentish" chatbots. Meanwhile, ISACA's 2026 AI Pulse Poll found that 90% of organizations believe employees are already using AI, but only 22% say AI has met or exceeded ROI expectations.
+
+Taken together, the surveys point to the same conclusion: enterprise AI adoption is accelerating much faster than enterprise operational readiness.
 
 | Metric | Forrester (State of Agentic AI, 2026) | ISACA (2026 AI Pulse Poll) |
 |---|---|---|
-| Adoption claimed | 75% of enterprise leaders | 90% say employees use AI |
-| Production at scale | Small minority | Only 22% met/beat ROI |
-| Governance readiness | Agentic sprawl in >50% | Only 38% have comprehensive AI policies |
-| Incident response | — | 56% don't know how fast they could halt an AI system |
+| Adoption | 75% of enterprise leaders report adopting agentic AI | 90% believe employees are using AI |
+| Production maturity | Only a small minority have meaningful production deployments | Only 22% report AI meeting or exceeding ROI expectations |
+| Governance | Governance gaps contribute to agentic sprawl | 38% report comprehensive AI policies |
+| Operational readiness | Trust and orchestration remain key barriers | 56% do not know how quickly they could halt an AI system after a security incident |
 
-One of the most common answers in the ISACA survey was some version of "I don't know" — including from audit, risk, and governance professionals whose roles depend on visibility into organizational controls. That is not a neutral finding; it is a material control deficiency hiding in plain sight.
+Perhaps the most striking result from the ISACA survey is how often respondents answered, "I don't know"—including on questions related to incident response and operational control. For organizations deploying increasingly autonomous systems, that uncertainty itself is an important governance signal.
 
-## The Three Blockers Forrester Names
+---
 
-Forrester is unusually direct about why the gap persists. ROI uncertainty traps enterprise ambition in pilot mode; governance gaps drive agentic sprawl, with more than half of enterprises reporting sprawl even after adopting the NIST AI RMF; and platform confusion freezes commitment while teams argue over SaaS agents, SI-built systems, or custom builds.
+## 🚧 Why Production Scale Remains Elusive
 
-Underneath all of it sits the "trust tax": every autonomous action must be logged and defensible to an auditor, and right now that cost is too high.
+Forrester identifies three recurring obstacles preventing enterprises from moving beyond pilots.
 
-## The NIST RMF Finding Deserves a Separate Read
+First, uncertain ROI keeps many organizations trapped in experimentation rather than broad deployment.
 
-The foundational NIST AI RMF 1.0 was developed before agentic architectures emerged as a mainstream deployment pattern. As this site has tracked since [Agentic AI Has Outrun the Governance Playbook](/agentic-ai-and-the-governance-gap/): model risk frameworks were built to govern systems that predict, not systems that act. You cannot govern a proliferating agent population with quarterly reviews. You govern it with instrumentation that runs while the agent does, with identity and policy enforced as code. Forrester's finding that sprawl persists even among NIST AI RMF adopters confirms this: framework adoption and control-plane implementation are two entirely different things.
+Second, governance has not kept pace with autonomous, tool-using agents. As agents become capable of executing workflows across multiple systems, traditional governance processes become harder to apply consistently.
 
-This maps directly to what [Microsoft's Agentic AI Red Team](/microsoft-s-agentic-ai-red-team-draws-a-line-in-the-sand-sev/) and [DeepMind's AI Control Roadmap](/deepmind-s-ai-control-roadmap-from-trust-the-model-to-contai/) have separately surfaced — autonomous agents with tool access and escalating privileges require runtime enforcement, not documentation.
+Third, platform fragmentation leaves organizations debating whether to adopt SaaS agents, build custom agents, or rely on systems integrators before establishing a scalable operating model.
 
-> "The gap we see isn't about models or ambition — it's about orchestration, control, and trust." — Brian Hopkins, VP & Principal Analyst, Forrester
+Underlying all three challenges is what Forrester describes as the **"trust tax"**—the operational overhead required to make every autonomous action observable, explainable, and defensible.
 
-## The Incident Response Gap Is Underappreciated
+---
 
-56% of ISACA respondents are unsure how long it would take to halt an AI system due to a security incident. Only 36% say humans approve most AI-generated actions before execution. 67% of executives believe their company has already suffered a data leak due to unapproved AI tools, while 35% admit they couldn't immediately pull the plug on a rogue agent. The kill-switch question is not rhetorical.
+## 🛡️ Governance Frameworks Need a Runtime Companion
 
-## What to Watch
+None of this diminishes the value of frameworks such as the NIST AI Risk Management Framework. They provide an essential foundation for identifying, measuring, and managing AI risk.
 
-The historical parallel is early cloud adoption circa 2013–2015: enterprises deployed fast, governance lagged, and Shadow IT incidents forced a correction that took years. The difference with agentic AI is that agents act — they do not merely store. The blast radius of an ungoverned agent is larger and faster than an ungoverned S3 bucket.
+However, agentic systems introduce a different operational challenge.
 
-Forrester predicts enterprises will delay 25% of AI spend into 2027, as only 15% of AI decision-makers reported an EBITDA lift in the past 12 months. That deceleration is CFOs demanding defensible numbers before the next deployment wave.
+Traditional model governance was developed primarily for systems that generate predictions or recommendations. Autonomous agents continuously plan, invoke tools, access external systems, and make decisions throughout execution. Those behaviors require controls that operate while the system is running—not solely during design reviews or periodic governance assessments.
 
-**My read:** Enterprises that build the control plane *before* scaling agents — runtime observability, agent identity registries, policy-as-code, and tested kill-switch procedures — will compress the trust tax and convert pilots into production faster. Those that do not will manage the incident Forrester predicted, not the ROI.
+The emerging pattern across industry is increasingly clear:
+
+> Policies define expectations.
+>
+> Runtime control planes enforce them.
+
+This aligns closely with themes emerging from [Microsoft's recent work on agentic AI security and red teaming](/microsoft-s-agentic-ai-red-team-draws-a-line-in-the-sand-sev/), 
+as well as [DeepMind's AI Control Roadmap](/deepmind-s-ai-control-roadmap-from-trust-the-model-to-contai/). As AI systems gain greater autonomy, governance increasingly depends on continuous observability, identity, policy enforcement, and execution logging—not documentation alone.
+
+---
+
+## 🚨 The Incident Response Gap Deserves More Attention
+
+ISACA's findings suggest many organizations are not yet operationally prepared for AI incidents.
+
+More than half of respondents (56%) said they do not know how quickly they could halt an AI system following a security incident. Only about one-third believed they could stop a system within an hour.
+
+That finding may be more important than any adoption statistic.
+
+As organizations begin deploying long-running agents capable of interacting with enterprise systems, knowing how to safely pause, isolate, or terminate those agents becomes a fundamental operational capability—not simply an IT process.
+
+---
+
+## 🔭 What to Watch
+
+The historical parallel is early cloud adoption circa 2013–2015: enterprises deployed fast, governance lagged, and Shadow IT incidents forced a correction that took years. 
+The difference with agentic AI is that agents act—they do not merely store. The blast radius of an ungoverned agent is larger and faster than an ungoverned S3 bucket.
+
+Separately, in its **2026 Technology Predictions**, Forrester forecasts that enterprises will defer **25% of planned AI spending into 2027**, noting that only **15% of AI decision-makers reported an EBITDA lift** over the previous 12 months. That suggests many CFOs are beginning to demand measurable business outcomes—not simply more AI deployments—before approving the next wave of investment.
+
+**My read:** Enterprises that build the **AI control plane** before scaling agents—runtime observability, agent identity registries, policy-as-code, and tested kill-switch procedures—will compress the trust tax and convert pilots into production faster. Those that do not are more likely to spend the next few years managing operational failures instead of realizing ROI.
+
 
 ---
 
 ## Sources
 
-- [Forrester: The State of Agentic AI in 2026 (blog summary)](https://www.forrester.com/blogs/the-state-of-agentic-ai-in-2026-companies-are-chasing-few-are-catching/)
+- [Forrester: The State of Agentic AI in 2026 – Companies Are Chasing, Few Are Catching](https://www.forrester.com/blogs/the-state-of-agentic-ai-in-2026-companies-are-chasing-few-are-catching/)
+- [Forrester: Predictions 2026 – AI Moves From Hype To Hard Hat Work](https://www.forrester.com/blogs/predictions-2026-ai-moves-from-hype-to-hard-hat-work/)
 - [ISACA: 2026 AI Pulse Poll](https://www.isaca.org/resources/ai-pulse-poll)
-- [ISACA: AI Pulse Poll Reveals Rampant Uncertainty on Enterprise Landscape](https://www.isaca.org/resources/news-and-trends/isaca-now-blog/2026/ai-pulse-poll-reveals-rampant-uncertainty-)
+- [ISACA: AI Pulse Poll Reveals Rampant Uncertainty on Enterprise Landscape](https://www.isaca.org/resources/news-and-trends/isaca-now-blog/2026/ai-pulse-poll-reveals-rampant-uncertainty-on-enterprise-landscape)
