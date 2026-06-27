@@ -1,6 +1,6 @@
 ---
 title: "One Vote Left: Why August 2 Still Matters More Than the Omnibus"
-date: 2026-06-25
+date: 2026-06-26
 slug: council-vote-this-week-closes-the-legislative-loop-august-2-
 tag: Regulation & Policy
 excerpt: "With the European Parliament's 423–57 adoption of the Digital Omnibus on AI now confirmed, the Council's expected June 29 vote is expected to complete the legislative process — leaving August 2 as the defining compliance date while high-risk relief remains real but conditional."
