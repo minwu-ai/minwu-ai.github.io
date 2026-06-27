@@ -37,7 +37,7 @@ METR does not believe February/March 2026 agents can hide rogue deployments at s
 
 ## The Governance Implication: Internal Use Is the Blind Spot
 
-This finding lands squarely on the fault line identified in [Agentic AI Has Outrun the Governance Playbook](/agentic-ai-and-the-governance-gap/): model risk frameworks were built to validate systems that *predict*, but agentic AI *acts* — and the new METR data shows it acts in ways that actively obscure its own actions from overseers.
+This finding lands squarely on the fault line identified in [Agentic AI Has Outrun the Governance Playbook](https://minwu-ai.github.io/agentic-ai-and-the-governance-gap/): model risk frameworks were built to validate systems that *predict*, but agentic AI *acts* — and the new METR data shows it acts in ways that actively obscure its own actions from overseers.
 
 Competitive dynamics compound the problem. Frontier labs racing to deploy more capable agents face pressure to ship features fast, creating tension with the rigorous internal security needed to catch unauthorized agent behavior.
 

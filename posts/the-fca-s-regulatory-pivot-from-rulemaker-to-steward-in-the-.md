@@ -12,7 +12,7 @@ published: false
 
 The most important thing Nikhil Rathi said on June 24 was not a warning — it was a concession. "Technology is moving much faster than many regulatory paradigms," the FCA CEO told the Agents of Change conference. "Legislation will never keep up." For a financial regulator, that is a remarkable thing to say out loud. It is also the opening move in a structural redesign of how the FCA governs markets.
 
-The AI conversation so far has focused on what generative AI can summarise, detect, or automate. The next phase is different: systems that don't just support financial decisions, but coordinate and transact. That distinction — support vs. transact — is exactly the governance fault line this site has been tracking. If you read our earlier piece [Agentic AI Has Outrun the Governance Playbook](/agentic-ai-and-the-governance-gap/), the FCA's framing should feel familiar: existing controls were designed for AI that predicts, not AI that acts.
+The AI conversation so far has focused on what generative AI can summarise, detect, or automate. The next phase is different: systems that don't just support financial decisions, but coordinate and transact. That distinction — support vs. transact — is exactly the governance fault line this site has been tracking. If you read our earlier piece [Agentic AI Has Outrun the Governance Playbook](https://minwu-ai.github.io/agentic-ai-and-the-governance-gap/), the FCA's framing should feel familiar: existing controls were designed for AI that predicts, not AI that acts.
 
 Accountability for regulated activities must remain clear — designed with the right human oversight, and in a way that gives consumers confidence to engage. That is the governance ask in plain English: human accountability must survive automation.
 
@@ -36,7 +36,7 @@ Three risks deserve more weight than the speech gave them:
 
 - **Systemic herding.** Algorithmic collusion and herding behaviour could amplify volatility or trigger flash crashes. Stewardship-based oversight is slow to catch emergent, cross-firm dynamics.
 - **Third-party concentration.** The Treasury Committee has called for major AI and cloud providers to be designated as Critical Third Parties by year-end — HM Treasury must act by end of 2026, but it is not clear why it has been so slow to use powers already at its disposal.
-- **Accountability gaps in agentic chains.** The [Microsoft Agentic AI Red Team taxonomy](/microsoft-s-agentic-ai-red-team-draws-a-line-in-the-sand-sev/) documented these failure modes empirically. The FCA's principles require human accountability; it has not yet said what *evidence of that accountability* it will accept from firms running multi-agent pipelines.
+- **Accountability gaps in agentic chains.** The [Microsoft Agentic AI Red Team taxonomy](https://minwu-ai.github.io/microsoft-s-agentic-ai-red-team-draws-a-line-in-the-sand-sev/) documented these failure modes empirically. The FCA's principles require human accountability; it has not yet said what *evidence of that accountability* it will accept from firms running multi-agent pipelines.
 
 ## What to Watch
 
@@ -47,7 +47,7 @@ Three risks deserve more weight than the speech gave them:
 | HM Treasury CTP designations | End of 2026 | Model provider dependencies become formal risk items |
 | FCA payments regulation review | Ongoing | May produce first agentic-specific payment rules |
 
-**My read:** The FCA's principles-based stance will hold through 2026, but the agentic payments carve-out signals a boundary. If a significant consumer harm event is traced to an agentic transaction system before those rules land, expect the timeline to compress sharply. Firms that have mapped their agentic accountability chains now will be far better positioned than those treating SM&CR as a paper exercise. See also our analysis of how [Colorado's governance retreat](/colorado-s-ai-governance-retreat-what-sb-26-189-means-for-ev/) illustrates what happens when principle-first frameworks face their first real test.
+**My read:** The FCA's principles-based stance will hold through 2026, but the agentic payments carve-out signals a boundary. If a significant consumer harm event is traced to an agentic transaction system before those rules land, expect the timeline to compress sharply. Firms that have mapped their agentic accountability chains now will be far better positioned than those treating SM&CR as a paper exercise. See also our analysis of how [Colorado's governance retreat](https://minwu-ai.github.io/colorado-s-ai-governance-retreat-what-sb-26-189-means-for-ev/) illustrates what happens when principle-first frameworks face their first real test.
 
 ## Sources
 

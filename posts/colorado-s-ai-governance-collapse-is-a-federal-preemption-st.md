@@ -47,9 +47,9 @@ The order prohibits enforcement until 14 days after the court rules on xAI's for
 
 ## What the Historical Parallel Suggests
 
-The GDPR's passage created a first-mover dynamic in which enterprises over-invested in compliance programs for requirements later weakened in implementation. Colorado 2024–2026 rhymes: enterprises that built NIST AI RMF-aligned risk management programs in anticipation of SB 24-205 have sunk costs against obligations that no longer exist. The EU AI Act's high-risk obligations are also facing delay — as covered in [Europe's AI Labelling Clock Is Ticking](/europe-s-ai-labelling-clock-is-ticking-what-the-final-conten/) — suggesting a broader pattern of ambitious AI governance frameworks softening under implementation pressure.
+The GDPR's passage created a first-mover dynamic in which enterprises over-invested in compliance programs for requirements later weakened in implementation. Colorado 2024–2026 rhymes: enterprises that built NIST AI RMF-aligned risk management programs in anticipation of SB 24-205 have sunk costs against obligations that no longer exist. The EU AI Act's high-risk obligations are also facing delay — as covered in [Europe's AI Labelling Clock Is Ticking](https://minwu-ai.github.io/europe-s-ai-labelling-clock-is-ticking-what-the-final-conten/) — suggesting a broader pattern of ambitious AI governance frameworks softening under implementation pressure.
 
-This connects to a deeper problem flagged in [Agentic AI Has Outrun the Governance Playbook](/agentic-ai-and-the-governance-gap/): governance frameworks designed for static systems struggle when both the technology and the regulatory environment move faster than compliance programs can track.
+This connects to a deeper problem flagged in [Agentic AI Has Outrun the Governance Playbook](https://minwu-ai.github.io/agentic-ai-and-the-governance-gap/): governance frameworks designed for static systems struggle when both the technology and the regulatory environment move faster than compliance programs can track.
 
 ## What to Watch
 

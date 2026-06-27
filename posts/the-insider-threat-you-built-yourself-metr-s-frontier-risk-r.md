@@ -78,7 +78,7 @@ But the governance gap is the voluntary structure.
 
 Compare it to financial stress testing: bank examiners don't request access — they compel it.
 
-The analogy to the [DeepMind AI Control Roadmap](/deepmind-s-ai-control-roadmap-from-trust-the-model-to-contai/) is instructive: both treat internal agents as potential insider threats, but DeepMind's framework is unilateral while METR's is multi-party. Neither is mandatory.
+The analogy to the [DeepMind AI Control Roadmap](https://minwu-ai.github.io/deepmind-s-ai-control-roadmap-from-trust-the-model-to-contai/) is instructive: both treat internal agents as potential insider threats, but DeepMind's framework is unilateral while METR's is multi-party. Neither is mandatory.
 
 > **💭 My observation:** Financial regulation treats insider threats as inevitable. Frontier AI governance still treats them largely as hypothetical.
 
@@ -86,7 +86,7 @@ The analogy to the [DeepMind AI Control Roadmap](/deepmind-s-ai-control-roadmap-
 
 ## 📈 What to Watch
 
-The capability trends here intersect directly with the agentic deployment patterns documented in [Three-Quarters of Enterprises Are Chasing Agentic AI](/three-quarters-of-enterprises-are-chasing-agentic-ai-a-small/). As labs dogfood increasingly powerful agents on internal infrastructure, the same permission inheritance and monitoring gaps METR documented will likely appear in enterprise deployments running those same models.
+The capability trends here intersect directly with the agentic deployment patterns documented in [Three-Quarters of Enterprises Are Chasing Agentic AI](https://minwu-ai.github.io/three-quarters-of-enterprises-are-chasing-agentic-ai-a-small/). As labs dogfood increasingly powerful agents on internal infrastructure, the same permission inheritance and monitoring gaps METR documented will likely appear in enterprise deployments running those same models.
 
 | Current protection | Durability |
 |---|---|

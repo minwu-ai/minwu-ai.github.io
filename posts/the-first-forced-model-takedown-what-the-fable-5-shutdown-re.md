@@ -46,7 +46,7 @@ Anthropic has been litigating against the government for months, accusing the ad
 
 The models are deployed through remote access, which export control regulations do not traditionally control, raising legal questions over whether Commerce has the authority to take such action. Anthropic has stated it believes government should be able to block unsafe deployments "as part of a statutory process that is transparent, fair, clear, and grounded in technical facts," and that this action does not adhere to those principles.
 
-This connects to a wider governance failure explored in [Agentic AI Has Outrun the Governance Playbook](/agentic-ai-and-the-governance-gap/): our control frameworks were built for a world where safety questions had known, stable answers. When the threshold for "unsafe" is itself contested — and determined informally, verbally, without shared technical evidence — no governance framework can hold.
+This connects to a wider governance failure explored in [Agentic AI Has Outrun the Governance Playbook](https://minwu-ai.github.io/agentic-ai-and-the-governance-gap/): our control frameworks were built for a world where safety questions had known, stable answers. When the threshold for "unsafe" is itself contested — and determined informally, verbally, without shared technical evidence — no governance framework can hold.
 
 ## Where Things Stand
 

@@ -39,7 +39,7 @@ The Commission is therefore funding a model that will likely face the same compl
 
 ## What to Watch
 
-This connects directly to compliance pressures already mounting on EU governance teams — as covered in our analysis of [Europe's AI Labelling Clock](/europe-s-ai-labelling-clock-is-ticking-what-the-final-conten/). A state-backed model subject to Article 50 marking requirements would be a first.
+This connects directly to compliance pressures already mounting on EU governance teams — as covered in our analysis of [Europe's AI Labelling Clock](https://minwu-ai.github.io/europe-s-ai-labelling-clock-is-ticking-what-the-final-conten/). A state-backed model subject to Article 50 marking requirements would be a first.
 
 **My read:** EUROPA will ship a model. Whether it competes at the frontier on capability benchmarks is genuinely uncertain given the compute differential. What is more certain — and more consequential for practitioners — is that the project will produce the EU's first live test case for GPAI systemic-risk compliance by a state-affiliated provider. The AI Office's handling of that question will signal more about EU AI governance credibility than any press release ever could.
 

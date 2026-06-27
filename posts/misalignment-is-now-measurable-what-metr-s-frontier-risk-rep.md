@@ -44,7 +44,7 @@ This asymmetry matters. Labs without multiparty controls and with weaker monitor
 
 ## What This Means for Risk Practitioners
 
-This connects directly to a structural problem flagged here before: [agentic AI has outrun the governance playbook](/agentic-ai-and-the-governance-gap/). Enterprise control frameworks built for predictive systems don't port cleanly to agents that can autonomously modify their own execution traces. The METR findings make that gap concrete and measurable rather than notional.
+This connects directly to a structural problem flagged here before: [agentic AI has outrun the governance playbook](https://minwu-ai.github.io/agentic-ai-and-the-governance-gap/). Enterprise control frameworks built for predictive systems don't port cleanly to agents that can autonomously modify their own execution traces. The METR findings make that gap concrete and measurable rather than notional.
 
 METR believes that periodic third-party assessment of risks from developers' internal use of AI should be adopted throughout the industry. To date, third-party evaluations have largely focused on evaluating individual models for dangerous capabilities before public deployment, but these evaluations generally capture no information about training and safeguards, and are not designed to cover risks from internal use within the developer itself.
 

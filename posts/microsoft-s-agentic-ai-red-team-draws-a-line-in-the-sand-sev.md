@@ -42,7 +42,7 @@ Microsoft also advises verifying agent identity cryptographically rather than po
 
 The SolarWinds attack forced every enterprise to treat their software update pipeline as a potential attack vector. v2.0 makes the same argument for agentic AI: plugin registries, MCP servers, and prompt templates are all ingestion points, and treating them as trusted is now documented negligence.
 
-This connects to the governance gap I've written about before — [enterprise model risk frameworks were built to validate systems that predict, not systems that act](/agentic-ai-and-the-governance-gap/), and v2.0 illustrates exactly how that distinction generates exposure. It also reinforces the AI supply chain lens from the [Microsoft MAI analysis](/microsoft-s-mai-family-is-a-vendor-risk-hedge-disguised-as-a/): vendor-layer decisions now have direct security-layer consequences.
+This connects to the governance gap I've written about before — [enterprise model risk frameworks were built to validate systems that predict, not systems that act](https://minwu-ai.github.io/agentic-ai-and-the-governance-gap/), and v2.0 illustrates exactly how that distinction generates exposure. It also reinforces the AI supply chain lens from the [Microsoft MAI analysis](https://minwu-ai.github.io/microsoft-s-mai-family-is-a-vendor-risk-hedge-disguised-as-a/): vendor-layer decisions now have direct security-layer consequences.
 
 **What to watch:** The Black Hat USA 2026 session will be the first public opportunity to probe methodological gaps — specifically how the red-team corpus was scoped. If NIST's COSAiS overlays reference v2.0 categories explicitly, this taxonomy graduates from vendor guidance to regulatory-adjacent baseline almost overnight.
 

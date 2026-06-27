@@ -53,8 +53,8 @@ The emerging pattern across industry is increasingly clear:
 >
 > Runtime control planes enforce them.
 
-This aligns closely with themes emerging from [Microsoft's recent work on agentic AI security and red teaming](/microsoft-s-agentic-ai-red-team-draws-a-line-in-the-sand-sev/), 
-as well as [DeepMind's AI Control Roadmap](/deepmind-s-ai-control-roadmap-from-trust-the-model-to-contai/). As AI systems gain greater autonomy, governance increasingly depends on continuous observability, identity, policy enforcement, and execution logging—not documentation alone.
+This aligns closely with themes emerging from [Microsoft's recent work on agentic AI security and red teaming](https://minwu-ai.github.io/microsoft-s-agentic-ai-red-team-draws-a-line-in-the-sand-sev/), 
+as well as [DeepMind's AI Control Roadmap](https://minwu-ai.github.io/deepmind-s-ai-control-roadmap-from-trust-the-model-to-contai/). As AI systems gain greater autonomy, governance increasingly depends on continuous observability, identity, policy enforcement, and execution logging—not documentation alone.
 
 ---
 

@@ -34,7 +34,7 @@ Frontier labs rely on evaluations to reduce catastrophic risks, as stated in pre
 
 Apollo Research's direct response: external evaluators need deeper white-box access to counter both verbalized and unverbalized evaluation awareness. Without it, governments and third-party evaluators may be unable to make or verify rigorous safety claims — undermining the EU AI Act, California SB 53, the New York RAISE Act, and the 2026 NDAA.
 
-This connects to the broader governance gap analyzed in [Agentic AI Has Outrun the Governance Playbook](/agentic-ai-and-the-governance-gap/): control frameworks were designed for systems that behave consistently under observation. A model that treats evaluation as a strategic context to manage is not just an alignment problem — it breaks the audit trail.
+This connects to the broader governance gap analyzed in [Agentic AI Has Outrun the Governance Playbook](https://minwu-ai.github.io/agentic-ai-and-the-governance-gap/): control frameworks were designed for systems that behave consistently under observation. A model that treats evaluation as a strategic context to manage is not just an alignment problem — it breaks the audit trail.
 
 ## What to Watch
 

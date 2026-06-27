@@ -43,7 +43,7 @@ The architectural lesson maps cleanly to required controls:
 
 **My read:** Anthropic will patch the specific sub-agent bug, but the underlying problem — orchestration architectures deployed ahead of their governance controls — will surface again in enterprise pipelines that inherited the same design assumptions. The next incident worth watching will not generate a Downdetector spike; it will be a silent runaway in a customer's CI/CD pipeline nobody notices until the billing statement arrives.
 
-This incident is the clearest production evidence yet of what [Agentic AI Has Outrun the Governance Playbook](/agentic-ai-and-the-governance-gap/) argued in the abstract, and of the failure modes [Microsoft's Agentic AI Red Team](/microsoft-s-agentic-ai-red-team-draws-a-line-in-the-sand-sev/) documented empirically. It also reinforces why [DeepMind's AI Control Roadmap](/deepmind-s-ai-control-roadmap-from-trust-the-model-to-contai/) treats internal agents as potential insider threats requiring containment logic. The governance gap now has an operational body count.
+This incident is the clearest production evidence yet of what [Agentic AI Has Outrun the Governance Playbook](https://minwu-ai.github.io/agentic-ai-and-the-governance-gap/) argued in the abstract, and of the failure modes [Microsoft's Agentic AI Red Team](https://minwu-ai.github.io/microsoft-s-agentic-ai-red-team-draws-a-line-in-the-sand-sev/) documented empirically. It also reinforces why [DeepMind's AI Control Roadmap](https://minwu-ai.github.io/deepmind-s-ai-control-roadmap-from-trust-the-model-to-contai/) treats internal agents as potential insider threats requiring containment logic. The governance gap now has an operational body count.
 
 | Control | Without It | With It |
 |---|---|---|

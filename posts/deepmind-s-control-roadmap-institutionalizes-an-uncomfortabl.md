@@ -47,7 +47,7 @@ The gap is not ignorance — 82% of executives say their policies protect them, 
 
 DeepMind's release was the fourth distinct agentic security framework published in four days — following Databricks Omnigent (June 15), Beyond Identity (June 16), and Hugging Face (June 17). Convergence of this density is rarely coincidental; it reflects a field recognizing simultaneously that the tooling gap is real and that first-mover standard-setting carries durable influence.
 
-As previously examined in [DeepMind's AI Control Roadmap: From 'Trust the Model' to 'Contain the Agent'](/deepmind-s-ai-control-roadmap-from-trust-the-model-to-contai/), this is the first control roadmap from a frontier AI company that operationalizes AI control as an engineering discipline. And as explored in [Agentic AI Has Outrun the Governance Playbook](/agentic-ai-and-the-governance-gap/), the shift from prediction to action broke most existing control assumptions — this roadmap is the first credible attempt to rebuild them.
+As previously examined in [DeepMind's AI Control Roadmap: From 'Trust the Model' to 'Contain the Agent'](https://minwu-ai.github.io/deepmind-s-ai-control-roadmap-from-trust-the-model-to-contai/), this is the first control roadmap from a frontier AI company that operationalizes AI control as an engineering discipline. And as explored in [Agentic AI Has Outrun the Governance Playbook](https://minwu-ai.github.io/agentic-ai-and-the-governance-gap/), the shift from prediction to action broke most existing control assumptions — this roadmap is the first credible attempt to rebuild them.
 
 ## What to Watch
 

@@ -129,12 +129,14 @@ FORMAT_GUIDE = (
     "fenced code block (flowchart, timeline, or sequence). Keep it small and correct; "
     "omit it entirely if a diagram wouldn't add real value. Otherwise rely on text "
     "formatting.\n"
-    "CITATIONS (required): support every factual claim with an inline markdown link "
-    "to its primary source, and end the piece with a '## Sources' section listing the "
-    "key references as markdown links (title + URL). Cite ONLY real URLs you actually "
-    "retrieved via web search — never invent or guess a link. If you could not verify "
-    "a claim with a real source, soften it or leave it out rather than fabricate a "
-    "citation. The Sources section does not count toward the word limit."
+    "CITATIONS (required): weave clickable INLINE hyperlinks into the prose — link the "
+    "specific words that carry a factual claim straight to the primary source, as "
+    "markdown [phrase](https://...). Do NOT add a separate 'Sources' or 'References' "
+    "section at the end; all citations are inline. Example: \"...reflects the final "
+    "agreement described by the [Council of the EU](https://...) and analysis from "
+    "[White & Case](https://...).\" Cite ONLY real URLs you actually retrieved via web "
+    "search — never invent or guess a link; if a claim can't be sourced, soften it or "
+    "drop it. Use several inline citations across the piece."
 )
 
 # What makes a post worth publishing — analysis, not summary.
@@ -149,7 +151,8 @@ ANALYSIS_GUIDE = (
     "'My read' line) — specific but appropriately hedged, never overconfident.\n"
     "- CONNECT: a list of already-published posts is provided in the user message. If "
     "this story overlaps one, do NOT rehash it — focus on what is NEW, and LINK the "
-    "prior post (use its /slug/ path) so readers get the throughline.\n"
+    "prior post inline using its FULL absolute URL (https://minwu-ai.github.io/<slug>/) "
+    "so readers get the throughline.\n"
     "Always apply a model-risk, safety, and governance lens. Be the analyst a busy "
     "practitioner reads BECAUSE it tells them something the original source didn't."
 )
@@ -313,11 +316,12 @@ def published_posts_context(limit=25):
         title = meta.get("title", "")
         slug = meta.get("slug") or os.path.basename(path)[:-3]
         if title:
-            items.append("- [{}](/{}/) — {}".format(title, slug, meta.get("excerpt", "")))
+            items.append("- [{}](https://minwu-ai.github.io/{}/) — {}".format(
+                title, slug, meta.get("excerpt", "")))
     if not items:
         return ""
     return ("\n\nAlready published on this site — reference and LINK any that are "
-            "relevant (use the /slug/ path) to build a throughline:\n"
+            "relevant (use the FULL absolute URL shown) to build a throughline:\n"
             + "\n".join(items[:limit]))
 
 
@@ -334,16 +338,13 @@ def draft_article(instruction):
 
 
 def has_sources(article):
-    """True if the draft has a Sources section containing at least one URL.
+    """True if the draft has enough INLINE citations (markdown links to real URLs).
 
-    Lenient on purpose: accepts a '## Sources' heading OR a 'Sources:' label, and
-    counts ANY http(s) URL after it — markdown links, bare URLs, or numbered refs.
+    Citations are now woven into the prose (no end 'Sources' section), so we require
+    at least two inline hyperlinks to http(s) sources.
     """
     body = article.get("body_markdown", "")
-    m = re.search(r"(?:^|\n)\s*(?:#{1,6}\s*|\*{0,2})sources\b\*{0,2}\s*:?", body, re.IGNORECASE)
-    if not m:
-        return False
-    return bool(re.search(r"https?://", body[m.end():]))
+    return len(re.findall(r"\]\(https?://[^)]+\)", body)) >= 2
 
 
 def trim_to_length(article):
@@ -356,8 +357,8 @@ def trim_to_length(article):
         max_tokens=1500,
         system=("You are a ruthless editor. Cut the following article body to UNDER "
                 f"{MAX_WORDS} words (aim ~600). Preserve the core analysis "
-                "(cross-references, historical parallel, prediction) and KEEP the "
-                "'## Sources' section with ALL its links intact. Keep markdown headings. "
+                "(cross-references, historical parallel, prediction) and KEEP every "
+                "inline source hyperlink intact. Keep markdown headings. "
                 "Return ONLY the tightened markdown body, nothing else."),
         messages=[{"role": "user", "content": body}],
     )
@@ -372,10 +373,11 @@ def draft_with_sourcing(instruction):
     article = draft_article(instruction)
     if not has_sources(article):
         article = draft_article(
-            instruction + "\n\nYOUR PREVIOUS DRAFT FAILED: it had no proper '## Sources' "
-            "section with real links. Either ground this in real, citable sources that "
-            "meet the corroboration bar and include a '## Sources' list of working links, "
-            "or — if the story cannot be corroborated — say so plainly rather than writing it.")
+            instruction + "\n\nYOUR PREVIOUS DRAFT FAILED: it lacked real inline source "
+            "links. Weave at least two clickable inline hyperlinks [phrase](https://...) "
+            "to primary sources directly into the prose (no end 'Sources' section). If "
+            "the story cannot be corroborated with real links, say so plainly rather "
+            "than writing it.")
     if has_sources(article):
         article = trim_to_length(article)
     return article

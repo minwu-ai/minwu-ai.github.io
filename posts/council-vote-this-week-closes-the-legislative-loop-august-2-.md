@@ -34,8 +34,7 @@ August 2 remains an active compliance date. Human-facing AI disclosures, chatbot
 
 August 2, 2026 is the date the Commission gains penalty enforcement powers over GPAI providers, Article 50 transparency obligations activate for most AI systems, and competent authorities obtain their full enforcement toolkit for provisions applicable from August 2. Penalty tiers are unchanged: €35M/7% of global turnover for prohibited practices, €15M/3% for high-risk and transparency violations, and €7.5M/1.5% for misleading information to authorities.
 
-This follows directly from what we covered in [Europe's AI Labelling Clock Is Ticking](/europe-s-ai-labelling-clock-is-ticking-what-the-final-conten/). 
-The Council vote this week removes most remaining legislative uncertainty: compliance teams now have a single, fixed planning calendar. For organisations already navigating agentic deployments — where [the governance gap is already wide](/agentic-ai-and-the-governance-gap/) — Article 50 deployer disclosure applies to any AI-facing customer or worker interface. August 2 is not a future problem.
+This follows directly from what we covered in [Europe's AI Labelling Clock Is Ticking](https://minwu-ai.github.io/europe-s-ai-labelling-clock-is-ticking-what-the-final-conten/). The Council vote this week removes most remaining legislative uncertainty: compliance teams now have a single, fixed planning calendar. For organisations already navigating agentic deployments — where [the governance gap is already wide](https://minwu-ai.github.io/agentic-ai-and-the-governance-gap/) — Article 50 deployer disclosure applies to any AI-facing customer or worker interface. August 2 is not a future problem.
 
 ## 🧭 The Classification Consultation: A Hidden Signal
 
