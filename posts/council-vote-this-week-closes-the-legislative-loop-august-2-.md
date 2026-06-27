@@ -5,7 +5,7 @@ slug: council-vote-this-week-closes-the-legislative-loop-august-2-
 tag: Regulation & Policy
 excerpt: "With the European Parliament's 423–57 adoption of the Digital Omnibus on AI now confirmed, the Council's expected June 29 vote is expected to complete the legislative process — leaving August 2 as the defining compliance date while high-risk relief remains real but conditional."
 takeaway: "The Council's formal adoption — expected June 29 — will pave the way for publication in the Official Journal and entry into force of the amended AI Act three days later; but August 2, 2026 remains the single most consequential compliance date, activating Article 50 transparency obligations and the Commission's full penalty enforcement powers over GPAI providers regardless of any high-risk deferral."
-published: false
+published: true
 ---
 
 ## 🏛️ The Legislative Marathon Is Nearly Over
