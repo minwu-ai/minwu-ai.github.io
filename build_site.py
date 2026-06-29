@@ -11,6 +11,8 @@ HTML into public/. Posts with "published: false" are skipped (the review gate).
 import os
 import re
 import html
+import random
+import hashlib
 import shutil
 import datetime
 from pathlib import Path
@@ -224,6 +226,39 @@ def tag_pills(tags):
         for t in tags)
 
 
+def cover_svg(slug):
+    """A static, per-post abstract cover: an accent-tinted gradient with a faint
+    'constellation' motif. Deterministic from the slug, theme-aware via CSS vars,
+    zero runtime/API cost. Placed after the title, before the takeaway."""
+    rnd = random.Random(int(hashlib.md5(slug.encode()).hexdigest(), 16))
+    W, H, N, LINK = 1200, 340, 13, 330
+    pts = [(rnd.uniform(40, W - 40), rnd.uniform(28, H - 28)) for _ in range(N)]
+    parts = []
+    for i in range(N):
+        for j in range(i + 1, N):
+            dx, dy = pts[i][0] - pts[j][0], pts[i][1] - pts[j][1]
+            d = (dx * dx + dy * dy) ** 0.5
+            if d < LINK:
+                parts.append(
+                    '<line x1="{:.0f}" y1="{:.0f}" x2="{:.0f}" y2="{:.0f}" '
+                    'stroke="var(--accent)" stroke-width="1" opacity="{:.3f}"/>'.format(
+                        pts[i][0], pts[i][1], pts[j][0], pts[j][1], (1 - d / LINK) * 0.22))
+    for x, y in pts:
+        parts.append('<circle cx="{:.0f}" cy="{:.0f}" r="{}" fill="var(--accent)" '
+                     'opacity="0.5"/>'.format(x, y, rnd.choice([3, 4, 4, 5])))
+    return (
+        '<div class="post-cover" aria-hidden="true">'
+        '<svg viewBox="0 0 {W} {H}" preserveAspectRatio="xMidYMid slice" '
+        'xmlns="http://www.w3.org/2000/svg">'
+        '<defs><linearGradient id="coverg" x1="0" y1="0" x2="1" y2="1">'
+        '<stop offset="0" stop-color="var(--accent-soft)"/>'
+        '<stop offset="1" stop-color="var(--surface)"/>'
+        '</linearGradient></defs>'
+        '<rect width="{W}" height="{H}" fill="url(#coverg)"/>{body}'
+        '</svg></div>'
+    ).format(W=W, H=H, body="".join(parts))
+
+
 # ---- Markdown rendering with Mermaid diagram support --------------------
 _MERMAID_RE = re.compile(r"```mermaid\s*\n(.*?)```", re.DOTALL)
 
@@ -344,12 +379,13 @@ def build():
             '<a class="back" href="/">← All posts</a>'
             '<article class="post">'
             '<div class="meta">{date} · {tags}</div>'
-            '<h1>{title}</h1>{takeaway}{body}'
+            '<h1>{title}</h1>{cover}{takeaway}{body}'
             '<div class="post-footer"><span>Written by {author}. Filed under {filed}.</span>'
             '{share}</div>'
             '</article>'
         ).format(date=p["date_str"], tags=meta_tags,
-                 title=p["title"], takeaway=takeaway_html, body=p["body_html"],
+                 title=p["title"], cover=cover_svg(p["slug"]),
+                 takeaway=takeaway_html, body=p["body_html"],
                  author=AUTHOR, filed=filed, share=share_button(post_url))
         post_dir = PUBLIC_DIR / p["slug"]
         post_dir.mkdir(exist_ok=True)
