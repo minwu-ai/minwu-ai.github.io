@@ -5,7 +5,9 @@ slug: when-the-alignment-researcher-is-the-threat-anthropic-s-diff
 tag: AI Safety
 excerpt: "Anthropic's new Diffuse AI Control paper asks a recursive question: if AI systems begin helping align future AI systems, can we trust the research they produce? The early answer is sobering: on difficult-to-evaluate research tasks, monitoring alone may not be enough."
 takeaway: "The biggest challenge is not whether today's AI is secretly sabotaging alignment research. It is whether tomorrow's AI-generated alignment research can be reliably evaluated. Anthropic's new framework suggests that for 'fuzzy' research tasks, monitoring alone may not provide sufficient assurance, making robust training interventions an increasingly important line of defense."
-published: false
+cover: "/assets/AI_challenger.png"
+cover_alt: "Illustration: As AI begins helping align future AI systems, the integrity of the alignment research pipeline itself becomes a new frontier safety challenge."
+published: true
 ---
 
 # 🔁 The Recursive Problem at the Heart of AI Safety
