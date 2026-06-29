@@ -5,6 +5,8 @@ slug: agentic-ai-and-the-governance-gap
 tag: AI Governance, AI Safety
 excerpt: "Enterprise model risk frameworks were built to validate systems that predict. Agentic AI acts — and that single shift breaks most of the assumptions our controls quietly depend on."
 takeaway: "Agentic AI breaks the core assumption beneath model-risk management — that a model is a function you can bound. The 2026 refresh, SR 26-2, even leaves agentic AI out of scope. Govern the agent as a system, not the model as a function, before an incident forces the issue."
+cover: "https://commons.wikimedia.org/wiki/Special:FilePath/Marriner_S._Eccles_Federal_Reserve_Board_Building.jpg?width=1200"
+cover_alt: "The Federal Reserve's Eccles Building. Photo: AgnosticPreachersKid, CC BY-SA 3.0, via Wikimedia Commons."
 published: true
 ---
 
