@@ -13,6 +13,12 @@ permissions:
   pages: write
   id-token: write
 
+# Serialize Pages deploys: only one runs at a time, so rapid pushes queue instead
+# of colliding ("in progress deployment" errors). Don't cancel an in-flight deploy.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
