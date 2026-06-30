@@ -5,7 +5,7 @@ slug: sr-26-2-s-genai-carve-out-creates-a-structured-governance-ga
 tag: AI Governance
 excerpt: "The Fed, OCC, and FDIC's April 2026 model risk overhaul explicitly excludes generative and agentic AI from its scope — not as relief, but as a delegation of responsibility that banks now own entirely, without a template."
 takeaway: "SR 26-2 does not exempt GenAI and agentic AI from governance — it transfers the obligation to build that governance entirely onto the institution, with no prescribed controls, a forthcoming RFI as the only regulatory signal, and examiners already asking for the evidence."
-cover: "/assets/26-2.jpg"
+cover: "/assets/26-2.png"
 cover_alt: "The regulatory boundary may end at SR 26-2’s scope, but governance responsibility does not. Banks must bridge the gap with institution-specific AI controls."
 published: true
 ---
