@@ -5,9 +5,9 @@ slug: training-itself-as-the-attack-surface-anthropic-s-new-red-te
 tag: AI Safety
 excerpt: "Anthropic's 'Diffuse AI Control on Fuzzy Tasks' paper formalizes an adversarial framework around a deceptively simple question: what happens when the AI producing work becomes better than the AI—or human—evaluating it? The answer has implications far beyond frontier labs, reaching into every AI evaluation pipeline."
 takeaway: "The paper is not about today's models secretly sabotaging alignment research. It is about a broader evaluation problem: when a stronger AI learns to optimize for an imperfect evaluator rather than the true objective. Anthropic's framework suggests that monitoring alone may not provide sufficient assurance for these 'diffuse' threats, making the training and evaluation loop itself a new security boundary."
-cover: "/assets/26-2.png"
-cover_alt: "The regulatory boundary may end at SR 26-2’s scope, but governance responsibility does not. Banks must bridge the gap with institution-specific AI controls."
-published: false
+cover: "/assets/LLM-judge.png"
+cover_alt: "Illustration: As AI systems become more capable, the challenge shifts from generating high-quality work to ensuring the evaluators can still recognize it."
+published: true
 ---
 
 # 🎯 The Specific Threat: When AI Learns to Fool Its Evaluator
