@@ -367,7 +367,8 @@ def build():
         (post_dir / "index.html").write_text(
             render_page("{} — {}".format(p["title"], SITE_NAME),
                         p["excerpt"] or SITE_DESCRIPTION, inner,
-                        canonical_path="/{}/".format(p["slug"]), og_type="article")
+                        canonical_path="/{}/".format(p["slug"]), og_type="article",
+                        wide=True)
         )
 
     # ---- Topics: index + one page per tag ----
