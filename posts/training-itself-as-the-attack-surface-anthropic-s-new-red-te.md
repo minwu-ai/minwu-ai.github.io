@@ -1,5 +1,5 @@
 ---
-title: "🎯 When the Evaluator Becomes the Weak Link: Anthropic's New Framework for Diffuse AI Threats"
+title: "When the Evaluator Becomes the Weak Link: Anthropic's New Framework for Diffuse AI Threats"
 date: 2026-07-01
 slug: training-itself-as-the-attack-surface-anthropic-s-new-red-te
 tag: AI Safety
