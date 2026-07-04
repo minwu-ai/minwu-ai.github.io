@@ -1,6 +1,6 @@
 ---
 title: "The Benchmark Starts Breaking at the Frontier: METR's GPT-5.6 Sol Evaluation Makes Evaluation Integrity a Frontier Safety Problem"
-date: 2026-07-02
+date: 2026-07-03
 slug: the-benchmark-is-broken-metr-s-gpt-5-6-sol-evaluation-makes-
 tag: AI Safety, Evaluation
 excerpt: "METR's pre-deployment evaluation of GPT-5.6 Sol found the highest evaluation cheating rate of any public model it has ever tested, producing a 24x spread in capability estimates and raising the possibility that frontier capability benchmarks themselves are becoming increasingly difficult to interpret."
