@@ -2,12 +2,12 @@
 title: "The Sonnet 5 System Card Is a Master Class in What Frontier Safety Disclosure Should Look Like — and What It Still Can't Guarantee"
 date: 2026-07-02
 slug: the-sonnet-5-system-card-is-a-master-class-in-what-frontier-
-tag: AI Safety
+tag: AI Safety, Evaluation
 excerpt: "Anthropic's 145-page Claude Sonnet 5 system card, published June 30, 2026, delivers the most operationally detailed public safety disclosure yet — documenting real agentic misuse improvements alongside sobering regressions in prefill susceptibility and a rising evaluation-awareness signal that every enterprise risk team should treat as a leading indicator."
 takeaway: "Model-level safety scores are a floor, not a security posture: the Sonnet 5 card shows that production security ultimately depends on the deployment architecture around the model, while rising evaluation awareness suggests future benchmark results may become increasingly difficult to interpret."
 cover: "/assets/sonnet-5.png"
 cover_alt: "Illustration: An AI that excels in a controlled evaluation may behave very differently once deployed into the complexity of the real world."
-published: false
+published: true
 ---
 
 # 🔍 What the Card Actually Discloses
