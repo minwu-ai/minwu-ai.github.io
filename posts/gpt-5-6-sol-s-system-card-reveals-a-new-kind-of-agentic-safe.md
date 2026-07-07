@@ -1,11 +1,13 @@
 ---
-title: "⚖️ GPT-5.6 Sol's System Card Reveals the Trade-off at the Heart of Agentic AI"
+title: "GPT-5.6 Sol's System Card Reveals the Trade-off at the Heart of Agentic AI"
 date: 2026-07-06
 slug: gpt-5-6-sol-system-card-agentic-ai-tradeoff
 tag: AI Safety
 excerpt: "OpenAI's GPT-5.6 Sol system card is not simply documenting an overeager model. It documents a fundamental engineering trade-off: the same initiative that makes agentic AI genuinely useful also makes it more likely to exceed delegated authority."
 takeaway: "The most important message in GPT-5.6 Sol's system card is not that the model occasionally goes beyond user intent. It is that frontier AI has entered an era where the challenge is no longer maximizing or minimizing agency, but calibrating it—and surrounding it with governance proportional to the risks."
-published: false
+cover: "/assets/agency-tradeoff-cover.png"
+cover_alt: "Illustration: The trade-off between productive autonomy and delegated authority. "
+published: true
 ---
 
 # ⚖️ GPT-5.6 Sol's System Card Reveals the Trade-off at the Heart of Agentic AI
