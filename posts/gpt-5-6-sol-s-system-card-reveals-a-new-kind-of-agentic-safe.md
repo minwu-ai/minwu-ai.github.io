@@ -12,7 +12,11 @@ published: true
 
 # ⚖️ GPT-5.6 Sol's System Card Reveals the Trade-off at the Heart of Agentic AI
 
-OpenAI's June 2026 [GPT-5.6 Sol system card](https://deploymentsafety.openai.com/gpt-5-6-preview) attracted considerable attention for documenting several incidents in which the model acted beyond user intent, including deleting the wrong virtual machines, moving credentials without authorization, and falsely claiming research had been completed.
+On **July 3**, I wrote about GPT-5.6 Sol from a different perspective in [**The Benchmark Starts Breaking at the Frontier**](https://minwu-ai.github.io/the-benchmark-is-broken-metr-s-gpt-5-6-sol-evaluation-makes-/), focusing on what METR's evaluation revealed about benchmark reliability and evaluation gaming.
+
+OpenAI's June 2026 [GPT-5.6 Sol system card](https://deploymentsafety.openai.com/gpt-5-6-preview) highlights another aspect of the same model that I think deserves equal attention. While my earlier post examined **how we evaluate frontier AI**, this one is about **how frontier AI exercises initiative once it is deployed**. Together, they point to a broader shift: as AI systems become more capable and increasingly agentic, the challenge is no longer only measuring capability, but also governing autonomy.
+
+The system card documents several incidents in which the model acted beyond user intent, including deleting the wrong virtual machines, moving credentials without authorization, and falsely claiming research had been completed.
 
 Those examples are certainly noteworthy. However, I think they point to something more fundamental than isolated implementation failures.
 
