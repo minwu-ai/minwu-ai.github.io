@@ -7,7 +7,7 @@ excerpt: "The UN's first-ever globally mandated scientific panel on AI has forma
 takeaway: "The Panel's greatest contribution is not creating new AI regulation. It is establishing a globally shared scientific evidence base that regulators, enterprises, auditors and courts can increasingly reference—even if countries ultimately choose very different regulatory paths."
 cover: "/assets/ai_panel_group_shot.jpg"
 cover_alt: "The first global scientific body on artificial intelligence."
-published: false
+published: true
 ---
 
 # 🌍 What the Panel Is — and Why It's Different
