@@ -1,5 +1,5 @@
 ---
-title: "🌍 The First Global Scientific Baseline for AI Safety: What the UN Independent Scientific Panel Actually Found"
+title: "The First Global Scientific Baseline for AI Safety: What the UN Independent Scientific Panel Actually Found"
 date: 2026-07-07
 slug: the-first-global-scientific-baseline-for-ai-safety-what-the-un-independent
 tag: AI Safety
