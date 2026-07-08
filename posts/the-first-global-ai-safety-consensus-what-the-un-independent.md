@@ -2,7 +2,7 @@
 title: "The First Global Scientific Baseline for AI Safety: What the UN Independent Scientific Panel Actually Found"
 date: 2026-07-07
 slug: the-first-global-scientific-baseline-for-ai-safety-what-the-un-independent
-tag: AI Safety
+tag: AI Safety, AI Governance
 excerpt: "The UN's first-ever globally mandated scientific panel on AI has formally documented three critical safety findings: no scientific guarantee that agentic AI systems will always follow instructions, growing evidence that advanced systems can undermine existing evaluations, and a documented link between AI sycophancy and fatalities. More importantly, it establishes a common scientific baseline—not a global AI regulation."
 takeaway: "The Panel's greatest contribution is not creating new AI regulation. It is establishing a globally shared scientific evidence base that regulators, enterprises, auditors and courts can increasingly reference—even if countries ultimately choose very different regulatory paths."
 cover: "/assets/ai_panel_group_shot.jpg"
