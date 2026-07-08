@@ -265,7 +265,14 @@ def load_posts():
         tags = normalize_tags(post.get("tag", ""))
         takeaway = post.get("takeaway", "")
         cover = str(post.get("cover", "")).strip()
+        # Ignore unfilled placeholders (e.g. "/assets/" with no filename) so a blank
+        # cover never renders a broken image.
+        if cover in ("/assets/", "/assets") or cover.endswith("/"):
+            cover = ""
         cover_alt = str(post.get("cover_alt", "")).strip()
+        # "Illustration:" alone (the placeholder prefix) isn't a real caption
+        if cover_alt.rstrip(": ").strip().lower() in ("illustration", ""):
+            cover_alt = ""
         body_html = render_markdown(post.content)
         posts.append({
             "title": title, "date": date, "date_str": date.strftime("%b %d, %Y"),

@@ -404,6 +404,8 @@ def save_post(article, default_tag="Analysis"):
         f"tag: {tag}\n"
         f'excerpt: "{excerpt}"\n'
         f'takeaway: "{takeaway}"\n'
+        'cover: "/assets/"\n'          # <-- fill in your image path, e.g. /assets/foo.png
+        'cover_alt: "Illustration: "\n'  # <-- fill in the caption / credit
         "published: false\n"        # <-- review gate: flip to true to publish
         "---\n\n"
     )
