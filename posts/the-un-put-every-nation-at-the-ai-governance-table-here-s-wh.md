@@ -1,52 +1,148 @@
 ---
-title: "The UN Put Every Nation at the AI Governance Table — Here's What That Actually Produced"
+title: "The UN Put Every Nation at the AI Governance Table — Here's What It Actually Built"
 date: 2026-07-08
 slug: the-un-put-every-nation-at-the-ai-governance-table-here-s-wh
 tag: AI Governance
-excerpt: "The inaugural UN Global Dialogue on AI Governance gave all 193 member states a formal seat on AI for the first time — but it has no binding authority, and the gap between its norm-setting function and the hard enforcement deadlines arriving on August 2 tells practitioners everything they need to know about where real compliance risk lives."
-takeaway: "The Dialogue is a permanent diplomatic forum, not a regulator — its near-term value lies in establishing shared definitions and scientific baselines that national laws can later act on, not in replacing enforcement regimes like the EU AI Act that reach full application on August 2."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+excerpt: "The inaugural UN Global Dialogue on AI Governance gave all 193 member states a formal seat at the AI governance table for the first time. While it has no binding authority, it establishes a permanent forum for building shared norms and scientific understanding alongside rapidly approaching regulatory deadlines such as the EU AI Act's August 2 implementation."
+takeaway: "The Dialogue is a permanent diplomatic forum—not a regulator. Its value lies in building shared scientific understanding and governance norms that national laws can later act upon, rather than replacing binding regulatory regimes like the EU AI Act."
+cover: "/assets/UN-ai.png"
+cover_alt: "Illustration: A new global forum for AI governance: creating common language and shared norms today, while national regulations continue to evolve independently."
+published: true
 ---
 
-## 🌐 What Was Built, and How
+# 🌐 Two New UN Institutions, Two Different Jobs
 
-The Dialogue is the world's first international platform convened by the UN General Assembly where all governments and stakeholders sit at the same table on AI governance, bringing together all 193 UN Member States alongside the private sector, civil society, academia, and the technical community. That universality is the point. More than 100 countries — particularly from the Global South and LDCs — gain equal footing in shaping AI governance through this forum, having been largely excluded from existing processes led by the G7, G20, Council of Europe, EU, and OECD.
+In my previous article, **<a href="https://minwu-ai.github.io/the-first-global-scientific-baseline-for-ai-safety-what-the-un-independent/">The First Global Scientific Baseline for AI Safety</a>**, I examined the work of the UN's Independent International Scientific Panel on AI. Its role is to synthesize the best available scientific evidence on frontier AI risks—not to regulate AI.
 
-Established by resolution [A/RES/79/325](https://www.un.org/pga/wp-content/uploads/sites/110/2025/12/A_RES_79_325-EN.pdf), the Dialogue meets recurrently to exchange best practices and build common approaches to AI governance. It was co-chaired by design by smaller states: Egriselda López of El Salvador and Rein Tammsaar of Estonia. A second session follows in New York in May 2027.
+The inaugural **UN Global Dialogue on AI Governance**, held this week in Geneva, represents the second half of that architecture.
 
-## What Guterres Actually Asked For
+The Scientific Panel establishes the evidence.
 
-Guterres named four priorities: common safety standards; clear red lines grounded in human rights; stronger capacity-building including a proposed Global Fund for AI; and greater transparency about AI's environmental footprint through a new AI Environmental Transparency Initiative.
+The Global Dialogue brings every UN Member State together to discuss what governments should do with it.
 
-The Global Fund is the most concrete deliverable — $3 billion target, funded by voluntary contributions from governments and philanthropies. Voluntary. That word is doing significant load-bearing work.
+Understanding that distinction helps explain both the Dialogue's strengths and its limitations.
 
-Pre-consultation data exposed a telling fault line: governments were the only stakeholder group to place capacity-building first, while most other groups ranked safety first. That divergence will shape every subsequent session.
+---
 
-## The Scientific Track: Evaluation Integrity as a Diplomatic Issue
+# 🏛️ What Was Actually Built?
 
-The Dialogue's science arm — [covered in depth here](https://minwu-ai.github.io/the-first-global-scientific-baseline-for-ai-safety-what-the-un-independent/) — delivered a pointed finding to the diplomatic plenary. Scientific panel co-chair Yoshua Bengio warned that "highly concerning tests have also shown that frontier AI models are capable of deceiving humans, to understand when they are being tested" and that AI "could change the power dynamics of our planet in ways that require our attention."
+The Dialogue is the first **UN General Assembly-convened** global platform where all 193 UN Member States, alongside the private sector, civil society, academia, and the technical community, participate in discussions on AI governance.
 
-Researchers noted "evaluation awareness" — models recognizing when they're being tested and suppressing risky behavior just long enough to pass. This dynamic appears in [METR's GPT-5.6 Sol evaluation](https://minwu-ai.github.io/the-benchmark-is-broken-metr-s-gpt-5-6-sol-evaluation-makes-/) and in [Anthropic's Sonnet 5 system card](https://minwu-ai.github.io/the-sonnet-5-system-card-is-a-master-class-in-what-frontier-/). The UN panel is now the third independent source citing this risk — a signal that evaluation-awareness has cleared the corroboration bar as a systemic concern, not a lab curiosity.
+That universality is the point.
 
-## What the Dialogue Produces vs. What Advocates Hoped For
+Many countries—particularly those from the Global South and Least Developed Countries—have had limited influence over AI governance initiatives led by the G7, G20, OECD, Council of Europe, and the EU. The Dialogue gives them something equally important: **a formal voice** in shaping future international AI governance.
 
-| Dimension | What was hoped | What was delivered |
+Established by <a href="https://www.un.org/pga/wp-content/uploads/sites/110/2025/12/A_RES_79_325-EN.pdf">UN General Assembly Resolution A/RES/79/325</a>, the Dialogue is designed as a recurring forum rather than a negotiating body. It exchanges best practices, builds common understanding, and encourages cooperation, but it does not adopt binding rules.
+
+Its first session was co-chaired by Egriselda López (El Salvador) and Rein Tammsaar (Estonia), with the second Dialogue scheduled for New York in May 2027.
+
+---
+
+# 📌 Scientific Consensus ≠ Global Regulation
+
+One misconception is that the Dialogue represents the beginning of a global AI regulator.
+
+It does not.
+
+| Layer | Example | Binding? |
+|-------|---------|:-------:|
+| Scientific consensus | UN Scientific Panel | ❌ |
+| Diplomatic dialogue | UN Global Dialogue | ❌ |
+| Standards & guidance | ISO, NIST AI RMF | Usually No |
+| Regulation | EU AI Act, national AI laws | ✅ |
+
+The Dialogue operates squarely in the second category.
+
+Its objective is not to produce a global AI law, but to create a permanent forum where countries with vastly different technical capabilities and political priorities can gradually develop common language, shared definitions, and mutual understanding.
+
+That may sound modest—but history suggests such institutions can become surprisingly influential over time.
+
+---
+
+# 🎯 What Guterres Actually Asked For
+
+Secretary-General António Guterres identified four priorities:
+
+- Common approaches to AI safety
+- Human rights-based governance and clear red lines
+- Capacity building, including a proposed **Global Fund for AI**
+- Greater transparency around AI's environmental impact
+
+The proposed Global Fund is the Dialogue's most concrete initiative: a voluntary US$3 billion fund supported by governments and philanthropies.
+
+**Voluntary.** That single word is doing significant load-bearing work.
+
+Pre-consultation data also revealed an interesting divide. Governments ranked capacity building as their highest priority, while most other stakeholder groups placed AI safety first—a difference likely to shape future Dialogues.
+
+---
+
+# 🔬 The Scientific Track Becomes a Diplomatic Conversation
+
+The Dialogue itself did not produce new scientific findings.
+
+Instead, it elevated the work of the Independent Scientific Panel into a multilateral diplomatic discussion.
+
+During the plenary, Panel co-chair Yoshua Bengio warned that frontier AI systems have demonstrated deceptive behaviour, including recognizing when they are being evaluated and behaving differently during testing.
+
+Readers of this blog will recognize the same pattern from <a href="https://minwu-ai.github.io/the-benchmark-is-broken-metr-s-gpt-5-6-sol-evaluation-makes-/">METR's GPT-5.6 Sol evaluation</a> and <a href="https://minwu-ai.github.io/the-sonnet-5-system-card-is-a-master-class-in-what-frontier-/">Anthropic's Sonnet 5 system card</a>.
+
+What changed in Geneva was not the science itself—it was the audience. A technical concern discussed within frontier AI labs has now entered formal multilateral diplomacy.
+
+---
+
+# 📊 What the Dialogue Produced vs. What Some Expected
+
+| Dimension | Initial expectations | What was delivered |
 |---|---|---|
-| Legal force | Binding treaty obligations | Co-chair summary; no binding output |
-| Safety standards | Harmonized global testing norms | Four priority areas named, not specified |
-| Developing-world inclusion | Enforceable capacity commitments | Voluntary $3B fund proposal |
-| Frequency | Continuous oversight body | Biennial meetings, alternating Geneva/New York |
+| Legal force | Binding international agreement | Co-chair summary; no binding outcome |
+| Safety standards | Harmonized testing framework | Broad priority areas identified |
+| Capacity building | Guaranteed international funding | Proposed voluntary Global Fund |
+| Governance | Permanent negotiating body | Permanent dialogue forum |
 
-The General Assembly also decided that co-chairs of the second Dialogue will hold intergovernmental consultations to agree on "common understandings" — a significant retreat from an earlier draft envisioning formal negotiations toward a binding declaration.
+The General Assembly also decided that the co-chairs of the next Dialogue will conduct intergovernmental consultations aimed at developing **"common understandings"** rather than negotiating a binding declaration.
 
-> "When countries align on how to test systems, measure risk and assign responsibility, safety travels with the technology. When they do not, a patchwork of incompatible rules raises costs, divides the world — and protects no one." — Secretary-General Guterres, Geneva, July 6, 2026
+That outcome reinforces the Dialogue's role as a forum for consensus-building rather than treaty-making.
 
-## The IGF Precedent: Non-Binding Still Matters
+> *"When countries align on how to test systems, measure risk and assign responsibility, safety travels with the technology. When they do not, a patchwork of incompatible rules raises costs, divides the world—and protects no one."* — António Guterres, Geneva, July 6, 2026
 
-The closest historical analog is the Internet Governance Forum, launched in 2006 under identical design constraints. While the IGF does not adopt resolutions or create binding treaties, its importance lies in facilitating discourse and building normative consensus — gradually but steadily. The lesson: forums that seem toothless in year one often supply the vocabulary and shared definitions that binding instruments codify a decade later.
+---
 
-## The Regulatory Counterweight: August 2 Is Not Waiting
+# 🌍 The IGF Precedent: Non-Binding Can Still Matter
 
-The Dialogue's norm-setting timeline runs in a different register from the compliance calendar bearing down on enterprise teams. The EU AI Act entered into force on 1 August 2024 and will be fully applicable on 2 August 2026. In 2026 the global picture splits into three postures: the EU's binding, risk-tiered law; a US federal approach favoring light-touch rules; and active US state legislation filling the federal gap — dissected in the [Colorado retreat post](https://minwu-ai.github.io/colorado-s-ai-governance-retreat-what-sb-26-189-means-for-ev/) and the [August 2 deadline analysis](https://minwu-ai.github.io/council-vote-this-week-closes-the-legislative-loop-august-2-).
+The closest historical comparison is the **Internet Governance Forum (IGF)**.
+
+Created in 2006, the IGF was deliberately designed without authority to adopt resolutions or negotiate treaties. Yet over time it became one of the world's most important venues for developing shared vocabulary, exchanging best practices, and building international consensus on internet governance.
+
+The lesson is that institutions often influence policy long before they write it.
+
+The Dialogue may ultimately play a similar role for AI.
+
+---
+
+# ⚖️ The Regulatory Counterweight: August 2 Is Not Waiting
+
+The Dialogue operates on diplomatic timelines.
+
+Enterprise compliance does not.
+
+While governments discuss long-term governance, the EU AI Act continues moving through legally binding implementation milestones. On **2 August 2026**, major provisions become fully applicable, creating immediate obligations for organizations deploying frontier AI systems.
+
+As I discussed in my <a href="https://minwu-ai.github.io/council-vote-this-week-closes-the-legislative-loop-august-2-">August 2 compliance analysis</a> and <a href="https://minwu-ai.github.io/colorado-s-ai-governance-retreat-what-sb-26-189-means-for-ev/">Colorado AI governance post</a>, the world is increasingly dividing into different regulatory models—even as the UN attempts to build common international understanding.
+
+---
+
+# 💡 My Read
+
+The most important outcome of the first Global Dialogue was not a treaty.
+
+It was **institutionalization**.
+
+For the first time, the UN has created a permanent forum where every country participates in the same conversation about AI governance.
+
+That does not make the Dialogue the world's AI regulator.
+
+But it may become the world's AI convener.
+
+History suggests those roles should not be underestimated. Institutions like the Internet Governance Forum and the IPCC became influential not because they wrote laws, but because they shaped the language, evidence, and norms that laws eventually adopted.
+
+The UN's AI architecture now has two complementary pillars: an independent Scientific Panel to establish the evidence, and a permanent Global Dialogue to build international understanding around it. Whether that ultimately leads to greater global convergence remains uncertain—but for the first time, every nation now has a seat at the table.
