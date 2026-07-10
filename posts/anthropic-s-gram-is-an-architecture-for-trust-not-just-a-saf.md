@@ -5,9 +5,9 @@ slug: anthropic-s-gram-is-an-architecture-for-trust-not-just-a-saf
 tag: AI Safety
 excerpt: "Gradient-Routed Auxiliary Modules isolate dual-use knowledge into removable neural compartments, pointing toward a future where AI capability tiers are governed by verified trust levels — with direct implications for vendor risk, export controls, and emerging AI governance."
 takeaway: "GRAM introduces a fundamentally different way to think about AI safety: treating certain high-risk capabilities as removable infrastructure rather than relying solely on behavioral guardrails. If that approach ultimately scales, AI governance may evolve from choosing between models to governing which capabilities are present in a deployed system."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/4A02872F-7960-4414-B1B3-511277E68BC5.png"
+cover_alt: "Illustration: Can AI Modularize its Knowledge"
+published: true
 ---
 
 # 🔬 What GRAM Actually Does
