@@ -1,8 +1,8 @@
 ---
 title: "After the Shutdown: What Fable 5's Restoration Actually Settled — and What It Left Open"
-date: 2026-07-07
+date: 2026-07-10
 slug: after-the-shutdown-what-fable-5-s-restoration-actually-settl
-tag: AI Governance
+tag: AI Governance, Regulation & Policy
 excerpt: "The Commerce Department's June 30 lifting of export controls on Fable 5 and Mythos 5 was not simply a reversal—it offered one of the clearest public demonstrations yet of how governments may govern frontier AI before dedicated AI regulatory institutions fully exist."
 takeaway: "The Fable 5 restoration demonstrated that export-control authority can rapidly disrupt commercially deployed frontier AI—and that technical safeguards, negotiated commitments, and differentiated access may become part of how governments manage frontier models before dedicated AI governance frameworks fully mature. Enterprises should therefore treat frontier model availability as a regulatory supply-chain variable, not simply a vendor SLA guarantee."
 published: false
