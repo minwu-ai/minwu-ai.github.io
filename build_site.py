@@ -288,13 +288,25 @@ def post_list_html(posts):
     for p in posts:
         tags_html = ('<div class="tags">{}</div>'.format(tag_pills(p["tags"]))
                      if p["tags"] else "")
+        thumb_html = ""
+        li_class = "post-item"
+        if p["cover"]:
+            li_class += " has-thumb"
+            alt = html.escape(p["cover_alt"] or p["title"])
+            thumb_html = (
+                '<a class="post-thumb" href="/{slug}/" tabindex="-1" aria-hidden="true">'
+                '<img src="{src}" alt="{alt}" loading="lazy"></a>').format(
+                    slug=p["slug"], src=html.escape(p["cover"]), alt=alt)
         items.append(
-            '<li class="post-item">'
+            '<li class="{cls}">'
+            '<div class="post-item-text">'
             '<div class="date">{date}</div>'
             '<h2><a href="/{slug}/">{title}</a></h2>'
             '<p>{excerpt}</p>{tags}'
-            '</li>'.format(date=p["date_str"], slug=p["slug"],
-                           title=p["title"], excerpt=p["excerpt"], tags=tags_html)
+            '</div>{thumb}'
+            '</li>'.format(cls=li_class, date=p["date_str"], slug=p["slug"],
+                           title=p["title"], excerpt=p["excerpt"], tags=tags_html,
+                           thumb=thumb_html)
         )
     items.append("</ul>")
     return "\n".join(items)
