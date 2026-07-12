@@ -5,7 +5,7 @@ slug: colorado-s-ai-governance-retreat-didn-t-end-the-story-it-cha
 tag: AI Governance, Regulation & Policy
 excerpt: "Colorado's replacement of its landmark AI law was only the first chapter. Since then, an xAI lawsuit, DOJ intervention, and a federal enforcement stay have revealed how state AI regulation may increasingly be contested through constitutional litigation before courts ever reach the merits."
 takeaway: "The most important development is no longer what Colorado's replacement law requires, but how litigation is reshaping the future of state AI regulation. Colorado may become the blueprint for challenging state AI laws nationwide, making regulatory uncertainty itself a governance risk."
-cover: "/assets/assets/F41F9A39-43A9-4EB5-90F0-ECEFE5989635.png"
+cover: "/assets/F41F9A39-43A9-4EB5-90F0-ECEFE5989635.png"
 cover_alt: "Illustration: The future of AI regulation may be shaped as much by the courtroom as by the legislature."
 published: true
 ---
