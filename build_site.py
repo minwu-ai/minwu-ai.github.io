@@ -55,6 +55,7 @@ TOPICS = [
     ("Regulation & Policy", "Laws, standards, and the politics shaping AI."),
     ("Industry", "Model releases, labs, and the business of AI."),
     ("Life", "Notes and photos from outside the work."),
+    ("Travel", "Golf, places, and the roads in between."),
 ]
 
 # Projects shown on the Projects page. Each links to its repo. Edit freely.

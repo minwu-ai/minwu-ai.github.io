@@ -7,7 +7,7 @@ excerpt: "The first four days of my UK trip moved from London’s riverfronts an
 takeaway: "The best road trips are not defined only by the destination, but by the moments that gradually change the meaning of the journey."
 cover: "/assets/photo-10689_singular_display_fullPicture.jpeg"
 cover_alt: "Prince's Golf Club"
-published: false
+published: true
 ---
 
 I came to the UK primarily for golf and The Open, but the first few days of the trip have already become something broader: a journey through several different versions of Britain.
@@ -42,7 +42,9 @@ The next afternoon, I played The Grove.
 
 The Grove is not a traditional British members’ club. It is a modern championship resort course—polished, accessible, and designed to deliver a premium experience without the formality associated with many historic clubs.
 
-![The course was in excellent condition, and the late-afternoon tee time gave me long shadows and warm evening light across the fairways.](/assets/photo-9714_singular_display_fullPicture.jpeg)
+The course was in excellent condition, and the late-afternoon tee time gave me long shadows and warm evening light across the fairways.
+
+![The Grove at golden hour, long shadows stretching across the tee](/assets/photo-9714_singular_display_fullPicture.jpeg)
 
 I was paired with another golfer, and what began as a shared round became a long and thoughtful conversation that continued over dinner in the clubhouse.
 
@@ -62,13 +64,15 @@ Greenwich had shown me London's history. Soho showed me its celebration.
 
 On Sunday, I drove to the Kent coast to play Prince’s Golf Club.
 
-![Prince’s is a very different experience from The Grove. It is exposed, firm, strategic, and shaped by the wind. Instead of manicured parkland framed by trees, the course stretches through dunes, rough, sand, and open sky.](/assets/IMG_5040.jpeg)
+Prince’s is a very different experience from The Grove. It is exposed, firm, strategic, and shaped by the wind. Instead of manicured parkland framed by trees, the course stretches through dunes, rough, sand, and open sky.
 
 I had originally booked 18 holes, but the day was too good to stop. I ended up playing all 27 holes.
 
 By the final nine, the sun was lowering across the course, and the landscape took on the muted gold and brown tones that make links golf so distinctive. The fairways looked almost dry and ancient, shaped more by weather than by landscaping.
 
 The bunkers were especially memorable. They were not merely hazards placed beside greens. They were deep, sculptural features that visually defined the course and demanded respect.
+
+![One of Prince's deep, sleeper-walled bunkers, with the clubhouse behind](/assets/IMG_5040.jpeg)
 
 Playing 27 holes was physically demanding, but it also gave me time to understand the course more fully. Links golf is not simply golf beside the sea. It requires a different imagination.
 
@@ -90,15 +94,19 @@ On Monday, I checked out of my hotel and began the drive north toward Liverpool.
 
 Rather than treating the journey as a simple motorway transfer, I stopped first in Stratford-upon-Avon.
 
-Stratford is inseparable from Shakespeare, but even without entering every museum or historic house, the town has a strong sense of place. ![The River Avon, the old buildings, the theatre, and the narrow streets all reinforce the idea that this is not merely a preserved tourist town.](/assets/IMG_5156.jpeg) It remains connected to the cultural identity of England.
+Stratford is inseparable from Shakespeare, but even without entering every museum or historic house, the town has a strong sense of place. The River Avon, the old buildings, the theatre, and the narrow streets all reinforce the idea that this is not merely a preserved tourist town. It remains connected to the cultural identity of England.
+
+![The Royal Shakespeare Theatre on the River Avon, swans gathered along the bank](/assets/IMG_5156.jpeg)
 
 I stayed for about an hour before continuing north.
 
 The next stop was Ironbridge.
 
-![If Stratford represents literary England, Ironbridge represents industrial England.](/assets/IMG_5165.jpeg)
+If Stratford represents literary England, Ironbridge represents industrial England.
 
 The Iron Bridge, completed in the eighteenth century, is often treated as a symbol of the Industrial Revolution. Standing above the River Severn, surrounded by greenery and old houses, it does not immediately look like the birthplace of a technological transformation.
+
+![The Iron Bridge spanning the River Severn](/assets/IMG_5165.jpeg)
 
 That contrast is what makes the place compelling.
 
