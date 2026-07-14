@@ -42,7 +42,7 @@ The next afternoon, I played The Grove.
 
 The Grove is not a traditional British members’ club. It is a modern championship resort course—polished, accessible, and designed to deliver a premium experience without the formality associated with many historic clubs.
 
-![The course was in excellent condition, and the late-afternoon tee time gave me long shadows and warm evening light across the fairways.](/assets/)
+![The course was in excellent condition, and the late-afternoon tee time gave me long shadows and warm evening light across the fairways.](/assets/IMG_5040.jpeg)
 
 I was paired with another golfer, and what began as a shared round became a long and thoughtful conversation that continued over dinner in the clubhouse.
 
