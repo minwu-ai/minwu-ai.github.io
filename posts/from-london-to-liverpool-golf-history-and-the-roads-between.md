@@ -54,7 +54,7 @@ The round reminded me that travel memories are often shaped as much by the peopl
 
 After dinner, I drove into Soho.
 
-The timing turned out to be perfect. England had just defeated Norway in the UEFA Women's Euro quarter-final, and central London was still celebrating. Pubs were overflowing, supporters filled the streets waving England flags, and the atmosphere was energetic without feeling chaotic. As a visitor, it was one of those moments that cannot be planned—you simply happen to arrive at the right place on the right night.
+The timing turned out to be perfect. England had just defeated Norway in the World Cup's quarter-final, and central London was still celebrating. Pubs were overflowing, supporters filled the streets waving England flags, and the atmosphere was energetic without feeling chaotic. As a visitor, it was one of those moments that cannot be planned—you simply happen to arrive at the right place on the right night.
 
 At midnight, Soho was still alive. The streets around Chinatown, Old Compton Street, and Piccadilly felt almost theatrical—crowds spilling from pubs, music drifting through open doors, and late-night restaurants still full.
 
