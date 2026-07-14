@@ -90,7 +90,7 @@ On Monday, I checked out of my hotel and began the drive north toward Liverpool.
 
 Rather than treating the journey as a simple motorway transfer, I stopped first in Stratford-upon-Avon.
 
-Stratford is inseparable from Shakespeare, but even without entering every museum or historic house, the town has a strong sense of place. The River Avon, the old buildings, the theatre, and the narrow streets all reinforce the idea that this is not merely a preserved tourist town. It remains connected to the cultural identity of England.
+Stratford is inseparable from Shakespeare, but even without entering every museum or historic house, the town has a strong sense of place. ![The River Avon, the old buildings, the theatre, and the narrow streets all reinforce the idea that this is not merely a preserved tourist town.]() It remains connected to the cultural identity of England.
 
 I stayed for about an hour before continuing north.
 
