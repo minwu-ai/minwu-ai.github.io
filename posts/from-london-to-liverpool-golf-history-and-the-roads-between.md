@@ -5,6 +5,8 @@ slug: from-london-to-liverpool-golf-history-and-the-roads-between
 tag: Travel
 excerpt: "The first four days of my UK trip moved from London’s riverfronts and late-night streets to championship golf, Shakespeare’s Stratford, and the birthplace of the Industrial Revolution."
 takeaway: "The best road trips are not defined only by the destination, but by the moments that gradually change the meaning of the journey."
+cover: "/assets/3D58D774-1542-491B-A07F-1419664AEE2F.png"
+cover_alt: "Illustration: When AI advances in months but governance evolves over years, existing laws become the bridge."
 published: false
 ---
 
