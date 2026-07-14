@@ -62,7 +62,7 @@ Greenwich had shown me London's history. Soho showed me its celebration.
 
 On Sunday, I drove to the Kent coast to play Prince’s Golf Club.
 
-Prince’s is a very different experience from The Grove. It is exposed, firm, strategic, and shaped by the wind. Instead of manicured parkland framed by trees, the course stretches through dunes, rough, sand, and open sky.
+![Prince’s is a very different experience from The Grove. It is exposed, firm, strategic, and shaped by the wind. Instead of manicured parkland framed by trees, the course stretches through dunes, rough, sand, and open sky.](assets/IMG_5040.jpeg)
 
 I had originally booked 18 holes, but the day was too good to stop. I ended up playing all 27 holes.
 
