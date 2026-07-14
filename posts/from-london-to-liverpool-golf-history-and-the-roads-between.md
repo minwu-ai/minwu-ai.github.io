@@ -5,8 +5,8 @@ slug: from-london-to-liverpool-golf-history-and-the-roads-between
 tag: Travel
 excerpt: "The first four days of my UK trip moved from London’s riverfronts and late-night streets to championship golf, Shakespeare’s Stratford, and the birthplace of the Industrial Revolution."
 takeaway: "The best road trips are not defined only by the destination, but by the moments that gradually change the meaning of the journey."
-cover: "/assets/3D58D774-1542-491B-A07F-1419664AEE2F.png"
-cover_alt: "Illustration: When AI advances in months but governance evolves over years, existing laws become the bridge."
+cover: "/assets/photo-10689_singular_display_fullPicture.jpeg"
+cover_alt: "Prince's Golf Club"
 published: false
 ---
 
@@ -26,7 +26,11 @@ I drove to Richmond, walked around Richmond Green, and had lunch near the Thames
 
 Later that evening, after checking into my hotel in Surbiton and taking a long nap, I drove across London to Greenwich.
 
-Greenwich turned out to be one of the best early choices of the trip. Standing beside the Thames, with the Old Royal Naval College behind me and Canary Wharf glowing across the river, I could see two Londons at once: the historic maritime city and the modern global financial center.
+Greenwich turned out to be one of the best early choices of the trip.
+
+![Standing beside the Thames in Greenwich, with the Old Royal Naval College behind me and Canary Wharf across the river](/assets/IMG_4866.jpeg)
+
+Standing beside the Thames, with the Old Royal Naval College behind me and Canary Wharf glowing across the river, I could see two Londons at once: the historic maritime city and the modern global financial center.
 
 That contrast stayed with me.
 
