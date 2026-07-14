@@ -90,13 +90,13 @@ On Monday, I checked out of my hotel and began the drive north toward Liverpool.
 
 Rather than treating the journey as a simple motorway transfer, I stopped first in Stratford-upon-Avon.
 
-Stratford is inseparable from Shakespeare, but even without entering every museum or historic house, the town has a strong sense of place. ![The River Avon, the old buildings, the theatre, and the narrow streets all reinforce the idea that this is not merely a preserved tourist town.]() It remains connected to the cultural identity of England.
+Stratford is inseparable from Shakespeare, but even without entering every museum or historic house, the town has a strong sense of place. ![The River Avon, the old buildings, the theatre, and the narrow streets all reinforce the idea that this is not merely a preserved tourist town.](/assets/IMG_5156.jpeg) It remains connected to the cultural identity of England.
 
 I stayed for about an hour before continuing north.
 
 The next stop was Ironbridge.
 
-If Stratford represents literary England, Ironbridge represents industrial England.
+![If Stratford represents literary England, Ironbridge represents industrial England.](/assets/IMG_5165.jpeg)
 
 The Iron Bridge, completed in the eighteenth century, is often treated as a symbol of the Industrial Revolution. Standing above the River Severn, surrounded by greenery and old houses, it does not immediately look like the birthplace of a technological transformation.
 
