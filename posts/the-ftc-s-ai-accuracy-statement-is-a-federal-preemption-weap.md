@@ -6,42 +6,70 @@ tag: Regulation & Policy
 excerpt: "The FTC's July 1 proposed policy statement on AI accuracy reframes bias-mitigation and disparate-impact compliance as potential federal deception violations — putting enterprise compliance teams in direct conflict between state fairness mandates and federal consumer protection law, with no disclosure safe harbor yet defined."
 takeaway: "The FTC's proposed policy statement makes state-mandated AI fairness measures — bias mitigation, disparate-impact avoidance — legally indistinguishable from deceptive output steering under § 5 of the FTC Act. Until a disclosure safe harbor is defined after July 31, enterprises simultaneously subject to Colorado-style mandates and FTC scrutiny have no fully compliant path."
 cover: "/assets/B1DC2C33-51BE-4C7A-B503-602CCD3FEEAB.png"
-cover_alt: "Illustration: "
-published: false
+cover_alt: "Illustration: What happens when the industry’s best AI safety program still falls short? "
+published:true
 ---
 
-## What the FTC Actually Said
 
-On July 1, the FTC published a proposed policy statement addressing whether AI companies that steer outputs toward undisclosed ideological objectives may be engaging in deceptive acts or practices under § 5 of the FTC Act. The title is revealing: *[Policy Statement Concerning the Suppression of Accuracy in Artificial Intelligence Systems](https://www.federalregister.gov/documents/2026/07/07/2026-13628/policy-statement-concerning-the-suppression-of-accuracy-in-artificial-intelligence-systems)*.
+## 📊 The Scorecard
 
-The most consequential sentence may be this: "These prohibitions apply even when a company engages in a deceptive act or practice in order to comply with a State law. Although the FTC Act does not expressly preempt State law, State law is impliedly preempted to the extent it conflicts with a Federal regulatory scheme." The FTC is telling enterprise compliance teams that following state AI fairness law may itself be a federal offense.
+The evaluation covered nine major AI companies: Anthropic, OpenAI, Google DeepMind, Meta, Z.ai, Alibaba Cloud, xAI, DeepSeek, and Mistral. Seven independent reviewers graded each company across six domains — risk assessment, current harms, safety frameworks, existential safety, governance, and information sharing — using a US GPA-style letter scale.
 
-Motivation is legally irrelevant under this framing — a company doing the right thing for the wrong-framed reason is still liable. The statement carves out AI "hallucinations" as arising from limitations rather than design decisions. That carve-out is narrower than it looks: deliberate post-training alignment, RLHF tuning, and bias-mitigation layers are all *design decisions*.
-
-## Colorado Is Named — But It Won't Be the Last
-
-Colorado's AI Act "appears to coerce companies into altering the output of their AI models to comply with and advance the state's ideological objectives," and is "impliedly preempted to the extent it conflicts with a federal regulatory scheme." As covered in [Colorado's AI Governance Retreat Didn't End the Story](https://minwu-ai.github.io/colorado-s-ai-governance-retreat-didn-t-end-the-story-it-cha/), Colorado had already retreated to a lighter transparency regime under SB 26-189 — yet the FTC still named that revised statute by section number. The preemption theory doesn't require a strong state law to bite; it bites whatever law pressures output changes.
-
-The Illinois Human Rights Act and California's FEHA (recently amended to cover AI) face the same logical exposure.
-
-## The Compliance Trap — Illustrated
-
-| Obligation | Required Action | FTC Risk |
+| Company | Grade | Change |
 |---|---|---|
-| Colorado SB 26-189 § 6-1-1707 | Avoid AI outputs causing disparate impact | Undisclosed output steering → § 5 deception |
-| Fair lending / ECOA | Model bias mitigation in underwriting | Same theory; disparate-impact EO cited in footnote |
-| Internal AI safety policy | RLHF, content filters, refusal tuning | Permissible *only* with sufficiently prominent disclosure |
+| Anthropic | C+ | ↔ Holds top |
+| OpenAI | C | ↓ From C+ |
+| Google DeepMind | C | ↔ |
+| Meta | D+ | ↑ From D |
+| Z.ai / Alibaba Cloud | D- | — |
+| xAI / DeepSeek / Mistral | F | ↓ xAI from 4th |
 
-A company may prioritize objectives other than pure correctness — but only with clear and conspicuous disclosure. The statement rules out burying disclaimers in terms of service. No template for what *would* suffice is provided. That undefined safe harbor is the governance gap that matters.
+The most important result in the [FLI Summer 2026 AI Safety Index](https://futureoflife.org/ai-safety-index-summer-2026/) is not who ranked first. It is that the grading scale's upper end went unused. Top-ranked Anthropic earned only a C+, and the report concludes that even the strongest performers remain far from meeting adequate safety expectations relative to the pace of frontier AI development. Failing grades across one US company (xAI), one Chinese (DeepSeek), and one European (Mistral) suggest this is not a regional problem but an industry-wide one.
 
-## The Preemption Theory and Its Limits
+## 🔄 The Commitment Rollback — Now Measurable
 
-The statement extends traditional deception principles to AI model design while advancing a conflict-preemption theory that could substantially affect emerging state AI laws. The historical parallel is *Geier v. American Honda* (2000), where the Supreme Court found implied preemption from a federal safety standard without an express preemption clause. The FTC attempts a structurally similar move: asserting that § 5's purpose overrides state law compelling the very conduct § 5 prohibits. Courts have not always been receptive to agency-asserted implied preemption absent congressional intent — this will be litigated.
+The Index turns a series of separately documented policy changes into a measurable industry-wide pattern. It concludes that Anthropic, OpenAI, Google DeepMind, and Meta have all weakened or withdrawn earlier commitments to pause frontier development unilaterally if critical safety thresholds are reached, describing a broader trend of "moving the goalposts" that has weakened voluntary safety frameworks.
 
-A 2-0 Commission vote — in a body whose independence is now doubtful following a Supreme Court decision holding the president can fire commissioners at will — signals this is political as much as legal.
+The Anthropic example is particularly instructive. On February 24, 2026, Anthropic published [Responsible Scaling Policy Version 3.0](https://www.anthropic.com/responsible-scaling-policy/rsp-v3-0), replacing its earlier unconditional approach with a two-tier structure: company-level measures it expects to pursue regardless of competitors, alongside stronger industry-wide measures that it explicitly says it cannot commit to implementing unilaterally.
 
-## What to Watch
+A commitment that ultimately depends on competitors behaving the same way is fundamentally different from an unconditional commitment. It creates a coordination problem where no single participant has a strong incentive to move first — precisely the competitive dynamic that earlier pause commitments were intended to address.
 
-The comment period closes July 31. The docket at [Regulations.gov (FTC-2026-0859)](https://www.regulations.gov/docket/FTC-2026-0859) is where the real action happens: AI developers, civil rights organizations, and state attorneys general will submit conflicting records shaping whether the FTC finalizes or withdraws the preemption language.
+## ⚠️ Existential Safety Remains the Weakest Domain
 
-**My read:** The FTC will finalize some version before Q4 2026 — but courts will strip the implied preemption claim on first challenge unless Congress acts. The deeper lasting effect is the *disclosure standard*: even if preemption fails, enterprises that cannot document why their AI outputs are configured as they are face a credible § 5 deception theory on the merits. Model risk teams should treat this as a documentation and disclosure problem today, regardless of legal outcome. For context on how SR 26-2's model risk guidance already left a structured governance gap, see [SR 26-2's GenAI Carve-Out Creates a Structured Governance Gap](https://minwu-ai.github.io/sr-26-2-s-gen).
+Perhaps the most striking finding is that **Existential Safety** is the weakest category across the entire industry. Even the strongest performers receive only D+ scores in this domain, while most companies receive D or F grades.
+
+The panel credits progress in areas such as interpretability research, chain-of-thought monitoring, and loss-of-control planning. But it concludes these efforts remain insufficient for frontier systems whose capabilities may eventually exceed existing oversight mechanisms. As the report notes, **detection is not prevention**.
+
+That observation aligns closely with my earlier analysis in [**The Insider Threat You Built Yourself: METR's Frontier Risk Report**](https://minwu-ai.github.io/the-insider-threat-you-built-yourself-metr-s-frontier-risk-r/). Read together, the two reports point toward the same governance challenge: frontier developers increasingly recognize loss-of-control risks, yet the institutional safeguards intended to manage those risks remain incomplete and, in some cases, increasingly conditional.
+
+## 🏛️ A Broader Governance Signal
+
+Since the Index's evidence cutoff in early June, OpenAI has announced another significant governance change. Head of Safety Systems Johannes Heidecke is leaving, while responsibility for both research and safety now sits under the same executive leadership structure.
+
+OpenAI has presented the reorganization as bringing safety closer to frontier model development. Another interpretation is that the separation between developing increasingly capable models and overseeing their safety becomes less distinct.
+
+As I discussed in [**The Benchmark Starts Breaking at the Frontier**](https://minwu-ai.github.io/the-benchmark-is-broken-metr-s-gpt-5-6-sol-evaluation-makes-/), frontier evaluations themselves are becoming increasingly challenging as models grow more capable. Whether or not these developments are directly connected, they reinforce a broader governance question: how independent should safety oversight remain as competitive pressure continues to increase?
+
+## 🏦 What This Means for Enterprise Risk Teams
+
+> **The governance question is no longer "Does this vendor have a safety framework?" It is "Which commitments remain binding when commercial pressure intensifies?"**
+
+Three practical implications follow.
+
+- **Demand independent evidence.** Model cards alone are no longer enough. Procurement teams should understand external evaluations, risk thresholds, incident reporting, and governance processes before deployment.
+
+- **Track framework versioning.** Safety frameworks evolve just like technical architectures. Changes to Responsible Scaling Policies, deployment frameworks, or evaluation commitments should be monitored throughout the vendor lifecycle rather than reviewed only during initial procurement.
+
+- **Evaluate governance as well as technology.** As discussed in [**SR 26-2's GenAI Carve-Out Creates a Structured Governance Gap**](https://minwu-ai.github.io/sr-26-2-s-genai-carve-out-creates-a-structured-governance-ga/), regulators are increasingly placing responsibility for AI risk management on deploying organizations. The FLI Index reinforces that relying solely on upstream developer commitments is becoming a progressively weaker control.
+
+## 💭 My Read
+
+The voluntary safety system was never intended to be permanent. It was designed as a bridge until more durable governance mechanisms emerged.
+
+The Summer 2026 FLI Safety Index does not prove that voluntary AI safety has failed. What it does show is that many of its most consequential commitments have become increasingly conditional precisely as frontier capability races accelerate.
+
+To me, that is the real significance of the C+ ceiling.
+
+When the industry's best publicly documented safety program still earns only a C+, the lesson is not simply that every company needs a higher grade. It is that enterprise governance can no longer assume vendor safety frameworks are stable over time.
+
+Independent verification, continuous oversight, and governance that extends beyond published commitments are becoming essential parts of responsible AI adoption—not because developers are acting in bad faith, but because competitive incentives and safety commitments increasingly pull in different directions.
