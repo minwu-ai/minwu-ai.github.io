@@ -5,8 +5,8 @@ slug: the-ftc-s-ai-accuracy-statement-is-a-federal-preemption-weap
 tag: Regulation & Policy
 excerpt: "The FTC's July 1 proposed policy statement on AI accuracy reframes bias-mitigation and disparate-impact compliance as potential federal deception violations — putting enterprise compliance teams in direct conflict between state fairness mandates and federal consumer protection law, with no disclosure safe harbor yet defined."
 takeaway: "The FTC's proposed policy statement makes state-mandated AI fairness measures — bias mitigation, disparate-impact avoidance — legally indistinguishable from deceptive output steering under § 5 of the FTC Act. Until a disclosure safe harbor is defined after July 31, enterprises simultaneously subject to Colorado-style mandates and FTC scrutiny have no fully compliant path."
-cover: "/assets/"
-cover_alt: "Illustration: "
+cover: "/assets/B1DC2C33-51BE-4C7A-B503-602CCD3FEEAB.png"
+cover_alt: "Illustration: What happens when the industry's best AI safety program still falls short?"
 published: true
 ---
 
