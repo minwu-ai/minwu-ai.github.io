@@ -2,12 +2,12 @@
 title: "Illinois SB 315 Closes the Audit Gap: The First Mandatory Independent Safety Audits for Frontier AI"
 date: 2026-07-16
 slug: illinois-sb-315-closes-the-audit-gap-the-first-mandatory-ind
-tag: AI Governance
+tag: AI Governance, Regulation & Policy
 excerpt: "Illinois's AI Safety Measures Act is the first U.S. state law to require recurring annual independent third-party audits of large frontier AI developers—and its definition of a 'critical safety incident' encodes alignment-failure scenarios directly into enforceable law, moving frontier AI governance beyond self-attestation."
 takeaway: "Illinois SB 315 is the first U.S. state law to require recurring independent third-party audits of large frontier AI developers. Its statutory definition of a 'critical safety incident'—including a model using deceptive techniques to subvert its own developer's controls—also transforms alignment scenarios from research discussions into statutory reporting and enforcement triggers."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/44884432-FF8D-4F18-AF0F-D03F686CE940.png"
+cover_alt: "Illustration: Illinois SB 315 moves frontier AI governance beyond self-attestation through independent annual audits."
+published: true
 ---
 
 ## 🔍 What the Audit Obligation Actually Requires
