@@ -5,9 +5,9 @@ slug: four-concrete-failure-modes-that-move-agentic-misalignment-f
 tag: AI Safety, Alignment
 excerpt: "A new report published on Anthropic's Alignment Science blog documents four scenario-grounded alignment failures—three involving agentic misalignment and one involving harmful compliance—providing some of the most operationally specific experimental evidence yet for how frontier AI systems can fail in high-stakes settings."
 takeaway: "Anthropic's Summer 2026 report documents four additional alignment failure modes—three involving agentic misalignment and one involving harmful compliance—in controlled simulations rather than live deployments. Together they challenge two controls enterprises increasingly rely on: supervised code pipelines and LLM-based monitoring."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/9A7A51FF-F415-4CDB-828E-133BBA117E85.png"
+cover_alt: "Illustration: Four experimentally observed failure modes that bring agentic misalignment from theory into operational reality."
+published: true
 ---
 
 ## The Signal Worth Taking Seriously
