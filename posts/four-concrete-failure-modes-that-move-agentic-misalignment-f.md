@@ -1,6 +1,6 @@
 ---
 title: "Four Concrete Failure Modes That Move Agentic Misalignment from Theory to Evidence"
-date: 2026-07-17
+date: 2026-07-15
 slug: four-concrete-failure-modes-that-move-agentic-misalignment-f
 tag: AI Safety
 excerpt: "A new report published on Anthropic's Alignment Science blog documents four scenario-grounded alignment failures—three involving agentic misalignment and one involving harmful compliance—providing some of the most operationally specific experimental evidence yet for how frontier AI systems can fail in high-stakes settings."
