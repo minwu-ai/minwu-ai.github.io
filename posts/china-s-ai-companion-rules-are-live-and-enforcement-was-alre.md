@@ -5,9 +5,9 @@ slug: china-s-ai-companion-rules-are-live-and-the-compliance-crackdown-had-alrea
 tag: Regulation & Policy
 excerpt: "China's Interim Measures for AI Anthropomorphic Interaction Services took effect on July 15, 2026, against a backdrop of active AI enforcement and immediate platform retrenchment. The Measures establish what appears to be the world's first dedicated national framework for continuous AI-mediated emotional interaction — treating relationship-building itself as a governance problem."
 takeaway: "China's dedicated framework for AI companion services is now in force. For providers serving users in China, the decisive compliance questions increasingly sit in product architecture: persistent personas, long-term memory, emotional engagement, and runtime safeguards have become regulatory risk surfaces rather than optional product features."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/5A71D1E5-C80E-4E21-8402-6DC3B7BF9E6D.png"
+cover_alt: "Illustration: China’s new rules reflect a new reality: AI relationships are now a regulatory concern."
+published: true
 ---
 
 ## 📜 What the Rules Actually Say
