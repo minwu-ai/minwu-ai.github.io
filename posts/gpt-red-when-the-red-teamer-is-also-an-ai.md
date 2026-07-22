@@ -1,6 +1,6 @@
 ---
 title: "GPT-Red: When the Red-Teamer Is Also an AI"
-date: 2026-07-2
+date: 2026-07-20
 slug: gpt-red-when-the-red-teamer-is-also-an-ai
 tag: AI Safety
 excerpt: "OpenAI's internal automated red-teaming model GPT-Red found successful attacks in 84% of held-out prompt injection scenarios against GPT-5.1, compared with 13% for participating human red-teamers. Its attacks are now used directly to train GPT-5.6, signaling a shift toward continuous AI-assisted adversarial training alongside human and third-party review."
