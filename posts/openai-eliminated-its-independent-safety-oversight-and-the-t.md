@@ -5,9 +5,9 @@ slug: openai-folded-safety-deeper-into-research-and-why-the-timing-raises-a-gove
 tag: AI Governance
 excerpt: "OpenAI's July 11 reorganization places its safety teams more firmly within the research organization just as increasingly capable agentic models enter enterprise workflows. The move reflects a genuine engineering need—but also raises an enduring governance question: how much independent challenge should remain as AI capabilities accelerate?"
 takeaway: "Embedding safety into frontier AI development is necessary as release cycles accelerate. But integration should complement—not replace—independent challenge. The question is no longer whether safety belongs in research; it is whether enough organizational independence remains to challenge deployment decisions when it matters most."
-cover: "/assets/"
+cover: "/assets/CF3AE221-1180-4B2C-A9F7-05C23844ED57.png"
 cover_alt: "Illustration: AI safety and research converging within an organizational structure."
-published: false
+published: true
 ---
 
 ## ⚖️ What Actually Changed
