@@ -12,7 +12,7 @@ published: false
 
 The second half of my England journey became less about moving from one destination to another and more about experiencing the traditions that have shaped the country's identity for centuries.
 
-**📷 [Insert Photo: Liverpool Waterfront at Night]**
+![Liverpool Waterfront at Night](/assets/)
 
 Liverpool was my base for the week, but the city offered much more than I expected. Beyond its rich maritime history and musical legacy, the waterfront comes alive after sunset, blending historic docklands with modern architecture. It was the perfect gateway to the experiences that followed.
 
@@ -22,13 +22,13 @@ The main reason for this trip was **The Open Championship**.
 
 Watching The Open in person is unlike watching any other sporting event. The links landscape is every bit as much a competitor as the players themselves—firm fairways, deep pot bunkers, unpredictable bounces, and coastal winds that can transform the same hole within minutes.
 
-**📷 [Insert Photo: The Open – 18th Green & Grandstand]**
+![The Open – 18th Green & Grandstand](/assets/)
 
 Standing beside the 18th green as the championship unfolded, I finally understood why The Open occupies such a special place in golf. The atmosphere wasn't loud or theatrical—it was built on history, respect, patience, and an appreciation for great shot-making. Every player, every spectator, and every volunteer seemed to understand they were participating in something much bigger than a single tournament.
 
 One moment that will stay with me came earlier on the course, at the 7th green, where I watched Tommy Fleetwood hole an unforgettable long putt. Television captures the result, but being there lets you experience the anticipation, the silence before impact, and the eruption of the crowd all at once.
 
-**📷 [Insert Photo: 7th Green – Tommy Fleetwood]**
+![7th Green – Tommy Fleetwood](/assets/)
 
 ---
 
@@ -36,17 +36,17 @@ As memorable as the championship was, playing golf across England and Wales beca
 
 Beginning at **Formby Golf Club**, I had the very first tee time of the day—6:30 in the morning. Walking onto an almost empty course as the sun rose over the links was one of those rare golfing experiences that you never forget. The quiet morning, golden light, and classic links terrain reminded me why early tee times are often the best ones.
 
-**📷 [Insert Photo: Formby Golf Club – Sunrise]**
-
-Later in the trip, **The Oxfordshire Golf Club** offered an entirely different experience. Wide fairways, strategic bunkering, and immaculate conditioning showcased a modern championship design that contrasted beautifully with the traditional links courses I had been playing.
-
-**📷 [Insert Photo: The Oxfordshire Golf Club]**
+![Formby Golf Club – Sunrise](/assets/)
 
 And then there was **Nefyn Golf Club**.
 
 Perched high above the Irish Sea, few golf courses I've played combine scenery and golf as naturally as Nefyn. Every hole seemed to frame another breathtaking stretch of coastline. Even without a golf club in hand, it would have been worth the journey.
 
-**📷 [Insert Photo: Nefyn Golf Club]**
+![Nefyn Golf Club](/assets/)
+
+Later in the trip, **The Oxfordshire Golf Club** offered an entirely different experience. Wide fairways, strategic bunkering, and immaculate conditioning showcased a modern championship design that contrasted beautifully with the traditional links courses I had been playing.
+
+![The Oxfordshire Golf Club](/assets/)
 
 ---
 
@@ -54,13 +54,13 @@ Beyond golf, I made time for two places that had been on my list for years.
 
 Growing up reading Sherlock Holmes, visiting **221B Baker Street** felt like stepping into one of literature's most recognizable fictional worlds. The museum is a celebration of imagination as much as history, and it was surprisingly enjoyable to see how faithfully the Victorian setting has been recreated.
 
-**📷 [Insert Photo: Sherlock Holmes Museum]**
+![Sherlock Holmes Museum](/assets/)
 
 Later, a quiet evening walk through Oxford became one of the most peaceful moments of the trip.
 
 Once the daytime crowds had disappeared, the colleges, courtyards, and historic buildings took on an almost timeless atmosphere. Walking through centuries of academic history after dark made it easy to appreciate why Oxford has inspired generations of scholars, scientists, writers, and leaders.
 
-**📷 [Insert Photo: Oxford Night Walk]**
+![Oxford Night Walk](/assets/)
 
 ---
 
