@@ -5,9 +5,9 @@ slug: england-part-ii-where-traditions-endure
 tag: Life
 excerpt: "The second half of my England trip moved from The Open Championship at Royal Birkdale to sunrise golf at Formby, coastal links at Nefyn, and quiet evenings at Baker Street and Oxford — a week built around traditions that have endured for generations."
 takeaway: "Some journeys aren't about covering more ground. They're about understanding fewer places a little more deeply, through the traditions that shaped them."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/IMG_5701.jpeg"
+cover_alt: "154th Open Championship at Royal Birkdale"
+published: true
 ---
 
 The second half of my England journey became less about moving from one destination to another and more about experiencing the traditions that have shaped the country's identity for centuries.
