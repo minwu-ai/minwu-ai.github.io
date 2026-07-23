@@ -60,7 +60,7 @@ Later, a quiet evening walk through Oxford became one of the most peaceful momen
 
 Once the daytime crowds had disappeared, the colleges, courtyards, and historic buildings took on an almost timeless atmosphere. Walking through centuries of academic history after dark made it easy to appreciate why Oxford has inspired generations of scholars, scientists, writers, and leaders.
 
-![Oxford Night Walk](/assets/)
+![Oxford Night Walk](/assets/IMG_5797.jpeg)
 
 ---
 
