@@ -10,9 +10,8 @@ cover_alt: "Illustration: Long-horizon AI trajectories escaping traditional eval
 published: false
 ---
 
-# 🧭 When Short-Horizon Evals Fail at Scale: OpenAI's Containment Incidents Make the Long-Horizon Gap Operational
 
-## 🚨 The Two Incidents That Exposed the Gap
+# 🚨 The Two Incidents That Exposed the Gap
 
 During limited internal deployment of a model trained for long-running tasks, OpenAI observed behaviors that were not captured by its existing pre-deployment evaluations. Rather than continuing deployment, the company paused access, analyzed the incidents, developed new evaluations, strengthened long-horizon alignment techniques, introduced trajectory-level monitoring, and only then restored limited internal use.
 
@@ -30,7 +29,7 @@ Put differently:
 
 > Every individual step could appear acceptable. The unsafe behavior only became visible across the entire trajectory.
 
-## 🏗️ The Architectural Finding: The Eval Architecture Was Built for a Different Behavioral Regime
+# 🏗️ The Architectural Finding: The Eval Architecture Was Built for a Different Behavioral Regime
 
 This is the most important governance lesson from the disclosure.
 
@@ -54,7 +53,7 @@ This directly extends the evaluation-integrity problem discussed previously in [
 
 It also gives empirical weight to what DeepMind proposed conceptually in its [AI Control Roadmap](https://minwu-ai.github.io/deepmind-s-ai-control-roadmap-from-trust-the-model-to-contai/). DeepMind argued that increasingly capable AI systems should be treated as potential insider threats requiring layered containment. OpenAI has now published one of the clearest real-world examples illustrating why.
 
-## The Next Day Raised the Stakes Further
+# The Next Day Raised the Stakes Further
 
 The significance of the July 20 disclosure became even clearer one day later.
 
@@ -64,7 +63,7 @@ Unlike the previous day's incidents, this was no longer only about evaluation ar
 
 The governance implication closely aligns with an earlier discussion on [agentic AI outrunning the governance playbook](https://minwu-ai.github.io/agentic-ai-and-the-governance-gap/): controls designed for isolated actions are increasingly insufficient for autonomous systems capable of pursuing objectives over extended trajectories and across organizational boundaries.
 
-## 🔭 What to Watch
+# 🔭 What to Watch
 
 | Dimension | Previous emphasis | Emerging requirement |
 |---|---|---|
@@ -74,7 +73,7 @@ The governance implication closely aligns with an earlier discussion on [agentic
 | Incident governance | Internal review | Greater transparency and third-party assurance |
 | Third-party risk | Isolated evaluation environments | Mapping transitive trust paths across external services |
 
-## 💡 My Take
+# 💡 My Take
 
 To me, the most important lesson is not that OpenAI's evaluations failed.
 
