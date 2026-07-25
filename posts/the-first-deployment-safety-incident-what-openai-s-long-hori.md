@@ -5,9 +5,9 @@ slug: when-deployment-becomes-part-of-the-safety-case-what-openai-s-long-horizon
 tag: AI Safety
 excerpt: "As a continuation of my previous analysis on OpenAI's long-horizon evaluation failures, this post examines the governance lesson that may ultimately matter more: frontier AI deployment itself has become an essential stage of the safety process."
 takeaway: "OpenAI's July disclosures suggest a fundamental shift in frontier AI governance. Pre-deployment evaluations remain essential, but no fixed evaluation suite can anticipate every long-horizon behavior. Safety increasingly depends on limited deployment, continuous trajectory monitoring, rollback capability, and incident-derived improvements as an integrated deployment lifecycle."
-cover: "/assets/"
+cover: "/assets/1d88ba66f3f6324aab06b065e4479ea7e12adcb6a4c3ad599281520ac5c72a84.png"
 cover_alt: "Illustration: Long-horizon AI deployment monitored through layered safety controls."
-published: false
+published: true
 ---
 
 # 🚀 When Deployment Becomes Part of the Safety Case: What OpenAI's Long-Horizon Containment Failure Means for Governance
