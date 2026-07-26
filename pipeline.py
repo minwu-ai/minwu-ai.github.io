@@ -51,6 +51,18 @@ FOCUS_TOPICS = [
     "AI regulation and policy",
     "enterprise AI adoption and risk",
     "notable frontier model releases",
+    "academic research on AI safety, interpretability, evaluation, auditing, and risk "
+    "(arXiv papers and the followed researchers below)",
+]
+
+# Academic researchers to follow — surface and read their NEW papers/writing (arXiv,
+# Google Scholar, personal sites) as post material. (name, focus, home page). Edit freely.
+FOLLOWED_RESEARCHERS = [
+    ("Neel Nanda", "mechanistic interpretability", "https://www.neelnanda.io/"),
+    ("Been Kim", "explainability / concept-based interpretability", "https://beenkim.github.io/"),
+    ("Jacob Steinhardt", "ML safety, evaluation, robustness", "https://jsteinhardt.stat.berkeley.edu/"),
+    ("Dan Hendrycks", "AI safety benchmarks and catastrophic risk", "https://www.safe.ai/"),
+    ("Inioluwa Deborah Raji", "algorithmic auditing and accountability", "https://rajiinio.github.io/"),
 ]
 
 WEB_SEARCH = {"type": "web_search_20250305", "name": "web_search"}
@@ -99,6 +111,42 @@ def _sources_preference():
     )
 
 
+def _researchers_preference():
+    who = "; ".join("{} ({}) — {}".format(n, u, f) for n, f, u in FOLLOWED_RESEARCHERS)
+    return (
+        "FOLLOW ACADEMIC RESEARCH: actively track and surface NEW papers/writing "
+        "(roughly the last 2 weeks) from these researchers as post material — check "
+        "arXiv, Google Scholar, and their sites: " + who + ". Also scan arXiv "
+        "(cs.LG / cs.AI / cs.CY) for notable AI-safety, interpretability, evaluation, "
+        "or auditing papers. Papers on arXiv are open-access — read the abstract and "
+        "intro, and cite the arXiv URL. A rigorous paper is excellent post material."
+    )
+
+
+def _coverage_summary():
+    """Recent published-post distribution, to steer discovery toward under-covered topics."""
+    from collections import Counter
+    counts = Counter()
+    for path in glob.glob(os.path.join(POSTS_DIR, "*.md")):
+        meta = _read_frontmatter(path)
+        if str(meta.get("published", "true")).lower() == "false":
+            continue
+        for t in str(meta.get("tag", "")).split(","):
+            t = t.strip()
+            if t:
+                counts[t] += 1
+    cats = ["AI Safety", "AI Governance", "Alignment", "Evaluation", "Agentic AI",
+            "Regulation & Policy", "Industry"]
+    line = ", ".join("{} ({})".format(c, counts.get(c, 0)) for c in cats)
+    return (
+        "CURRENT COVERAGE (published posts per category): " + line + ". The blog is "
+        "over-concentrated in AI Safety and AI Governance. Keep featuring those regularly "
+        "but do NOT let them dominate — actively PRIORITISE the under-covered categories "
+        "(especially any with 0-2 posts, e.g. Alignment, Evaluation, Agentic AI, "
+        "Regulation & Policy, Industry) so coverage balances across the site over time."
+    )
+
+
 # Corroboration bar — what counts as trustworthy enough to write about.
 CORROBORATION_RULE = (
     "CORROBORATION BAR (required): treat a development as established fact ONLY if "
@@ -123,12 +171,14 @@ FORMAT_GUIDE = (
     "EMOJI: you MAY use one tasteful emoji as a signpost at the start of a section "
     "heading (at most one per heading); never mid-sentence, and omit emoji entirely "
     "if the topic is serious (incidents, harm, regulation enforcement).\n"
-    "VISUALS: do NOT embed external images (link rot / licensing). When a process, "
-    "timeline, comparison, or relationship would genuinely be clearer as a diagram, "
-    "you MAY include ONE simple, syntactically-valid Mermaid diagram in a ```mermaid "
-    "fenced code block (flowchart, timeline, or sequence). Keep it small and correct; "
-    "omit it entirely if a diagram wouldn't add real value. Otherwise rely on text "
-    "formatting.\n"
+    "VISUALS (encouraged): do NOT embed external images (link rot / licensing), but "
+    "ACTIVELY look for a chance to illustrate. Whenever the content involves a process, "
+    "workflow, comparison, taxonomy, timeline, hierarchy, or relationship, INCLUDE a "
+    "simple, syntactically-valid Mermaid diagram in a ```mermaid fenced code block "
+    "(flowchart, timeline, sequence, or mindmap) — you may include up to TWO small "
+    "diagrams if they genuinely aid understanding. A markdown comparison table is also "
+    "encouraged where apt. Keep diagrams small, correct, and readable; omit only if a "
+    "visual truly adds nothing.\n"
     "CITATIONS (required): weave clickable INLINE hyperlinks into the prose — link the "
     "specific words that carry a factual claim straight to the primary source, as "
     "markdown [phrase](https://...). Do NOT add a separate 'Sources' or 'References' "
@@ -170,9 +220,10 @@ DRAFT_SYSTEM = (
     "TITLE: <the title on a single line>\n"
     "EXCERPT: <one-sentence summary on a single line>\n"
     "TAG: <one or two best-fit subject categories from EXACTLY this list, "
-    "comma-separated (use ONE normally; use TWO only if the piece genuinely belongs "
-    "to both): AI Governance, AI Safety, Alignment, Evaluation, Agentic AI, "
-    "Regulation & Policy, Industry>\n"
+    "comma-separated. Use TWO categories WHENEVER the piece genuinely spans two areas "
+    "(this is encouraged, e.g. 'Agentic AI, AI Governance'); use one only if it clearly "
+    "fits a single category. Choose from: AI Governance, AI Safety, Alignment, "
+    "Evaluation, Agentic AI, Regulation & Policy, Industry>\n"
     "TAKEAWAY: <a '1-minute takeaway' in 1-2 sentences — the single most important "
     "point, specific and plainly stated>\n"
     "BODY:\n"
@@ -256,25 +307,31 @@ def _discovery_prompt(count, focus=None):
     focus_line = "; ".join(focus or FOCUS_TOPICS)
     return (
         f"Find the {count} most significant, recent AI developments (roughly the last "
-        "48 hours) worth writing about. Prefer concrete news (releases, regulation, "
-        "research, incidents) over evergreen topics. General areas of interest: "
-        f"{focus_line}.\n\n"
+        "48 hours) worth writing about, INCLUDING notable new academic research/papers. "
+        "Prefer concrete items (releases, regulation, research papers, incidents) over "
+        f"evergreen topics. General areas of interest: {focus_line}.\n\n"
+        + _coverage_summary() + "\n\n"
         "REQUIRED MIX (this is a candidate list; extras are backups in case some can't "
         "be corroborated):\n"
-        "- The FIRST TWO topics MUST each be squarely about AI SAFETY (e.g. alignment, "
-        "dangerous capabilities, evaluations/red-teaming, oversight, control, security "
-        "of AI systems, safety policy) — distinct stories.\n"
-        "- The REMAINING topics should span DIFFERENT categories, whichever are most "
-        "newsworthy: AI Governance, Alignment, Evaluation, Agentic AI, Regulation & "
-        "Policy, Industry. Vary them. Order them best-first.\n\n"
+        "- Candidates must span DIFFERENT categories — do not return two topics in the "
+        "same category.\n"
+        "- PRIORITISE under-covered categories per the coverage stats above. AI Safety "
+        "and AI Governance may appear but must NOT both dominate; include Alignment, "
+        "Evaluation, Agentic AI, Regulation & Policy, or Industry whenever there's a real "
+        "story.\n"
+        "- Include at least one candidate grounded in ACADEMIC research (an arXiv paper "
+        "or a followed researcher's new work) whenever a notable one exists.\n"
+        "- Order candidates best-first.\n\n"
         + _sources_preference() + "\n\n"
+        + _researchers_preference() + "\n\n"
         + CORROBORATION_RULE + " Only propose topics that clear this bar.\n\n"
         "AVOID REDUNDANCY: a list of posts already published on this site is provided "
         "below. Do NOT propose a topic that merely repeats one of them. Revisiting a "
         "topic is fine ONLY if there's a genuine new development or new angle — if so, "
         "note in the angle what's new and which prior post it follows up.\n\n"
-        "For each topic, set 'category' to the best-fit category name (the first topic's "
-        "category is normally 'AI Safety'). Return ONLY a JSON array, no markdown:\n"
+        "For each topic, set 'category' to the best-fit category from: AI Safety, AI "
+        "Governance, Alignment, Evaluation, Agentic AI, Regulation & Policy, Industry. "
+        "Return ONLY a JSON array, no markdown:\n"
         '[{"topic": "...", "angle": "...", "category": "..."}]'
     )
 
@@ -444,16 +501,9 @@ def run_scheduled(count, focus=None, dry_run=False):
     print(f"Done — saved {saved} of {target} target draft(s).")
 
 
-def _is_safety(cand):
-    s = (cand.get("category", "") + " " + cand.get("topic", "")).lower()
-    return "ai safety" in s or "safety" in cand.get("category", "").lower()
-
-
 def _select_and_draft(candidates, target):
-    """Save `target` drafts: one guaranteed AI-safety post, the rest distinct
-    categories. Skips topics that can't be cited; backfills from the remainder."""
-    safety = [c for c in candidates if _is_safety(c)]
-    others = [c for c in candidates if not _is_safety(c)]
+    """Save `target` drafts across DISTINCT categories, in discovery order (which is
+    coverage-balanced). Skips topics that can't be cited; backfills if still short."""
     saved, used_cats = 0, set()
 
     def attempt(cand):
@@ -463,7 +513,8 @@ def _select_and_draft(candidates, target):
         instruction = (
             f"Write an analytical piece about: {cand['topic']}. "
             f"Angle: {cand.get('angle', '')}. "
-            f"This belongs in the '{cat}' category; set TAG accordingly. "
+            f"This belongs in the '{cat}' category; set TAG accordingly (add a second "
+            "category too if the piece genuinely spans two). "
             "Research it with web search first, cross-referencing multiple sources."
         )
         article = draft_with_sourcing(instruction)
@@ -474,20 +525,15 @@ def _select_and_draft(candidates, target):
         used_cats.add(cat)
         saved += 1
 
-    # 1) Guarantee one AI-safety post.
-    for c in safety:
-        if saved >= 1:
-            break
-        attempt(c)
-    # 2) Fill remaining slots with DISTINCT categories from the rest.
-    for c in others:
+    # Pass 1: fill with DISTINCT categories, in discovery (coverage-balanced) order.
+    for c in candidates:
         if saved >= target:
             break
         if (c.get("category", "").strip() or "Industry") in used_cats:
             continue
         attempt(c)
-    # 3) Backfill anything still short (extra safety / repeat categories).
-    for c in safety[1:] + others:
+    # Pass 2: backfill with anything remaining if still short.
+    for c in candidates:
         if saved >= target:
             break
         attempt(c)
