@@ -98,7 +98,7 @@ The mechanisms differ, but perhaps the continuity deserves more attention than t
 
 Whether AI represents adaptation, imposed order, or both remains an open question in my mind.
 
-# ⚖️ Is Every Existing Order "Natural"?
+# 🎬 A Thought Experiment from *Breaking Bad*
 
 This thought experiment came to mind while reflecting on the television series *Breaking Bad*.
 
