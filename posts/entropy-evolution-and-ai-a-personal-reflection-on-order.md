@@ -5,9 +5,9 @@ slug: entropy-evolution-and-ai-a-personal-reflection-on-order
 tag: Life
 excerpt: "A personal reflection on whether the order we create—from life to civilizations to AI—is an act of adaptation, an act of imposition, or perhaps both."
 takeaway: "The more I think about entropy, evolution, and AI, the less certain I become that 'order' and 'disorder' are opposites. Perhaps they are simply different perspectives on the same process."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/49a95181e8cfdaf9d23b2a5c83d123e5e826d50730d6a8e0d0762c1dc827c45e.png"
+cover_alt: "Illustration:  Entropy, Evolution, and AI"
+published: true
 ---
 
 > *This is not an argument or a conclusion. It is simply a snapshot of my current thinking. I suspect many of these ideas have been explored before by scientists and philosophers far more deeply than I have. My goal here is merely to record the questions that seem worth returning to.*
