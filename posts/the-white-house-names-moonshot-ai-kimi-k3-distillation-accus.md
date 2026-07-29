@@ -1,13 +1,13 @@
 ---
 title: "The White House Accuses Moonshot AI: The Kimi K3 Distillation Dispute Opens a New Front in U.S.-China AI Competition"
-date: 2026-07-24
+date: 2026-07-28
 slug: the-white-house-names-moonshot-ai-kimi-k3-distillation-accus
 tag: Regulation & Policy
 excerpt: "For one of the clearest instances to date, a senior U.S. official publicly accused a specific Chinese AI lab of distilling a specific American frontier model. Whether the allegation is ultimately proven or not, the dispute exposes a deeper governance challenge that extends well beyond one company."
 takeaway: "The White House's accusation against Moonshot is more than a dispute over one model—it exposes a structural governance mismatch. Existing policy tools are increasingly effective at regulating chips, companies, and cloud infrastructure, but far less prepared to govern model lineage, synthetic knowledge transfer, and globally distributed open weights."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/b7eee1e79c0123625d191934d4bb58f2437473e02719ed776a1b124c652b75fb.png"
+cover_alt: "Illustration:  When AI becomes information, governance becomes the challenge."
+published: true
 ---
 
 ## 🚨 What Makes Kimi K3 Significant Enough to Name
