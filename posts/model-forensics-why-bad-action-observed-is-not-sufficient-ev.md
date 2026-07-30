@@ -1,13 +1,13 @@
 ---
 title: "Model Forensics: Why 'Bad Action Observed' Is Not Sufficient Evidence of Misalignment"
-date: 2026-07-28
+date: 2026-07-29
 slug: model-forensics-why-bad-action-observed-is-not-sufficient-ev
 tag: Alignment, Evaluation
 excerpt: "A new Google DeepMind paper by Singh, Kroiz, Rajamanoharan, and Nanda introduces a structured investigative protocol for determining whether concerning AI behavior reflects genuine misalignment or benign confusion — a methodological shift that raises the evidentiary standard for alignment research."
 takeaway: "Treating a concerning AI action as evidence of misalignment is epistemically insufficient. Model forensics proposes a structured, iterative protocol — generate hypotheses from available reasoning traces, then test them through environmental perturbations — to distinguish genuine malign intent from benign confusion before escalating or relaxing controls."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/5b9f9b3a9af662662ec58f46117afec2d7befaa0cdc2cabed6fdc1b25511c5d4.png"
+cover_alt: "Illustration: Misalignment is a conclusion—not an observation"
+published: true
 ---
 
 ## 🔍 The Problem: Safety Research Has Stopped One Step Too Soon
