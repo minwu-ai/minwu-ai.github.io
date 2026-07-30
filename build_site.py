@@ -61,6 +61,11 @@ TOPICS = [
 # (name, short description, repo URL). The shared avatar is assets/axiom-avatar.svg.
 PROJECT_AVATAR = "/assets/axiom-avatar.svg"
 PROJECTS = [
+    ("GenAI Alignment",
+     "A scenario library and testing framework for GenAI alignment — objective drift, "
+     "robustness, and agentic/enterprise risk — tested against Azure OpenAI and Claude, "
+     "with audit-ready findings mapped to governance frameworks.",
+     "https://github.com/minw0607/genai_alignment"),
     ("Regulus",
      "AI governance standards lookup powered by RAG and knowledge graphs — retrieves "
      "applicable risks and cross-referenced guidance across NIST AI RMF, SR 26-2, the "
