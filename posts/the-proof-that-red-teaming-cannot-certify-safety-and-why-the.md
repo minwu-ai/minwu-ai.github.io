@@ -5,9 +5,9 @@ slug: the-mathematical-limit-of-red-team-safety-claims-and-why-the-eu-ai-act-nee
 tag: Evaluation, AI Governance
 excerpt: "A formal arXiv analysis first posted on July 23 derives a mathematical ceiling on the safety claims AI red-team evaluations can support, arriving just days before Microsoft's EXTRA initiative and one week after the ExploitGym incident illustrated the practical challenges of evaluating frontier models."
 takeaway: "Bandana Kaur's arXiv:2607.21735 shows that red-team evidence is mathematically bounded: demonstrated failures confirm dangerous capability, while clean evaluations support only carefully scoped safety claims whose strength depends on the harm rate, elicitation sensitivity, sample size, and statistical assumptions. That distinction has important implications for how regulators interpret AI evaluation results."
-cover: "/assets/"
+cover: "/assets/b0cfc70d29a12788b6a75113a61bf60eb5ce5077f6ed28f0ed5cf8bb905142c1.png"
 cover_alt: "Illustration: The evidential limits of AI red-team evaluations."
-published: false
+published: true
 ---
 
 ## 🎯 The Core Result
