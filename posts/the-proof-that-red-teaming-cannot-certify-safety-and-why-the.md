@@ -5,7 +5,7 @@ slug: the-mathematical-limit-of-ai-safety-evidence-what-red-team-evaluations-can
 tag: Evaluation, AI Governance
 excerpt: "A new theoretical analysis establishes the mathematical limits of what AI red-team evaluations can demonstrate. Rather than diminishing the value of red-teaming, it clarifies exactly what evaluation evidence can—and cannot—justify."
 takeaway: "Bandana Kaur's arXiv:2607.21735 shows that AI red-team evaluations produce mathematically bounded evidence: demonstrated failures confirm dangerous capability, while clean evaluations support only carefully scoped safety claims whose strength depends on the harm rate, elicitation sensitivity, sample size, and statistical assumptions."
-cover: "/assets/b0cfc70d29a12788b6a75113a61bf60eb5ce5077f6ed28f0ed5cf8bb905142c1.png"
+cover: "/assets/9f0567b85366624e400897ae8a0e585f6e91913c7fb4a5c379d0b4dfd1d1ee1d.png"
 cover_alt: "Illustration: The mathematical limits of AI safety evidence."
 published: true
 ---
