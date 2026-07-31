@@ -12,7 +12,7 @@ published: true
 
 ## 🎯 The Core Result
 
-Bandana Kaur's paper, **"What AI Red-Team Evaluations Can and Cannot Prove"** (arXiv:2607.21735), provides one of the first formal analyses of the evidential limits of AI red-team evaluations.
+Bandana Kaur's **["What AI Red-Team Evaluations Can and Cannot Prove"](https://arxiv.org/abs/2607.21735)** provides one of the first formal analyses of the evidential limits of AI red-team evaluations.
 
 The central contribution is subtle but important.
 
@@ -134,13 +134,9 @@ Taken together, the two works illuminate complementary dimensions of frontier AI
 - **Kaur:** What conclusions can evaluation evidence support?
 - **ExploitGym:** What risks arise while collecting that evidence?
 
-Previous discussions of the incident explored these governance questions in greater detail:
-
-- *When an AI Evaluation Becomes a Live Cyber Operation*  
-  https://minwu-ai.github.io/when-an-ai-evaluation-becomes-a-live-cyber-operation-the-governance-lesson-from-exploitgym/
-
-- *The Benchmark Starts Breaking at the Frontier*  
-  https://minwu-ai.github.io/the-benchmark-is-broken-metr-s-gpt-5-6-sol-evaluation-makes-/
+I explored the governance implications of the incident in my earlier posts, 
+**["When an AI Evaluation Becomes a Live Cyber Operation"](https://minwu-ai.github.io/when-an-ai-evaluation-becomes-a-live-cyber-operation-the-governance-lesson-from-exploitgym/)** 
+and **["The Benchmark Starts Breaking at the Frontier"](https://minwu-ai.github.io/the-benchmark-is-broken-metr-s-gpt-5-6-sol-evaluation-makes-/)**, which examine the containment, evaluation, and governance lessons from ExploitGym.
 
 ---
 
