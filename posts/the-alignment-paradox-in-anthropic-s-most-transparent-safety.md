@@ -5,9 +5,9 @@ slug: why-anthropic-s-opus-5-system-card-should-change-how-we-read
 tag: Alignment, AI Safety
 excerpt: "Claude Opus 5's system card reports Anthropic's strongest alignment results alongside its highest publicly disclosed offensive cyber capability evaluation—illustrating that alignment and capability are complementary, not interchangeable, dimensions of AI safety."
 takeaway: "A model can simultaneously exhibit Anthropic's lowest observed rate of concerning autonomous behavior while successfully completing enterprise cyber attack tasks in 8 of 10 UK AISI evaluations. The governance lesson is not a contradiction, but a reminder that alignment and capability measure fundamentally different properties and must be interpreted together."
-cover: "/assets/"
+cover: "/assets/b4139ff622c18411a47a842943ae526b3fb04f46c02593531b7aca809b780b21.png"
 cover_alt: "Illustration: Two intersecting axes labeled 'Alignment' and 'Capability', highlighting that AI safety depends on evaluating both."
-published: false
+published: true
 ---
 
 ## 📊 The Alignment Numbers, Precisely
