@@ -12,7 +12,7 @@ published: true
 
 ## Another AI Copyright Lawsuit?
 
-On July 31, 2026, Judge Paul Engelmayer of the U.S. District Court for the Southern District of New York largely denied motions to dismiss Reddit's lawsuit against Perplexity and SerpApi in **_Reddit Inc. v. SerpApi LLC et al._** ([Opinion](https://storage.courtlistener.com/recap/gov.uscourts.nysd.651592/gov.uscourts.nysd.651592.155.0.pdf)). The decision, which was also reported by [Reuters](https://www.reuters.com/legal/litigation/perplexity-ai-loses-bid-toss-reddit-lawsuit-over-data-scraping-2026-07-31/), allows most of Reddit's principal claims to proceed to discovery while dismissing several state-law claims.
+On July 31, 2026, Judge Paul Engelmayer of the U.S. District Court for the Southern District of New York largely denied motions to dismiss Reddit's lawsuit against Perplexity and SerpApi in **_Reddit Inc. v. SerpApi LLC et al._** ([Opinion](https://www.courtlistener.com/docket/71720563/reddit-inc-v-serpapi-llc/)). The decision, which was also reported by [Reuters](https://www.reuters.com/legal/litigation/perplexity-ai-loses-bid-toss-reddit-lawsuit-over-data-scraping-2026-07-31/), allows most of Reddit's principal claims to proceed to discovery while dismissing several state-law claims.
 
 Reddit alleges that SerpApi bypassed Google's anti-bot protections to collect Reddit content at scale, and that Perplexity played more than a passive role in obtaining or using that data. The court did **not** decide whether the defendants ultimately violated the law. It concluded only that Reddit had plausibly alleged sufficient facts for the litigation to continue.
 
@@ -41,7 +41,7 @@ Likewise, cybersecurity and digital-access laws have long prohibited bypassing t
 None of these legal principles are new.
 
 The Digital Millennium Copyright Act (DMCA) was enacted in 1998—long before anyone imagined today's frontier AI systems. 
-As Judge Engelmayer notes in the opinion, Congress originally enacted the statute to combat digital piracy, while AI has now "added a new dimension" to questions surrounding copyrighted works and technological protection measures ([Opinion](https://storage.courtlistener.com/recap/gov.uscourts.nysd.651592/gov.uscourts.nysd.651592.155.0.pdf)).
+As Judge Engelmayer notes in the opinion, Congress originally enacted the statute to combat digital piracy, while AI has now "added a new dimension" to questions surrounding copyrighted works and technological protection measures ([Opinion](https://www.courtlistener.com/docket/71720563/reddit-inc-v-serpapi-llc/)).
 
 So perhaps the most interesting question is not whether the rules have changed.
 
