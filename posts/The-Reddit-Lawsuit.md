@@ -79,25 +79,10 @@ The more interesting question is whether AI changes **how quickly** that cycle u
 
 ## Traditional Technologies Eventually Stabilize
 
-Most major technologies have followed a broadly similar trajectory.
+Most major technologies have followed a broadly similar trajectory. Traditional technologies typically enter a period of relative maturity, allowing governance, engineering standards, education, and security practices to gradually catch up.
 
-```text
-Capability
-   ▲
-   │                         ───────────────
-   │                    ─────
-   │                ────
-   │            ────
-   │        ────
-   │    ────
-   └──────────────────────────────────────► Time
+assets/6da56f95b01975b964d195d0af69ff885932d987b63277561bd1fc95b1bcfe50.png
 
-      Rapid development      Relative maturity
-                                   ↓
-                         Governance catches up
-```
-
-*Figure 1. Traditional technologies typically enter a period of relative maturity, allowing governance, engineering standards, education, and security practices to gradually catch up.*
 
 Electricity required infrastructure.
 
