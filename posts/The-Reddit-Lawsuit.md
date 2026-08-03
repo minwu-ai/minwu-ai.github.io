@@ -2,12 +2,12 @@
 title: "The Reddit Lawsuit Reveals a Larger AI Governance Question Than Copyright"
 date: 2026-08-03
 slug: the-reddit-lawsuit-reveals-a-larger-ai-governance-question-than-copyright
-tag: AI Governance, Cybersecurity
+tag: AI Governance, Regulation & Policy
 excerpt: "A recent federal ruling allowing Reddit's lawsuit against Perplexity and SerpApi to proceed is widely viewed as another AI copyright dispute. The more interesting question may be what the case reveals about AI's impact on cybersecurity, governance, and the assumptions underlying modern institutions."
 takeaway: "The legal doctrines governing unauthorized access and copyright are not new. What may be changing is the technological environment in which they operate: AI is making sophisticated capabilities cheaper, easier to replicate, globally accessible, and still rapidly evolving. The governance challenge may therefore be less about inventing new rules than about whether existing institutions can adapt quickly enough."
 cover: "/assets/a2a4df02ac0ddf5b56d5b398ef80f946b0acb1fa7b576a7e61050b07930a67b6.png"
 cover_alt: "Conceptual illustration comparing traditional technology maturity with rapidly evolving AI capabilities and governance lag."
-published: false
+published: true
 ---
 
 ## Another AI Copyright Lawsuit?
@@ -81,8 +81,10 @@ The more interesting question is whether AI changes **how quickly** that cycle u
 
 Most major technologies have followed a broadly similar trajectory. Traditional technologies typically enter a period of relative maturity, allowing governance, engineering standards, education, and security practices to gradually catch up.
 
-assets/6da56f95b01975b964d195d0af69ff885932d987b63277561bd1fc95b1bcfe50.png
-
+<figure>
+  <img src="/assets/6da56f95b01975b964d195d0af69ff885932d987b63277561bd1fc95b1bcfe50.png" alt="Traditional technologies mature and stabilize over time, giving institutions room to adapt; AI's capability curve may be rising faster than governance can follow.">
+  <figcaption>Traditional technologies tend to mature and stabilize, giving institutions time to catch up. AI's trajectory may be compressing that window.</figcaption>
+</figure>
 
 Electricity required infrastructure.
 
