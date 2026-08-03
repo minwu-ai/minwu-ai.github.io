@@ -5,7 +5,7 @@ slug: the-reddit-lawsuit-reveals-a-larger-ai-governance-question-than-copyright
 tag: AI Governance, Cybersecurity
 excerpt: "A recent federal ruling allowing Reddit's lawsuit against Perplexity and SerpApi to proceed is widely viewed as another AI copyright dispute. The more interesting question may be what the case reveals about AI's impact on cybersecurity, governance, and the assumptions underlying modern institutions."
 takeaway: "The legal doctrines governing unauthorized access and copyright are not new. What may be changing is the technological environment in which they operate: AI is making sophisticated capabilities cheaper, easier to replicate, globally accessible, and still rapidly evolving. The governance challenge may therefore be less about inventing new rules than about whether existing institutions can adapt quickly enough."
-cover: "/assets/"
+cover: "/assets/a2a4df02ac0ddf5b56d5b398ef80f946b0acb1fa7b576a7e61050b07930a67b6.png"
 cover_alt: "Conceptual illustration comparing traditional technology maturity with rapidly evolving AI capabilities and governance lag."
 published: false
 ---
