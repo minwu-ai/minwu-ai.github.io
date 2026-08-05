@@ -1,13 +1,13 @@
 ---
 title: "Who Decides When to Pull Back? The Governance Question at the Heart of 'Pacing the Frontier'"
-date: 2026-08-03
+date: 2026-08-04
 slug: who-decides-when-to-pull-back-the-governance-question-at-the
 tag: Alignment, AI Governance
 excerpt: "More than 1,300 employees of frontier AI companies — including CEOs, chief scientists, research leaders, and safety specialists — have asked Washington to help develop international technical and governance mechanisms for deliberately pacing AI development before automated AI progress outstrips institutional oversight."
 takeaway: "'Pacing the Frontier' is not an immediate pause letter. It is a request to build the infrastructure that could make coordinated pacing possible before it becomes necessary. Its significance lies not only in what it asks for, but in who is asking — and the governance questions it leaves unanswered."
-cover: "/assets/"
+cover: "/assets/8b484947f41a5db21941f9487bad1dd7951a16a0f8104b19c5cfe7ccb1b65191.png"
 cover_alt: "Illustration: Coordinated governance steering rapidly advancing AI."
-published: false
+published: true
 ---
 
 ## 📝 What the Letter Actually Says
