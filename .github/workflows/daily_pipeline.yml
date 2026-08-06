@@ -9,11 +9,11 @@ on:
     # GitHub cron is best-effort and often drops a slot, so we try several off-peak
     # times each day. A same-day guard (below) ensures only the FIRST one that
     # actually fires produces drafts — the rest no-op, so no duplicate posts.
-    # Mon-Fri: the usual AI drafts. Sat: pipeline.py detects Saturday and instead
-    # drafts a single 'Life' essay. Sunday is off.
-    - cron: '7 6 * * 1-6'    # ~02:07 ET — early so GitHub's delays still land by morning
-    - cron: '43 7 * * 1-6'   # backup ~03:43 ET
-    - cron: '23 9 * * 1-6'   # backup ~05:23 ET
+    # Mon-Fri only. Saturday 'Life' mode exists in pipeline.py (run it by hand with
+    # `python pipeline.py --life`) but is NOT scheduled — change 1-5 to 1-6 to enable.
+    - cron: '7 6 * * 1-5'    # ~02:07 ET — early so GitHub's delays still land by morning
+    - cron: '43 7 * * 1-5'   # backup ~03:43 ET
+    - cron: '23 9 * * 1-5'   # backup ~05:23 ET
   workflow_dispatch:           # also lets you run it manually anytime
 
 permissions:
