@@ -65,11 +65,12 @@ FOLLOWED_RESEARCHERS = [
     ("Inioluwa Deborah Raji", "algorithmic auditing and accountability", "https://rajiinio.github.io/"),
 ]
 
-# ---- Saturday 'Life' run -------------------------------------------------
-# Saturdays are reserved for one Life post: a researched essay in a personal
-# register, NOT a travel diary. The pipeline cannot know where you actually went
-# or who you actually met, so it must never invent personal experience — see
-# LIFE_DRAFT_SYSTEM. Edit this palette freely.
+# ---- Saturday 'Life' briefs ----------------------------------------------
+# Saturdays do NOT auto-draft a Life post. A personal essay's value is the
+# author's own point of view, which the pipeline cannot supply — so instead of
+# writing prose in a borrowed voice, it does the legwork: it surfaces a few
+# researched subjects with verified sources and leaves the writing to you.
+# Edit this palette freely.
 LIFE_TOPICS = [
     ("Golf history & architecture",
      "the origins and design of a famous course or hole, a course architect "
@@ -89,41 +90,7 @@ LIFE_TOPICS = [
      "in the register of the 'Entropy, Evolution, and AI' post"),
 ]
 
-# Life essays get a little more room to breathe than the news analysis.
-LIFE_MAX_WORDS = 900
-
-LIFE_DRAFT_SYSTEM = (
-    "You are writing the Saturday 'Life' essay for a personal website — the one day "
-    "a week the author steps away from AI and writes about history, travel, golf, "
-    "skiing, and people. The reader is curious and intelligent but not a specialist.\n\n"
-    "VOICE: warm, unhurried, and genuinely curious. This is an essay, not a news "
-    "analysis and not a listicle. Lead with something concrete — a scene, a date, an "
-    "odd detail — and let the significance emerge. Short paragraphs. No hype, no "
-    "'in conclusion', no motivational filler.\n\n"
-    "THE HARD RULE — NEVER FABRICATE PERSONAL EXPERIENCE:\n"
-    "You do not know where the author has travelled, what they have played, who they "
-    "have met, or what they own. NEVER invent a trip, a round of golf, a ski run, a "
-    "meal, a conversation, a memory, or a photograph. Do NOT write sentences like 'when "
-    "I played this course', 'on my last visit', or 'I remember standing there'. Write "
-    "as a researched essay ABOUT the subject. First person is allowed ONLY for thought "
-    "and opinion — 'what I find striking is...', 'I've never been convinced that...', "
-    "'the part I keep coming back to is...' — never for invented events.\n\n"
-    "SOURCING: ground the piece in the public record and weave at least two clickable "
-    "inline hyperlinks [phrase](https://...) to solid sources (club and resort "
-    "histories, museums, archives, governing bodies like the R&A or USGA, reputable "
-    "long-form journalism, university and library collections). No end 'Sources' "
-    "section. Never state a date, record, or attribution you could not support.\n\n"
-    f"LENGTH: aim for 600-800 words; never exceed {LIFE_MAX_WORDS}.\n\n"
-    "VISUALS: a short markdown table or a simple timeline can help when there's real "
-    "structure to show, but most of these essays need none. Never invent a photograph.\n\n"
-    "Return the article in EXACTLY this format, and nothing else (no code fences):\n"
-    "TITLE: <the title on a single line>\n"
-    "EXCERPT: <one-sentence summary on a single line>\n"
-    "TAG: Life\n"
-    "TAKEAWAY: <a '1-minute takeaway' in 1-2 sentences — the thought worth keeping>\n"
-    "BODY:\n"
-    "<the full markdown body; may span many lines>"
-)
+LIFE_BRIEF_COUNT = 4      # how many subjects to surface each Saturday
 
 WEB_SEARCH = {"type": "web_search_20250305", "name": "web_search"}
 
@@ -584,84 +551,122 @@ def run_scheduled(count, focus=None, dry_run=False):
     print(f"Done — saved {saved} of {target} target draft(s).")
 
 
-# ---- Mode: Saturday 'Life' essay -----------------------------------------
+# ---- Mode: Saturday 'Life' briefs ----------------------------------------
 
-def _life_discovery_prompt(count):
+def _life_brief_prompt(count):
     palette = "\n".join("- {}: {}".format(n, d) for n, d in LIFE_TOPICS)
     return (
-        f"Propose {count} candidate subjects for a Saturday personal essay on a "
-        "website that spends the rest of the week on AI safety and governance. "
-        "Saturday is the author's day off from AI — these must have NOTHING to do "
-        "with AI, machine learning, or technology policy.\n\n"
+        f"Surface {count} subjects worth writing a personal essay about, for the "
+        "Saturday 'Life' section of a website that spends the rest of the week on AI "
+        "safety and governance. Saturday is the author's day off from AI — these must "
+        "have NOTHING to do with AI, machine learning, or technology policy.\n\n"
+        "You are NOT writing the essay. You are doing the legwork so the author can "
+        "decide whether they have something to say. Give them material and a question, "
+        "never prose in their voice.\n\n"
         "The author's interests, and the palette to choose from:\n" + palette + "\n\n"
-        "WHAT MAKES A GOOD CANDIDATE:\n"
-        "- Evergreen, not news. There is no 'last 48 hours' requirement here.\n"
+        "WHAT MAKES A GOOD SUBJECT:\n"
+        "- Evergreen, not news. There is no recency requirement here.\n"
         "- Specific and concrete: 'Why the Old Course at St Andrews is played "
         "anticlockwise' beats 'the history of golf'. A single course, person, place, "
-        "object, or question — not a survey.\n"
-        "- Genuinely researchable: there must be solid public sources (club and resort "
-        "archives, museums, governing bodies, libraries, reputable long-form "
-        "journalism) so the essay can carry real inline citations.\n"
-        "- Has a story or a surprise in it — something the reader would repeat to "
-        "someone else.\n"
-        "- Candidates must span DIFFERENT entries in the palette above.\n"
-        "- Do NOT propose anything requiring personal experience of the author "
-        "(no 'my trip to...', no 'a round at...'). These are researched essays.\n\n"
-        "Use web search to check each subject has real, citable source material "
-        "before proposing it. Order candidates best-first.\n\n"
+        "object, decision, or question — never a survey.\n"
+        "- Built on a genuine surprise: a fact that reverses an assumption, an origin "
+        "nobody expects, a decision that turned out to matter. If there is no surprise, "
+        "drop the subject.\n"
+        "- Genuinely researchable: real, checkable public sources (club and resort "
+        "archives, museums, governing bodies like the R&A or USGA, university and "
+        "library collections, reputable long-form journalism).\n"
+        "- Subjects must span DIFFERENT entries in the palette above.\n"
+        "- Nothing requiring personal experience of the author — you do not know where "
+        "they have been or what they have played.\n\n"
+        "VERIFY BEFORE YOU PROPOSE: use web search on every subject. Every source URL "
+        "you return must be one you actually found — never guess or construct a URL, "
+        "and never cite a page you did not see. Drop any subject you cannot support "
+        "with at least two real sources.\n\n"
         "AVOID REDUNDANCY: a list of posts already published on this site is provided "
         "below. Do not propose a subject that repeats one of them.\n\n"
-        "Return ONLY a JSON array, no markdown:\n"
-        '[{"topic": "...", "angle": "...", "category": "<palette entry>"}]'
+        "For each subject return:\n"
+        "- topic: the specific subject, as a short phrase\n"
+        "- hook: the surprising fact at its center, in 1-2 sentences of plain "
+        "reporting (facts only — not an opening line for the essay)\n"
+        "- why: one sentence on why this could be worth an essay\n"
+        "- question: ONE genuine question the author would have to answer for "
+        "themselves to make it a real piece — the thing only they can supply\n"
+        "- sources: 2-4 objects with 'title' and 'url', verified via search\n"
+        "- category: which palette entry it belongs to\n\n"
+        "Order best-first. Return ONLY a JSON array, no markdown:\n"
+        '[{"topic": "...", "hook": "...", "why": "...", "question": "...", '
+        '"sources": [{"title": "...", "url": "..."}], "category": "..."}]'
     )
 
 
-def discover_life_topics(count):
+def generate_life_briefs(count=LIFE_BRIEF_COUNT):
     resp = get_client().messages.create(
         model=MODEL,
-        max_tokens=3000,
+        max_tokens=4000,
         tools=[WEB_SEARCH],
         messages=[{"role": "user",
-                   "content": _life_discovery_prompt(count) + published_posts_context()}],
+                   "content": _life_brief_prompt(count) + published_posts_context()}],
     )
-    return (_extract_json(_text_of(resp)) or [])[:count]
+    briefs = _extract_json(_text_of(resp)) or []
+    # Keep only briefs with at least two real-looking source links.
+    clean = []
+    for b in briefs:
+        srcs = [s for s in (b.get("sources") or [])
+                if isinstance(s, dict) and str(s.get("url", "")).startswith("http")]
+        if len(srcs) >= 2:
+            b["sources"] = srcs
+            clean.append(b)
+    return clean[:count]
 
 
-def run_life(dry_run=False):
-    """Saturday: draft exactly one Life essay for review."""
+def life_briefs_markdown(briefs):
+    today = datetime.date.today().isoformat()
+    if not briefs:
+        return ("No Life subjects cleared the bar this week — nothing that had both a "
+                "real surprise and sources to back it. No action needed.\n")
+    out = [
+        f"Saturday reading for {today}. {len(briefs)} subject(s) with the legwork done "
+        "— sources checked, nothing written in your voice.\n",
+        "Write one only if the question at the end is one you actually have a view on. "
+        "Most weeks the honest answer is none, and that's the point.\n",
+    ]
+    for i, b in enumerate(briefs, 1):
+        out.append(f"\n---\n\n### {i}. {b.get('topic', 'Untitled')}")
+        if b.get("category"):
+            out.append(f"*{b['category']}*\n")
+        if b.get("hook"):
+            out.append(f"**The surprise:** {b['hook']}\n")
+        if b.get("why"):
+            out.append(f"**Why it could be an essay:** {b['why']}\n")
+        if b.get("question"):
+            out.append(f"**Your call:** {b['question']}\n")
+        if b.get("sources"):
+            out.append("**Sources:**\n")
+            for s in b["sources"]:
+                out.append("- [{}]({})".format(s.get("title") or s["url"], s["url"]))
+    out.append("\n---\n\nTo write one up with research support:\n"
+               "`python pipeline.py --topic \"<subject>\" --angle \"<your take>\"`\n")
+    return "\n".join(out)
+
+
+def run_life_briefs(dry_run=False, out_path=None):
+    """Saturday: surface researched subjects. Writes no post and no prose."""
     if dry_run:
         print("=" * 70)
-        print("[DRY RUN] Saturday 'Life' mode")
+        print("[DRY RUN] Saturday 'Life' briefs")
         print("=" * 70)
-        print("\n--- SUBJECT-DISCOVERY PROMPT ---\n" + _life_discovery_prompt(4))
-        print("\n--- then drafted with this SYSTEM PROMPT ---\n" + LIFE_DRAFT_SYSTEM)
+        print("\n--- BRIEF PROMPT ---\n" + _life_brief_prompt(LIFE_BRIEF_COUNT))
         print("\n[dry-run] No API call made and no file written.\n")
         return
-    print("Saturday Life essay — finding a subject...")
-    candidates = discover_life_topics(4)
-    if not candidates:
-        print("No Life subjects found; nothing drafted.")
-        return
-    for cand in candidates:
-        print(f"Drafting: {cand['topic']}")
-        instruction = (
-            f"Write the Saturday Life essay about: {cand['topic']}. "
-            f"Angle: {cand.get('angle', '')}. "
-            "Research it with web search first and cite real sources inline. "
-            "Remember: this is a researched essay — do not invent any personal "
-            "experience of the author. Set TAG to exactly 'Life'."
-        )
-        article = draft_with_sourcing(
-            instruction, system=LIFE_DRAFT_SYSTEM, max_words=LIFE_MAX_WORDS,
-            preserve="the narrative thread and the concrete detail")
-        if not has_sources(article):
-            print("  skipped (couldn't cite it) — trying the next subject.")
-            continue
-        article["tag"] = "Life"       # Saturday is Life-only, whatever the model returned
-        save_post(article, default_tag="Life")
-        print("Done — saved 1 Life draft for review.")
-        return
-    print("Done — saved 0 drafts (no subject could be cited).")
+    print("Saturday Life briefs — researching subjects...")
+    briefs = generate_life_briefs()
+    md = life_briefs_markdown(briefs)
+    print("\n" + md)
+    if out_path:
+        with open(out_path, "w") as f:
+            f.write(md)
+        print(f"\n  wrote {out_path}")
+    print(f"Done — {len(briefs)} brief(s).")
 
 
 def _select_and_draft(candidates, target):
@@ -773,10 +778,12 @@ def main():
     p.add_argument("--angle", help="on demand: angle/emphasis for the piece")
     p.add_argument("--interactive", "-i", action="store_true",
                    help="on demand: paste/describe a finding at the prompt")
-    p.add_argument("--life", action="store_true",
-                   help="draft one Saturday 'Life' essay (auto-selected on Saturdays)")
+    p.add_argument("--life-briefs", dest="life_briefs", action="store_true",
+                   help="surface researched 'Life' subjects to write about yourself "
+                        "(auto-selected on Saturdays); writes no post")
     p.add_argument("--no-life", dest="no_life", action="store_true",
                    help="run the normal AI pipeline even if today is Saturday")
+    p.add_argument("--out", help="with --life-briefs: also write the briefs to this file")
     p.add_argument("--dry-run", dest="dry_run", action="store_true",
                    help="show the exact prompts that would be sent; no API call, "
                         "no file written")
@@ -793,9 +800,9 @@ def main():
         run_ondemand(topic=args.topic, url=args.url, text=text,
                      article_type=args.article_type, angle=args.angle,
                      dry_run=args.dry_run)
-    elif args.life or (datetime.date.today().weekday() == 5 and not args.no_life):
-        # weekday() == 5 is Saturday — reserved for a single Life essay.
-        run_life(dry_run=args.dry_run)
+    elif args.life_briefs or (datetime.date.today().weekday() == 5 and not args.no_life):
+        # weekday() == 5 is Saturday — Life briefs, not an auto-drafted post.
+        run_life_briefs(dry_run=args.dry_run, out_path=args.out)
     else:
         focus = [t.strip() for t in args.focus.split(",")] if args.focus else None
         run_scheduled(args.count, focus=focus, dry_run=args.dry_run)
