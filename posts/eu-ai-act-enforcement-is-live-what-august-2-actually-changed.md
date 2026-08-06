@@ -5,12 +5,12 @@ slug: eu-ai-act-enforcement-expands-what-august-2-actually-changed
 tag: Regulation & Policy, AI Governance
 excerpt: "August 2, 2026 marked two distinct milestones under the EU AI Act: the European Commission's enforcement powers over general-purpose AI (GPAI) obligations entered into application, while Article 50 transparency obligations began applying to many public-facing AI systems."
 takeaway: "August 2 did not simply 'start enforcement.' It activated Commission enforcement of GPAI obligations that had applied since August 2025, while simultaneously bringing Article 50 transparency obligations into force for many AI deployments—expanding the AI Act from regulating frontier model providers to governing AI interactions across the broader value chain."
-cover: "/assets/"
+cover: "/assets/3e6f6809a4cfd351c4e76ef9cab073afc24df7c208eb6040d1022ae9714a7f05.png"
 cover_alt: "Illustration: EU AI Act enforcement expands from foundation models to public-facing AI systems."
-published: false
+published: true
 ---
 
-## Two Different Milestones Happened on August 2
+## ⚖️ Two Different Milestones Happened on August 2
 
 Much of the discussion around August 2, 2026 has focused on a single headline: **the EU AI Act became enforceable**.
 
@@ -27,7 +27,7 @@ This post builds directly on two earlier pieces—the [legislative close-out](ht
 
 ---
 
-## GPAI Enforcement Has Now Become Real
+## 🏛️ GPAI Enforcement Has Now Become Real
 
 For providers of general-purpose AI models, the substantive obligations did **not** begin on August 2, 2026.
 
@@ -54,7 +54,7 @@ For organisations building or supplying frontier models, any gap between documen
 
 ---
 
-## The AI Act Has Three Different Regulatory Layers
+## 📏 The AI Act Has Three Different Regulatory Layers
 
 One reason the August 2 milestone is widely misunderstood is that the AI Act regulates three different things.
 
@@ -74,7 +74,7 @@ That distinction explains why organisations that never build a frontier model—
 
 ---
 
-## Article 50 Reaches Far Beyond High-Risk AI
+## 📢 Article 50 Reaches Far Beyond High-Risk AI
 
 While the AI Office's new enforcement powers mainly concern GPAI providers, August 2 also activated a different part of the Act that reaches far more organisations: **Article 50's transparency regime**.
 
@@ -97,7 +97,7 @@ The machine-readable marking requirement under Article 50(2) received a limited 
 
 ---
 
-## The Omnibus Deferral Is Real — But Narrow
+## ⏳ The Omnibus Deferral Is Real — But Narrow
 
 The Digital Omnibus substantially postpones the application of the AI Act's high-risk regime:
 
@@ -131,7 +131,7 @@ timeline
 
 ---
 
-## The GDPR Parallel—and Where It Breaks Down
+## ⚖️ The GDPR Parallel—and Where It Breaks Down
 
 The comparison many governance teams instinctively make is GDPR.
 
@@ -153,7 +153,7 @@ The AI Office has indicated that **technical compliance dialogue** will generall
 
 ---
 
-## The Governance Shift Is Bigger Than It First Appears
+## 🎯 The Governance Shift Is Bigger Than It First Appears
 
 The most important consequence of August 2 is not simply that fines became available.
 
