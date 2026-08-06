@@ -404,6 +404,9 @@ def build():
     # ---- About page (from pages/about.md if present) ----
     build_about()
 
+    # ---- Disclaimer page (linked from the footer) ----
+    build_disclaimer()
+
     # ---- RSS feed ----
     build_rss(posts)
 
@@ -494,7 +497,12 @@ def build_projects():
         '<img class="page-logo" src="{avatar}" alt="Axiom" width="120" height="120">'
         '</div>'
     ).format(avatar=PROJECT_AVATAR)
-    cards = [head, '<ul class="project-grid">']
+    cards = [head,
+             '<p class="sourcing">All source code, software, datasets, documentation, and '
+             'other project materials are independently developed or derived from publicly '
+             'available resources and are not affiliated with, sponsored by, or endorsed by '
+             'any individuals or organizations.</p>',
+             '<ul class="project-grid">']
     for name, desc, url in PROJECTS:
         cards.append(
             '<li class="project-card">'
@@ -533,6 +541,35 @@ def build_about():
     (d / "index.html").write_text(
         render_page("About — " + SITE_NAME, "About " + AUTHOR, inner,
                     nav_active="about", canonical_path="/about/"))
+
+
+def build_disclaimer():
+    body = (
+        '<p>The content on this website, including articles, research notes, code, '
+        'projects, visualizations, and other materials, reflects my personal work and '
+        'opinions unless otherwise stated. It is provided for informational and '
+        'educational purposes only.</p>'
+        '<p>Unless explicitly indicated, all analyses, projects, and implementations are '
+        'developed independently using publicly available information, research '
+        'publications, technical documentation, regulations, court decisions, news '
+        'reports, or other publicly accessible sources. They do not rely on, incorporate, '
+        'or disclose any confidential, proprietary, non-public, or client information '
+        'obtained through my employment or professional engagements.</p>'
+        '<p>The views expressed on this website are solely my own and do not represent '
+        'the views of my employer, clients, or any affiliated organization.</p>'
+        '<p>Any references to third-party organizations, products, research, or '
+        'publications are for commentary, analysis, or educational purposes only and do '
+        'not imply endorsement, sponsorship, or affiliation.</p>'
+    )
+    inner = ('<div class="eyebrow">Legal</div>'
+             '<h1 class="page">Disclaimer</h1>'
+             '<div class="prose">{body}</div>').format(body=body)
+    d = PUBLIC_DIR / "disclaimer"
+    d.mkdir(exist_ok=True)
+    (d / "index.html").write_text(
+        render_page("Disclaimer — " + SITE_NAME,
+                    "Disclaimer for " + SITE_NAME, inner,
+                    canonical_path="/disclaimer/"))
 
 
 def build_rss(posts):

@@ -212,12 +212,14 @@ footer.site{border-top:1px solid var(--hair); padding:30px 0; color:var(--muted)
 footer.site .inner{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; max-width:960px; margin:0 auto; padding:0 26px}
 footer.site a{color:var(--muted)}
 .copyright{display:inline-flex; align-items:center; gap:8px}
-.sourcing{margin:-6px 0 30px; padding:14px 18px; border-left:3px solid var(--accent);
+.sourcing{margin:24px 0 30px; padding:14px 18px; border-left:3px solid var(--accent);
   background:var(--hair); border-radius:0 6px 6px 0;
-  font-size:13.5px; line-height:1.65; color:var(--muted); max-width:760px}
+  font-size:13.5px; line-height:1.65; color:var(--muted)}
 .footer-disclaimer{max-width:960px; margin:18px auto 0; padding:16px 26px 0; border-top:1px solid var(--hair);
   font-size:12px; line-height:1.65; color:var(--muted)}
 .footer-disclaimer strong{font-weight:600; color:var(--muted)}
+.footer-disclaimer a{text-decoration:underline; text-underline-offset:2px}
+.footer-disclaimer a:hover{color:var(--accent)}
 .footer-right{display:inline-flex; align-items:center; gap:14px}
 .social-row{display:inline-flex; align-items:center; gap:14px}
 .social-row a{color:var(--muted); display:inline-flex; transition:color .15s}
@@ -270,7 +272,7 @@ footer.site a{color:var(--muted)}
     <span class="copyright"><img class="us-flag" src="/assets/us-flag.svg" alt="United States" width="22" height="15">© {{ year }} {{ author }} · All rights reserved</span>
     <span class="footer-right">{{ social_html }}<a href="/feed.xml">RSS</a></span>
   </div>
-  <p class="footer-disclaimer"><strong>Disclaimer:</strong> The views and analyses expressed on this website are solely my own and are based on publicly available information unless otherwise noted. They do not represent the views of my employer, clients, or any affiliated organizations.</p>
+  <p class="footer-disclaimer"><strong><a href="/disclaimer/">Disclaimer</a>:</strong> The views and analyses expressed on this website are solely my own and are based on publicly available information unless otherwise noted. They do not represent the views of my employer, clients, or any affiliated organizations.</p>
 </footer>
 <script>
 (function(){
