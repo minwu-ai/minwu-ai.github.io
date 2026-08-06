@@ -272,7 +272,8 @@ footer.site a{color:var(--muted)}
     <span class="copyright"><img class="us-flag" src="/assets/us-flag.svg" alt="United States" width="22" height="15">© {{ year }} {{ author }} · All rights reserved</span>
     <span class="footer-right">{{ social_html }}<a href="/feed.xml">RSS</a></span>
   </div>
-  <p class="footer-disclaimer"><strong><a href="/disclaimer/">Disclaimer</a>:</strong> The views and analyses expressed on this website are solely my own and are based on publicly available information unless otherwise noted. They do not represent the views of my employer, clients, or any affiliated organizations.</p>
+{% if footer_disclaimer %}  <p class="footer-disclaimer"><strong><a href="/disclaimer/">Disclaimer</a>:</strong> The views and analyses expressed on this website are solely my own and are based on publicly available information unless otherwise noted. They do not represent the views of my employer, clients, or any affiliated organizations.</p>
+{% endif %}
 </footer>
 <script>
 (function(){

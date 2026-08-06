@@ -110,7 +110,8 @@ md = markdown.Markdown(extensions=["extra", "smarty", "sane_lists"])
 
 
 def render_page(page_title, page_description, inner_html,
-                nav_active="", canonical_path="/", og_type="website", wide=False):
+                nav_active="", canonical_path="/", og_type="website", wide=False,
+                footer_disclaimer=True):
     return TEMPLATE.render(
         page_title=page_title,
         page_description=page_description,
@@ -124,6 +125,7 @@ def render_page(page_title, page_description, inner_html,
         canonical_path=canonical_path,
         og_type=og_type,
         wide=wide,
+        footer_disclaimer=footer_disclaimer,
         social_html=social_links_html(),
         needs_mermaid=('class="mermaid"' in inner_html),
     )
@@ -569,7 +571,7 @@ def build_disclaimer():
     (d / "index.html").write_text(
         render_page("Disclaimer — " + SITE_NAME,
                     "Disclaimer for " + SITE_NAME, inner,
-                    canonical_path="/disclaimer/"))
+                    canonical_path="/disclaimer/", footer_disclaimer=False))
 
 
 def build_rss(posts):
