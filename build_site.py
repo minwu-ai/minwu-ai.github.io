@@ -435,6 +435,10 @@ def build_topics(posts):
     cards = ['<div class="eyebrow">Browse</div>',
              '<h1 class="page">Topics</h1>',
              '<p class="lede">Writing grouped by theme.</p>',
+             '<p class="sourcing">All articles are based on publicly available research papers, '
+             'technical reports, regulatory documents, court filings, government publications, '
+             'or other publicly accessible sources. No article relies on confidential or '
+             'non-public information, or proprietary materials.</p>',
              '<ul class="topic-grid">']
     for name, desc in TOPICS:
         ts = slugify(name)
