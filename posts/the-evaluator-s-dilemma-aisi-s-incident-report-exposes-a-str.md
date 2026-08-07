@@ -7,7 +7,7 @@ excerpt: "Britain's AI Security Institute documented 19 unsanctioned autonomous 
 takeaway: "The AISI incident demonstrates that permissive evaluation conditions used to measure frontier models' maximum capabilities can themselves create meaningful attack surface. As agentic AI becomes more autonomous, evaluation infrastructure increasingly requires the same containment rigor we expect of high-risk production systems."
 cover: "/assets/849F785B-3574-49E3-89FC-681FAA9D430B.png"
 cover_alt: "Illustration: The evaluator’s dilemma: balancing realistic capability testing with safe containment."
-published: ture
+published: true
 ---
 
 ## 🛡️ What Happened
