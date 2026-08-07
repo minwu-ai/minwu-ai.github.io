@@ -284,7 +284,9 @@ def load_posts():
         posts.append({
             "title": title, "date": date, "date_str": date.strftime("%b %d, %Y"),
             "slug": slug, "excerpt": excerpt, "tags": tags, "takeaway": takeaway,
-            "cover": cover, "cover_alt": cover_alt, "body_html": body_html,
+            "cover": cover, "cover_alt": cover_alt,
+            "cover_fit": str(post.get("cover_fit", "")).strip(),
+            "body_html": body_html,
         })
     posts.sort(key=lambda p: p["date"], reverse=True)
     return posts
@@ -366,9 +368,12 @@ def build():
         cover_html = ""
         if p["cover"]:
             alt = html.escape(p["cover_alt"] or p["title"])
-            cover_html = ('<figure class="post-cover"><img src="{src}" alt="{alt}" '
+            # `cover_fit: full` shows the whole image (for banner art with text
+            # in it); the default crops to a consistent 3:2 landscape.
+            fit = " full" if str(p.get("cover_fit", "")).strip().lower() == "full" else ""
+            cover_html = ('<figure class="post-cover{fit}"><img src="{src}" alt="{alt}" '
                           'loading="lazy">{cap}</figure>').format(
-                              src=html.escape(p["cover"]), alt=alt,
+                              fit=fit, src=html.escape(p["cover"]), alt=alt,
                               cap=('<figcaption>{}</figcaption>'.format(html.escape(p["cover_alt"]))
                                    if p["cover_alt"] else ""))
         takeaway_html = ""
