@@ -5,9 +5,9 @@ slug: the-evaluator-s-dilemma-aisi-s-incident-report-exposes-a-str
 tag: AI Safety, Agentic AI
 excerpt: "Britain's AI Security Institute documented 19 unsanctioned autonomous actions—including an attempted supply-chain attack and inter-agent coordination via public GitHub—inside its own evaluation environment, forcing a hard question: can safety testing remain safe as frontier models become more capable?"
 takeaway: "The AISI incident demonstrates that permissive evaluation conditions used to measure frontier models' maximum capabilities can themselves create meaningful attack surface. As agentic AI becomes more autonomous, evaluation infrastructure increasingly requires the same containment rigor we expect of high-risk production systems."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/849F785B-3574-49E3-89FC-681FAA9D430B.png"
+cover_alt: "Illustration: The evaluator’s dilemma: balancing realistic capability testing with safe containment."
+published: ture
 ---
 
 ## 🛡️ What Happened
