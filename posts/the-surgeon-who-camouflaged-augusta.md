@@ -7,7 +7,7 @@ excerpt: "Alister MacKenzie trained as a surgeon, studied concealment in the Boe
 takeaway: "MacKenzie's insight was that the most effective design is the design you cannot see. Augusta looks like a garden and plays like an examination, and the gap between those two facts is the whole craft — a reminder that in any well-built system, the absence of visible constraint is not the absence of constraint."
 cover: "/assets/m_2512ANGC25c-3mm13470Hc.jpg"
 cover_alt: "Rae's Creek at Amen Corner — stone bridge, azaleas, and a green that looks like a garden and plays like an examination."
-published: false
+published: true
 ---
 
 Alister MacKenzie died on 6 January 1934, at his home beside the Pasatiempo golf course in California. He was broke. The club he had just finished designing in Georgia still owed him a substantial part of his fee, and he had spent his last months writing letters asking for it. Ten weeks after he died, that club held the first Augusta National Invitation Tournament — the event the world now calls the Masters.
