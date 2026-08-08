@@ -44,13 +44,16 @@ POSTS_DIR = os.path.join(os.path.dirname(__file__), "posts")
 
 # Topics the scheduled run should prioritize when surfacing the day's news.
 # Edit this list freely. Override for a single run with --focus "a, b, c".
+# Kept deliberately even across the categories — a focus list weighted toward
+# safety/governance produces a site weighted toward safety/governance.
 FOCUS_TOPICS = [
-    "AI safety and alignment",
+    "agentic AI, autonomous systems, and real-world agent deployments",
+    "evaluation, benchmarking, red-teaming results, and audit methodology",
+    "alignment research and interpretability findings",
+    "enterprise AI adoption, vendor and market moves, and deployment economics",
+    "AI regulation, policy, and enforcement",
+    "AI safety incidents and frontier model releases",
     "model risk management and AI governance (SR 26-2)",
-    "agentic AI and autonomous systems",
-    "AI regulation and policy",
-    "enterprise AI adoption and risk",
-    "notable frontier model releases",
     "academic research on AI safety, interpretability, evaluation, auditing, and risk "
     "(arXiv papers and the followed researchers below)",
 ]
@@ -150,28 +153,86 @@ def _researchers_preference():
     )
 
 
-def _coverage_summary():
-    """Recent published-post distribution, to steer discovery toward under-covered topics."""
+# The AI categories the balancer manages. 'Life' is deliberately excluded — it's
+# the Saturday category and is written by hand, not by the pipeline.
+CATEGORIES = ["AI Safety", "AI Governance", "Alignment", "Evaluation", "Agentic AI",
+              "Regulation & Policy", "Industry"]
+
+# A category is "over-covered" above this multiple of an even share, and
+# "under-covered" below this one. Tuned so a single big story can't tip a
+# category into being blocked, but a sustained run of them will.
+OVER_SHARE = 1.25
+UNDER_SHARE = 0.75
+
+
+def _coverage_counts():
+    """Published-post weight per category.
+
+    The FIRST tag on a post is its primary category and counts 1.0; any further
+    tags count 0.5. Without this, a piece tagged 'Agentic AI, AI Safety' would
+    credit AI Safety just as much as Agentic AI, which is how the imbalance kept
+    compounding even while the prompt asked for balance.
+    """
     from collections import Counter
-    counts = Counter()
+    counts = Counter({c: 0.0 for c in CATEGORIES})
     for path in glob.glob(os.path.join(POSTS_DIR, "*.md")):
         meta = _read_frontmatter(path)
         if str(meta.get("published", "true")).lower() == "false":
             continue
-        for t in str(meta.get("tag", "")).split(","):
-            t = t.strip()
-            if t:
-                counts[t] += 1
-    cats = ["AI Safety", "AI Governance", "Alignment", "Evaluation", "Agentic AI",
-            "Regulation & Policy", "Industry"]
-    line = ", ".join("{} ({})".format(c, counts.get(c, 0)) for c in cats)
-    return (
-        "CURRENT COVERAGE (published posts per category): " + line + ". The blog is "
-        "over-concentrated in AI Safety and AI Governance. Keep featuring those regularly "
-        "but do NOT let them dominate — actively PRIORITISE the under-covered categories "
-        "(especially any with 0-2 posts, e.g. Alignment, Evaluation, Agentic AI, "
-        "Regulation & Policy, Industry) so coverage balances across the site over time."
-    )
+        tags = [t.strip() for t in str(meta.get("tag", "")).split(",") if t.strip()]
+        for i, t in enumerate(tags):
+            if t in counts:
+                counts[t] += 1.0 if i == 0 else 0.5
+    return counts
+
+
+def coverage_plan():
+    """Decide which categories this run must draw from, and which are on cooldown."""
+    counts = _coverage_counts()
+    total = sum(counts.values())
+    if total <= 0:
+        return {"counts": counts, "required": list(CATEGORIES), "discouraged": [],
+                "even": 0.0}
+    even = total / len(CATEGORIES)
+    under = sorted((c for c in CATEGORIES if counts[c] < even * UNDER_SHARE),
+                   key=lambda c: counts[c])
+    over = sorted((c for c in CATEGORIES if counts[c] > even * OVER_SHARE),
+                  key=lambda c: -counts[c])
+    # If nothing is meaningfully under-covered, just take the leanest few so the
+    # run still has a concrete target rather than a vague preference.
+    required = under or sorted(CATEGORIES, key=lambda c: counts[c])[:3]
+    return {"counts": counts, "required": required, "discouraged": over, "even": even}
+
+
+def _coverage_summary(plan=None):
+    """Turn the plan into an instruction with a hard requirement, not a nudge."""
+    plan = plan or coverage_plan()
+    counts, even = plan["counts"], plan["even"]
+    line = ", ".join(
+        "{} ({:g}{})".format(
+            c, counts[c],
+            " OVER" if c in plan["discouraged"] else
+            (" UNDER" if c in plan["required"] else ""))
+        for c in CATEGORIES)
+    txt = ("CURRENT COVERAGE (weighted: primary tag 1.0, secondary 0.5) — "
+           + line + ". An even share would be about {:.1f} per category.\n".format(even))
+    txt += ("BALANCING REQUIREMENT (this is a hard constraint, not a preference):\n"
+            "- EVERY candidate you return MUST have its 'category' set to one of: "
+            + ", ".join(plan["required"]) + ".\n")
+    if plan["discouraged"]:
+        txt += ("- Do NOT return candidates in these over-covered categories: "
+                + ", ".join(plan["discouraged"]) + ". The site already leans heavily "
+                "on them. The ONLY exception is a genuinely major, unavoidable story "
+                "(a landmark regulation taking effect, a major incident, a frontier "
+                "release) — if you use the exception, say why in the angle.\n")
+    txt += ("- A story can often be told through an under-covered lens: an incident "
+            "framed as Evaluation (did the tests catch it?), a model release framed as "
+            "Agentic AI or Industry (what it means for deployment and vendors), a "
+            "safety paper framed as Alignment. Choose the lens that fills the gap, and "
+            "make the piece genuinely about that lens — do not just relabel a safety "
+            "story.\n"
+            "- Set 'category' to the piece's PRIMARY subject. It becomes the first tag.")
+    return txt
 
 
 # Corroboration bar — what counts as trustworthy enough to write about.
@@ -348,22 +409,24 @@ def _text_of(resp):
     return "".join(b.text for b in resp.content if b.type == "text").strip()
 
 
-def _discovery_prompt(count, focus=None):
+def _discovery_prompt(count, focus=None, plan=None):
+    plan = plan or coverage_plan()
     focus_line = "; ".join(focus or FOCUS_TOPICS)
     return (
         f"Find the {count} most significant, recent AI developments (roughly the last "
         "48 hours) worth writing about, INCLUDING notable new academic research/papers. "
         "Prefer concrete items (releases, regulation, research papers, incidents) over "
         f"evergreen topics. General areas of interest: {focus_line}.\n\n"
-        + _coverage_summary() + "\n\n"
+        + _coverage_summary(plan) + "\n\n"
         "REQUIRED MIX (this is a candidate list; extras are backups in case some can't "
         "be corroborated):\n"
         "- Candidates must span DIFFERENT categories — do not return two topics in the "
         "same category.\n"
-        "- PRIORITISE under-covered categories per the coverage stats above. AI Safety "
-        "and AI Governance may appear but must NOT both dominate; include Alignment, "
-        "Evaluation, Agentic AI, Regulation & Policy, or Industry whenever there's a real "
-        "story.\n"
+        "- Every candidate's category must come from the required list above.\n"
+        "- Search SPECIFICALLY for stories in the required categories. Do not just "
+        "report the day's headlines and label them; go looking for what happened in "
+        "agent deployments, evaluation and benchmarking work, alignment research, and "
+        "the business/vendor side of AI.\n"
         "- Include at least one candidate grounded in ACADEMIC research (an arXiv paper "
         "or a followed researcher's new work) whenever a notable one exists.\n"
         "- Order candidates best-first.\n\n"
@@ -374,8 +437,8 @@ def _discovery_prompt(count, focus=None):
         "below. Do NOT propose a topic that merely repeats one of them. Revisiting a "
         "topic is fine ONLY if there's a genuine new development or new angle — if so, "
         "note in the angle what's new and which prior post it follows up.\n\n"
-        "For each topic, set 'category' to the best-fit category from: AI Safety, AI "
-        "Governance, Alignment, Evaluation, Agentic AI, Regulation & Policy, Industry. "
+        "For each topic, set 'category' to one of the REQUIRED categories listed "
+        "above: " + ", ".join(plan["required"]) + ". "
         "Return ONLY a JSON array, no markdown:\n"
         '[{"topic": "...", "angle": "...", "category": "..."}]'
     )
@@ -534,21 +597,41 @@ def _dump_prompt(label, instruction):
 
 
 def run_scheduled(count, focus=None, dry_run=False):
+    plan = coverage_plan()
     if dry_run:
         print("=" * 70)
         print("[DRY RUN] scheduled mode")
         print("=" * 70)
-        print("\n--- TOPIC-DISCOVERY PROMPT ---\n" + _discovery_prompt(count, focus))
+        print_coverage_report(plan)
+        print("\n--- TOPIC-DISCOVERY PROMPT ---\n"
+              + _discovery_prompt(count, focus, plan))
         print("\n--- then each topic is drafted with this SYSTEM PROMPT ---\n"
               + DRAFT_SYSTEM)
         print("\n[dry-run] No API call made and no file written.\n")
         return
     target = count
+    print("Balancing toward: " + ", ".join(plan["required"])
+          + (" (cooling off: " + ", ".join(plan["discouraged"]) + ")"
+             if plan["discouraged"] else ""))
     print(f"Discovering candidate topics (target {target})...")
     # Over-fetch so we can backfill when a topic can't be corroborated/cited.
-    candidates = discover_topics(target + 4, focus=focus)
-    saved = _select_and_draft(candidates, target)
+    candidates = discover_topics(target + 4, focus=focus, plan=plan)
+    saved = _select_and_draft(candidates, target, plan=plan)
     print(f"Done — saved {saved} of {target} target draft(s).")
+
+
+def print_coverage_report(plan=None):
+    plan = plan or coverage_plan()
+    counts, even = plan["counts"], plan["even"]
+    total = sum(counts.values()) or 1
+    print("\nTopic coverage (primary tag 1.0, secondary 0.5):")
+    print("  {:22s} {:>7s} {:>8s}  {}".format("category", "weight", "share", "status"))
+    for c in sorted(CATEGORIES, key=lambda c: -counts[c]):
+        status = ("OVER — on cooldown" if c in plan["discouraged"]
+                  else "under — prioritised" if c in plan["required"] else "on target")
+        print("  {:22s} {:7.1f} {:7.1f}%  {}".format(
+            c, counts[c], counts[c] / total * 100, status))
+    print("  even share would be {:.1f} each\n".format(even))
 
 
 # ---- Mode: Saturday 'Life' briefs ----------------------------------------
@@ -669,42 +752,70 @@ def run_life_briefs(dry_run=False, out_path=None):
     print(f"Done — {len(briefs)} brief(s).")
 
 
-def _select_and_draft(candidates, target):
-    """Save `target` drafts across DISTINCT categories, in discovery order (which is
-    coverage-balanced). Skips topics that can't be cited; backfills if still short."""
+def _force_primary_tag(article, cat):
+    """Make `cat` the first tag, keeping any extra category the model added.
+
+    The drafting model often returns 'AI Safety, Agentic AI' for a piece assigned
+    to Agentic AI. Since the first tag is the primary one for coverage purposes,
+    letting that stand is what kept re-concentrating the site on AI Safety.
+    """
+    tags = [t.strip() for t in str(article.get("tag") or "").split(",") if t.strip()]
+    tags = [t for t in tags if t in CATEGORIES and t != cat]
+    article["tag"] = ", ".join([cat] + tags[:1])
+    return article
+
+
+def _select_and_draft(candidates, target, plan=None):
+    """Save `target` drafts, preferring the categories the balancer asked for.
+
+    Pass 1 takes only required (under-covered) categories, one per category.
+    Pass 2 backfills from anything left, but only if pass 1 came up short — so a
+    thin news day still produces posts instead of nothing.
+    """
+    plan = plan or coverage_plan()
+    required = set(plan["required"])
     saved, used_cats = 0, set()
 
     def attempt(cand):
         nonlocal saved
-        cat = cand.get("category", "").strip() or "Industry"
-        print(f"Drafting: {cand['topic']}")
+        cat = cand.get("category", "").strip()
+        if cat not in CATEGORIES:
+            cat = plan["required"][0] if plan["required"] else "Industry"
+        print(f"Drafting [{cat}]: {cand['topic']}")
         instruction = (
             f"Write an analytical piece about: {cand['topic']}. "
             f"Angle: {cand.get('angle', '')}. "
-            f"This belongs in the '{cat}' category; set TAG accordingly (add a second "
-            "category too if the piece genuinely spans two). "
+            f"The PRIMARY category is '{cat}' — the piece must genuinely be about "
+            f"that, and TAG must start with '{cat}'. Add at most one more category, "
+            "and only if the piece truly spans two. "
             "Research it with web search first, cross-referencing multiple sources."
         )
         article = draft_with_sourcing(instruction)
         if not has_sources(article):
             print("  skipped (couldn't corroborate/cite) — trying the next candidate.")
             return
+        _force_primary_tag(article, cat)
         save_post(article, default_tag=cat)
         used_cats.add(cat)
         saved += 1
 
-    # Pass 1: fill with DISTINCT categories, in discovery (coverage-balanced) order.
+    # Pass 1: required (under-covered) categories only, one topic each.
     for c in candidates:
         if saved >= target:
             break
-        if (c.get("category", "").strip() or "Industry") in used_cats:
+        cat = c.get("category", "").strip()
+        if cat not in required or cat in used_cats:
             continue
         attempt(c)
-    # Pass 2: backfill with anything remaining if still short.
-    for c in candidates:
-        if saved >= target:
-            break
-        attempt(c)
+    # Pass 2: only if short — anything left, still one per category.
+    if saved < target:
+        print(f"  only {saved}/{target} from under-covered categories; backfilling.")
+        for c in candidates:
+            if saved >= target:
+                break
+            if (c.get("category", "").strip() or "Industry") in used_cats:
+                continue
+            attempt(c)
     return saved
 
 
@@ -784,10 +895,17 @@ def main():
     p.add_argument("--no-life", dest="no_life", action="store_true",
                    help="run the normal AI pipeline even if today is Saturday")
     p.add_argument("--out", help="with --life-briefs: also write the briefs to this file")
+    p.add_argument("--coverage", action="store_true",
+                   help="print the topic-coverage report and what the next run would "
+                        "target, then exit (no API call)")
     p.add_argument("--dry-run", dest="dry_run", action="store_true",
                    help="show the exact prompts that would be sent; no API call, "
                         "no file written")
     args = p.parse_args()
+
+    if args.coverage:
+        print_coverage_report()
+        return
 
     text = None
     if args.from_file:
