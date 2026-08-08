@@ -5,9 +5,9 @@ slug: the-preemption-trap-how-the-frontier-act-inherited-gaaias-ha
 tag: Regulation & Policy, AI Governance
 excerpt: "The Great American AI Act never became law—but its central ideas survived in the newly introduced FRONTIER Act. What did not disappear was the political fight over federal preemption, even as states continued building their own AI governance regimes."
 takeaway: "The debate in Washington is no longer whether the federal government should regulate frontier AI—it is whether Congress can establish a national framework without displacing state laws that are already becoming operational. As California, New York, Illinois, and Colorado move ahead, every month of congressional delay raises the political cost of federal preemption."
-cover: "/assets/"
-cover_alt: "Illustration:"
-published: false
+cover: "/assets/fbe54eaa17d693f4e9dc0c7b9b29921b080c1c353c5709497874372a75332bf2.png"
+cover_alt: "Illustration: The challenge is no longer writing a federal AI framework—it’s replacing state frameworks that already exist."
+published: true
 ---
 
 # ⚖️ The Preemption Trap: How the FRONTIER Act Inherited GAAIA's Hardest Political Problem
