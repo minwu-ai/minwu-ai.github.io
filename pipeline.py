@@ -68,32 +68,57 @@ FOLLOWED_RESEARCHERS = [
     ("Inioluwa Deborah Raji", "algorithmic auditing and accountability", "https://rajiinio.github.io/"),
 ]
 
-# ---- Saturday 'Life' briefs ----------------------------------------------
-# Saturdays do NOT auto-draft a Life post. A personal essay's value is the
-# author's own point of view, which the pipeline cannot supply — so instead of
-# writing prose in a borrowed voice, it does the legwork: it surfaces a few
-# researched subjects with verified sources and leaves the writing to you.
-# Edit this palette freely.
-LIFE_TOPICS = [
-    ("Golf history & architecture",
-     "the origins and design of a famous course or hole, a course architect "
-     "(MacKenzie, Colt, Ross, Tillinghast), how the rules or equipment evolved, "
-     "the story behind a championship or a piece of golf tradition"),
-    ("Places & the history beneath them",
-     "why a city, region, route, or landmark came to look and feel the way it "
-     "does — the geography, trade, or accident of history that shaped it"),
-    ("Skiing & alpine culture",
-     "how a resort or region was built, the evolution of technique and equipment, "
-     "avalanche and snow science, the history of alpine racing and mountaineering"),
-    ("People worth knowing",
-     "a short biographical essay on a figure whose life is genuinely interesting — "
-     "explorers, architects, mathematicians, athletes, builders, eccentrics"),
-    ("Ideas & reflection",
-     "an idea from science, mathematics, or history examined slowly and personally, "
-     "in the register of the 'Entropy, Evolution, and AI' post"),
+# ---- Saturday 'History & People' -----------------------------------------
+# Saturdays draft ONE post in the 'History & People' category: a historical
+# event, story, or figure, plus what it still explains about the present. This
+# is research and analysis, not memoir — no personal experience is invented.
+# 'Life' is NOT written by the pipeline; those posts are written by hand.
+#
+# Add to this list freely — one entry per area of interest.
+HISTORY_TOPICS = [
+    ("Ancient Greece",
+     "the city-states, Athenian democracy and its failure modes, Thucydides and "
+     "the Peloponnesian War, philosophy and mathematics, Alexander"),
+    ("Ancient Rome",
+     "the Republic's institutions and their collapse, engineering and logistics, "
+     "law and citizenship, the Principate, administration of a vast territory"),
+    ("World War II",
+     "strategy and logistics, codebreaking and intelligence, industrial "
+     "mobilization, command decisions, reconstruction and the postwar order"),
+    ("Ming dynasty China",
+     "the Yongle era and the treasure fleets, the decision to turn inward, "
+     "bureaucracy and the examination system, currency, porcelain and trade, "
+     "the Great Wall and frontier defense"),
+    ("US history & the founding",
+     "the Constitutional Convention and the design of institutions, the "
+     "Federalist debates, early republic finance under Hamilton, "
+     "the founders as administrators rather than icons"),
+    ("New York City",
+     "the grid and the water supply, immigration and neighborhoods, the building "
+     "of the bridges and subway, finance, and how the city kept reinventing itself"),
+    ("Legendary golfers",
+     "Bobby Jones, Old Tom Morris, Hogan, Nicklaus and the rest — careers, "
+     "technique, temperament, and the eras that shaped them"),
 ]
 
-LIFE_BRIEF_COUNT = 4      # how many subjects to surface each Saturday
+# Editorial guardrail. The point is settled history and durable institutional
+# lessons, not commentary on live political fights.
+HISTORY_GUARDRAIL = (
+    "EDITORIAL GUARDRAIL — stay out of contested contemporary politics:\n"
+    "- Write about episodes where the historical record is reasonably settled and "
+    "the scholarship is solid. Report genuine historiographical disagreement as "
+    "disagreement rather than picking a side.\n"
+    "- Do NOT touch live partisan politics, current elections or candidates, "
+    "ongoing wars and territorial disputes, or culture-war framing. No "
+    "present-day politician should be praised or criticised.\n"
+    "- Modern parallels must be STRUCTURAL and institutional — how institutions "
+    "concentrate or check power, how organizations handle information, incentives, "
+    "succession, overreach, logistics, trust. Never partisan.\n"
+    "- Handle atrocity and human suffering with restraint and accuracy. No "
+    "sensationalism, no invented detail, no dialogue you cannot source.\n"
+    "- If a subject cannot be treated without taking a contemporary political "
+    "side, choose a different subject."
+)
 
 WEB_SEARCH = {"type": "web_search_20250305", "name": "web_search"}
 
@@ -634,122 +659,134 @@ def print_coverage_report(plan=None):
     print("  even share would be {:.1f} each\n".format(even))
 
 
-# ---- Mode: Saturday 'Life' briefs ----------------------------------------
+# ---- Mode: Saturday 'History & People' -----------------------------------
 
-def _life_brief_prompt(count):
-    palette = "\n".join("- {}: {}".format(n, d) for n, d in LIFE_TOPICS)
+HISTORY_MAX_WORDS = 900   # a little more room than the weekday news analysis
+
+HISTORY_DRAFT_SYSTEM = (
+    "You are writing the Saturday 'History & People' piece for a personal website "
+    "whose weekday subject is AI risk and governance. This piece is about the past: "
+    "an event, an episode, or a figure — told well, and then read for what it still "
+    "explains about the present. The reader is intelligent and curious but not a "
+    "specialist in the period.\n\n"
+    "STRUCTURE:\n"
+    "1. Open on something concrete — a decision, a date, a scene, a number. No "
+    "scene-setting throat-clearing.\n"
+    "2. Tell the history clearly and accurately, with the detail that makes it stick.\n"
+    "3. Then turn to what it means now. This is the part that earns the piece: the "
+    "structural pattern that recurs — how institutions concentrate or check power, "
+    "how organizations handle information and incentives, how succession, overreach, "
+    "logistics, or trust actually work. Draw the parallel precisely and admit where "
+    "it breaks down. A parallel that has to be forced is not a parallel.\n\n"
+    "VOICE: warm, unhurried, confident, never grandiose. Short paragraphs. No "
+    "'throughout history', no 'little did they know', no moral lecture at the end. "
+    "First person is welcome for interpretation — 'what strikes me is...', 'I read "
+    "this as...' — but never invent personal experience: no trips, no visits, no "
+    "memories, no conversations. You do not know what the author has seen.\n\n"
+    "ACCURACY AND SOURCING: this is real history and it must be right. Weave at "
+    "least two clickable inline hyperlinks [phrase](https://...) to solid sources "
+    "into the prose — university and museum collections, national archives, "
+    "encyclopaedias of record, respected historians, primary documents in "
+    "translation. No end 'Sources' section. Never state a date, quotation, or "
+    "attribution you cannot support, and never invent a quotation. Where historians "
+    "genuinely disagree, say so.\n\n"
+    + HISTORY_GUARDRAIL + "\n\n"
+    f"LENGTH: aim for 700-850 words; never exceed {HISTORY_MAX_WORDS}.\n\n"
+    "VISUALS: a short markdown table or timeline is welcome when there is real "
+    "structure to show (a sequence of decisions, a comparison across eras). Never "
+    "invent an image.\n\n"
+    "Return the article in EXACTLY this format, and nothing else (no code fences):\n"
+    "TITLE: <the title on a single line>\n"
+    "EXCERPT: <one-sentence summary on a single line>\n"
+    "TAG: History & People\n"
+    "TAKEAWAY: <a '1-minute takeaway' in 1-2 sentences — the pattern worth keeping>\n"
+    "BODY:\n"
+    "<the full markdown body; may span many lines>"
+)
+
+
+def _history_discovery_prompt(count):
+    palette = "\n".join("- {}: {}".format(n, d) for n, d in HISTORY_TOPICS)
     return (
-        f"Surface {count} subjects worth writing a personal essay about, for the "
-        "Saturday 'Life' section of a website that spends the rest of the week on AI "
-        "safety and governance. Saturday is the author's day off from AI — these must "
-        "have NOTHING to do with AI, machine learning, or technology policy.\n\n"
-        "You are NOT writing the essay. You are doing the legwork so the author can "
-        "decide whether they have something to say. Give them material and a question, "
-        "never prose in their voice.\n\n"
-        "The author's interests, and the palette to choose from:\n" + palette + "\n\n"
+        f"Propose {count} candidate subjects for a Saturday 'History & People' essay: "
+        "a historical event, episode, or figure, told for its own sake and then read "
+        "for what it still explains about how institutions and people behave today.\n\n"
+        "The author's areas of interest — choose from these:\n" + palette + "\n\n"
         "WHAT MAKES A GOOD SUBJECT:\n"
-        "- Evergreen, not news. There is no recency requirement here.\n"
-        "- Specific and concrete: 'Why the Old Course at St Andrews is played "
-        "anticlockwise' beats 'the history of golf'. A single course, person, place, "
-        "object, decision, or question — never a survey.\n"
-        "- Built on a genuine surprise: a fact that reverses an assumption, an origin "
-        "nobody expects, a decision that turned out to matter. If there is no surprise, "
-        "drop the subject.\n"
-        "- Genuinely researchable: real, checkable public sources (club and resort "
-        "archives, museums, governing bodies like the R&A or USGA, university and "
-        "library collections, reputable long-form journalism).\n"
-        "- Subjects must span DIFFERENT entries in the palette above.\n"
-        "- Nothing requiring personal experience of the author — you do not know where "
-        "they have been or what they have played.\n\n"
-        "VERIFY BEFORE YOU PROPOSE: use web search on every subject. Every source URL "
-        "you return must be one you actually found — never guess or construct a URL, "
-        "and never cite a page you did not see. Drop any subject you cannot support "
-        "with at least two real sources.\n\n"
+        "- Specific and concrete. 'Why the Ming turned the treasure fleets around' "
+        "beats 'the history of Ming China'. One decision, person, institution, or "
+        "episode — never a survey of a period.\n"
+        "- Carries a genuine surprise or a reversal of the obvious reading — "
+        "something a well-read person would not already know.\n"
+        "- Supports a REAL modern parallel about institutions, incentives, "
+        "information, or power — structural, never partisan. State the parallel in "
+        "the angle so it can be judged. If the only available parallel is strained "
+        "or a cliché, drop the subject.\n"
+        "- Solidly documented: real, checkable sources (university and museum "
+        "collections, national archives, encyclopaedias of record, respected "
+        "historians, primary documents).\n"
+        "- Candidates must span DIFFERENT areas from the list above.\n\n"
+        + HISTORY_GUARDRAIL + "\n\n"
+        "Use web search to confirm each subject is real, well documented, and not "
+        "misremembered popular history before proposing it. Order candidates "
+        "best-first.\n\n"
         "AVOID REDUNDANCY: a list of posts already published on this site is provided "
         "below. Do not propose a subject that repeats one of them.\n\n"
-        "For each subject return:\n"
-        "- topic: the specific subject, as a short phrase\n"
-        "- hook: the surprising fact at its center, in 1-2 sentences of plain "
-        "reporting (facts only — not an opening line for the essay)\n"
-        "- why: one sentence on why this could be worth an essay\n"
-        "- question: ONE genuine question the author would have to answer for "
-        "themselves to make it a real piece — the thing only they can supply\n"
-        "- sources: 2-4 objects with 'title' and 'url', verified via search\n"
-        "- category: which palette entry it belongs to\n\n"
-        "Order best-first. Return ONLY a JSON array, no markdown:\n"
-        '[{"topic": "...", "hook": "...", "why": "...", "question": "...", '
-        '"sources": [{"title": "...", "url": "..."}], "category": "..."}]'
+        "Return ONLY a JSON array, no markdown:\n"
+        '[{"topic": "...", "angle": "...", "parallel": "...", "area": "..."}]'
     )
 
 
-def generate_life_briefs(count=LIFE_BRIEF_COUNT):
+def discover_history_topics(count):
     resp = get_client().messages.create(
         model=MODEL,
-        max_tokens=4000,
+        max_tokens=3000,
         tools=[WEB_SEARCH],
         messages=[{"role": "user",
-                   "content": _life_brief_prompt(count) + published_posts_context()}],
+                   "content": _history_discovery_prompt(count)
+                   + published_posts_context()}],
     )
-    briefs = _extract_json(_text_of(resp)) or []
-    # Keep only briefs with at least two real-looking source links.
-    clean = []
-    for b in briefs:
-        srcs = [s for s in (b.get("sources") or [])
-                if isinstance(s, dict) and str(s.get("url", "")).startswith("http")]
-        if len(srcs) >= 2:
-            b["sources"] = srcs
-            clean.append(b)
-    return clean[:count]
+    return (_extract_json(_text_of(resp)) or [])[:count]
 
 
-def life_briefs_markdown(briefs):
-    today = datetime.date.today().isoformat()
-    if not briefs:
-        return ("No Life subjects cleared the bar this week — nothing that had both a "
-                "real surprise and sources to back it. No action needed.\n")
-    out = [
-        f"Saturday reading for {today}. {len(briefs)} subject(s) with the legwork done "
-        "— sources checked, nothing written in your voice.\n",
-        "Write one only if the question at the end is one you actually have a view on. "
-        "Most weeks the honest answer is none, and that's the point.\n",
-    ]
-    for i, b in enumerate(briefs, 1):
-        out.append(f"\n---\n\n### {i}. {b.get('topic', 'Untitled')}")
-        if b.get("category"):
-            out.append(f"*{b['category']}*\n")
-        if b.get("hook"):
-            out.append(f"**The surprise:** {b['hook']}\n")
-        if b.get("why"):
-            out.append(f"**Why it could be an essay:** {b['why']}\n")
-        if b.get("question"):
-            out.append(f"**Your call:** {b['question']}\n")
-        if b.get("sources"):
-            out.append("**Sources:**\n")
-            for s in b["sources"]:
-                out.append("- [{}]({})".format(s.get("title") or s["url"], s["url"]))
-    out.append("\n---\n\nTo write one up with research support:\n"
-               "`python pipeline.py --topic \"<subject>\" --angle \"<your take>\"`\n")
-    return "\n".join(out)
-
-
-def run_life_briefs(dry_run=False, out_path=None):
-    """Saturday: surface researched subjects. Writes no post and no prose."""
+def run_history(dry_run=False):
+    """Saturday: draft one 'History & People' post for review."""
     if dry_run:
         print("=" * 70)
-        print("[DRY RUN] Saturday 'Life' briefs")
+        print("[DRY RUN] Saturday 'History & People' mode")
         print("=" * 70)
-        print("\n--- BRIEF PROMPT ---\n" + _life_brief_prompt(LIFE_BRIEF_COUNT))
+        print("\n--- SUBJECT-DISCOVERY PROMPT ---\n" + _history_discovery_prompt(4))
+        print("\n--- then drafted with this SYSTEM PROMPT ---\n"
+              + HISTORY_DRAFT_SYSTEM)
         print("\n[dry-run] No API call made and no file written.\n")
         return
-    print("Saturday Life briefs — researching subjects...")
-    briefs = generate_life_briefs()
-    md = life_briefs_markdown(briefs)
-    print("\n" + md)
-    if out_path:
-        with open(out_path, "w") as f:
-            f.write(md)
-        print(f"\n  wrote {out_path}")
-    print(f"Done — {len(briefs)} brief(s).")
+    print("Saturday History & People — finding a subject...")
+    candidates = discover_history_topics(4)
+    if not candidates:
+        print("No subjects found; nothing drafted.")
+        return
+    for cand in candidates:
+        area = cand.get("area", "")
+        print(f"Drafting [{area}]: {cand.get('topic', '')}")
+        instruction = (
+            f"Write the Saturday 'History & People' piece about: {cand['topic']}. "
+            f"Angle: {cand.get('angle', '')}. "
+            f"The modern parallel to develop: {cand.get('parallel', '')}. "
+            "Research it with web search first and cite real sources inline. "
+            "Get the history right, then earn the parallel — and say where it "
+            "breaks down. Set TAG to exactly 'History & People'."
+        )
+        article = draft_with_sourcing(
+            instruction, system=HISTORY_DRAFT_SYSTEM, max_words=HISTORY_MAX_WORDS,
+            preserve="the historical detail and the modern parallel")
+        if not has_sources(article):
+            print("  skipped (couldn't cite it) — trying the next subject.")
+            continue
+        article["tag"] = "History & People"
+        save_post(article, default_tag="History & People")
+        print("Done — saved 1 History & People draft for review.")
+        return
+    print("Done — saved 0 drafts (no subject could be cited).")
 
 
 def _force_primary_tag(article, cat):
@@ -889,12 +926,10 @@ def main():
     p.add_argument("--angle", help="on demand: angle/emphasis for the piece")
     p.add_argument("--interactive", "-i", action="store_true",
                    help="on demand: paste/describe a finding at the prompt")
-    p.add_argument("--life-briefs", dest="life_briefs", action="store_true",
-                   help="surface researched 'Life' subjects to write about yourself "
-                        "(auto-selected on Saturdays); writes no post")
-    p.add_argument("--no-life", dest="no_life", action="store_true",
+    p.add_argument("--history", action="store_true",
+                   help="draft one 'History & People' post (auto-selected on Saturdays)")
+    p.add_argument("--no-history", dest="no_history", action="store_true",
                    help="run the normal AI pipeline even if today is Saturday")
-    p.add_argument("--out", help="with --life-briefs: also write the briefs to this file")
     p.add_argument("--coverage", action="store_true",
                    help="print the topic-coverage report and what the next run would "
                         "target, then exit (no API call)")
@@ -918,9 +953,10 @@ def main():
         run_ondemand(topic=args.topic, url=args.url, text=text,
                      article_type=args.article_type, angle=args.angle,
                      dry_run=args.dry_run)
-    elif args.life_briefs or (datetime.date.today().weekday() == 5 and not args.no_life):
-        # weekday() == 5 is Saturday — Life briefs, not an auto-drafted post.
-        run_life_briefs(dry_run=args.dry_run, out_path=args.out)
+    elif args.history or (datetime.date.today().weekday() == 5
+                          and not args.no_history):
+        # weekday() == 5 is Saturday — one 'History & People' post.
+        run_history(dry_run=args.dry_run)
     else:
         focus = [t.strip() for t in args.focus.split(",")] if args.focus else None
         run_scheduled(args.count, focus=focus, dry_run=args.dry_run)

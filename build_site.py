@@ -54,6 +54,8 @@ TOPICS = [
     ("Agentic AI", "Systems that take actions, not just generate text."),
     ("Regulation & Policy", "Laws, standards, and the politics shaping AI."),
     ("Industry", "Model releases, labs, and the business of AI."),
+    ("History & People", "Events, stories, and figures from the past — and what they "
+                         "still explain about the present."),
     ("Life", "Notes and photos from outside the work."),
 ]
 
