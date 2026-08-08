@@ -30,6 +30,11 @@ The military version hides a trench from an observer. The golf version hides the
 
 Bobby Jones retired from competition in 1930, at twenty-eight, having won the Grand Slam. He wanted to build a course. He had seen MacKenzie's Cypress Point and understood he had found the right collaborator, and the two of them walked the site at Fruitland Nurseries in Augusta — a former plantation turned commercial nursery, which is why the property is full of specimen plants and why the holes carry the names of flowers.
 
+<figure class="full">
+  <img src="/assets/jones-mackenzie.jpg" alt="Bobby Jones and Alister MacKenzie on the Augusta site, holding a routing plan while Jones points across the ground.">
+  <figcaption>Jones and MacKenzie with the routing plan at Fruitland Nurseries. The retired champion was still in his twenties; the architect was past sixty and had only a few years to live.</figcaption>
+</figure>
+
 The course they built was, by the standards of 1930s American golf, close to eccentric.
 
 It had almost no bunkers. Roughly two dozen, on a property where a conventional architect of the era would have used a hundred. The fairways were enormously wide. The greens were vast and severely contoured. There was no rough worth the name. Jones's brief was that a member should be able to get round and enjoy it, while a great player trying to score should find the course asking harder and harder questions.

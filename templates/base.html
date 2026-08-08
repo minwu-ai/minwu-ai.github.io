@@ -177,6 +177,11 @@ article.post h1{font-family:var(--serif); font-weight:600; font-size:38px; line-
 article.post p img, article.post figure:not(.post-cover) img{
   display:block; width:100%; max-width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; object-position:center;
   margin:24px auto; border:1px solid var(--line); border-radius:10px}
+/* Opt-out for inline images that must not be cropped (archival photos,
+   diagrams with labels). Use <figure class="full">. Must follow the rule
+   above — same specificity, so source order decides. */
+article.post figure.full img{width:auto; max-width:100%; height:auto; max-height:80vh;
+  aspect-ratio:auto; object-fit:contain; margin:24px auto}
 article.post figure:not(.post-cover) figcaption{margin-top:8px; font-size:13px; color:var(--muted); font-style:italic; text-align:center}
 article.post h2{font-family:var(--serif); font-weight:600; font-size:25px; margin:40px 0 14px; letter-spacing:-0.01em}
 article.post h3{font-family:var(--serif); font-weight:600; font-size:20px; margin:30px 0 10px}
