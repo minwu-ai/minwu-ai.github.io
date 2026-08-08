@@ -5,8 +5,8 @@ slug: the-surgeon-who-camouflaged-augusta
 tag: History & People
 excerpt: "Alister MacKenzie trained as a surgeon, studied concealment in the Boer War, and taught camouflage to the British Army — then applied the same principles to Augusta National, where he died ten weeks before the first Masters and was never fully paid."
 takeaway: "MacKenzie's insight was that the most effective design is the design you cannot see. Augusta looks like a garden and plays like an examination, and the gap between those two facts is the whole craft — a reminder that in any well-built system, the absence of visible constraint is not the absence of constraint."
-cover: "/assets/"
-cover_alt: "Illustration: "
+cover: "/assets/m_2512ANGC25c-3mm13470Hc.jpg"
+cover_alt: "Rae's Creek at Amen Corner — stone bridge, azaleas, and a green that looks like a garden and plays like an examination."
 published: false
 ---
 
@@ -45,6 +45,11 @@ And here the honest caveat: very little of MacKenzie's actual construction survi
 I went to the Masters in 2024, and the thing nobody prepares you for is the elevation. Television flattens Augusta into a green carpet. Standing on it, the ground moves constantly — the drop from the 10th tee, the fall away from the 18th fairway, the way the ground at Amen Corner tilts toward the water without ever appearing to. On screen the 12th looks like a short iron over a creek. In person it looks like a decision.
 
 That is precisely the effect MacKenzie was after, and it is slightly unnerving to notice it working on you.
+
+<figure>
+  <img src="/assets/IMG_1397.jpeg" alt="Standing on the lawn in front of the Augusta National clubhouse during Masters week, 2024.">
+  <figcaption>Outside the clubhouse, Masters week, 2024. Even the founders' circle is a designed landscape pretending not to be one.</figcaption>
+</figure>
 
 On the same trip I played Forest Hills, a few minutes from the National — a Donald Ross course, and the place where Bobby Jones won the 1930 Southeastern Open in the year he completed the Grand Slam. It is a public course now, home to the university team. Standing on ground Jones won on, a short drive from ground Jones commissioned, the history of American golf compresses into an afternoon. I also played Lanier Islands, up near the lake — no comparable history, a good day's golf, and a useful reminder that most golf is just golf.
 
