@@ -15,6 +15,11 @@ on:
     - cron: '43 7 * * 1-5'   # backup ~03:43 ET
     - cron: '23 9 * * 1-5'   # backup ~05:23 ET
   workflow_dispatch:           # also lets you run it manually anytime
+    inputs:
+      count:
+        description: "How many posts to draft"
+        required: false
+        default: "2"
 
 permissions:
   contents: write
@@ -52,7 +57,7 @@ jobs:
         if: steps.guard.outputs.skip != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python pipeline.py
+        run: python pipeline.py --count "${{ github.event.inputs.count || '2' }}"
 
       - name: Commit new drafts
         id: commit
