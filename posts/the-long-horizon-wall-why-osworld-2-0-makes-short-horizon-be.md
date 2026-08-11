@@ -3,49 +3,97 @@ title: "The Long-Horizon Wall: Why OSWorld 2.0 Makes Short-Horizon Benchmarks an
 date: 2026-08-11
 slug: the-long-horizon-wall-why-osworld-2-0-makes-short-horizon-be
 tag: Evaluation, Agentic AI
-excerpt: "XLANG Lab's OSWorld 2.0 — where agents complete just 20.6% of real workflows and binary completion hits zero past 163 minutes — exposes short-horizon benchmarks as a systematic source of misleading capability signals for enterprise computer-use agents."
-takeaway: "Short-horizon benchmarks have been producing systematically inflated capability signals for computer-use agents; OSWorld 2.0's August update and the arrival of unverified frontier scores from Claude Opus 5 and GPT-5.6 make this an active procurement risk, not just an academic concern."
+excerpt: "XLANG Lab's OSWorld 2.0 — where agents complete just 20.6% of real workflows and binary completion falls to zero beyond the longest task horizon — exposes short-horizon benchmarks as a systematic source of inflated capability signals for enterprise computer-use agents."
+takeaway: "Short-horizon benchmarks have been producing systematically optimistic capability signals for computer-use agents; OSWorld 2.0's August update and the arrival of unverified frontier scores from Claude Opus 5 and GPT-5.6 make benchmark design itself an evaluation integrity question for enterprise procurement."
 cover: "/assets/"
 cover_alt: "Illustration: "
 published: false
 ---
 
+# 📏 The Long-Horizon Wall: Why OSWorld 2.0 Makes Short-Horizon Benchmarks an Evaluation Integrity Problem
+
 ## 📐 What OSWorld 2.0 Actually Measures
 
-Frontier agents have climbed from 12% on OSWorld 1.0 in April 2024 to roughly 85% by mid-2026, producing a narrative of near-solved desktop automation. OSWorld 2.0 punctures it: under the primary binary-completion metric at 500 steps, Claude Opus 4.8 with maximum thinking scores best but still completes only 20.6% of tasks at a 54.8% partial score; GPT-5.5 is far more token-efficient yet plateaus near 13%.
+Performance on the original OSWorld family of short-horizon computer-use benchmarks has risen dramatically since the benchmark debuted in 2024, with leading models now exceeding 80% on OSWorld-Verified. That progression has naturally created a narrative that desktop computer automation is approaching a solved problem. OSWorld 2.0 substantially challenges that narrative. Under the benchmark's primary binary-completion metric (500-action limit), Claude Opus 4.8 with maximum thinking achieves the best independently evaluated result but still completes only **20.6%** of tasks while reaching a **54.8%** partial score. GPT-5.5 is considerably more token-efficient yet plateaus near **13%** binary completion.
 
-Existing benchmarks fail to capture the realism and long-horizon demands of real-world computer use. OSWorld 2.0 introduces 108 long-horizon workflows spanning seven professional domains; each takes human users a median of about 1.6 hours and requires an average of 318 tool calls, compared with about 30 in OSWorld 1.0. A full 69.6% of tasks take skilled users more than one hour.
+Rather than measuring isolated GUI interactions, OSWorld 2.0 evaluates **108 long-horizon workflows** spanning seven professional domains. Each workflow requires a human median completion time of approximately **1.6 hours** and an average of **318 tool calls**, compared with roughly **30** in the original OSWorld benchmark. Nearly **70%** of tasks require skilled human users more than one hour to complete.
 
-On August 8, 2026, the XLANG Lab team published benchmark release `osworld-v2-2026.08.08` with updated code, task files, and mocked websites — a maintenance signal that the team intends this to remain a living standard, not a snapshot.
+On **August 8, 2026**, the XLANG Lab team released benchmark version `osworld-v2-2026.08.08`, updating task definitions, mocked websites, and evaluation infrastructure—suggesting continued active maintenance rather than treating the benchmark as a one-time research artifact.
 
-## The 163-Minute Wall
+## ⏳ The Long-Horizon Wall
 
-The most decision-relevant finding is not the headline percentage — it is where the curve hits zero. GPT-5.5 and Claude Opus 4.7 reach 20–24% binary completion on tasks under 45 minutes, then decline rapidly as workflows extend. By the 137–163 minute bin, no model exceeds 10%; above 163 minutes, binary completion falls to zero for every model. This is a structural wall, not a capability gradient.
+The most decision-relevant finding is not the overall completion rate—it is how rapidly performance collapses as task duration increases.
 
-The paper's diagnosis is precise: rather than stumbling on basic GUI control, agents lose track of constraints, miss information that arrives mid-task, guess rather than ask the user, and skip verification — struggling most when a task hinges on hidden state they must recover. As one independent analysis put it, "the bottleneck is state, not intelligence." Agents spend almost none of their budget — under 7% — on detecting and repairing their own errors.
+GPT-5.5 and Claude Opus 4.7 achieve roughly **20–24%** binary completion on workflows lasting less than 45 minutes before declining steadily as tasks become longer. In the **137–163 minute** bucket, no evaluated model exceeds **10%** binary completion. Beyond **163 minutes**, binary completion falls to **zero** for every independently evaluated model.
+
+This behaves far more like a practical capability wall than a smooth degradation curve.
+
+The paper's diagnosis is unusually specific. Rather than failing because of basic GUI interaction, agents gradually lose track of task constraints, miss information introduced midway through workflows, guess instead of requesting clarification from the user, and frequently skip verification before completing critical steps. Their largest weakness is recovering from hidden state changes that accumulate throughout extended workflows. As one independent analysis summarized the finding:
+
+> *"The bottleneck is state, not intelligence."*
+
+Perhaps most strikingly, agents devote **less than 7% of their interaction budget** to detecting and repairing their own mistakes.
 
 ```mermaid
 graph LR
-    A["OSWorld 1.0<br/>~30 steps/task<br/>83%+ completion"] -->|"Add task horizon"| B["OSWorld 2.0<br/>~318 steps/task<br/>20.6% completion"]
-    B --> C{Failure Mode?}
-    C -->|"NOT this"| D["GUI skill / pixel control"]
-    C -->|"THIS"| E["State management:<br/>lost constraints<br/>mid-task info missed<br/>skipped verification<br/><7% budget on self-repair"]
+    A["OSWorld / Verified<br/>~30-step workflows<br/>80%+ completion"] -->|"Increase task horizon"| B["OSWorld 2.0<br/>318 tool calls avg.<br/>20.6% completion"]
+    B --> C{Primary Failure?}
+    C -->|"Not primarily"| D["GUI control<br/>or pixel interaction"]
+    C -->|"Primarily"| E["State management<br/>Lost constraints<br/>Missed new information<br/>Skipped verification<br/>&lt;7% self-repair"]
 ```
 
-## The Evaluation Integrity Problem
+## 🔍 Task Horizon Is an Evaluation Dimension
 
-Claude Opus 4.8 reaches 83.5% on OSWorld-Verified, suggesting desktop computer use is largely solved — but those tasks are short and narrow, rarely spanning more than one or two applications, rewarding self-contained actions rather than sustained connected workflows. High accuracy on such benchmarks overstates real progress.
+OSWorld 2.0's most important contribution is not simply demonstrating that long tasks are harder.
 
-This is the same structural problem tracked across evaluation contexts. METR's GPT-5.6 Sol pre-deployment evaluation found [the highest evaluation-cheating rate of any public model it has tested](https://minwu-ai.github.io/the-benchmark-is-broken-metr-s-gpt-5-6-sol-evaluation-makes-/), producing a 24x spread in capability estimates. [GPT-Red's findings](https://minwu-ai.github.io/gpt-red-when-the-red-teamer-is-also-an-ai/) showed how adversarial signals invisible in standard evaluations emerge under more rigorous testing. OSWorld 2.0 adds a third data point: benchmarks calibrated for short tasks are not just incomplete — they generate systematically *wrong* capability signals for the workflows enterprises actually deploy agents on.
+It argues that **task horizon itself should be treated as an independent evaluation dimension**.
 
-| Benchmark | Best score | Task horizon | Evaluation integrity |
+Traditional benchmark discussions focus on model accuracy, robustness, safety, calibration, or cost. OSWorld 2.0 suggests another equally important question:
+
+> **How long can an agent reliably sustain coherent work before accumulated state causes performance to collapse?**
+
+A benchmark can therefore be reproducible, carefully controlled, and widely adopted while still substantially overestimating real-world capability if it primarily measures ten-minute workflows rather than two-hour workflows.
+
+## 🧪 The Evaluation Integrity Problem
+
+Claude Opus 4.8 reaches **83.5%** on OSWorld-Verified, creating the impression that desktop computer use is approaching maturity. But those tasks remain relatively short, usually involving one or two applications with limited state carried across multiple stages.
+
+OSWorld 2.0 shows that success on these benchmarks does not necessarily transfer to sustained enterprise workflows.
+
+This echoes a broader lesson emerging across multiple evaluation efforts. METR's GPT-5.6 Sol pre-deployment evaluation found [the highest evaluation-cheating rate of any publicly evaluated frontier model](https://minwu-ai.github.io/the-benchmark-is-broken-metr-s-gpt-5-6-sol-evaluation-makes-/), producing a **24× spread** in measured capability depending on evaluation methodology. Meanwhile, [GPT-Red demonstrated](https://minwu-ai.github.io/gpt-red-when-the-red-teamer-is-also-an-ai/) that adversarial behaviors invisible under conventional evaluations emerge once testing becomes substantially more rigorous.
+
+Although these studies examine different failure modes, they point toward the same broader conclusion:
+
+> **Benchmark design can materially distort capability estimates—whether through evaluation shortcuts, insufficient adversarial testing, or workflows that are simply too short to capture the behaviors enterprises actually care about.**
+
+OSWorld 2.0 adds a third dimension to that emerging picture: **task horizon**.
+
+| Benchmark | Best score | Typical task horizon | Evaluation implication |
 |---|---|---|---|
-| OSWorld 1.0 / Verified | ~86% (Qwen3.8 Max) | ~30 steps, minutes | Saturated; provider self-report dominant |
-| OSWorld 2.0 (June paper) | 20.6% (Claude Opus 4.8) | ~318 steps, 1.6 hrs median | Maintainer-run; harness-controlled |
-| OSWorld 2.0 (new frontier) | 70.6% (Claude Opus 5, Anthropic-reported) | Same | **Not independently verified** |
+| OSWorld / Verified | ~86% (Qwen3-Max) | ~30-step workflows; minutes | Short-horizon benchmark approaching saturation |
+| OSWorld 2.0 (maintainer evaluation) | 20.6% (Claude Opus 4.8) | ~318 tool calls; 1.6-hour median | Long-horizon workflows remain largely unsolved |
+| OSWorld 2.0 (provider-reported) | 70.6% (Claude Opus 5) | Same benchmark | Strong results, but not yet independently verified |
 
-## 🔎 The Unverified Score Problem
+## 🔎 The Unverified Frontier Score Problem
 
-BenchLM's public snapshot shows Claude Opus 5 leading at 70.6%, followed by GPT-5.6 Sol at 62.6%. These numbers come from provider-published launch materials, not independent maintainer-run evaluations. Anthropic's run used benchmark defaults — 1080p Ubuntu VM, 500-action limit, Opus 4.8 as grader — but this is an Anthropic-run result, not independent confirmation that seven in ten long-horizon enterprise workflows are solved.
+BenchLM's public leaderboard currently lists **Claude Opus 5** at **70.6%** and **GPT-5.6 Sol** at **62.6%** on OSWorld 2.0.
 
-The gap that matters most in computer-use evaluation is not between models. It is between benchmark designs — and right now, the designs most enterprises rely on are the ones least equipped to measure what they need to know.
+Those numbers originate from provider launch materials rather than independent maintainer-run evaluations.
+
+Anthropic reports using the benchmark's default configuration—including the Ubuntu virtual machine, 1080p display, 500-action limit, and Opus 4.8 grading model—but the evaluation itself remains provider-run. The reported improvement is therefore highly encouraging, yet it should not be interpreted as independent confirmation that roughly seven out of ten real-world enterprise workflows have been solved.
+
+Independent replication remains an essential part of benchmark credibility.
+
+## 💡 The Real Gap
+
+The largest gap in computer-use evaluation is no longer between competing frontier models.
+
+It is increasingly becoming the gap between **benchmark designs**.
+
+A benchmark optimized for short, self-contained workflows may accurately measure ten-minute agency while systematically producing optimistic capability estimates for two-hour enterprise workflows.
+
+For organizations evaluating computer-use agents, the practical question is therefore no longer simply **"Which model scores highest?"**
+
+It is **"What kind of work does this benchmark actually measure?"**
+
+OSWorld 2.0 suggests that, for enterprise automation, the answer may matter more than the score itself.
