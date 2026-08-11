@@ -1,13 +1,13 @@
 ---
 title: "The Long-Horizon Wall: Why OSWorld 2.0 Makes Short-Horizon Benchmarks an Evaluation Integrity Problem"
-date: 2026-08-11
+date: 2026-08-10
 slug: the-long-horizon-wall-why-osworld-2-0-makes-short-horizon-be
 tag: Evaluation, Agentic AI
 excerpt: "XLANG Lab's OSWorld 2.0 — where agents complete just 20.6% of real workflows and binary completion falls to zero beyond the longest task horizon — exposes short-horizon benchmarks as a systematic source of inflated capability signals for enterprise computer-use agents."
 takeaway: "Short-horizon benchmarks have been producing systematically optimistic capability signals for computer-use agents; OSWorld 2.0's August update and the arrival of unverified frontier scores from Claude Opus 5 and GPT-5.6 make benchmark design itself an evaluation integrity question for enterprise procurement."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/5bcd8baab0a730a348d3a59e225e3fb512febcf43eb1095c4f060311ab027256.png"
+cover_alt: "Illustration: Long-horizon workflows expose the widening gap between benchmark success and sustained real-world agent performance."
+published: true
 ---
 
 # 📏 The Long-Horizon Wall: Why OSWorld 2.0 Makes Short-Horizon Benchmarks an Evaluation Integrity Problem
