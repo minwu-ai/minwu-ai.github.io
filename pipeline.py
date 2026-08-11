@@ -469,13 +469,14 @@ def _discovery_prompt(count, focus=None, plan=None):
     )
 
 
-def discover_topics(count, focus=None):
+def discover_topics(count, focus=None, plan=None):
     resp = get_client().messages.create(
         model=MODEL,
         max_tokens=3000,   # room for web-search rounds + the full candidate JSON
         tools=[WEB_SEARCH],
         messages=[{"role": "user",
-                   "content": _discovery_prompt(count, focus) + published_posts_context()}],
+                   "content": _discovery_prompt(count, focus, plan)
+                   + published_posts_context()}],
     )
     topics = _extract_json(_text_of(resp))
     return topics[:count]
