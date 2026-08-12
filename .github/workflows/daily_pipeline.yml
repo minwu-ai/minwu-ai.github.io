@@ -28,6 +28,12 @@ permissions:
 jobs:
   draft:
     runs-on: ubuntu-latest
+    # Runners default to UTC, which put post dates and the same-day guard on a
+    # different calendar day than the author's. Pin everything to Eastern so
+    # "today" means the same thing here, in the commit message, and in the
+    # frontmatter date Python writes.
+    env:
+      TZ: America/New_York
     steps:
       - uses: actions/checkout@v4
         with:
@@ -36,8 +42,10 @@ jobs:
       - name: Skip if already drafted today (scheduled runs only)
         id: guard
         run: |
+          # Only a previous SCHEDULED run counts. Manual runs commit under a
+          # different prefix so they never consume the day's scheduled slot.
           if [ "${{ github.event_name }}" = "schedule" ] && \
-             git log --oneline --grep="Daily drafts $(date -u +%Y-%m-%d)" | grep -q .; then
+             git log --oneline --grep="Daily drafts $(date +%Y-%m-%d)" | grep -q .; then
             echo "Already drafted today — this backup slot will no-op."
             echo "skip=true" >> "$GITHUB_OUTPUT"
           else
@@ -70,7 +78,11 @@ jobs:
             echo "No new drafts"
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "Daily drafts $(date +%Y-%m-%d)"
+            if [ "${{ github.event_name }}" = "schedule" ]; then
+              git commit -m "Daily drafts $(date +%Y-%m-%d)"
+            else
+              git commit -m "Manual drafts $(date +%Y-%m-%d)"
+            fi
             # Resilient push: rebase onto any concurrent changes, retry a few times.
             pushed=false
             for i in 1 2 3 4 5; do
