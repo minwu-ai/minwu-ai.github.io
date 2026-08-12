@@ -5,9 +5,9 @@ slug: the-token-transparency-gap-why-agentic-ai-still-hides-where-computation-go
 tag: Agentic AI, AI Evaluation
 excerpt: "Modern APIs can tell us how many tokens an agent consumed, but not where those tokens were actually spent. As reasoning models and autonomous agents become mainstream, token attribution—not token counting—may become the next frontier in AI evaluation."
 takeaway: "Today's LLMs provide cost accounting, not computational accountability. Input, output, and even reasoning tokens reveal how much compute was consumed, but reveal very little about whether that compute was spent efficiently."
-cover: "/assets/"
-cover_alt: ""
-published: false
+cover: "/assets/136fd6dda182e0fe46fa082ee91fc4da77f455727a810d97f87aa1c17bd61280.png"
+cover_alt: "Illustration: Most tokens in agentic AI are spent beneath the surface—in hidden computation rather than visible conversation."
+published: true
 ---
 
 Modern LLM APIs routinely report token usage. Enterprise teams estimate operational costs from tokens, benchmark models by cost per million tokens, and monitor inference budgets as closely as latency.
