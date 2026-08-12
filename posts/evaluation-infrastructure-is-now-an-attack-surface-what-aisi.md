@@ -1,6 +1,6 @@
 ---
 title: "Evaluation Infrastructure Is Now an Attack Surface: What AISI's Incident Report Actually Teaches"
-date: 2026-08-12
+date: 2026-08-11
 slug: evaluation-infrastructure-is-now-an-attack-surface-what-aisi
 tag: Evaluation, AI Safety
 excerpt: "AISI's August 4 incident report reveals that the real failure was not the agents themselves, but two deliberate evaluator-side configuration choices — disabled cyber classifiers and unrestricted internet access — that together removed the only controls that would have kept goal-seeking behavior inside the test boundary."
