@@ -1,6 +1,6 @@
 ---
 title: "The Token Transparency Gap: Why Agentic AI Still Hides Where Computation Goes"
-date: 2026-08-12
+date: 2026-08-11
 slug: the-token-transparency-gap-why-agentic-ai-still-hides-where-computation-goes
 tag: Agentic AI, AI Evaluation
 excerpt: "Modern APIs can tell us how many tokens an agent consumed, but not where those tokens were actually spent. As reasoning models and autonomous agents become mainstream, token attribution—not token counting—may become the next frontier in AI evaluation."
