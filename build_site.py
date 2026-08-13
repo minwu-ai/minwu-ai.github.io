@@ -210,6 +210,9 @@ def slugify(value):
 _TOPIC_BY_LOWER = {name.lower(): name for name, _ in TOPICS}
 
 
+UNKNOWN_TAGS = set()   # populated during the build; reported at the end
+
+
 def normalize_tags(raw):
     """A post's `tag` may be one value, a comma-separated string, or a YAML list.
     Return a de-duped list of tag names (mapped to the curated topic casing)."""
@@ -222,6 +225,11 @@ def normalize_tags(raw):
         if not v:
             continue
         canon = _TOPIC_BY_LOWER.get(v.lower(), v)
+        # A tag that isn't a curated topic still renders a pill, but links to a
+        # /topics/ page that is never generated — a silent 404. Warn loudly so a
+        # typo like "AI Evaluation" is caught at build time, not months later.
+        if canon not in _TOPIC_BY_LOWER.values():
+            UNKNOWN_TAGS.add(canon)
         if canon not in out:
             out.append(canon)
     return out
@@ -431,6 +439,12 @@ def build():
                     canonical_path="/404.html"))
 
     print("Built {} published posts into public/".format(len(posts)))
+    if UNKNOWN_TAGS:
+        print("\n  WARNING: {} tag(s) are not curated topics, so their pills link "
+              "to pages that don't exist:".format(len(UNKNOWN_TAGS)))
+        for t in sorted(UNKNOWN_TAGS):
+            print("    - {!r}".format(t))
+        print("  Fix the post's `tag:` line, or add the topic to TOPICS.\n")
 
 
 def build_topics(posts):
