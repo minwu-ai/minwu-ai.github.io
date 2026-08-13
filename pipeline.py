@@ -60,12 +60,38 @@ FOCUS_TOPICS = [
 
 # Academic researchers to follow — surface and read their NEW papers/writing (arXiv,
 # Google Scholar, personal sites) as post material. (name, focus, home page). Edit freely.
+# (name, focus, homepage). Leave the URL empty when you aren't sure of it — the
+# pipeline is told to find the person's latest work by name rather than guess a
+# URL. Add freely; more names means more non-news material to draw on.
 FOLLOWED_RESEARCHERS = [
     ("Neel Nanda", "mechanistic interpretability", "https://www.neelnanda.io/"),
     ("Been Kim", "explainability / concept-based interpretability", "https://beenkim.github.io/"),
     ("Jacob Steinhardt", "ML safety, evaluation, robustness", "https://jsteinhardt.stat.berkeley.edu/"),
     ("Dan Hendrycks", "AI safety benchmarks and catastrophic risk", "https://www.safe.ai/"),
     ("Inioluwa Deborah Raji", "algorithmic auditing and accountability", "https://rajiinio.github.io/"),
+    ("Percy Liang", "holistic evaluation, benchmarks, transparency (Stanford CRFM)", ""),
+    ("Rishi Bommasani", "foundation-model transparency and policy (Stanford)", ""),
+    ("Sam Bowman", "alignment, model evaluation, scalable oversight", ""),
+    ("Ethan Perez", "red-teaming, adversarial evaluation", ""),
+    ("Chris Olah", "interpretability and features", ""),
+    ("David Bau", "model editing and interpretability (Northeastern)", ""),
+    ("Cynthia Rudin", "interpretable models over post-hoc explanation (Duke)", ""),
+    ("Arvind Narayanan and Sayash Kapoor", "evaluation critique, AI claims (Princeton)", ""),
+    ("Yoshua Bengio", "AI risk, scientific oversight (Mila)", ""),
+]
+
+# Listings and venues to scan for new work. These are where papers live; the
+# news cycle is not.
+RESEARCH_VENUES = [
+    "arXiv cs.LG / cs.AI / cs.CY new-submission listings",
+    "OpenReview (ICLR, NeurIPS, ICML submissions and reviews)",
+    "ACL Anthology",
+    "Transformer Circuits",
+    "the Alignment Forum's research posts (not link posts)",
+    "Stanford CRFM / HAI publications",
+    "Epoch AI",
+    "Redwood Research",
+    "ACM FAccT proceedings",
 ]
 
 # ---- Saturday 'History & People' -----------------------------------------
@@ -167,15 +193,81 @@ def _sources_preference():
 
 
 def _researchers_preference():
-    who = "; ".join("{} ({}) — {}".format(n, u, f) for n, f, u in FOLLOWED_RESEARCHERS)
+    who = "; ".join(
+        "{}{} — {}".format(n, " ({})".format(u) if u else "", f)
+        for n, f, u in FOLLOWED_RESEARCHERS)
+    venues = "; ".join(RESEARCH_VENUES)
     return (
-        "FOLLOW ACADEMIC RESEARCH: actively track and surface NEW papers/writing "
-        "(roughly the last 2 weeks) from these researchers as post material — check "
-        "arXiv, Google Scholar, and their sites: " + who + ". Also scan arXiv "
-        "(cs.LG / cs.AI / cs.CY) for notable AI-safety, interpretability, evaluation, "
-        "or auditing papers. Papers on arXiv are open-access — read the abstract and "
-        "intro, and cite the arXiv URL. A rigorous paper is excellent post material."
+        "FOLLOW ACADEMIC RESEARCH — search these ACTIVELY, every run, by name. Do "
+        "not wait for a paper to show up in the news; papers rarely do, which is "
+        "exactly why this section exists.\n"
+        "Researchers to track (find their latest work by searching their name plus "
+        "'arXiv' or 'paper' if you don't have a URL): " + who + ".\n"
+        "Venues and listings to scan: " + venues + ".\n"
+        "Look back roughly 30 DAYS for papers and researcher writing — this window "
+        "is deliberately much longer than the news window, because a good paper is "
+        "not less interesting for being three weeks old.\n"
+        "Read the abstract and introduction before proposing it, cite the abstract "
+        "page URL, and describe what the paper actually shows — not what a headline "
+        "says it shows."
     )
+
+
+# Hosts that indicate a post is grounded in a real research artifact rather than
+# an announcement. Used to measure how research-led the site actually is.
+RESEARCH_HOSTS = ("arxiv.org", "doi.org", "openreview.net", "aclanthology.org",
+                  "nature.com", "science.org", "pnas.org", "transformer-circuits.pub",
+                  "distill.pub", "jmlr.org", "neurips.cc", "icml.cc", "iclr.cc")
+
+
+def _research_share(recent=20):
+    """How many of the most recent published posts cite a real research artifact."""
+    dated = []
+    for path in glob.glob(os.path.join(POSTS_DIR, "*.md")):
+        meta = _read_frontmatter(path)
+        if str(meta.get("published", "true")).lower() == "false":
+            continue
+        dated.append((str(meta.get("date", "")), path))
+    dated.sort(reverse=True)
+    sample = dated[:recent]
+    hits = 0
+    for _, path in sample:
+        try:
+            body = open(path).read().lower()
+        except OSError:
+            continue
+        if any(h in body for h in RESEARCH_HOSTS):
+            hits += 1
+    return hits, len(sample)
+
+
+def _source_mix_requirement(count):
+    """Require research-grounded candidates, sized to how thin that coverage is."""
+    hits, total = _research_share()
+    need = max(1, (count + 1) // 2)
+    txt = ("SOURCE MIX (a second hard constraint, independent of category):\n")
+    if total:
+        txt += ("Of the last {} published posts, only {} cite a research artifact "
+                "(arXiv, a journal, OpenReview, Transformer Circuits). The site reads "
+                "as lab-announcement and regulatory news. Fix that here.\n".format(
+                    total, hits))
+    txt += (
+        "- At least {} of the {} candidates MUST be grounded in a RESEARCH ARTIFACT: "
+        "a paper or preprint, a lab's research write-up (not a product or policy "
+        "announcement), or a benchmark/evaluation result with a methodology you can "
+        "read. Its primary link must be to the artifact itself.\n".format(need, count)
+        + "- Do NOT satisfy this with a news article about research. The candidate "
+        "must point at the work.\n"
+        "- Different material moves at different speeds, so use DIFFERENT LOOKBACK "
+        "WINDOWS rather than one news window:\n"
+        "    • announcements, incidents, regulatory action — last ~72 hours\n"
+        "    • benchmark and evaluation results — last ~2 weeks\n"
+        "    • papers, preprints, and researcher writing — last ~30 days\n"
+        "  A three-week-old paper nobody has written up well is a BETTER candidate "
+        "than today's press release.\n"
+        "- Avoid stacking multiple candidates on one ongoing story. If the site has "
+        "already covered an incident, only revisit it with genuinely new material.")
+    return txt
 
 
 # The AI categories the balancer manages. 'Life' is deliberately excluded — it's
@@ -267,7 +359,14 @@ CORROBORATION_RULE = (
     "(b) it is independently reported by at least TWO credible sources OUTSIDE the "
     "priority list. If a story clears NEITHER bar, do not build a post around it — omit "
     "it, or clearly label the specific unconfirmed claims as unverified/rumored. Never "
-    "present an uncorroborated story as established fact."
+    "present an uncorroborated story as established fact.\n"
+    "CARVE-OUT FOR RESEARCH: a paper, preprint, or published evaluation IS its own "
+    "primary source. It does NOT need secondary news coverage to qualify — requiring "
+    "that would exclude exactly the research this publication most wants to cover. "
+    "What it needs is that the work genuinely exists, that you have read the abstract "
+    "and introduction, and that you describe its actual claims and stated limitations "
+    "accurately. Treat a preprint as a preprint: report it as 'not yet peer reviewed' "
+    "and do not overstate it."
 )
 
 # ---- Draft length & formatting (edit these to taste) ----
@@ -438,11 +537,17 @@ def _discovery_prompt(count, focus=None, plan=None):
     plan = plan or coverage_plan()
     focus_line = "; ".join(focus or FOCUS_TOPICS)
     return (
-        f"Find the {count} most significant, recent AI developments (roughly the last "
-        "48 hours) worth writing about, INCLUDING notable new academic research/papers. "
-        "Prefer concrete items (releases, regulation, research papers, incidents) over "
-        f"evergreen topics. General areas of interest: {focus_line}.\n\n"
+        f"Find {count} things worth writing about for a publication on AI risk, "
+        "evaluation, and governance.\n\n"
+        "IMPORTANT — this is NOT a news round-up. Do not start from today's "
+        "headlines. Headlines are dominated by lab announcements and regulatory "
+        "action, and a site built from them ends up covering the same few stories "
+        "from every angle. Start instead from the question: what has been PUBLISHED "
+        "recently — papers, evaluations, research write-ups, deployment data — that a "
+        "risk practitioner would be glad someone read carefully for them?\n\n"
+        f"General areas of interest: {focus_line}.\n\n"
         + _coverage_summary(plan) + "\n\n"
+        + _source_mix_requirement(count) + "\n\n"
         "REQUIRED MIX (this is a candidate list; extras are backups in case some can't "
         "be corroborated):\n"
         "- Candidates must span DIFFERENT categories — do not return two topics in the "
@@ -452,8 +557,6 @@ def _discovery_prompt(count, focus=None, plan=None):
         "report the day's headlines and label them; go looking for what happened in "
         "agent deployments, evaluation and benchmarking work, alignment research, and "
         "the business/vendor side of AI.\n"
-        "- Include at least one candidate grounded in ACADEMIC research (an arXiv paper "
-        "or a followed researcher's new work) whenever a notable one exists.\n"
         "- Order candidates best-first.\n\n"
         + _sources_preference() + "\n\n"
         + _researchers_preference() + "\n\n"
