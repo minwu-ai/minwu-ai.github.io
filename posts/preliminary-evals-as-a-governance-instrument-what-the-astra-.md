@@ -5,9 +5,9 @@ slug: preliminary-evals-as-a-governance-instrument-what-the-astra-
 tag: AI Governance, AI Safety
 excerpt: "OpenAI's August 7 Astra disclosure is the clearest public example yet of a frontier AI developer allowing preliminary safety evaluations to influence ongoing development before a final capability determination, revealing both the growing power of evaluation as a governance instrument and the limits of a system that still depends largely on voluntary corporate judgment."
 takeaway: "The Astra disclosure demonstrates that preliminary safety evaluations can now shape frontier AI development—not merely deployment—through strengthened internal controls before a final capability determination is reached. But it also exposes a broader governance question: when the developer designs the evaluations, interprets the evidence, decides the mitigation measures, and ultimately chooses what to disclose, can voluntary corporate governance alone provide sufficient accountability as frontier AI capabilities continue to advance?"
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/04f94ae5a05bfad6ed1a489a2c549454d75b38d4de3913e3d43cc65088ad62df.png"
+cover_alt: "Illustration: As safety evaluations increasingly influence development decisions, the governance challenge extends beyond evaluating AI models to governing the evaluation process itself."
+published: true
 ---
 
 # 📏 What Actually Happened
