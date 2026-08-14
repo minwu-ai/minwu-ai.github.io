@@ -210,6 +210,8 @@ def slugify(value):
 _TOPIC_BY_LOWER = {name.lower(): name for name, _ in TOPICS}
 
 
+HOME_POSTS = 10        # how many recent posts the homepage shows; rest go to /archive/
+
 UNKNOWN_TAGS = set()   # populated during the build; reported at the end
 
 
@@ -338,9 +340,16 @@ def build():
 
     posts = load_posts()
 
-    # ---- Home page (hero + latest posts) ----
+    # ---- Home page (hero + the most recent posts only) ----
+    # The full back catalogue lives at /archive/ so the homepage stays light as
+    # the post count grows.
     if posts:
-        listing = post_list_html(posts)
+        listing = post_list_html(posts[:HOME_POSTS])
+        if len(posts) > HOME_POSTS:
+            listing += (
+                '<a class="see-all" href="/archive/">'
+                'All {n} posts <span aria-hidden="true">&rarr;</span></a>'
+            ).format(n=len(posts))
     else:
         listing = '<p class="lede">No posts published yet — drafts are awaiting review.</p>'
     quote_html = ""
@@ -414,6 +423,9 @@ def build():
 
     # ---- Topics: index + one page per tag ----
     build_topics(posts)
+
+    # ---- Archive: the full back catalogue ----
+    build_archive(posts)
 
     # ---- Projects page ----
     build_projects()
@@ -564,6 +576,48 @@ def build_about():
     (d / "index.html").write_text(
         render_page("About — " + SITE_NAME, "About " + AUTHOR, inner,
                     nav_active="about", canonical_path="/about/"))
+
+
+def build_archive(posts):
+    """Every post in one compact chronological list, grouped by month.
+
+    Deliberately title + date + tags only — no excerpts or thumbnails — so it
+    stays fast and scannable at hundreds of posts, which is where numbered
+    pagination stops being useful.
+    """
+    parts = ['<div class="eyebrow">Archive</div>',
+             '<h1 class="page">All posts</h1>',
+             '<p class="lede">{n} post{s}, newest first. '
+             'Browse by subject on the <a href="/topics/">Topics</a> page.</p>'.format(
+                 n=len(posts), s="" if len(posts) == 1 else "s")]
+    current_month = None
+    open_list = False
+    for p in posts:
+        month = (p["date"].year, p["date"].month)
+        if month != current_month:
+            if open_list:
+                parts.append("</ul>")
+            current_month = month
+            parts.append('<h2 class="archive-month">{}</h2>'.format(
+                p["date"].strftime("%B %Y")))
+            parts.append('<ul class="archive-list">')
+            open_list = True
+        day = p["date"].strftime("%d")
+        parts.append(
+            '<li><span class="archive-day">{day}</span>'
+            '<a href="/{slug}/">{title}</a>'
+            '<span class="archive-tags">{tags}</span></li>'.format(
+                day=day, slug=p["slug"], title=p["title"],
+                tags=" · ".join(p["tags"])))
+    if open_list:
+        parts.append("</ul>")
+    d = PUBLIC_DIR / "archive"
+    d.mkdir(exist_ok=True)
+    (d / "index.html").write_text(
+        render_page("Archive — " + SITE_NAME,
+                    "Every post by " + AUTHOR + ", newest first",
+                    "\n".join(parts), nav_active="archive",
+                    canonical_path="/archive/", wide=True))
 
 
 def build_disclaimer():

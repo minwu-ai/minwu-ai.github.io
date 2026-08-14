@@ -111,6 +111,31 @@ h1.page{font-family:var(--serif); font-weight:600; font-size:34px; line-height:1
   .post-thumb{order:-1; width:100%; border-radius:10px}
   .post-item h2{font-size:20px}
 }
+/* Homepage link through to the full archive */
+.see-all{display:inline-block; margin-top:26px; font-family:var(--mono); font-size:13px;
+  color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  transition:border-color .15s}
+.see-all:hover{border-bottom-color:var(--accent)}
+
+/* Archive: compact chronological list, grouped by month */
+.archive-month{font-family:var(--mono); font-size:12px; font-weight:500;
+  letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+  margin:36px 0 4px; padding-bottom:8px; border-bottom:1px solid var(--hair)}
+.archive-list{list-style:none; margin:0; padding:0}
+.archive-list li{display:flex; align-items:baseline; gap:14px; padding:11px 0;
+  border-bottom:1px solid var(--hair)}
+.archive-day{flex:0 0 22px; font-family:var(--mono); font-size:12px; color:var(--muted);
+  text-align:right}
+.archive-list a{font-family:var(--serif); font-size:17px; text-decoration:none; flex:1 1 auto}
+.archive-list a:hover{color:var(--accent)}
+.archive-tags{flex:0 0 auto; font-family:var(--mono); font-size:11px; color:var(--muted);
+  text-align:right}
+@media(max-width:600px){
+  .archive-list li{flex-wrap:wrap; gap:4px 12px}
+  .archive-list a{flex:1 1 100%; order:2}
+  .archive-tags{order:3; flex:1 1 100%; text-align:left}
+}
+
 .tag{display:inline-block; font-family:var(--mono); font-size:11px; color:var(--accent-ink);
   background:var(--accent-soft); padding:4px 10px; border-radius:100px; margin-top:14px;
   text-decoration:none; letter-spacing:0.02em}
@@ -261,6 +286,7 @@ footer.site a{color:var(--muted)}
     <a class="brand" href="/">{{ site_name_html }}</a>
     <div class="nav">
       <a href="/"{{ ' class="active"' if nav_active == 'home' else '' }}>Home</a>
+      <a href="/archive/"{{ ' class="active"' if nav_active == 'archive' else '' }}>Archive</a>
       <a href="/topics/"{{ ' class="active"' if nav_active == 'topics' else '' }}>Topics</a>
       <a href="/projects/"{{ ' class="active"' if nav_active == 'projects' else '' }}>Projects</a>
       <a href="/about/"{{ ' class="active"' if nav_active == 'about' else '' }}>About</a>
