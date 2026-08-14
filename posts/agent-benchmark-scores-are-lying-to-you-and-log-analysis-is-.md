@@ -5,9 +5,9 @@ slug: agent-benchmark-scores-are-lying-to-you-and-log-analysis-is-
 tag: Evaluation, AI Governance
 excerpt: "A May 2026 preprint from researchers at Princeton, UC Berkeley, UK AISI, Apollo Research, and Transluce argues that outcome-only agent benchmarks suffer from three fundamental validity problems—and that systematic log analysis of execution traces is a necessary complement for trustworthy AI evaluation."
 takeaway: "Outcome-only agent benchmarks can simultaneously over-report capability (through benchmark artifacts), under-report capability (through flawed tasks or scaffolds), and completely conceal dangerous intermediate behavior. As AI evaluations increasingly become governance instruments, execution-trace analysis is no longer an optional diagnostic—it is part of the evidence."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/A83B46D1-B793-4A9D-A757-DB6A02D99D48.png"
+cover_alt: "Illustration: A passing benchmark score reveals only the outcome; execution logs reveal the evidence behind it.  "
+published: true
 ---
 
 
