@@ -140,6 +140,11 @@ By the final decades of the fifth century BCE, the two dominant figures in Athen
 
 They disagreed on almost everything.
 
+<figure>
+  <img src="/assets/zpage216.jpg" alt="A nineteenth-century engraving of a garlanded Alcibiades arriving at an Athenian symposium, torch-bearing revellers behind him.">
+  <figcaption>A nineteenth-century engraving of Alcibiades arriving at a symposium — the charisma that made him impossible to ignore, and impossible to ostracise once he decided to cooperate. Source: <a href="https://presentconcerns.wordpress.com/2015/12/02/nicias-vs-alcibiades/">Present Concerns, "Nicias vs Alcibiades"</a>.</figcaption>
+</figure>
+
 According to Plutarch, Hyperbolos believed that proposing an ostracism would remove one of them from political life.
 
 Instead, something unexpected happened.
