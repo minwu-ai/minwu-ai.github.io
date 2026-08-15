@@ -5,7 +5,7 @@ slug: the-mechanism-that-ate-itself-how-athens-abolished-its-own-a
 tag: History & People
 excerpt: "Athenian ostracism was democracy's immune system—until the political order it created gradually reorganized itself around the mechanism. The institution did not simply fail; the incentives moved elsewhere."
 takeaway: "Institutions rarely eliminate power. More often, they redistribute it. Every governance mechanism creates a new order, and that order gradually reshapes the incentives of the people living within it. The greatest threat to a mechanism is often not opposition, but adaptation."
-cover: "/assets/"
+cover: "/assets/Ostracism2-min.jpg"
 cover_alt: "Illustration: "
 published: false
 ---
