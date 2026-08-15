@@ -5,9 +5,9 @@ slug: the-architecture-of-failure-what-a-live-two-week-agent-red-t
 tag: Agentic AI, Evaluation
 excerpt: "A February 2026 preprint from 38 researchers across six universities ran real frontier agents in a live environment for two weeks — and the failures it documented point to architectural capabilities that current agent systems fundamentally lack, and that are difficult to solve through prompting or model fine-tuning alone."
 takeaway: "*Agents of Chaos* (arXiv:2602.20021) shows that recurring agentic failure modes — unauthorized compliance, destructive action, false completion reporting, and cross-agent propagation — arise from missing architectural primitives. Two are explicit in the paper (a stakeholder model and a self-model); a third naturally follows from a systems perspective: permission scope. Together they argue for architectural controls outside the language model itself rather than relying solely on better prompting or model alignment."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/abb1b1e0443b7d98866161693ca7b69d5e8f94bcfcac89809eb92ac004d33b6b.png"
+cover_alt: "Illustration: Real-world agent failures expose three missing architectural primitives: stakeholder models, self-models, and permission scope."
+published: true
 ---
 
 ## 🔬 What They Actually Built
