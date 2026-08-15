@@ -1,5 +1,5 @@
 ---
-title: "The Mechanism That Ate Itself: How Athens Abolished Its Own Anti-Tyranny Tool"
+title: "The Mechanism That Ate Itself: How Institutions Redistribute Power"
 date: 2026-08-15
 slug: the-mechanism-that-ate-itself-how-athens-abolished-its-own-a
 tag: History & People
