@@ -6,8 +6,8 @@ tag: History & People
 excerpt: "Athenian ostracism was democracy's immune system—until the political order it created gradually reorganized itself around the mechanism. The institution did not simply fail; the incentives moved elsewhere."
 takeaway: "Institutions rarely eliminate power. More often, they redistribute it. Every governance mechanism creates a new order, and that order gradually reshapes the incentives of the people living within it. The greatest threat to a mechanism is often not opposition, but adaptation."
 cover: "/assets/Ostracism2-min.jpg"
-cover_alt: "Illustration: "
-published: false
+cover_alt: "Illustration: Pericles addresses the Athenian assembly in Philipp von Foltz's 'Pericles' Funeral Oration' (1852) — a nineteenth-century imagining of the body that decided who would be sent into exile."
+published: true
 ---
 
 ## 🏛️ The Redistribution of Order
@@ -26,7 +26,7 @@ Perhaps institutions rarely eliminate power.
 
 Perhaps they simply **redistribute** it.
 
-In a recent reflection on entropy, evolution, and AI, I explored the idea that local order never comes for free. The Second Law of Thermodynamics tells us that physical systems maintain local order only by exchanging energy and matter with their surroundings while increasing entropy overall. Whether that analogy extends beyond physics is, of course, another question. I do not think history literally obeys thermodynamics.
+In a recent reflection on [entropy, evolution, and AI](https://minwu-ai.github.io/entropy-evolution-and-ai-a-personal-reflection-on-order/), I explored the idea that local order never comes for free. The Second Law of Thermodynamics tells us that physical systems maintain local order only by exchanging energy and matter with their surroundings while increasing entropy overall. Whether that analogy extends beyond physics is, of course, another question. I do not think history literally obeys thermodynamics.
 
 Yet the idea has changed the kinds of questions I ask.
 
@@ -85,6 +85,11 @@ Yet around 471 BCE, he himself was ostracised.
 The archaeology surrounding that vote is remarkable.
 
 A cache of 190 ostraka bearing the name of Themistocles was discovered in a well on the northern slope of the Acropolis. The catalogue of the American School of Classical Studies at Athens records that analysis of the handwriting suggests these sherds were written by only fourteen individuals.
+
+<figure>
+  <img src="/assets/ostraka-stoa-of-attalus.jpg" alt="A museum case of ancient Greek pottery sherds used as ballots, each scratched with a politician's name in Greek capitals.">
+  <figcaption>Ostraka in the Stoa of Attalus museum in the Athenian Agora. The names are still legible — Themistokles son of Neokles, Aristeides son of Lysimachos, Megakles son of Hippokrates — scratched into broken pottery, the cheapest writing surface in the city. Photo by Giovanni Dall'Orto.</figcaption>
+</figure>
 
 These were probably the ancient equivalent of pre-printed campaign materials.
 
