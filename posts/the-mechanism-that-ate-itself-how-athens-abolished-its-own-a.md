@@ -87,7 +87,7 @@ The archaeology surrounding that vote is remarkable.
 A cache of 190 ostraka bearing the name of Themistocles was discovered in a well on the northern slope of the Acropolis. The catalogue of the American School of Classical Studies at Athens records that analysis of the handwriting suggests these sherds were written by only fourteen individuals.
 
 <figure>
-  <img src="/assets/ostraka-stoa-of-attalus.jpg" alt="A museum case of ancient Greek pottery sherds used as ballots, each scratched with a politician's name in Greek capitals. Source: Wikipedia">
+  <img src="/assets/ostraka-stoa-of-attalus.jpg" alt="A museum case of ancient Greek pottery sherds used as ballots, each scratched with a politician's name in Greek capitals.">
   <figcaption>Ostraka in the Stoa of Attalus museum in the Athenian Agora. The names are still legible — Themistokles son of Neokles, Aristeides son of Lysimachos, Megakles son of Hippokrates — scratched into broken pottery, the cheapest writing surface in the city. Photo by Giovanni Dall'Orto.</figcaption>
 </figure>
 
