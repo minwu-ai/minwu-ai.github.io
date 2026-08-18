@@ -5,9 +5,9 @@ slug: the-monitor-is-the-problem-self-attribution-bias-and-the-hid
 tag: Alignment, Agentic AI
 excerpt: "A March 2026 preprint shows that AI monitors can rate their own prior outputs as safer or more correct than identical actions presented externally — and that conventional off-policy monitor evaluations can systematically miss this deployment-time degradation."
 takeaway: "Monitor validity depends on trajectory structure. A model can judge high-risk or incorrect actions more leniently when those actions are implicitly framed as its own prior output, meaning fixed-example, off-policy evaluations can materially overstate how reliably the same monitor will perform inside a deployed agentic loop."
-cover: "/assets/"
+cover: "/assets/6592ed54696762991cc10b52586b687a59d4dea3b28016edcc2d60f6ff0bc9aa.png"
 cover_alt: "Illustration: An AI system simultaneously acting as author and judge of its own actions, representing self-attribution bias in same-model oversight."
-published: false
+published: true
 ---
 
 ## 🔬 What the Paper Actually Shows
