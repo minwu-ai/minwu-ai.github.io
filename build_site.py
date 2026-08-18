@@ -3,7 +3,9 @@ build_site.py — turns markdown in posts/ (and pages/) into a finished website 
 
 Run it with:  python build_site.py
 
-Articles live in posts/ as markdown files; standalone pages (e.g. About) live in
+Articles live in posts/published/ and posts/unpublished/ as markdown files
+(the folders are a convenience view — the `published:` flag is what decides
+what ships; run organize_posts.py to re-file after flipping it); standalone pages (e.g. About) live in
 pages/. This reads them, wraps them in templates/base.html, and writes ready-to-serve
 HTML into public/. Posts with "published: false" are skipped (the review gate).
 """
@@ -267,7 +269,7 @@ def render_markdown(text):
 
 def load_posts():
     posts = []
-    for path in sorted(POSTS_DIR.glob("*.md")):
+    for path in sorted(POSTS_DIR.rglob("*.md")):   # rglob: posts/ or posts/<state>/
         post = frontmatter.load(path)
         # Review gate: posts with "published: false" are hidden until you approve.
         # (Posts with no "published" field are treated as published.)

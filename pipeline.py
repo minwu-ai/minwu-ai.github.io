@@ -2,7 +2,7 @@
 pipeline.py — surfaces AI topics, researches them, and drafts articles as markdown.
 
 It uses the Claude API to (1) discover topics and (2) write articles with web search.
-Every article is saved into posts/ as a DRAFT (published: false) so you review it
+Every article is saved into posts/unpublished/ as a DRAFT (published: false) so you review it
 before it goes live. It works two ways:
 
   SCHEDULED (auto-discover trending topics and draft a few):
@@ -223,7 +223,7 @@ RESEARCH_HOSTS = ("arxiv.org", "doi.org", "openreview.net", "aclanthology.org",
 def _research_share(recent=20):
     """How many of the most recent published posts cite a real research artifact."""
     dated = []
-    for path in glob.glob(os.path.join(POSTS_DIR, "*.md")):
+    for path in glob.glob(os.path.join(POSTS_DIR, "**", "*.md"), recursive=True):
         meta = _read_frontmatter(path)
         if str(meta.get("published", "true")).lower() == "false":
             continue
@@ -292,7 +292,7 @@ def _coverage_counts():
     """
     from collections import Counter
     counts = Counter({c: 0.0 for c in CATEGORIES})
-    for path in glob.glob(os.path.join(POSTS_DIR, "*.md")):
+    for path in glob.glob(os.path.join(POSTS_DIR, "**", "*.md"), recursive=True):
         meta = _read_frontmatter(path)
         if str(meta.get("published", "true")).lower() == "false":
             continue
@@ -603,7 +603,7 @@ def _read_frontmatter(path):
 def published_posts_context(limit=25):
     """A list of already-published posts the model can reference and link."""
     items = []
-    for path in sorted(glob.glob(os.path.join(POSTS_DIR, "*.md"))):
+    for path in sorted(glob.glob(os.path.join(POSTS_DIR, "**", "*.md"), recursive=True)):
         meta = _read_frontmatter(path)
         if str(meta.get("published", "true")).lower() == "false":
             continue
@@ -690,7 +690,11 @@ def slugify(title):
 def save_post(article, default_tag="Analysis"):
     today = datetime.date.today().isoformat()
     slug = slugify(article["title"])
-    path = os.path.join(POSTS_DIR, f"{slug}.md")
+    # New drafts start unpublished, so they file themselves into
+    # posts/unpublished/. organize_posts.py moves them once you publish.
+    draft_dir = os.path.join(POSTS_DIR, "unpublished")
+    os.makedirs(draft_dir, exist_ok=True)
+    path = os.path.join(draft_dir, f"{slug}.md")
     title = article["title"].replace('"', "'")
     excerpt = article.get("excerpt", "").replace('"', "'")
     takeaway = article.get("takeaway", "").replace('"', "'")
