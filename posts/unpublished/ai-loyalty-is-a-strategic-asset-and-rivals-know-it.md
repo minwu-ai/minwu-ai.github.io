@@ -5,9 +5,9 @@ slug: ai-loyalty-is-a-strategic-asset-and-rivals-know-it
 tag: Alignment, AI Safety
 excerpt: "A May 2026 CAIS preprint reframes AI betrayal not as accidental misalignment but as an externally induced, potentially offense-dominant attack class — one whose mechanisms map directly onto the fine-tuning, model-supply-chain, and retrieval infrastructure enterprises already operate."
 takeaway: "The CAIS 'AI Deterrence by Betrayal' preprint argues that defending against intentional loyalty subversion may be difficult enough to affect the strategic calculus around high-autonomy AI deployment. More immediately, its threat model maps onto infrastructure enterprises are scaling today — fine-tuning pipelines, model adapters, retrieval systems, and third-party model providers — while most existing controls remain framed as conventional cybersecurity, model integrity, and data provenance rather than deliberate loyalty subversion."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/ed339eddb929326c366648fc2b6d48744dc09d9c4b5a03956432fe7db13ad735.png"
+cover_alt: "Illustration: AI loyalty becomes a strategic asset when adversaries can target not just the system, but the behavior it has been trained to trust."
+published: true
 ---
 
 ## 🎯 The Threat Taxonomy: Subversion vs. Overt Co-option
