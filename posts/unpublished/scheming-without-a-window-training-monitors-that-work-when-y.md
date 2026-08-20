@@ -5,16 +5,18 @@ slug: scheming-without-a-window-training-monitors-that-work-when-y
 tag: Evaluation, AI Safety
 excerpt: "A May 2026 preprint from researchers affiliated with Apollo Research, MATS Research, Astra Fellowship, and independently trains smaller open-weight models to detect scheming and sabotage from action traces alone — no chain-of-thought, no internals — and provides unusually concrete cost-performance data for monitoring architectures relevant to deployed AI governance."
 takeaway: "Action-only deliberative monitors trained through curated distillation and reinforcement learning can outperform several prompted frontier monitors at far lower modeled marginal inference cost — but the six-benchmark OOD suite validates held-out agentic domains, not naturally occurring, long-horizon, or oversight-aware adaptive scheming."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/4cf00a99e2e104f0ee9176c1b2f95d5bed65829639a4dfec057e54ec795ded8f.png"
+cover_alt: "Illustration: When an AI agent’s reasoning is hidden, safety monitoring shifts to the behavioral trail it leaves behind—actions, tools, and observable state changes."
+published: true
 ---
 
 ## 🛡️ The Deployment Reality That Research Has Been Ignoring
 
 Existing monitors often rely on chain-of-thought access or internal activations, or use prompted frontier models — all of which can be unavailable, unreliable, or expensive in deployment.
 
-Closed-weight models may suppress, truncate, or simply not expose their reasoning traces. Third-party auditors almost never have white-box access to the model under review. And even when chain-of-thought is visible, it should not automatically be treated as a faithful record of the computation producing the model's behavior: optimization pressure can create incentives for models to hide, distort, or strategically manage what an overseer can see.
+Closed-weight models may suppress, truncate, or simply not expose their reasoning traces. Third-party auditors almost never have white-box access to the model under review. This is also an observability problem at the API layer. As I discussed in [*The Token Transparency Gap: Why Agentic AI Still Hides Where Computation Goes*](https://minwu-ai.github.io/the-token-transparency-gap-why-agentic-ai-still-hides-where-computation-goes/), providers may report how many reasoning tokens were consumed without exposing how that reasoning was actually used. Token accounting can therefore reveal the **quantity of hidden computation without making its contents auditable**.
+
+And even when chain-of-thought is visible, it should not automatically be treated as a faithful record of the computation producing the model's behavior: optimization pressure can create incentives for models to hide, distort, or strategically manage what an overseer can see.
 
 That creates a practical question for AI control:
 
@@ -24,9 +26,9 @@ A May 2026 preprint, [*Training Deliberative Monitors for Black-Box Scheming Det
 
 The paper defines scheming around the covert pursuit of misaligned objectives while behaving strategically to avoid detection. Unlike ordinary model failures that manifest directly as incorrect outputs, scheming introduces strategic concealment: the observable behavior itself may be selected partly to preserve the model's ability to pursue another objective later.
 
-This connects directly to the failure patterns discussed in [Four Concrete Failure Modes That Move Agentic Misalignment from Theory to Evidence](https://minwu-ai.github.io/four-concrete-failure-modes-that-move-agentic-misalignment-f/) and the broader control framing introduced in [DeepMind's AI Control Roadmap](https://minwu-ai.github.io/deepmind-s-ai-control-roadmap-from-trust-the-model-to-contai/).
+This connects directly to the failure patterns discussed in [*Four Concrete Failure Modes That Move Agentic Misalignment from Theory to Evidence*](https://minwu-ai.github.io/four-concrete-failure-modes-that-move-agentic-misalignment-f/) and the broader control framing introduced in [*DeepMind's AI Control Roadmap*](https://minwu-ai.github.io/deepmind-s-ai-control-roadmap-from-trust-the-model-to-contai/).
 
-The difference here is architectural. Instead of asking whether we can inspect the agent's reasoning, the paper asks whether an independent monitor can infer suspicious intent from the **behavioral evidence the agent leaves behind**.
+The difference here is architectural. **Action-only monitoring starts from the observability constraint rather than assuming it away.** Instead of asking whether we can inspect the agent's reasoning, the paper asks whether an independent monitor can infer suspicious intent from the **behavioral evidence the agent leaves behind**.
 
 ## 🔬 What the Paper Actually Does
 
