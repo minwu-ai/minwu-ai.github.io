@@ -138,6 +138,7 @@ def render_page(page_title, page_description, inner_html,
         footer_disclaimer=footer_disclaimer,
         social_html=social_links_html(),
         needs_mermaid=('class="mermaid"' in inner_html),
+        needs_math=has_math(inner_html),
     )
 
 
@@ -251,25 +252,46 @@ def tag_pills(tags):
         for t in tags)
 
 
-# ---- Markdown rendering with Mermaid diagram support --------------------
+# ---- Markdown rendering with Mermaid + LaTeX math support ---------------
 _MERMAID_RE = re.compile(r"```mermaid\s*\n(.*?)```", re.DOTALL)
+
+# Math spans, using MathJax 3's default delimiters. Bare $...$ is deliberately
+# NOT matched: it collides with ordinary dollar amounts in the prose.
+# These must be hidden from Markdown before conversion, because Markdown treats
+# "\(" as an escaped parenthesis and silently eats the backslash, and smarty
+# rewrites quotes and dashes inside formulas.
+_MATH_RE = re.compile(r"\$\$.+?\$\$|\\\[.+?\\\]|\\\(.+?\\\)", re.DOTALL)
+
+
+def has_math(text):
+    return bool(_MATH_RE.search(text))
 
 
 def render_markdown(text):
     """Convert markdown to HTML, turning ```mermaid blocks into <pre class="mermaid">
-    elements (rendered client-side by mermaid.js in the template)."""
+    elements (rendered client-side by mermaid.js) and passing LaTeX math through
+    untouched for MathJax to typeset."""
     blocks = []
+    formulas = []
 
     def stash(m):
         blocks.append(m.group(1).strip())
         return "\n\nMERMAIDBLOCK{}END\n\n".format(len(blocks) - 1)
 
+    def stash_math(m):
+        formulas.append(m.group(0))
+        return "MATHSPAN{}END".format(len(formulas) - 1)
+
+    text = _MATH_RE.sub(stash_math, _MERMAID_RE.sub(stash, text))
+
     md.reset()
-    out = md.convert(_MERMAID_RE.sub(stash, text))
+    out = md.convert(text)
     for i, diagram in enumerate(blocks):
         token = "MERMAIDBLOCK{}END".format(i)
         pre = '<pre class="mermaid">{}</pre>'.format(html.escape(diagram))
         out = out.replace("<p>{}</p>".format(token), pre).replace(token, pre)
+    for i, formula in enumerate(formulas):
+        out = out.replace("MATHSPAN{}END".format(i), formula)
     return out
 
 

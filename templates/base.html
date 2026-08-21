@@ -208,6 +208,11 @@ article.post p img, article.post figure:not(.post-cover) img{
 article.post figure.full img{width:auto; max-width:100%; height:auto; max-height:80vh;
   aspect-ratio:auto; object-fit:contain; margin:24px auto}
 article.post figure:not(.post-cover) figcaption{margin-top:8px; font-size:13px; color:var(--muted); font-style:italic; text-align:center}
+/* LaTeX math (MathJax). Long equations scroll inside their own box rather
+   than pushing the page sideways. */
+article.post mjx-container{max-width:100%}
+article.post mjx-container[display="true"]{margin:26px 0; overflow-x:auto; overflow-y:hidden;
+  padding-bottom:4px}
 article.post h2{font-family:var(--serif); font-weight:600; font-size:25px; margin:40px 0 14px; letter-spacing:-0.01em}
 article.post h3{font-family:var(--serif); font-weight:600; font-size:20px; margin:30px 0 10px}
 article.post p{margin:0 0 22px}
@@ -352,6 +357,20 @@ footer.site a{color:var(--muted)}
   mermaid.initialize({ startOnLoad: true, securityLevel: 'strict',
     theme: t === 'dark' ? 'dark' : 'neutral', fontFamily: 'inherit' });
 </script>
+{% endif %}
+{% if needs_math %}
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 {% endif %}
 </body>
 </html>
