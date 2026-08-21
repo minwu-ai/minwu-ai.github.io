@@ -5,9 +5,9 @@ slug: adag-automates-the-hardest-step-in-circuit-tracing-and-chang
 tag: Interpretability, Evaluation
 excerpt: "A Stanford/Transluce preprint automates one of the most stubborn human bottlenecks in circuit tracing: turning attribution graphs into semantically organized, human-readable candidate mechanisms. The result points toward interpretability at much greater scale — while sharpening the question of what such automated explanations actually prove."
 takeaway: "ADAG demonstrates an automated pipeline for organizing and describing attribution graphs, recovering known circuits and identifying steerable feature clusters associated with a jailbreak in Llama 3.1 8B. But its autointerpretability scores validate how well descriptions capture measured attribution profiles, not whether those graphs constitute complete or uniquely faithful accounts of the model's underlying computation."
-cover: "/assets/"
+cover: "/assets/c4f974a06fc0151d836bbb546ff1b538b82dbc621f356c154748a6b260a52640.png"
 cover_alt: "Illustration: an automated system opening the black box of a language model and tracing an internal computational pathway, while part of the mechanism remains obscured."
-published: false
+published: true
 ---
 
 ## 🔬 What Does It Mean to "Interpret" an LLM?
