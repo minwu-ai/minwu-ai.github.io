@@ -5,8 +5,8 @@ slug: the-victory-athens-could-not-keep-arginusae-and-the-redistribution-of-orde
 tag: History & People
 excerpt: "Athens won a remarkable naval victory at Arginusae in 406 BCE, then executed six of the generals who had won it. The episode raises a deeper question: can one part of a society become more ordered only by creating instability somewhere else?"
 takeaway: "Arginusae suggests that human order is not a single quantity. Military effectiveness, democratic accountability, religious obligation, legal procedure, and political stability can all represent different forms of order—and strengthening one can weaken another. What looks like success may therefore depend on where we draw the boundary of the system."
-cover: "/assets/"
-cover_alt: "Illustration: "
+cover: "/assets/23d96c418f497e7b68aef60d6061494a52f17123db590d65796d9274e895ebfc.png"
+cover_alt: "Illustration: The battle of Arginusae"
 published: false
 ---
 
