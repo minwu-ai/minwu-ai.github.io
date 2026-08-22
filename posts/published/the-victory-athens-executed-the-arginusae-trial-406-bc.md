@@ -7,7 +7,7 @@ excerpt: "Athens won a remarkable naval victory at Arginusae in 406 BCE, then ex
 takeaway: "Arginusae suggests that human order is not a single quantity. Military effectiveness, democratic accountability, religious obligation, legal procedure, and political stability can all represent different forms of order—and strengthening one can weaken another. What looks like success may therefore depend on where we draw the boundary of the system."
 cover: "/assets/23d96c418f497e7b68aef60d6061494a52f17123db590d65796d9274e895ebfc.png"
 cover_alt: "Illustration: The battle of Arginusae"
-published: false
+published: true
 ---
 
 ## ⚓ Another Athenian Experiment in Order
@@ -55,6 +55,11 @@ And Athens discovered that preserving one did not necessarily preserve the other
 In the summer of 406 BCE, Athens achieved a remarkable military victory.
 
 Its fleet defeated Sparta near the Arginusae Islands, east of Lesbos. Nearly three hundred ships were involved, making it one of the largest naval battles the Greek world had yet seen. The Spartan commander Callicratidas was killed, and the Spartans lost roughly seventy ships.
+
+<figure class="full">
+  <img src="/assets/Agean_Sea_map_geographical.jpg" alt="Relief map of the Aegean, with mainland Greece to the west and the Anatolian coast to the east; the Arginusae islands lie in the eastern Aegean off Lesbos.">
+  <figcaption>Location of the Battle of Arginusae. Source: Wikipedia</figcaption>
+</figure>
 
 For an Athens exhausted by more than two decades of the Peloponnesian War, this was an extraordinary creation of military order.
 
