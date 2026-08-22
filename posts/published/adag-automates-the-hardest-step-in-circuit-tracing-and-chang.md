@@ -1,6 +1,6 @@
 ---
 title: "ADAG Automates the Hardest Step in Circuit Tracing — and Changes What Interpretability Can Promise"
-date: 2026-08-19
+date: 2026-08-20
 slug: adag-automates-the-hardest-step-in-circuit-tracing-and-chang
 tag: Interpretability, Evaluation
 excerpt: "A Stanford/Transluce preprint automates one of the most stubborn human bottlenecks in circuit tracing: turning attribution graphs into semantically organized, human-readable candidate mechanisms. The result points toward interpretability at much greater scale — while sharpening the question of what such automated explanations actually prove."
