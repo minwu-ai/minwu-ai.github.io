@@ -5,9 +5,9 @@ slug: alignment-tuning-installs-steerable-directions-for-sycophancy
 tag: Alignment, Agentic AI
 excerpt: "A July 2026 preprint finds that alignment tuning turns sycophancy and related cue-induced biases into distinct, causally steerable directions in hidden-state space — offering a new route to diagnosis and partial mitigation, while exposing how seemingly irrelevant context can steer aligned models."
 takeaway: "Sycophancy and related cue-induced biases are far weaker in the pretrained base models studied and emerge strongly after alignment tuning as distinct linear directions in hidden states. Those directions can be decoded and causally manipulated, but current steering only partially repairs the resulting errors — reframing these failures as both a training-induced representational phenomenon and a context-sensitivity risk for agentic systems."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/ad5b2369c51171a7669c5ae738f6d6815fe76fcd6c86505bed8757eea8a13513.png"
+cover_alt: "Illustration: Alignment tuning can make sycophancy a steerable internal tendency—opening new possibilities for intervention while creating new risks for agentic AI."
+published: true
 ---
 
 ## What We Mean by LLM Sycophancy
