@@ -169,29 +169,15 @@ Perhaps even confidence in democratic judgment itself.
 
 ## 🔄 Order Is Not One Thing
 
-This is where Arginusae takes my earlier thinking about ostracism somewhere new.
-
-In the ostracism story, the mechanism created an order and political actors gradually adapted around it.
-
-Arginusae presents something more difficult.
+Arginusae presents something more difficult than ostracism did.
 
 There was no single "order" to preserve.
 
-Athens wanted military effectiveness.
+Athens wanted military effectiveness, democratic accountability, respect for religious obligation toward the dead, citizen sovereignty over commanders, lawful procedure, and experienced leadership for an existential war.
 
-It also wanted democratic accountability.
+Each was a form of order.
 
-It wanted religious obligations toward the dead respected.
-
-It wanted citizens to retain sovereignty over their commanders.
-
-It had laws governing legal procedure.
-
-And it needed experienced military leadership to continue fighting an existential war.
-
-Each represented a form of order.
-
-Under the conditions of 406 BCE, however, Athens could not easily maximize all of them simultaneously.
+Under the conditions of 406 BCE, Athens could not maximize all of them at once.
 
 That makes me increasingly uncomfortable with the simple distinction between **order and disorder** when thinking about human systems.
 
@@ -205,9 +191,7 @@ A society maximizing security may sacrifice freedom.
 
 A career can become extraordinarily ordered while a family becomes increasingly unstable.
 
-A technology can make information abundant while destabilizing the institutions that previously organized knowledge.
-
-Artificial intelligence may dramatically increase cognitive productivity while simultaneously forcing labor markets, education, regulation, and even our understanding of human expertise to reorganize around it.
+Artificial intelligence may dramatically increase cognitive productivity while forcing labor markets, education, regulation, and even our understanding of human expertise to reorganize around it.
 
 None of these examples means that the newly created order is "bad."
 
@@ -227,19 +211,7 @@ Political actors adapted.
 
 Power reorganized itself around the institution.
 
-At Arginusae, something different happened.
-
-Military order produced victory.
-
-Victory came with human loss.
-
-Loss produced grief and demands for accountability.
-
-Those demands entered democratic politics.
-
-Politics overwhelmed legal procedure.
-
-The restoration of one kind of order damaged another.
+At Arginusae, something different happened. Military order produced victory, victory produced grief, and the attempt to answer that grief damaged a different kind of order altogether.
 
 The first story is about **adaptation around order**.
 
@@ -289,21 +261,7 @@ Athens itself?
 
 The Greek world?
 
-Changing the boundary changes what looks like success.
-
-The battle was a victory.
-
-The rescue operation was a catastrophe.
-
-The Assembly satisfied a demand for accountability.
-
-The procedure violated important legal safeguards.
-
-The executions punished commanders for a genuine failure.
-
-They also eliminated experienced military leaders during an existential war.
-
-All of these statements can be true simultaneously.
+Changing the boundary changes what looks like success. A victory, a catastrophe, a demand for accountability satisfied, and a legal safeguard violated can all be true of the same week.
 
 Perhaps many contradictions in how we judge history—and life—arise because we are measuring different forms of order across different system boundaries.
 
@@ -335,35 +293,11 @@ Yet everyone was also being carried by structures much larger than themselves.
 
 Perhaps this is true of our own lives more often than we acknowledge.
 
-We inherit language.
-
-Culture.
-
-Markets.
-
-Law.
-
-Morality.
-
-Technology.
-
-Geopolitics.
-
-Social expectations.
+We inherit language, culture, markets, law, morality, technology, geopolitics, and social expectations.
 
 Most of the time, we are not creating order from nothing. We are participating in a much larger redistribution already underway.
 
-Occasionally, however, we have more meaningful choices.
-
-Whom we marry.
-
-What career we pursue.
-
-Whether we start a company.
-
-How we raise a child.
-
-What technologies we create.
+Occasionally, however, we have more meaningful choices — whom we marry, what career we pursue, whether we start a company, how we raise a child, what technologies we build.
 
 Even these decisions are never completely independent of the systems around us, but our agency may be greater.
 
@@ -442,151 +376,3 @@ But as a way of looking at history—and increasingly at life—I find it useful
 Whenever something remarkable has been created, perhaps the next question should be:
 
 > **What else in the surrounding system had to move—and how long will it take before we see where it went?**
-
----
-
-## 🌐 But Where Is the System Boundary?
-
-This may be the question I find most difficult.
-
-When I clean my house, I create obvious local order.
-
-But I have not made the garbage disappear.
-
-I have moved it outside.
-
-From the perspective of my living room, the problem is solved.
-
-From the perspective of my house, perhaps it is solved too.
-
-From the perspective of the landfill, clearly something else happened.
-
-Thermodynamics handles this problem by defining system boundaries carefully.
-
-Life and history rarely give us that luxury.
-
-What was the relevant system at Arginusae?
-
-The fleet?
-
-The families of the dead?
-
-The Athenian democracy?
-
-The war?
-
-Athens itself?
-
-The Greek world?
-
-Changing the boundary changes what looks like success.
-
-The battle was an Athenian victory.
-
-The rescue operation was a catastrophe.
-
-The trial satisfied a demand for accountability.
-
-The executions damaged legal procedure and removed experienced commanders.
-
-All of those statements can be true simultaneously.
-
-Perhaps contradiction sometimes appears because we are measuring order inside different boundaries.
-
----
-
-## ⏳ The Order We Inherit
-
-There is another aspect of this story that interests me.
-
-Very few people at Arginusae were actually designing the system in which they acted.
-
-The sailors inherited the war.
-
-The generals inherited Athenian military institutions.
-
-The Assembly inherited democratic procedures.
-
-Socrates inherited laws he believed himself obligated to follow.
-
-Even the grieving families inherited religious expectations surrounding burial.
-
-Everyone was exercising agency.
-
-Yet almost everyone was also being carried by structures much larger than themselves.
-
-This resembles life more generally.
-
-We like to think of ourselves as creating our careers, beliefs, identities, and futures.
-
-But most of the order around us already existed before we arrived.
-
-Language.
-
-Culture.
-
-Markets.
-
-Law.
-
-Morality.
-
-Technology.
-
-Geopolitics.
-
-We participate in their redistribution much more often than we create them from nothing.
-
-Perhaps one form of wisdom is recognizing when we are merely being carried by a larger movement—and when we genuinely have enough agency to introduce a new order of our own.
-
-The distinction is rarely clear.
-
----
-
-## 🧭 What Arginusae Leaves Me Wondering
-
-The Athenians themselves soon regretted what they had done. Xenophon records that they later moved against those they believed had deceived the people.
-
-But remorse could not restore the executed generals.
-
-A year later, Athens suffered its catastrophic defeat at Aegospotami. It would be too simple to claim that Arginusae caused that defeat. History rarely offers such clean causal chains.
-
-The more interesting point, to me, is what happened inside Athens itself.
-
-A military system produced victory.
-
-The victory produced casualties.
-
-The casualties produced grief.
-
-Grief entered politics.
-
-Politics overwhelmed procedure.
-
-The attempt to restore accountability destroyed experienced commanders.
-
-And the city was left with a different distribution of order than the one with which it began.
-
-I do not think thermodynamics explains any of this.
-
-Entropy does not provide a theory of politics, morality, or history.
-
-But the Second Law has given me a metaphor I increasingly find difficult to ignore:
-
-> **Local order does not tell us what happened to the larger system.**
-
-Perhaps that is also why historical judgments become so difficult.
-
-Victory for whom?
-
-Order where?
-
-Cost paid by whom?
-
-And over what period of time?
-
-Arginusae does not give me an answer.
-
-It gives me a better question:
-
-> **Whenever we create something we recognize as order, what else in the surrounding system has to move—and how long will it take before we see where it went?**
