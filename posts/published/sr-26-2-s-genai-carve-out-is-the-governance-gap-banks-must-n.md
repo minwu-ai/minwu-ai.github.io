@@ -1,6 +1,6 @@
 ---
 title: "SR 26-2's GenAI Carve-Out Is the Governance Gap Banks Must Now Fill Themselves"
-date: 2026-08-21
+date: 2026-08-23
 slug: sr-26-2-s-genai-carve-out-is-the-governance-gap-banks-must-n
 tag: Industry, AI Governance
 excerpt: "The first overhaul of U.S. bank model risk management in fifteen years explicitly places generative and agentic AI outside its scope — leaving banks to determine how existing risk frameworks should govern AI systems that increasingly influence regulated workflows."
