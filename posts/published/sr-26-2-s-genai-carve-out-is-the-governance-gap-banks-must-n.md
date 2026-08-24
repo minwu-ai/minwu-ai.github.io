@@ -7,7 +7,7 @@ excerpt: "The first overhaul of U.S. bank model risk management in fifteen years
 takeaway: "SR 26-2 does not exempt GenAI from governance; it declines to prescribe how GenAI should fit within model risk management. That leaves banks to build the connective tissue between existing risk frameworks and AI systems that increasingly influence regulated workflows without themselves falling within SR 26-2's formal model-risk perimeter. Mao, Lin, Kang, and Wang's GAICF framework offers one timely, workflow-oriented approach to filling that gap."
 cover: "/assets/583ed98a6c1f65f21d0f85145416381b173f38656f4ed1d08cd97667643e1df2.png"
 cover_alt: "Illustration: SR 26-2 draws the model-risk boundary, while generative and agentic AI push banks into a governance landscape they must increasingly bridge themselves."
-published: false
+published: true
 ---
 
 ## ⚖️ The Carve-Out Is a Transfer, Not an Exemption
@@ -64,10 +64,10 @@ flowchart TB
 
     WF --> DEC["Decision · Communication · Action"]
 
-    style SR fill:#dce8f5,stroke:#315a7d,stroke-width:2px
-    style OUT fill:#f6e3c5,stroke:#9a6825,stroke-width:2px
-    style GOV fill:#e7e7e7,stroke:#555,stroke-width:2px
-    style DEC fill:#e1efe4,stroke:#477250,stroke-width:2px
+    style SR fill:#315a7d,stroke:#1f3c55,stroke-width:2px,color:#ffffff
+    style OUT fill:#9a6825,stroke:#6d4917,stroke-width:2px,color:#ffffff
+    style GOV fill:#4a4a52,stroke:#33333a,stroke-width:2px,color:#ffffff
+    style DEC fill:#2f5d50,stroke:#1e3f36,stroke-width:2px,color:#ffffff
 ```
 
 *The key distinction is scope versus obligation. SR 26-2 provides a defined model-risk-management perimeter for traditional models, while generative and agentic AI explicitly sit outside that perimeter. Outside SR 26-2, however, does not mean outside governance: those systems remain subject to institutional risk frameworks and to the regulatory obligations attached to the banking workflows they influence.*
@@ -78,7 +78,7 @@ Suppose an AI agent gathers customer information, interprets policy, invokes a t
 
 The result is a layered accountability problem:
 
-**the governed model may sit inside an AI-mediated workflow whose orchestration, interpretation, and downstream actions require a different governance architecture.**
+> **The governed model may sit inside an AI-mediated workflow whose orchestration, interpretation, and downstream actions require a different governance architecture.**
 
 In other words, the regulatory boundary can now run **through the middle of a single automated workflow**, rather than neatly around the technology stack.
 
@@ -116,7 +116,7 @@ That is arguably GAICF's most useful contribution.
 
 SR 26-2 defines a regulatory boundary. GAICF attempts to provide a control architecture for AI capabilities operating immediately outside that boundary.
 
-## ⚖️ Why Workflow Consequence Matters More Than the Model Label
+## 🧭 Why Workflow Consequence Matters More Than the Model Label
 
 Traditional model governance begins with classification:
 
@@ -188,7 +188,7 @@ Those questions become particularly difficult when the AI component itself sits 
 
 This is where traceability, workflow mapping, human review, escalation procedures, and evidence retention become central governance controls rather than merely technical best practices.
 
-## ⚖️ Where the Frameworks Agree — and Where They Differ
+## 🧩 Where the Frameworks Agree — and Where They Differ
 
 There is broad agreement among practitioners that SR 26-2's carve-out should not be interpreted as a governance holiday.
 
@@ -248,7 +248,7 @@ That means governance increasingly has to observe not only **what the AI says**,
 
 This connects directly to a broader pattern I have discussed previously: [agentic AI has already outrun the traditional governance playbook](https://minwu-ai.github.io/agentic-ai-and-the-governance-gap/).
 
-SR 26-2 makes that problem unusually visible in banking because the regulatory boundary can now run *through the middle of a single automated workflow*.
+SR 26-2 makes that problem unusually visible in banking, because the line it draws no longer sits neatly around the technology stack.
 
 A governed traditional model can become one tool inside a larger agentic system that itself sits outside SR 26-2.
 
@@ -291,7 +291,7 @@ They explicitly chose not to place rapidly evolving generative and agentic syste
 
 That choice creates a boundary.
 
-**SR 26-2 governs what is inside the model-risk perimeter. Banks must now determine how to govern AI systems operating around it — particularly when those systems can influence, interpret, communicate, or act upon the outputs of models that remain firmly inside.**
+> **SR 26-2 governs what is inside the model-risk perimeter. Banks must now determine how to govern AI systems operating around it — particularly when those systems can influence, interpret, communicate, or act upon the outputs of models that remain firmly inside.**
 
 The governance gap is therefore not an absence of regulation.
 
