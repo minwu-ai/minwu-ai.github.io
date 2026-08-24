@@ -5,8 +5,8 @@ slug: sr-26-2-s-genai-carve-out-is-the-governance-gap-banks-must-n
 tag: Industry, AI Governance
 excerpt: "The first overhaul of U.S. bank model risk management in fifteen years explicitly places generative and agentic AI outside its scope — leaving banks to determine how existing risk frameworks should govern AI systems that increasingly influence regulated workflows."
 takeaway: "SR 26-2 does not exempt GenAI from governance; it declines to prescribe how GenAI should fit within model risk management. That leaves banks to build the connective tissue between existing risk frameworks and AI systems that increasingly influence regulated workflows without themselves falling within SR 26-2's formal model-risk perimeter. Mao, Lin, Kang, and Wang's GAICF framework offers one timely, workflow-oriented approach to filling that gap."
-cover: "/assets/"
-cover_alt: "Illustration: "
+cover: "/assets/583ed98a6c1f65f21d0f85145416381b173f38656f4ed1d08cd97667643e1df2.png"
+cover_alt: "Illustration: SR 26-2 draws the model-risk boundary, while generative and agentic AI push banks into a governance landscape they must increasingly bridge themselves."
 published: false
 ---
 
