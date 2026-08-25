@@ -5,9 +5,9 @@ slug: the-safety-lab-ipo-what-going-public-does-to-a-mission-drive
 tag: Industry, AI Governance
 excerpt: "With Anthropic and OpenAI both filing confidential S-1s in June 2026, the real question for enterprise risk teams isn't valuation — it's how public ownership changes the control, jurisdiction, and incentive structures surrounding vendors that are becoming critical AI infrastructure."
 takeaway: "The Anthropic and OpenAI IPO filings turn three previously internal questions into first-order enterprise vendor risks: who controls a frontier lab when safety and shareholder returns conflict, whether geopolitical intervention can abruptly remove critical AI infrastructure, and whether public-market scrutiny changes the economics of safety research."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/f3e44670cad10abfc68892af3016970513eab170c8d5097941b6cc0044c8f0c3.png"
+cover_alt: "Illustration: AI safety and long-term mission weigh against shareholder returns and quarterly market pressure as frontier AI labs move toward public ownership."
+published: true
 ---
 
 Anthropic and OpenAI have crossed a threshold that has little to do with their eventual ticker symbols.
