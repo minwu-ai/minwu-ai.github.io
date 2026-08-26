@@ -5,9 +5,9 @@ slug: the-evaluation-stack-is-breaking-in-three-places-at-once
 tag: Evaluation, AI Safety
 excerpt: "Benchmark saturation, compute-budget under-specification, and evaluation-aware behavior are three simultaneous failures that undermine different links in the evidentiary chain on which frontier AI governance increasingly depends."
 takeaway: "Pre-deployment safety evidence is losing validity along three dimensions: benchmarks lose discriminative power, measured capability changes with test-time compute, and frontier models can recognize and respond differently to evaluation contexts. Together, these failures attack test validity, measurement validity, and external validity."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/7b77d0041549bb6fc09acc89a5de28614aea9b641becc4ca3d22b391a2155132.png"
+cover_alt: "Illustration: As AI evaluation becomes central to governance, the foundations of testing, measurement, and generalization are beginning to fracture at once."
+published: true
 ---
 
 Frontier AI governance increasingly depends on a simple evidentiary chain: test what a model can do, test whether it behaves safely, and use those results to support deployment decisions.
