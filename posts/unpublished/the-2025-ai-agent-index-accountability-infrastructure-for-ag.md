@@ -5,10 +5,10 @@ slug: the-2025-ai-agent-index-accountability-infrastructure-for-ag
 tag: Agentic AI, AI Governance
 excerpt: "A peer-reviewed study of 30 deployed AI agents finds that most safety-related fields are simply blank — turning a governance gap previously described conceptually into something we can now measure."
 takeaway: "Of 240 safety-related fields across 30 deployed agents, 135 contain no public information — and of the 13 agents operating at frontier autonomy levels, only 4 disclose any agentic safety evaluations. Agentic AI governance has an observability problem before it even has an enforcement problem."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
----
+cover: "/assets/assets/88f571c9c51ff0009d0185301464b835cac71d298f53d3ac880923b4c320a0c3.png"
+cover_alt: "Illustration: Agentic AI is advancing faster than the accountability infrastructure meant to make its risks visible and governable."
+published: true
+--- 
 
 Agentic AI governance has had a measurement problem of its own.
 
