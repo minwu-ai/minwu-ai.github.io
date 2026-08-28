@@ -5,9 +5,9 @@ slug: inference-economics-rewrites-the-ai-industry-s-solvency-calc
 tag: Industry, Agentic AI
 excerpt: "The AI infrastructure boom is usually framed as a race for data centers, GPUs, and power. A July 2026 RIKEN preprint suggests the harder question is what happens above the data center — as inference efficiency, open models, and agentic workloads determine how much of that physical capacity can actually be monetized."
 takeaway: "Agentic AI can drive an explosion in computation without producing an equivalent explosion in expensive inference demand. If routing, caching, compression, smaller models, and local execution improve faster than monetized workloads grow, value may migrate from simply owning compute toward the infrastructure that orchestrates, optimizes, and governs it."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/c41c684ec5fd7626390e0f2f437fca262a3d35ab46b6dde34d46c3d2d05eed6d.png"
+cover_alt: "Illustration: The infrastructure bet depends on more than just building more data centers."
+published: true
 ---
 
 ## 📊 The Number That Changes the Infrastructure Story
