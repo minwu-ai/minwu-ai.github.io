@@ -127,6 +127,99 @@ HISTORY_TOPICS = [
      "technique, temperament, and the eras that shaped them"),
 ]
 
+# Keywords used to work out which palette area an existing post belongs to, so
+# Saturdays can be balanced across areas the way weekdays are balanced across
+# categories. Posts don't record their area, so it is inferred from the text.
+HISTORY_AREA_KEYWORDS = {
+    "Ancient Greece": ["athens", "athenian", "greek", "greece", "sparta", "spartan",
+                       "socrates", "plato", "aristotle", "thucydides", "herodotus",
+                       "peloponnesian", "alexander", "hellen", "ostracism", "agora",
+                       "delphi", "marathon", "salamis", "arginusae"],
+    "Ancient Rome": ["rome", "roman", "caesar", "augustus", "cicero", "republic",
+                     "senate", "consul", "legion", "principate", "latin", "pompey",
+                     "hadrian", "aqueduct", "carthage", "punic"],
+    "World War II": ["world war", "wwii", "1939", "1940", "1941", "1942", "1943",
+                     "1944", "1945", "nazi", "wehrmacht", "churchill", "roosevelt",
+                     "normandy", "enigma", "bletchley", "pearl harbor", "stalingrad",
+                     "blitz", "luftwaffe", "manhattan project"],
+    "Ming dynasty China": ["ming", "yongle", "zheng he", "treasure fleet", "forbidden city",
+                           "chinese", "china", "confucian", "mandarin", "great wall",
+                           "porcelain", "qing", "dynasty"],
+    "US history & the founding": ["constitution", "constitutional convention", "founding",
+                                  "founders", "hamilton", "madison", "jefferson",
+                                  "franklin", "washington", "federalist", "philadelphia",
+                                  "continental congress", "revolutionary war", "adams"],
+    "New York City": ["new york", "manhattan", "brooklyn", "nyc", "tammany", "subway",
+                      "erie canal", "croton", "tenement", "ellis island", "harlem"],
+    "Legendary golfers": ["golf", "golfer", "masters", "augusta", "nicklaus", "hogan",
+                          "bobby jones", "old tom morris", "st andrews", "links",
+                          "mackenzie", "palmer", "the open championship", "usga", "r&a"],
+}
+
+# An area is "over-covered" above this multiple of an even share.
+HISTORY_OVER_SHARE = 1.25
+
+
+def _history_area_of(text):
+    """Best-guess palette area for a post, by keyword weight. None if unclear."""
+    low = text.lower()
+    scores = {area: sum(low.count(k) for k in keys)
+              for area, keys in HISTORY_AREA_KEYWORDS.items()}
+    best = max(scores, key=scores.get)
+    return best if scores[best] else None
+
+
+def history_area_counts():
+    """How many History & People posts fall in each palette area."""
+    from collections import Counter
+    counts = Counter({name: 0 for name, _ in HISTORY_TOPICS})
+    unknown = 0
+    for path in glob.glob(os.path.join(POSTS_DIR, "**", "*.md"), recursive=True):
+        meta = _read_frontmatter(path)
+        tags = [t.strip() for t in str(meta.get("tag", "")).split(",")]
+        if "History & People" not in tags:
+            continue
+        try:
+            body = open(path).read()
+        except OSError:
+            continue
+        area = _history_area_of(body)
+        if area in counts:
+            counts[area] += 1
+        else:
+            unknown += 1
+    return counts, unknown
+
+
+def history_plan():
+    """Which palette areas this Saturday must draw from, and which are resting."""
+    counts, _ = history_area_counts()
+    areas = [name for name, _ in HISTORY_TOPICS]
+    total = sum(counts.values())
+    if total == 0:
+        return {"counts": counts, "required": areas, "discouraged": []}
+    even = total / len(areas)
+    # Anything never used, or below an even share, is fair game; the leanest first.
+    required = sorted((a for a in areas if counts[a] <= even), key=lambda a: counts[a])
+    discouraged = sorted((a for a in areas if counts[a] > even * HISTORY_OVER_SHARE),
+                         key=lambda a: -counts[a])
+    return {"counts": counts, "required": required or areas,
+            "discouraged": discouraged}
+
+
+def print_history_coverage(plan=None):
+    plan = plan or history_plan()
+    counts = plan["counts"]
+    total = sum(counts.values()) or 1
+    print("\nSaturday 'History & People' coverage:")
+    for area in sorted(counts, key=lambda a: -counts[a]):
+        state = ("OVER — resting" if area in plan["discouraged"]
+                 else "prioritised" if area in plan["required"] else "on target")
+        print("  {:28s} {:2d}  {:5.1f}%  {}".format(
+            area, counts[area], counts[area] / total * 100, state))
+    print("  {} post(s) total\n".format(sum(counts.values())))
+
+
 # Editorial guardrail. The point is settled history and durable institutional
 # lessons, not commentary on live political fights.
 HISTORY_GUARDRAIL = (
@@ -813,9 +906,25 @@ HISTORY_DRAFT_SYSTEM = (
 )
 
 
-def _history_discovery_prompt(count):
+def _history_discovery_prompt(count, plan=None):
+    plan = plan or history_plan()
     palette = "\n".join("- {}: {}".format(n, d) for n, d in HISTORY_TOPICS)
-    return (
+    counts = plan["counts"]
+    tally = ", ".join("{} ({})".format(a, counts[a]) for a, _ in HISTORY_TOPICS)
+    balance = (
+        "AREA BALANCE (a hard constraint — the site has drifted badly here):\n"
+        "Posts published per area so far: " + tally + ".\n"
+        "- EVERY candidate's 'area' MUST be one of: "
+        + ", ".join(plan["required"]) + ".\n"
+        + ("- Do NOT propose anything from these over-used areas: "
+           + ", ".join(plan["discouraged"]) + ". They have had more than their "
+           "share and are resting this week. There is no exception — pick a "
+           "different area.\n" if plan["discouraged"] else "")
+        + "- Classical antiquity is NOT the default. An area with zero posts is a "
+        "better choice than a fresh angle on one already covered.\n"
+        "- Set 'area' to exactly one of the palette names above.\n\n"
+    )
+    return (balance + 
         f"Propose {count} candidate subjects for a Saturday 'History & People' essay: "
         "a historical event, episode, or figure, told for its own sake and then read "
         "for what it still explains about how institutions and people behave today.\n\n"
@@ -840,18 +949,20 @@ def _history_discovery_prompt(count):
         "best-first.\n\n"
         "AVOID REDUNDANCY: a list of posts already published on this site is provided "
         "below. Do not propose a subject that repeats one of them.\n\n"
+        "Set 'area' to one of the REQUIRED areas listed above: "
+        + ", ".join(plan["required"]) + ".\n"
         "Return ONLY a JSON array, no markdown:\n"
         '[{"topic": "...", "angle": "...", "parallel": "...", "area": "..."}]'
     )
 
 
-def discover_history_topics(count):
+def discover_history_topics(count, plan=None):
     resp = get_client().messages.create(
         model=MODEL,
         max_tokens=3000,
         tools=[WEB_SEARCH],
         messages=[{"role": "user",
-                   "content": _history_discovery_prompt(count)
+                   "content": _history_discovery_prompt(count, plan)
                    + published_posts_context()}],
     )
     return (_extract_json(_text_of(resp)) or [])[:count]
@@ -863,16 +974,26 @@ def run_history(dry_run=False):
         print("=" * 70)
         print("[DRY RUN] Saturday 'History & People' mode")
         print("=" * 70)
+        print_history_coverage()
         print("\n--- SUBJECT-DISCOVERY PROMPT ---\n" + _history_discovery_prompt(4))
         print("\n--- then drafted with this SYSTEM PROMPT ---\n"
               + HISTORY_DRAFT_SYSTEM)
         print("\n[dry-run] No API call made and no file written.\n")
         return
-    print("Saturday History & People — finding a subject...")
-    candidates = discover_history_topics(4)
+    plan = history_plan()
+    print("Saturday History & People — balancing toward: "
+          + ", ".join(plan["required"])
+          + ((" (resting: " + ", ".join(plan["discouraged"]) + ")")
+             if plan["discouraged"] else ""))
+    candidates = discover_history_topics(4, plan=plan)
     if not candidates:
         print("No subjects found; nothing drafted.")
         return
+    # Try the under-covered areas first; only fall back to the rest if none of
+    # them can be researched and cited this week.
+    required = set(plan["required"])
+    candidates = ([c for c in candidates if c.get("area") in required]
+                  + [c for c in candidates if c.get("area") not in required])
     for cand in candidates:
         area = cand.get("area", "")
         print(f"Drafting [{area}]: {cand.get('topic', '')}")
@@ -1038,6 +1159,8 @@ def main():
                    help="draft one 'History & People' post (auto-selected on Saturdays)")
     p.add_argument("--no-history", dest="no_history", action="store_true",
                    help="run the normal AI pipeline even if today is Saturday")
+    p.add_argument("--history-coverage", dest="history_coverage", action="store_true",
+                   help="print the Saturday 'History & People' area balance and exit")
     p.add_argument("--coverage", action="store_true",
                    help="print the topic-coverage report and what the next run would "
                         "target, then exit (no API call)")
@@ -1048,6 +1171,10 @@ def main():
 
     if args.coverage:
         print_coverage_report()
+        return
+
+    if args.history_coverage:
+        print_history_coverage()
         return
 
     text = None
