@@ -7,7 +7,7 @@ excerpt: "Sulla did not invent political killing. He made it governable — turn
 takeaway: "Institutional decay does not always mean becoming less organized. A system can become more standardized, efficient, and reproducible while becoming worse at the purpose it was meant to serve."
 cover: "/assets/b9ac2186f919cdd03ca0a95cd7e963efece58918073f4a14d525ba4f3041cfbe.png"
 cover_alt: "Illustration: Rome’s proscription lists transformed political violence into a public, procedural, and reusable system."
-published: false
+published: true
 ---
 
 ## 📜 The Word That Became a Death List
@@ -19,6 +19,11 @@ That semantic transformation — from administrative routine to political killin
 Sulla did not invent political violence. Rome had already experienced assassination, mob violence, confiscation, and factional revenge.
 
 **His innovation was making political violence governable.**
+
+<figure class="full">
+  <img src="/assets/lucius-cornelius-sulla-dictator.jpeg" alt="Sulla shown twice: an engraved profile portrait on a medallion inscribed SVLLA COS, beside a marble bust of the same face.">
+  <figcaption>Lucius Cornelius Sulla, in an engraved portrait medallion inscribed <em>SVLLA · COS</em> and in marble. Source: <a href="https://www.thecollector.com">TheCollector</a>.</figcaption>
+</figure>
 
 On 2 November 82 BC, after defeating his enemies at the Battle of the Colline Gate, [Sulla convened the Senate](https://www.perseus.tufts.edu/hopper/text?doc=Plut.%20Sull.%2030&lang=original) in the Temple of Bellona, outside Rome's sacred boundary, the *pomerium*. Nearby, thousands of captured Samnites and other prisoners were being killed.
 
