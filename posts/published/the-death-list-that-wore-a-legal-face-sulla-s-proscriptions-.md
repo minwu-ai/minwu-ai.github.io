@@ -14,11 +14,11 @@ published: true
 
 The Latin *proscribere* means "to write up" or "to publish." Before Sulla, *proscriptio* could describe an ordinary public notice. After Sulla, it acquired another meaning: a death list.
 
-That semantic transformation — from administrative routine to political killing — contains the story in miniature.
+That shift — from administrative routine to political killing — contains the story in miniature.
 
-Sulla did not invent political violence. Rome had already experienced assassination, mob violence, confiscation, and factional revenge.
+Rome already knew assassination, mob violence, confiscation, and factional revenge. Sulla did not invent political violence.
 
-**His innovation was making political violence governable.**
+**His innovation was making it governable.**
 
 <figure class="full">
   <img src="/assets/lucius-cornelius-sulla-dictator.jpeg" alt="Sulla shown twice: an engraved profile portrait on a medallion inscribed SVLLA COS, beside a marble bust of the same face.">
@@ -43,9 +43,9 @@ To appear on the list meant more than being marked for arrest. The proscribed co
 
 This changed the nature of the violence.
 
-What had been political revenge became a sequence of identification, publication, authorization, enforcement, confiscation, and redistribution.
+What had been political revenge became a sequence: identification, publication, authorization, enforcement, confiscation, redistribution.
 
-A victorious Roman had always been capable of killing an enemy. Sulla created something more scalable. A published designation could mobilize strangers to act. Informers had incentives to provide information. Killers had incentives to collect rewards. Buyers had incentives to acquire confiscated estates. Officials could administer the transfers.
+A victorious Roman had always been able to kill an enemy. Sulla built something scalable. A published name could mobilize strangers — informers, killers, buyers of confiscated estates, and the officials who administered the transfers all now had a reason to participate.
 
 **Political violence had acquired an operating model.**
 
@@ -57,7 +57,7 @@ Confiscated estates were sold at public auctions, often far below their actual v
 
 The most revealing case involved Sulla's freedman Lucius Cornelius Chrysogonus.
 
-Sextus Roscius of Ameria had been murdered, and his name was subsequently added to the proscription lists under suspicious circumstances. His estates, valued by Cicero at **six million sesterces**, were sold for just **2,000 sesterces** to Chrysogonus.
+Sextus Roscius of Ameria had been murdered, and his name was subsequently added to the proscription lists under suspicious circumstances. His estates, which [Cicero valued at six million sesterces](https://www.perseus.tufts.edu/hopper/text?doc=Cic.%20S.%20Rosc.%206), were sold for just **2,000 sesterces** to Chrysogonus.
 
 Roscius's son was then accused of murdering his own father — conveniently threatening to eliminate the person best positioned to challenge the confiscation.
 
@@ -65,15 +65,13 @@ A young Cicero defended him in *Pro Roscio Amerino*, attacking the corruption su
 
 The episode shows how quickly the machinery became larger than the purge that created it. There were now killers, informers, officials, buyers, intermediaries, and beneficiaries.
 
-As [Arthur Keaveney describes in his biography of Sulla](https://www.routledge.com/Sulla-The-Last-Republican/Keaveney/p/book/9780415336611), the proscriptions became intertwined with a massive redistribution of property and political power. François Hinard's foundational study similarly reconstructed the victims and networks produced by the purge.
+Arthur Keaveney's *Sulla: The Last Republican* and François Hinard's foundational study of the proscriptions both describe the same thing: a purge that became inseparable from a massive redistribution of property and political power.
 
 **Once confiscation became legal and profitable, the system no longer depended entirely on Sulla's political motivation. It had acquired incentives of its own.**
 
 ## ⚖️ When the Exception Became a Capability
 
-Sulla had seized power through extraordinary violence. It would therefore be misleading to describe the proscriptions as an ordinary application of republican law.
-
-Something more interesting happened.
+Sulla seized power through extraordinary violence, so it would be misleading to call the proscriptions an ordinary application of republican law. Something more interesting happened.
 
 **The extraordinary was progressively formalized.**
 
@@ -111,8 +109,6 @@ An act has to be chosen again. A procedure can be inherited.
 
 Sulla was dead. **The capability survived.**
 
-Rome had acquired institutional memory of how political elimination could be organized.
-
 ## 📈 An Improvement in the Wrong Direction
 
 There is an uncomfortable way to describe what happened.
@@ -133,35 +129,17 @@ Sulla exposes the assumption underneath that logic.
 
 An institution can become increasingly competent at doing the wrong thing.
 
-This is why the proscriptions are more interesting than another episode of ancient political brutality. Sulla imposed considerable administrative order on violence: names were organized, categories defined, rewards specified, auctions conducted, and transactions recorded.
+This is why the proscriptions are more interesting than another episode of ancient brutality. Sulla imposed real administrative order on violence: names organized, categories defined, rewards specified, auctions conducted, transactions recorded.
 
-The process worked.
+The process worked. That did not make the institution healthier. It made the wrong objective easier to administer.
 
-That did not make the institution healthier.
+We usually imagine institutional decline as a slide from order toward chaos. Sulla suggests something subtler.
 
-It made the wrong objective easier to administer.
-
-## 🏛️ Institutional Entropy Without Collapse
-
-We often imagine institutional decline as a movement from order toward dysfunction and eventually chaos.
-
-Sulla suggests another possibility.
-
-The Forum still functioned. Notices were still published. Records were maintained. Auctions transferred property. Statutes still carried legal authority.
+The Forum still functioned. Notices were still published. Records were kept. Statutes still carried legal authority.
 
 **The machinery survived while its function changed.**
 
-That is a subtler form of institutional entropy. The institution does not necessarily become less organized. It can remain orderly — even become more efficient — while drifting away from the purpose that made its procedures valuable in the first place.
-
-The danger is therefore not always the disappearance of rules.
-
-Sometimes it is the preservation of rules after their function has been inverted.
-
-And once that inversion becomes procedural, it becomes reusable.
-
-The Second Triumvirate did not need Sulla himself. It needed the capability Sulla had demonstrated.
-
-Rome had learned how to operate the system.
+The danger is not always that rules disappear. Sometimes it is that they are preserved after their function has been inverted — and once that inversion is procedural, it is reusable.
 
 ## 🤖 Why This Matters Now
 
@@ -173,27 +151,17 @@ Usually that represents genuine progress.
 
 But Sulla's experience suggests that **process maturity and institutional health are not the same variable**.
 
-A compliance process can become more efficient while shifting from identifying genuine misconduct toward producing reasons for predetermined outcomes. An HR process can become highly standardized while being selectively deployed. A legal review can become sophisticated at constructing defensible routes to decisions rather than independently testing them.
+A compliance process can grow more efficient while shifting from identifying genuine misconduct toward producing reasons for predetermined outcomes. A legal review can grow sophisticated at constructing defensible routes to a decision rather than independently testing it.
 
 Automation makes this distinction even more important.
 
 A flawed judgment made by one person is limited by that person's reach. A flawed objective embedded into a workflow can become consistent and persistent. Embedded into software, it becomes scalable. Embedded into AI-driven systems, that scale can expand dramatically further.
 
-The question is therefore not simply whether we can make a process more efficient.
-
-**What are we making easier to administer?**
-
 ## 🎯 The Question Before Efficiency
 
-None of this means procedure, bureaucracy, or automation is inherently dangerous.
+None of this makes procedure, bureaucracy, or automation inherently dangerous. Proceduralization is a multiplier: where institutional purpose is healthy it makes good governance scalable, and where purpose has drifted it makes the drift scalable too.
 
-Proceduralization is better understood as a multiplier.
-
-When institutional purpose is healthy, it can make good governance scalable.
-
-When purpose has drifted, it can make that drift scalable too.
-
-That means "Was the procedure followed?" is necessary but insufficient. We also have to ask what objective the procedure actually serves — and whether that objective deserves to become standardized, efficient, and reproducible.
+That means "Was the procedure followed?" is necessary but insufficient. The prior question is what objective the procedure serves — and whether that objective deserves to become standardized, efficient, and reproducible.
 
 Perhaps the most useful question Sulla leaves us is therefore:
 
