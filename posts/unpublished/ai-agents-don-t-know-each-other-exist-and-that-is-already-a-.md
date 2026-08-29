@@ -5,9 +5,9 @@ slug: ai-agents-don-t-know-each-other-exist-and-that-is-already-a-
 tag: Industry, Agentic AI
 excerpt: "Anthropic's Frontier Red Team has put controlled empirical numbers on a failure class beginning to surface in real deployments: autonomous agents sharing infrastructure without a reliable model of who else is operating there, why, or under whose authority."
 takeaway: "The coordination failure Anthropic documented in August — agents on shared infrastructure interpreting legitimate interference as hostile and escalating accordingly — exposes a missing layer in the agentic stack. Identity, authority, isolation, and conflict-resolution protocols must become infrastructure, not assumptions."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/2ebb173a68a3be1dd34a10b2b7920a6e2069e85ca98319e7316549c9240746e0.png"
+cover_alt: "Illustration: Autonomous agents collide over shared infrastructure, revealing the missing coordination layer in agentic AI."
+published: true
 ---
 
 ## 🧪 What the Experiment Actually Found
