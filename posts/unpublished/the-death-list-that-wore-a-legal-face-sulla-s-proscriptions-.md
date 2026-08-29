@@ -5,8 +5,8 @@ slug: the-death-list-that-wore-a-legal-face-sulla-s-proscriptions-
 tag: History & People
 excerpt: "Sulla did not invent political killing. He made it governable — turning violence into a published, incentivized, legally stabilized process that Rome could later reuse."
 takeaway: "Institutional decay does not always mean becoming less organized. A system can become more standardized, efficient, and reproducible while becoming worse at the purpose it was meant to serve."
-cover: "/assets/"
-cover_alt: "Illustration: "
+cover: "/assets/b9ac2186f919cdd03ca0a95cd7e963efece58918073f4a14d525ba4f3041cfbe.png"
+cover_alt: "Illustration: Rome’s proscription lists transformed political violence into a public, procedural, and reusable system."
 published: false
 ---
 
