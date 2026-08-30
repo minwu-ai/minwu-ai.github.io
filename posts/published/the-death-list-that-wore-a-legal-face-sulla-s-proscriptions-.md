@@ -4,7 +4,7 @@ date: 2026-08-29
 slug: the-death-list-that-wore-a-legal-face-sulla-s-proscriptions-
 tag: History & People
 excerpt: "Sulla did not invent political killing. He made it governable — turning violence into a published, incentivized, legally stabilized process that Rome could later reuse."
-takeaway: "Institutional decay does not always mean becoming less organized. A system can become more standardized, efficient, and reproducible while becoming worse at the purpose it was meant to serve."
+takeaway: "Humans preserve arrangements that work by turning decisions into reusable order. Sulla's proscriptions show the darker side of that instinct: a successful act of political violence became a procedure, then an institutional capability, and finally a precedent."
 cover: "/assets/b9ac2186f919cdd03ca0a95cd7e963efece58918073f4a14d525ba4f3041cfbe.png"
 cover_alt: "Illustration: Rome’s proscription lists transformed political violence into a public, procedural, and reusable system."
 published: true
@@ -123,52 +123,44 @@ Political elimination became more standardized, more legible, more decentralized
 
 These are characteristics we normally associate with institutional progress. Moving from informal to formal, arbitrary to standardized, undocumented to documented, and ad hoc to repeatable usually sounds like better governance.
 
-Sulla exposes the assumption underneath that logic.
+But there is a more general human tendency underneath this.
 
-**A process can become better without its purpose becoming better.**
+When we discover an arrangement that works, we tend to preserve it rather than solve the same problem again. A decision repeated often enough becomes a habit. Organizations turn repeated decisions into procedures. Political systems turn them into laws and institutions.
 
-An institution can become increasingly competent at doing the wrong thing.
+Part of the reason is simple economy. Reconsidering everything continuously is expensive. A company, for example, does not normally renegotiate every employee's compensation each month according to that month's exact contribution. It establishes a salary, reviews it periodically, and thereby compresses thousands of possible decisions into a relatively stable arrangement.
 
-This is why the proscriptions are more interesting than another episode of ancient brutality. Sulla imposed real administrative order on violence: names organized, categories defined, rewards specified, auctions conducted, transactions recorded.
+There is another force as well: **people who benefit from an existing order have an incentive to preserve it.** For someone with enough power, "this worked for me" can gradually become "this is how we do it" — and eventually "this is the rule."
 
-The process worked. That did not make the institution healthier. It made the wrong objective easier to administer.
+The same mechanism can therefore create useful institutions or destructive ones. The mechanism itself is not moral. It is a way of preserving successful responses.
 
-We usually imagine institutional decline as a slide from order toward chaos. Sulla suggests something subtler.
+### From Decision to Durable Order
 
-The Forum still functioned. Notices were still published. Records were kept. Statutes still carried legal authority.
-
-**The machinery survived while its function changed.**
-
-The danger is not always that rules disappear. Sometimes it is that they are preserved after their function has been inverted — and once that inversion is procedural, it is reusable.
-
-## 🤖 Why This Matters Now
-
-The modern parallel is structural, not partisan.
-
-Organizations today are extraordinarily good at proceduralization. When decisions are inconsistent, we standardize them. When processes are slow, we automate them. When accountability is unclear, we create controls, workflows, metrics, escalation paths, and audit trails.
-
-Usually that represents genuine progress.
-
-But Sulla's experience suggests that **process maturity and institutional health are not the same variable**.
-
-A compliance process can grow more efficient while shifting from identifying genuine misconduct toward producing reasons for predetermined outcomes. A legal review can grow sophisticated at constructing defensible routes to a decision rather than independently testing it.
-
-Automation makes this distinction even more important.
-
-A flawed judgment made by one person is limited by that person's reach. A flawed objective embedded into a workflow can become consistent and persistent. Embedded into software, it becomes scalable. Embedded into AI-driven systems, that scale can expand dramatically further.
-
-## 🎯 The Question Before Efficiency
-
-None of this makes procedure, bureaucracy, or automation inherently dangerous. Proceduralization is a multiplier: where institutional purpose is healthy it makes good governance scalable, and where purpose has drifted it makes the drift scalable too.
-
-That means "Was the procedure followed?" is necessary but insufficient. The prior question is what objective the procedure serves — and whether that objective deserves to become standardized, efficient, and reproducible.
-
-Perhaps the most useful question Sulla leaves us is therefore:
-
-**Would we still want this procedure to exist if it worked perfectly?**
-
-Sulla's enduring innovation was not simply the death list. It was demonstrating that political violence could move from an act to a process, from a process to a capability, and from a capability to a precedent.
-
-Rome did not merely kill its political enemies in 82 BC.
-
-**It learned how to run a system for doing it.**
+```text
+      Something works
+             │
+             ▼
+         REPEAT IT
+             │
+        ┌────┴────┐
+        │         │
+        ▼         ▼
+ Saves effort   Protects interests
+        │         │
+        └────┬────┘
+             ▼
+       STANDARDIZE IT
+             │
+             ▼
+   Habit · Procedure · Law
+             │
+             ▼
+       REUSABLE ORDER
+             │
+       ┌─────┴─────┐
+       ▼           ▼
+  Conditions     Conditions
+ still fit       have changed
+       │           │
+       ▼           ▼
+ Useful order   Institutional
+                  inertia
