@@ -165,3 +165,38 @@ The same mechanism can therefore create useful institutions or destructive ones.
  Useful order   Institutional
                   inertia
 ```
+
+
+## 🤖 Why This Matters Now
+
+That right-hand branch — conditions change, the procedure does not — is not an ancient problem.
+
+The modern parallel is structural, not partisan.
+
+Organizations today are extraordinarily good at proceduralization. When decisions are inconsistent, we standardize them. When processes are slow, we automate them. When accountability is unclear, we create controls, workflows, metrics, escalation paths, and audit trails.
+
+Usually that represents genuine progress.
+
+But Sulla's experience suggests that **process maturity and institutional health are not the same variable**.
+
+A compliance process can grow more efficient while shifting from identifying genuine misconduct toward producing reasons for predetermined outcomes. A legal review can grow sophisticated at constructing defensible routes to a decision rather than independently testing it.
+
+Automation makes this distinction even more important.
+
+A flawed judgment made by one person is limited by that person's reach. A flawed objective embedded into a workflow becomes consistent and persistent. Embedded into software, it becomes scalable. Embedded into AI-driven systems, that scale can expand dramatically further.
+
+## 🎯 The Question Before Efficiency
+
+If the mechanism itself is neutral, then the mechanism cannot be the test.
+
+"Was the procedure followed?" is necessary but insufficient. The prior question is what objective the procedure serves — and whether that objective deserves to become standardized, efficient, and reproducible.
+
+Perhaps the most useful question Sulla leaves us is therefore:
+
+**Would we still want this procedure to exist if it worked perfectly?**
+
+Sulla's enduring innovation was not simply the death list. It was demonstrating that political violence could move from an act to a process, from a process to a capability, and from a capability to a precedent.
+
+Rome did not merely kill its political enemies in 82 BC.
+
+**It learned how to run a system for doing it.**
