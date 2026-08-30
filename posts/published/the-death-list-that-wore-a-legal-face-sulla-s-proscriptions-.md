@@ -164,3 +164,4 @@ The same mechanism can therefore create useful institutions or destructive ones.
        ▼           ▼
  Useful order   Institutional
                   inertia
+```
