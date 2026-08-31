@@ -191,7 +191,8 @@ A remediation program usually has a straightforward evidentiary structure:
 
 Conditional misalignment breaks the last inference.
 
-```text
+```
+text
 Misalignment detected
         │
         ▼
@@ -209,3 +210,4 @@ Failure removed?   Failure suppressed?
                         │
                         ▼
                 Misalignment returns
+```
