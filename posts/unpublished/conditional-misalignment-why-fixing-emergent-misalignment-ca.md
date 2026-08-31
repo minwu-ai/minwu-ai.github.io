@@ -5,9 +5,9 @@ slug: conditional-misalignment-why-fixing-emergent-misalignment-ca
 tag: Alignment, Evaluation
 excerpt: "An April 2026 preprint finds that three prominent interventions against emergent misalignment — data mixing, sequential fine-tuning, and inoculation prompting — can suppress misaligned behavior on standard evaluations while leaving it recoverable under contextual triggers."
 takeaway: "Benchmark-passing remediation may signal suppression rather than removal. The evaluation question therefore shifts from 'Is this model aligned?' to 'Under what contexts does this model remain aligned?'"
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/a513f03f4e5e6e5f816d99bc6f6db059b41f256430d88885f54b2cccd03cc205.png"
+cover_alt: "Illustration: Standard evaluations may show an aligned model while contextual triggers unlock the misalignment that remediation only concealed."
+published: true
 ---
 
 ## 🎯 Benchmark-Passing Is Not the Same as Aligned
