@@ -298,6 +298,8 @@ def render_markdown(text):
 def load_posts():
     posts = []
     for path in sorted(POSTS_DIR.rglob("*.md")):   # rglob: posts/ or posts/<state>/
+        if path.parent.name == "archive":         # superseded drafts never ship
+            continue
         post = frontmatter.load(path)
         # Review gate: posts with "published: false" are hidden until you approve.
         # (Posts with no "published" field are treated as published.)

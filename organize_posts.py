@@ -24,6 +24,10 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 POSTS_DIR = ROOT / "posts"
 STATES = {True: "published", False: "unpublished"}
+# posts/archive/ holds drafts that were superseded by a published post or by a
+# later draft. They are kept as a record but are not part of the review queue,
+# so the filer leaves them alone.
+SKIP_DIRS = {"archive"}
 
 
 def is_published(path):
@@ -55,6 +59,8 @@ def main():
 
     moves, counts = [], {"published": 0, "unpublished": 0}
     for path in sorted(POSTS_DIR.rglob("*.md")):
+        if path.parent.name in SKIP_DIRS:
+            continue
         state = STATES[is_published(path)]
         counts[state] += 1
         target_dir = POSTS_DIR / state
