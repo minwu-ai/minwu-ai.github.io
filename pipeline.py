@@ -860,6 +860,157 @@ def print_coverage_report(plan=None):
     print("  even share would be {:.1f} each\n".format(even))
 
 
+# ---- Mode: revive a draft from the backlog -------------------------------
+# Tuesdays and Thursdays the pipeline does NOT go looking for new stories. It
+# revisits drafts that were written and never published, re-verifies them, and
+# republishes only the ones that survive.
+#
+# The important design point: this is a VERIFICATION GATE, not a polish pass.
+# An unpublished draft is not merely stale prose — its claims may now be false.
+# "Enforcement goes live in 13 days" was true when written and is wrong today.
+# So the model is required to reject anything it cannot re-confirm, and a run
+# that revives nothing is a correct outcome, not a failure.
+REVIVE_WEEKDAYS = {1, 3}          # Monday is 0, so: Tuesday and Thursday
+REVIVE_MAX_AGE_DAYS = 120         # older than this is not worth re-checking
+REVIVE_MAX_TRIES = 4              # re-checking costs an API call each, so cap
+                                  # the attempts per run rather than grinding
+                                  # through the whole backlog on a bad day
+
+REVIVE_SYSTEM = (
+    "You are re-examining an unpublished draft written for this publication "
+    "weeks ago, deciding whether it can still run today.\n\n"
+    "Your DEFAULT ANSWER IS NO. Most old drafts cannot be salvaged, and "
+    "publishing a stale claim as current would damage the site's credibility "
+    "far more than skipping a day costs. Reviving nothing is a perfectly good "
+    "outcome.\n\n"
+    "STEP 1 — RE-VERIFY EVERY TIME-SENSITIVE CLAIM with web search. Look "
+    "specifically for:\n"
+    "- deadlines and countdowns that have since passed ('in 13 days', 'next "
+    "month', 'the vote this week')\n"
+    "- predictions the draft made that have since resolved, correctly or not\n"
+    "- events that were pending and have now happened, been delayed, or been "
+    "abandoned\n"
+    "- figures, versions, and statuses that have since changed\n"
+    "- links that no longer resolve or no longer say what the draft claims\n\n"
+    "STEP 2 — DECIDE.\n"
+    "Answer REJECT if the piece is built on a moment that has passed, if its "
+    "core claim has been overtaken by events, if it needs so much rewriting "
+    "that nothing of the original survives, or if you cannot re-confirm its "
+    "central facts.\n"
+    "Answer REVIVE only if the subject still matters today AND you can update "
+    "it honestly.\n\n"
+    "STEP 3 — IF REVIVING, REWRITE IT AS A PIECE WRITTEN TODAY. Do not leave "
+    "language that implies the original date. Say what has happened since. "
+    "Where the draft anticipated something, report how it actually turned out "
+    "— that hindsight is the main reason an old draft is worth reviving at "
+    "all. Keep every citation you can still verify, drop the ones you cannot, "
+    "and add new ones for anything that has changed.\n\n"
+    "Return EXACTLY one of the following, and nothing else.\n\n"
+    "To reject:\n"
+    "REJECT: <one sentence on what specifically has gone stale>\n\n"
+    "To revive, the normal article format:\n"
+    "TITLE: <title on a single line>\n"
+    "EXCERPT: <one-sentence summary on a single line>\n"
+    "TAG: <one or two categories from: AI Governance, AI Safety, Alignment, "
+    "Evaluation, Agentic AI, Regulation & Policy, Industry>\n"
+    "TAKEAWAY: <a '1-minute takeaway' in 1-2 sentences>\n"
+    "BODY:\n"
+    "<the full markdown body>"
+)
+
+
+def _revive_candidates():
+    """Unpublished drafts worth re-checking, best first.
+
+    Ordered by freshness, then by whether the draft sits in a category the
+    coverage balancer is trying to fill. Archived drafts are excluded, and so
+    is anything older than REVIVE_MAX_AGE_DAYS.
+    """
+    plan = coverage_plan()
+    wanted = set(plan["required"])
+    today = datetime.date.today()
+    out = []
+    for path in glob.glob(os.path.join(POSTS_DIR, "unpublished", "*.md")):
+        meta = _read_frontmatter(path)
+        if str(meta.get("published", "false")).lower() != "false":
+            continue
+        try:
+            d = datetime.date(*[int(x) for x in str(meta.get("date", ""))[:10].split("-")])
+        except (ValueError, TypeError):
+            continue
+        age = (today - d).days
+        if age < 0 or age > REVIVE_MAX_AGE_DAYS:
+            continue
+        tags = [t.strip() for t in str(meta.get("tag", "")).split(",") if t.strip()]
+        if "History & People" in tags or "Life" in tags:
+            continue          # Saturday/hand-written categories are not revived
+        out.append({"path": path, "age": age, "title": str(meta.get("title", "")),
+                    "wanted": bool(set(tags) & wanted)})
+    out.sort(key=lambda c: (not c["wanted"], c["age"]))
+    return out
+
+
+def run_revive(count=1, dry_run=False):
+    """Tue/Thu: re-verify backlog drafts and revive the ones that still stand."""
+    candidates = _revive_candidates()
+    if dry_run:
+        print("=" * 70)
+        print("[DRY RUN] backlog revival mode")
+        print("=" * 70)
+        print("\n{} candidate(s); would try up to {}:".format(len(candidates), count))
+        for c in candidates[:8]:
+            print("   {:3d}d  {}{}".format(
+                c["age"], "[fills a gap] " if c["wanted"] else "", c["title"][:56]))
+        print("\n--- SYSTEM PROMPT ---\n" + REVIVE_SYSTEM)
+        print("\n[dry-run] No API call made and no file written.\n")
+        return 0
+    if not candidates:
+        print("No revivable drafts in the backlog.")
+        return 0
+    print("Backlog revival — {} candidate(s) to consider.".format(len(candidates)))
+    revived, tried = 0, 0
+    for cand in candidates:
+        if revived >= count or tried >= REVIVE_MAX_TRIES:
+            break
+        tried += 1
+        original = open(cand["path"]).read()
+        print("Re-checking [{}d]: {}".format(cand["age"], cand["title"][:60]))
+        instruction = (
+            "This draft was written {} days ago and never published. Re-verify "
+            "it against what is true today, then either REJECT it or rewrite it "
+            "as a piece written now.\n\n--- DRAFT ---\n{}"
+        ).format(cand["age"], original)
+        raw = _text_of(get_client().messages.create(
+            model=MODEL, max_tokens=2500, tools=[WEB_SEARCH],
+            system=REVIVE_SYSTEM,
+            messages=[{"role": "user", "content": instruction}]))
+        if re.search(r"^\s*REJECT\s*:", raw, re.M):
+            reason = re.sub(r"^\s*REJECT\s*:\s*", "",
+                            re.search(r"^\s*REJECT\s*:.*$", raw, re.M).group(0)).strip()
+            print("  rejected — {}".format(reason[:100]))
+            _retire_draft(cand["path"])
+            continue
+        article = parse_article(raw)
+        if not has_sources(article):
+            print("  rejected — could not re-cite it.")
+            _retire_draft(cand["path"])
+            continue
+        article = trim_to_length(article)
+        save_post(article, default_tag="Industry")
+        _retire_draft(cand["path"])      # the revived version supersedes it
+        revived += 1
+    print("Done — revived {} of {} attempted (cap {}).".format(
+        revived, tried, REVIVE_MAX_TRIES))
+    return revived
+
+
+def _retire_draft(path):
+    """Move a draft out of the review queue once it has been revived or rejected."""
+    archive = os.path.join(POSTS_DIR, "archive")
+    os.makedirs(archive, exist_ok=True)
+    os.replace(path, os.path.join(archive, os.path.basename(path)))
+
+
 # ---- Mode: Saturday 'History & People' -----------------------------------
 
 HISTORY_MAX_WORDS = 900   # a little more room than the weekday news analysis
@@ -1159,6 +1310,15 @@ def main():
                    help="draft one 'History & People' post (auto-selected on Saturdays)")
     p.add_argument("--no-history", dest="no_history", action="store_true",
                    help="run the normal AI pipeline even if today is Saturday")
+    p.add_argument("--revive", action="store_true",
+                   help="re-verify backlog drafts and revive what still stands "
+                        "(auto-selected on Tuesdays and Thursdays)")
+    p.add_argument("--no-revive", dest="no_revive", action="store_true",
+                   help="draft fresh even on a revival day")
+    p.add_argument("--revive-count", dest="revive_count", type=int, default=1,
+                   help="how many backlog drafts to revive (default 1)")
+    p.add_argument("--backlog", action="store_true",
+                   help="list the revivable backlog and exit")
     p.add_argument("--history-coverage", dest="history_coverage", action="store_true",
                    help="print the Saturday 'History & People' area balance and exit")
     p.add_argument("--coverage", action="store_true",
@@ -1175,6 +1335,14 @@ def main():
 
     if args.history_coverage:
         print_history_coverage()
+        return
+
+    if args.backlog:
+        c = _revive_candidates()
+        print("\n{} revivable draft(s), best first:".format(len(c)))
+        for x in c:
+            print("  {:3d}d  {}{}".format(x["age"],
+                  "[fills a gap] " if x["wanted"] else "", x["title"][:60]))
         return
 
     text = None
@@ -1194,6 +1362,17 @@ def main():
         run_history(dry_run=args.dry_run)
     else:
         focus = [t.strip() for t in args.focus.split(",")] if args.focus else None
+        revive_day = (datetime.date.today().weekday() in REVIVE_WEEKDAYS
+                      and not args.no_revive)
+        if args.revive or revive_day:
+            n = run_revive(args.revive_count, dry_run=args.dry_run)
+            if args.dry_run or n:
+                return
+            # Nothing in the backlog survived re-verification, which is a normal
+            # outcome. Rather than lose the day, fall through to a fresh draft.
+            print("Nothing revivable — falling back to a fresh draft.")
+            run_scheduled(1, focus=focus, dry_run=args.dry_run)
+            return
         run_scheduled(args.count, focus=focus, dry_run=args.dry_run)
 
 
