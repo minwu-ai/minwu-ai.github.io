@@ -17,9 +17,8 @@ on:
   workflow_dispatch:           # also lets you run it manually anytime
     inputs:
       count:
-        description: "How many posts to draft"
+        description: "How many posts to draft (blank = weekday default: 2, or 1 on Tue/Thu)"
         required: false
-        default: "2"
 
 permissions:
   contents: write
@@ -65,7 +64,15 @@ jobs:
         if: steps.guard.outputs.skip != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python pipeline.py --count "${{ github.event.inputs.count || '2' }}"
+          COUNT: ${{ github.event.inputs.count }}
+        # Pass --count only for a manual run. Scheduled runs let pipeline.py
+        # pick by weekday: two drafts Mon/Wed/Fri, one on Tue/Thu.
+        run: |
+          if [ -n "$COUNT" ]; then
+            python pipeline.py --count "$COUNT"
+          else
+            python pipeline.py
+          fi
 
       - name: Commit new drafts
         id: commit
