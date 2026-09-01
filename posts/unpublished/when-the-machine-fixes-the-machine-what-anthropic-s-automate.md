@@ -5,9 +5,9 @@ slug: when-the-machine-fixes-the-machine-what-anthropic-s-automate
 tag: Alignment, Evaluation
 excerpt: "Anthropic's automated alignment researcher closed an average 85% of the measured deception safety gap and beat one-shot proposals from experienced human researchers — a genuine milestone that simultaneously exposes the harder question: whether benchmark-measurable alignment is a reliable proxy for alignment that actually matters."
 takeaway: "Anthropic has demonstrated that automated post-training can reliably improve measurable alignment objectives — including outperforming experienced humans on deception — but a May 2026 preprint identifies the harder boundary: when success itself is difficult for humans to evaluate, optimization can concentrate errors precisely where reviewers are least able to detect them."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/4506d9766cd5a1a6a87852fbb497b99427143ca9117b2aa536ed483c664a095c.png"
+cover_alt: "Illustration: AI can increasingly optimize what we can measure; the harder alignment problem is knowing whether we are measuring what truly matters."
+published: true
 ---
 
 ## What Was Actually Demonstrated
