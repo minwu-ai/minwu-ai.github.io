@@ -46,6 +46,12 @@ def get_client():
 # for it). Set thinking={"type": "disabled"} here to restore 4.6 behaviour.
 MODEL = "claude-sonnet-5"
 
+# Sonnet 5 runs ADAPTIVE thinking when `thinking` is omitted, unlike 4.6 which
+# ran none. Thinking tokens count against max_tokens, which truncated the
+# discovery call's JSON mid-string on the first run. This pipeline wants
+# structured output within a fixed budget, not reasoning, so thinking is off.
+THINKING = {"type": "disabled"}
+
 # Drafts per weekday (Monday is 0). Tuesdays and Thursdays are deliberately
 # lighter: one draft instead of two. That trims API spend and leaves room to
 # revisit the unpublished backlog and reuse a draft already paid for, rather
@@ -687,6 +693,7 @@ def _discovery_prompt(count, focus=None, plan=None):
 def discover_topics(count, focus=None, plan=None):
     resp = get_client().messages.create(
         model=MODEL,
+        thinking=THINKING,
         max_tokens=3000,   # room for web-search rounds + the full candidate JSON
         tools=[WEB_SEARCH],
         messages=[{"role": "user",
@@ -735,6 +742,7 @@ def draft_article(instruction, system=None):
     """instruction: a natural-language brief describing what to write."""
     resp = get_client().messages.create(
         model=MODEL,
+        thinking=THINKING,
         max_tokens=2000,
         tools=[WEB_SEARCH],
         system=system or DRAFT_SYSTEM,
@@ -762,6 +770,7 @@ def trim_to_length(article, max_words=None, preserve="the core analysis "
         return article
     resp = get_client().messages.create(
         model=MODEL,
+        thinking=THINKING,
         max_tokens=1500,
         system=("You are a ruthless editor. Cut the following article body to UNDER "
                 f"{limit} words (aim ~{int(limit * 0.85)}). Preserve {preserve} "
@@ -978,6 +987,7 @@ def _history_discovery_prompt(count, plan=None):
 def discover_history_topics(count, plan=None):
     resp = get_client().messages.create(
         model=MODEL,
+        thinking=THINKING,
         max_tokens=3000,
         tools=[WEB_SEARCH],
         messages=[{"role": "user",
