@@ -39,7 +39,12 @@ def get_client():
     return _client
 
 
-MODEL = "claude-sonnet-4-6"
+# Sonnet 5 is both newer and cheaper than Sonnet 4.6: $2/$10 per MTok
+# against $3/$15, roughly a third off a bill that is ~90% input tokens.
+# Note: unlike 4.6, omitting `thinking` on Sonnet 5 runs ADAPTIVE thinking
+# rather than none, so drafts may reason more (and bill some output tokens
+# for it). Set thinking={"type": "disabled"} here to restore 4.6 behaviour.
+MODEL = "claude-sonnet-5"
 
 # Drafts per weekday (Monday is 0). Tuesdays and Thursdays are deliberately
 # lighter: one draft instead of two. That trims API spend and leaves room to
