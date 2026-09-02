@@ -27,7 +27,7 @@ from jinja2 import Template
 SITE_NAME = "Min Wu"
 SITE_NAME_HTML = 'Min<span> Wu</span>'   # the <span> part shows in the accent color
 AUTHOR = "Min Wu"
-SITE_DESCRIPTION = "Analysis and commentary on Frontier AI safety, alignment, evaluation, and governance."
+SITE_DESCRIPTION = ("Analysis of frontier AI safety, evaluation, and governance \u2014 with occasional notes on history, people, and life outside the work.")
 SITE_URL = "https://minwu-ai.github.io"
 
 # Small kicker shown above your name on the home page (was a duplicate "Min Wu").
@@ -53,12 +53,34 @@ TOPICS = [
     ("AI Safety", "Keeping increasingly capable systems controllable and secure."),
     ("Alignment", "Making AI systems pursue what we actually intend."),
     ("Evaluation", "Measuring capability, safety, and reliability of models."),
+    ("Interpretability", "Reading what is actually happening inside a model."),
     ("Agentic AI", "Systems that take actions, not just generate text."),
     ("Regulation & Policy", "Laws, standards, and the politics shaping AI."),
     ("Industry", "Model releases, labs, and the business of AI."),
     ("History & People", "Events, stories, and figures from the past — and what they "
                          "still explain about the present."),
     ("Life", "Notes and photos from outside the work."),
+]
+
+# Four doors onto the site, shown on the home page and used to cluster the
+# Topics page. This is a navigation layer over TOPICS above — posts are not
+# retagged and existing /topics/<slug>/ URLs are untouched. A post may sit
+# behind two doors, which is fine: these are entry points, not a filing system.
+# `slug` is the page created under /topics/; where a group is a single topic it
+# reuses that topic's own page instead of creating a duplicate.
+TOPIC_GROUPS = [
+    ("AI Safety & Alignment", "ai-safety-alignment",
+     "Whether these systems behave \u2014 and how we would know.",
+     ["AI Safety", "Alignment", "Evaluation", "Interpretability"]),
+    ("AI Governance & Policy", "ai-governance-policy",
+     "Who is accountable, and the rules taking shape around them.",
+     ["AI Governance", "Regulation & Policy", "Industry"]),
+    ("Agentic AI", "agentic-ai",
+     "Systems that take actions, not just generate text.",
+     ["Agentic AI"]),
+    ("Beyond AI", "beyond-ai",
+     "History, people, travel, and the things worth thinking about anyway.",
+     ["History & People", "Life"]),
 ]
 
 # Projects shown on the Projects page. Each links to its repo. Edit freely.
@@ -365,6 +387,25 @@ def post_list_html(posts):
     return "\n".join(items)
 
 
+def doors_html(posts):
+    """The four entry points on the home page.
+
+    A first-time visitor otherwise meets an undifferentiated reverse-chronological
+    feed with no way in by subject.
+    """
+    items = ['<ul class="door-grid">']
+    for gname, gslug, gdesc, members in TOPIC_GROUPS:
+        n = len(group_posts(posts, members))
+        items.append(
+            '<li class="door"><a href="/topics/{gs}/">'
+            '<span class="door-name">{gname}</span>'
+            '<span class="door-desc">{gdesc}</span>'
+            '<span class="door-count">{n} post{s}</span></a></li>'.format(
+                gs=gslug, gname=gname, gdesc=gdesc, n=n, s="" if n == 1 else "s"))
+    items.append('</ul>')
+    return "".join(items)
+
+
 def build():
     if PUBLIC_DIR.exists():
         shutil.rmtree(PUBLIC_DIR)
@@ -401,11 +442,13 @@ def build():
         '</div>'
         '{anim}'
         '</section>'
+        '<div class="eyebrow">Start here</div>'
+        '{doors}'
         '<div class="eyebrow">Latest writing</div>'
         '{listing}'
     ).format(eyebrow=HOME_EYEBROW, name=SITE_NAME, desc=SITE_DESCRIPTION,
              quote=quote_html, social=social_links_html("hero-social"),
-             anim=HERO_ANIM, listing=listing)
+             anim=HERO_ANIM, doors=doors_html(posts), listing=listing)
     (PUBLIC_DIR / "index.html").write_text(
         render_page(SITE_NAME, SITE_DESCRIPTION, home,
                     nav_active="home", canonical_path="/", wide=True)
@@ -453,8 +496,9 @@ def build():
                         wide=True)
         )
 
-    # ---- Topics: index + one page per tag ----
+    # ---- Topics: the four doors, the index, and one page per tag ----
     build_topics(posts)
+    build_topic_groups(posts)
 
     # ---- Archive: the full back catalogue ----
     build_archive(posts)
@@ -491,6 +535,46 @@ def build():
         print("  Fix the post's `tag:` line, or add the topic to TOPICS.\n")
 
 
+def group_posts(posts, members):
+    """Posts in any of a group's topics, newest first, without duplicates."""
+    seen, out = set(), []
+    for p in posts:
+        if set(p["tags"]) & set(members) and p["slug"] not in seen:
+            seen.add(p["slug"])
+            out.append(p)
+    return out
+
+
+def build_topic_groups(posts):
+    """A landing page per door, listing everything behind it.
+
+    A group that is a single topic (Agentic AI) already has an identical page at
+    /topics/<topic>/, so no duplicate is written for it.
+    """
+    d = PUBLIC_DIR / "topics"
+    d.mkdir(exist_ok=True)
+    for gname, gslug, gdesc, members in TOPIC_GROUPS:
+        if len(members) == 1 and slugify(members[0]) == gslug:
+            continue
+        items = group_posts(posts, members)
+        pills = " ".join(
+            '<a class="tag" href="/topics/{}/">{}</a>'.format(slugify(m), m)
+            for m in members)
+        body = ('<a class="back" href="/topics/">\u2190 All topics</a>'
+                '<div class="eyebrow">Browse</div>'
+                '<h1 class="page">{gname}</h1>'
+                '<p class="lede">{gdesc}</p>'
+                '<div class="tags">{pills}</div>'
+                '{listing}').format(
+                    gname=gname, gdesc=gdesc, pills=pills,
+                    listing=post_list_html(items))
+        (d / gslug).mkdir(exist_ok=True)
+        (d / gslug / "index.html").write_text(
+            render_page("{} \u2014 {}".format(gname, SITE_NAME), gdesc, body,
+                        nav_active="topics",
+                        canonical_path="/topics/{}/".format(gslug), wide=True))
+
+
 def build_topics(posts):
     # Group published posts by their tags (a post can appear under several topics).
     by_name = {}
@@ -501,27 +585,34 @@ def build_topics(posts):
     topics_dir = PUBLIC_DIR / "topics"
     topics_dir.mkdir(exist_ok=True)
 
-    # Topics index — every curated topic appears, even with zero posts.
+    # Topics index — the four doors, each holding its constituent topics.
+    desc_of = dict(TOPICS)
     cards = ['<div class="eyebrow">Browse</div>',
              '<h1 class="page">Topics</h1>',
-             '<p class="lede">Writing grouped by theme.</p>',
+             '<p class="lede">Four ways in. Every topic keeps its own page.</p>',
              '<p class="sourcing">All articles are based on publicly available research papers, '
              'technical reports, regulatory documents, court filings, government publications, '
              'or other publicly accessible sources. No article relies on confidential or '
-             'non-public information, or proprietary materials.</p>',
-             '<ul class="topic-grid">']
-    for name, desc in TOPICS:
-        ts = slugify(name)
-        items = by_name.get(name, [])
-        n = len(items)
-        count = "{} post{}".format(n, "" if n == 1 else "s") if n else "Coming soon"
+             'non-public information, or proprietary materials.</p>']
+    for gname, gslug, gdesc, members in TOPIC_GROUPS:
+        n = len(group_posts(posts, members))
         cards.append(
-            '<li class="topic-card"><a href="/topics/{ts}/">'
-            '<span class="topic-name">{name}</span>'
-            '<span class="desc">{desc}</span>'
-            '<span class="count">{count}</span></a></li>'.format(
-                ts=ts, name=name, desc=desc, count=count))
-    cards.append('</ul>')
+            '<h2 class="group-head" id="{gs}">{gname} '
+            '<span class="group-count">{n} post{s}</span></h2>'
+            '<p class="group-desc">{gdesc}</p>'.format(
+                gs=gslug, gname=gname, gdesc=gdesc, n=n, s="" if n == 1 else "s"))
+        cards.append('<ul class="topic-grid">')
+        for name in members:
+            ts = slugify(name)
+            k = len(by_name.get(name, []))
+            count = "{} post{}".format(k, "" if k == 1 else "s") if k else "Coming soon"
+            cards.append(
+                '<li class="topic-card"><a href="/topics/{ts}/">'
+                '<span class="topic-name">{name}</span>'
+                '<span class="desc">{desc}</span>'
+                '<span class="count">{count}</span></a></li>'.format(
+                    ts=ts, name=name, desc=desc_of.get(name, ""), count=count))
+        cards.append('</ul>')
     (topics_dir / "index.html").write_text(
         render_page("Topics — " + SITE_NAME, "Browse writing by topic",
                     "\n".join(cards), nav_active="topics", canonical_path="/topics/",

@@ -111,6 +111,25 @@ h1.page{font-family:var(--serif); font-weight:600; font-size:34px; line-height:1
   .post-thumb{order:-1; width:100%; border-radius:10px}
   .post-item h2{font-size:20px}
 }
+/* Home page entry points — four doors into the site by subject */
+.door-grid{list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:14px; margin:0 0 52px}
+.door a{display:flex; flex-direction:column; height:100%; padding:18px 20px;
+  border:1px solid var(--line); border-radius:12px; text-decoration:none;
+  background:var(--surface); transition:border-color .15s, transform .15s, box-shadow .15s}
+.door a:hover{border-color:var(--accent); transform:translateY(-2px);
+  box-shadow:0 6px 18px var(--shadow)}
+.door-name{font-family:var(--serif); font-weight:600; font-size:18px; color:var(--ink);
+  letter-spacing:-0.01em}
+.door-desc{color:var(--muted); font-size:14px; line-height:1.5; margin:7px 0 12px; flex:1 1 auto}
+.door-count{font-family:var(--mono); font-size:11px; letter-spacing:.05em; color:var(--accent)}
+
+/* Topics page: the four doors as section headings over their topic cards */
+.group-head{font-family:var(--serif); font-weight:600; font-size:21px; margin:38px 0 2px;
+  display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
+.group-count{font-family:var(--mono); font-size:11px; letter-spacing:.05em; color:var(--muted)}
+.group-desc{color:var(--muted); font-size:15px; margin:0 0 18px}
+
 /* Homepage link through to the full archive */
 .see-all{display:inline-block; margin-top:26px; font-family:var(--mono); font-size:13px;
   color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
