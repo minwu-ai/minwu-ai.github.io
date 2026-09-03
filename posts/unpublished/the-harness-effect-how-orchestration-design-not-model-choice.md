@@ -5,9 +5,9 @@ slug: the-harness-effect-why-orchestration-design-can-matter-more
 tag: Industry, AI Governance
 excerpt: "A July 2026 Writer preprint isolates the orchestration layer as a major cost lever in agentic AI — and reframes it as a financial-risk and governance question, not merely a DevOps one."
 takeaway: "Changing only the orchestration layer — not the model — cut task costs 41% and token consumption 38% in a controlled experiment. The larger implication is that enterprises focused primarily on model pricing may be optimizing only one side of the cost equation, while the architecture governing spend, observability, tool authority, retries, and stopping conditions lives largely in the harness."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/73d6ad31f1629a8fdc781457c9c75a067572edaf90a194ea3251bf6ee353009d.png"
+cover_alt: "Illustration: The AI model provides the power; the harness determines how efficiently—and safely—that power is used."
+published: true
 ---
 
 ## 🔬 What the Experiment Actually Showed
