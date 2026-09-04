@@ -5,9 +5,9 @@ slug: before-you-blame-the-model-a-314-page-audit-of-coding-agent-reliability
 tag: Industry, Evaluation
 excerpt: "Stephanie Jarmak's August 2026 arXiv monograph synthesizes 164 scholarly works, 100 practitioner records, 29 benchmark records and 17 author-system case records into a systems view of coding-agent reliability — showing why failures attributed to the LLM may actually originate in the machinery around it."
 takeaway: "An AI agent is not just an LLM: it is an LLM operating through a harness of retrieval, tools, state, permissions, execution and verification. Before paying for a better model, teams need enough system evidence to know whether the model was actually the component that failed."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/3e8e295767d1e40d00977be0407c38b649694235e6c5abd9ea9d467fd38fe1a0.png"
+cover_alt: "Illustration: The LLM may be the engine, but agent reliability depends on the entire machine around it."
+published: true
 ---
 
 ## 🔍 The Claim — and Why It's Worth Taking Seriously
