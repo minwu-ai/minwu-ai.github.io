@@ -2,13 +2,14 @@
 title: "Before You Blame the Model: A 314-Page Audit of Coding-Agent Reliability"
 date: 2026-09-03
 slug: before-you-blame-the-model-a-314-page-audit-of-coding-agent-reliability
-tag: Industry, Evaluation
+tag: Agentic AI, AI Governance, Evaluation
 excerpt: "Stephanie Jarmak's August 2026 arXiv monograph synthesizes 164 scholarly works, 100 practitioner records, 29 benchmark records and 17 author-system case records into a systems view of coding-agent reliability — showing why failures attributed to the LLM may actually originate in the machinery around it."
 takeaway: "An AI agent is not just an LLM: it is an LLM operating through a harness of retrieval, tools, state, permissions, execution and verification. Before paying for a better model, teams need enough system evidence to know whether the model was actually the component that failed."
 cover: "/assets/3e8e295767d1e40d00977be0407c38b649694235e6c5abd9ea9d467fd38fe1a0.png"
 cover_alt: "Illustration: The LLM may be the engine, but agent reliability depends on the entire machine around it."
 published: true
 ---
+
 
 ## 🔍 The Claim — and Why It's Worth Taking Seriously
 
@@ -29,6 +30,12 @@ In simplified form:
 ```text
 LLM + Harness + Operating Environment → Agent Behavior
 ```
+
+This connects directly to the argument in [*The Harness Effect: Why Orchestration Design Can Matter More Than Model Choice for Enterprise AI Costs*](https://minwu-ai.github.io/the-harness-effect-why-orchestration-design-can-matter-more/), where changing the orchestration layer while holding the model fixed materially changed token consumption, cost, and latency. That experiment showed the **economic** consequence of treating the harness as mere plumbing. Jarmak's synthesis exposes the **reliability** consequence: the same surrounding machinery can determine whether model capability translates into a successful outcome — and whether we can diagnose what went wrong when it does not.
+
+Together, they point toward a broader principle:
+
+> **Enterprise AI performance is not a property of the LLM alone. It emerges from the interaction between the LLM, its harness, and its operating environment.**
 
 That distinction is increasingly important. Organizations may buy access to the same underlying model and still build agents with very different reliability, cost, authority, and observability characteristics.
 
@@ -91,12 +98,6 @@ Those implementations also differ.
 Tool interfaces differ. Context construction differs. State handling differs. Permission models differ. Execution loops differ. Error recovery differs.
 
 So even when two agents use the same underlying LLM, their behavior does not have to be the same.
-
-This is closely related to the argument in [*The Harness Effect*](https://minwu-ai.github.io/), where orchestration design changed token consumption and task economics while the model itself remained fixed. Jarmak's synthesis extends the same systems perspective into reliability: **the infrastructure surrounding the LLM affects not only how much an agent costs to run, but whether model capability successfully becomes an end-to-end result.**
-
-Together, the two arguments point toward a broader principle:
-
-> **Enterprise AI performance is not a property of the LLM alone. It emerges from the interaction between the LLM, its harness, and its operating environment.**
 
 The literature still gives us an important boundary. The strongest controlled evidence currently comes from coding-agent environments. It does not establish that harness engineering matters more than model capability in every agentic setting.
 
