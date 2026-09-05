@@ -75,7 +75,8 @@ TOPIC_GROUPS = [
      "Who is accountable, and the rules taking shape around them.",
      ["AI Governance", "Regulation & Policy", "Industry"]),
     ("Agentic AI", "agentic-ai",
-     "Systems that take actions, not just generate text.",
+     "Systems that take actions, not just generate text \u2014 where safety, "
+     "evaluation, and governance meet in practice.",
      ["Agentic AI"]),
     ("Beyond AI", "beyond-ai",
      "History, people, travel, and the things worth thinking about anyway.",
