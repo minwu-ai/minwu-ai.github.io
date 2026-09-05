@@ -53,7 +53,6 @@ TOPICS = [
     ("AI Safety", "Keeping increasingly capable systems controllable and secure."),
     ("Alignment", "Making AI systems pursue what we actually intend."),
     ("Evaluation", "Measuring capability, safety, and reliability of models."),
-    ("Interpretability", "Reading what is actually happening inside a model."),
     ("Agentic AI", "Systems that take actions, not just generate text."),
     ("Regulation & Policy", "Laws, standards, and the politics shaping AI."),
     ("Industry", "Model releases, labs, and the business of AI."),
@@ -71,7 +70,7 @@ TOPICS = [
 TOPIC_GROUPS = [
     ("AI Safety & Alignment", "ai-safety-alignment",
      "Whether these systems behave \u2014 and how we would know.",
-     ["AI Safety", "Alignment", "Evaluation", "Interpretability"]),
+     ["AI Safety", "Alignment", "Evaluation"]),
     ("AI Governance & Policy", "ai-governance-policy",
      "Who is accountable, and the rules taking shape around them.",
      ["AI Governance", "Regulation & Policy", "Industry"]),
