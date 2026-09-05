@@ -5,8 +5,8 @@ slug: the-dinner-that-bought-the-constitution-time
 tag: History & People
 excerpt: "Around June 1790, with Hamilton's debt plan in jeopardy, a private dinner among three rivals helped turn two political deadlocks into a bargain the new constitutional system could survive."
 takeaway: "Durable institutions do not eliminate opposing forces. They contain them, balance them, and give them controlled ways to act against one another. Institutional entropy begins when that tension either disappears or escapes its boundaries."
-cover: "/assets/"
-cover_alt: "Illustration: "
+cover: "/assets/19f57d6acaefe03013894161abcc7c912bf82fe5a29015e6397158d94ec39b52.png"
+cover_alt: "Illustration: The dinner of 1790 — where Hamilton, Madison, and Jefferson turned political deadlock into a bargain the young constitutional order could absorb."
 published: false
 ---
 
