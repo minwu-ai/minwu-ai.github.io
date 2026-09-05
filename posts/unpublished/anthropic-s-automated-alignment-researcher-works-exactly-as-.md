@@ -5,9 +5,9 @@ slug: anthropic-s-automated-alignment-researcher-works-exactly-as-
 tag: Alignment, Evaluation
 excerpt: "Anthropic's August 28 paper shows Claude can outperform human researchers at fixing ten benchmarked alignment failures — and, more importantly, that those fixes generalize beyond the benchmarks it optimized. But its own limitations section draws the boundary practitioners should actually care about."
 takeaway: "Automated alignment research works impressively once a failure has been made measurable. For rare, subtle, or long-horizon failures with no trustworthy proxy, this benchmark-driven loop has nothing reliable to hill-climb against — shifting the bottleneck from finding interventions to defining what 'fixed' actually means."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/0c591b10d004ae8c6afbd08d2588819677bb8dddb2dc6f7bc32db5b1bcb4a976.png"
+cover_alt: "Illustration: Automated alignment can fix what benchmarks illuminate—but rare, emergent, and long-horizon failures may remain outside the light."
+published: true
 ---
 
 ## 🔬 The Headline Versus the Fine Print
