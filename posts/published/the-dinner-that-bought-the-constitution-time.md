@@ -52,7 +52,7 @@ Assumption by itself created one coalition of winners and losers. The capital qu
 
 Link them together, however, and politicians who could not accept either outcome independently could tolerate the combined package.
 
-**Two losing propositions can sometimes form one winning bargain.**
+>**Two losing propositions can sometimes form one winning bargain.**
 
 This is usually called logrolling, issue linkage, or political side-payment. It often looks inelegant because it is. But the apparent ugliness can perform an important institutional function: it converts an absolute conflict into a negotiable one.
 
@@ -82,11 +82,11 @@ But the friction is partly the point.
 
 A system with one dominant force can produce positive feedback:
 
-**Power → more power → fewer constraints → still more power**
+>**Power → more power → fewer constraints → still more power**
 
 A counterbalanced system attempts to introduce negative feedback:
 
-**Power → resistance → adjustment → temporary equilibrium**
+>**Power → resistance → adjustment → temporary equilibrium**
 
 And in 1790, Madison was no longer merely theorizing about that mechanism.
 
@@ -109,7 +109,7 @@ There is a famous line from *The Godfather Part II*: "Keep your friends close, b
 
 Institutions require a slightly different version:
 
-**Keep your opposition close enough that it can still constrain you — and close enough that you can still bargain with it.**
+>**Keep your opposition close enough that it can still constrain you — and close enough that you can still bargain with it.**
 
 Hamilton did not need Madison to disappear.
 
@@ -119,7 +119,7 @@ Each needed the other to remain an opponent whose interests had to be accounted 
 
 There is an older philosophical echo here too. The Chinese idea of 阴阳 (yin–yang) treats opposing forces not simply as things one must defeat, but as forces whose interaction can constitute a larger, dynamic order. The Analects offers an even sharper formulation: 和而不同 — harmony without uniformity.
 
-Harmony does not require sameness.
+>**Harmony does not require sameness.**
 
 The traditions are very different, but the structural insight is similar: durable order need not eliminate contradiction. It can preserve opposing forces within a relationship in which each constrains, informs, and adjusts to the other. Stability, in this sense, is not stillness. It is continuous rebalancing.
 
@@ -151,15 +151,15 @@ The system became more organized while becoming less capable of preserving the o
 
 The dinner of 1790 shows the opposite process.
 
-**Conflict → bargaining → adjustment → order**
+>**Conflict → bargaining → adjustment → order**
 
 Athens at Arginusae shows a feedback mechanism failing:
 
-**Crisis → constraints overwhelmed → irreversible decision → institutional damage**
+>**Crisis → constraints overwhelmed → irreversible decision → institutional damage**
 
 Sulla shows the destructive mechanism itself becoming institutionalized:
 
-**Conflict → violence → standardization → reproducible disorder**
+>**Conflict → violence → standardization → reproducible disorder**
 
 The difference is not conflict versus peace.
 
@@ -187,7 +187,7 @@ Some of that friction is dysfunction.
 
 But some of it is the mechanism preventing disagreement from becoming rupture.
 
-**Institutional order is not the absence of opposing forces. It is the capacity to keep those forces bounded, counterbalanced, and capable of producing change without destroying the system that contains them.**
+>**Institutional order is not the absence of opposing forces. It is the capacity to keep those forces bounded, counterbalanced, and capable of producing change without destroying the system that contains them.**
 
 The dinner did not settle America's conflicts.
 
