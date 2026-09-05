@@ -117,6 +117,12 @@ Madison did not need Hamilton to disappear.
 
 Each needed the other to remain an opponent whose interests had to be accounted for.
 
+There is an older philosophical echo here too. The Chinese idea of 阴阳 (yin–yang) treats opposing forces not simply as things one must defeat, but as forces whose interaction can constitute a larger, dynamic order. The Analects offers an even sharper formulation: 和而不同 — harmony without uniformity.
+
+Harmony does not require sameness.
+
+The traditions are very different, but the structural insight is similar: durable order need not eliminate contradiction. It can preserve opposing forces within a relationship in which each constrains, informs, and adjusts to the other. Stability, in this sense, is not stillness. It is continuous rebalancing.
+
 That is fundamentally different from a system in which opposition is suppressed, or one in which rulers manufacture internal or external enemies that can be mobilized without genuinely constraining those who hold power.
 
 A real counterbalance pushes back.
@@ -125,11 +131,11 @@ Managed opposition ultimately points in one direction.
 
 The distinction is between:
 
-**Power A ⇄ Power B**
+Power A ⇄ Power B
 
 and:
 
-**Power → controls A versus B**
+Power → controls A versus B
 
 Only the first creates meaningful feedback on power itself.
 
