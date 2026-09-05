@@ -7,7 +7,7 @@ excerpt: "Around June 1790, with Hamilton's debt plan in jeopardy, a private din
 takeaway: "Durable institutions do not eliminate opposing forces. They contain them, balance them, and give them controlled ways to act against one another. Institutional entropy begins when that tension either disappears or escapes its boundaries."
 cover: "/assets/19f57d6acaefe03013894161abcc7c912bf82fe5a29015e6397158d94ec39b52.png"
 cover_alt: "Illustration: The dinner of 1790 — where Hamilton, Madison, and Jefferson turned political deadlock into a bargain the young constitutional order could absorb."
-published: false
+published: true
 ---
 
 Around June 20, 1790, Alexander Hamilton stood outside the President's House in New York looking, in Thomas Jefferson's later words, "somber, haggard, and dejected beyond description." His proposal for the federal government to assume the states' Revolutionary War debts — a centerpiece of his financial program — had been defeated in the House, leaving the broader funding system in jeopardy. Jefferson, newly arrived as Secretary of State and by his own account not yet steeped in the details, [found Hamilton near the President's door and asked what was wrong](https://founders.archives.gov/documents/Jefferson/01-17-02-0018-0012).
@@ -101,6 +101,11 @@ This suggests something deeper than the familiar language of compromise.
 A durable political order may depend not merely on tolerating opposition, but on **keeping opposition inside the system**.
 
 There is a famous line from *The Godfather Part II*: "Keep your friends close, but your enemies closer."
+
+<figure class="full">
+  <img src="/assets/corleone_roth2.jpeg" alt="Michael Corleone sitting beside Hyman Roth in a still from The Godfather Part II, the two men talking quietly.">
+  <figcaption>Michael Corleone and Hyman Roth in <em>The Godfather Part II</em> (1974). Roth is the enemy kept closest of all — though the film's version of the principle is surveillance, not constraint.</figcaption>
+</figure>
 
 Institutions require a slightly different version:
 
