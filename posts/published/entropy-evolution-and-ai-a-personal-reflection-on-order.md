@@ -26,7 +26,7 @@ That resolves the apparent contradiction in physics.
 
 But it leaves me wondering whether there is a broader philosophical lesson.
 
-# 🌱 Evolution Does Not Seek "Better"
+## 🌱 Evolution Does Not Seek "Better"
 
 When people speak about evolution, we often unconsciously attach words like *progress*, *improvement*, or *perfection*.
 
@@ -50,7 +50,7 @@ That, too, is adaptation.
 
 But perhaps it also carries a subtle risk: believing that because we can shape our environment, we no longer need to adapt to it.
 
-# 🏛️ Every Order Has a Cost
+## 🏛️ Every Order Has a Cost
 
 Creating order is never free.
 
@@ -70,7 +70,7 @@ Perhaps the more interesting question is:
 
 > **Which forms of order are worth continuously paying for?**
 
-# 🤖 AI: Adaptation or Imposition?
+## 🤖 AI: Adaptation or Imposition?
 
 AI makes this question even more interesting.
 
@@ -98,7 +98,7 @@ The mechanisms differ, but perhaps the continuity deserves more attention than t
 
 Whether AI represents adaptation, imposed order, or both remains an open question in my mind.
 
-# 🎬 A Thought Experiment from *Breaking Bad*
+## 🎬 A Thought Experiment from *Breaking Bad*
 
 This thought experiment came to mind while reflecting on the television series *Breaking Bad*.
 
@@ -124,7 +124,7 @@ Evolution explains persistence, not virtue.
 
 Fitness is not the same as goodness.
 
-# 📚 A Thought Worth Revisiting
+## 📚 A Thought Worth Revisiting
 
 As I reflected on these questions, I realized many thinkers have approached parts of them from different directions.
 
