@@ -106,6 +106,11 @@ Walter White creates something remarkably organized—not just the famous blue m
 
 Objectively, it is an impressive system.
 
+<figure class="full">
+  <img src="/assets/breaking-bad.jpg" alt="Walter White in a yellow hazmat suit seated amid stacked bins of product and bricks of cash in an abandoned industrial building.">
+  <figcaption>Walter White amid the product and the proceeds, <em>Breaking Bad</em> (2008–2013). A great deal of local order — paid for entirely somewhere else.</figcaption>
+</figure>
+
 Yet society rightly condemns it because it produces profound harm.
 
 So should we describe it as "adaptive"?
