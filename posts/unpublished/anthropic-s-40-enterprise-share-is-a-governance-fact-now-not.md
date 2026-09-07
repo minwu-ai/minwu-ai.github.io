@@ -5,9 +5,9 @@ slug: anthropic-s-40-enterprise-share-is-a-governance-fact-now-not
 tag: Industry, AI Governance
 excerpt: "Anthropic now accounts for an estimated 40% of enterprise LLM API usage. As Fable 5.1, OpenAI's Astra, and World Labs' Atlas push the frontier in different directions, the governance question is shifting from which model wins to whether enterprises preserve a credible ability to switch."
 takeaway: "The risk is not that Anthropic has 40% of enterprise LLM API usage. It is that model choice increasingly determines retention, safeguards, monitoring, tool architecture, and operational dependencies. Healthy model competition only protects enterprise buyers if they remain capable of changing providers."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/2d89cc6af4354b9599267b7ce63facf8eb2cbd8a5770b46a94c8496391d5fc4d.png"
+cover_alt: "Illustration: A competitive AI market only protects enterprises if they preserve the ability to switch."
+published: true
 ---
 
 ## 🏁 The Model Race Is Getting Broader — While Enterprise Usage Concentrates
