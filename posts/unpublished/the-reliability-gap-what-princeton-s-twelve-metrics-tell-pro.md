@@ -5,9 +5,9 @@ slug: the-reliability-gap-your-agent-passed-the-benchmark
 tag: Industry, Evaluation
 excerpt: "Princeton's ICML 2026 work on agent reliability adds a missing layer to enterprise evaluation: not whether an agent can complete a task, but whether you can depend on it to keep completing it."
 takeaway: "Across roughly two years of frontier-model releases, Princeton researchers found that reliability improved far more slowly than accuracy — and barely improved on open-ended tasks. Their twelve-metric framework turns a familiar production concern into something measurable: capability tells you whether an agent can do the job; reliability tells you whether you can depend on it."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/6e41e8a1d12f079dbe958315f904551f401458d4d1aef116595d9ca11ed54e4b.png"
+cover_alt: "Illustration: Frontier AI may be capable of extraordinary feats, but production value depends on something less spectacular — whether it works reliably every day."
+published: true
 ---
 
 ## 🔬 The Next Question After the Benchmark
