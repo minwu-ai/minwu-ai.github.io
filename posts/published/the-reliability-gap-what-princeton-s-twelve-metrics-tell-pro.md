@@ -5,7 +5,8 @@ slug: the-reliability-gap-your-agent-passed-the-benchmark
 tag: Industry, Evaluation
 excerpt: "Princeton's ICML 2026 work on agent reliability adds a missing layer to enterprise evaluation: not whether an agent can complete a task, but whether you can depend on it to keep completing it."
 takeaway: "Across roughly two years of frontier-model releases, Princeton researchers found that reliability improved far more slowly than accuracy — and barely improved on open-ended tasks. Their twelve-metric framework turns a familiar production concern into something measurable: capability tells you whether an agent can do the job; reliability tells you whether you can depend on it."
-cover: "/assets/6e41e8a1d12f079dbe958315f904551f401458d4d1aef116595d9ca11ed54e4b.png"
+cover: "/assets/6e41e8a1d12f079dbe958315f904551f401458d4d1aef116595d9ca11ed54e4b.jpg"
+cover_fit: full
 cover_alt: "Illustration: Frontier AI may be capable of extraordinary feats, but production value depends on something less spectacular — whether it works reliably every day."
 published: true
 ---
@@ -16,7 +17,7 @@ For months, a recurring theme on this site has been that **a benchmark score is 
 
 The reasons keep accumulating.
 
-Benchmarks can [measure an outcome while hiding how an agent actually got there](/agent-benchmark-scores-are-lying-to-you). Short tasks can obscure the failure modes that emerge over [longer-horizon agentic work](/the-long-horizon-wall). Evaluation itself can become less informative as models become increasingly capable of recognizing, adapting to, or exploiting the conditions under which they are being tested. And even when the underlying model is unchanged, [the harness surrounding it can materially alter cost and behavior](/the-harness-effect-why-orchestration-design-can-matter-more/).
+Benchmarks can [measure an outcome while hiding how an agent actually got there](https://minwu-ai.github.io/agent-benchmark-scores-are-lying-to-you-and-log-analysis-is-/). Short tasks can obscure the failure modes that emerge over [longer-horizon agentic work](https://minwu-ai.github.io/the-long-horizon-wall-why-osworld-2-0-makes-short-horizon-be/). Evaluation itself can become less informative as models become increasingly capable of recognizing, adapting to, or exploiting the conditions under which they are being tested. And even when the underlying model is unchanged, [the harness surrounding it can materially alter cost and behavior](https://minwu-ai.github.io/the-harness-effect-why-orchestration-design-can-matter-more/).
 
 Those are fundamentally questions about **evaluation validity**:
 
@@ -186,7 +187,7 @@ If reliability limitations are systemic, vendor shopping alone cannot solve them
 
 **Reliability has to be engineered around at the system and integration layer.**
 
-That connects directly to the [harness effect](/the-harness-effect-why-orchestration-design-can-matter-more/): model selection matters, but orchestration, retries, validation, observability, permissions, escalation, and human review determine what the organization ultimately experiences as the product.
+That connects directly to the [harness effect](https://minwu-ai.github.io/the-harness-effect-why-orchestration-design-can-matter-more/): model selection matters, but orchestration, retries, validation, observability, permissions, escalation, and human review determine what the organization ultimately experiences as the product.
 
 ---
 
