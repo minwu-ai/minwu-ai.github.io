@@ -5,9 +5,9 @@ slug: ready-or-not-scale-ai-s-new-benchmark-puts-a-price-tag-on-ag
 tag: Industry, Evaluation
 excerpt: "A September 2026 Scale AI preprint shows that two enterprise agents nearly tied on accuracy can require wildly different amounts of human oversight to hit the same reliability bar — exposing what outcome-only benchmarks can't see."
 takeaway: "The procurement question is no longer simply which agent scores highest. It is which human–AI configuration can meet the required reliability level at the lowest sustainable oversight cost."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/2df35e6cca7b8b28b37c84e3f4ce54ea721e096435bc28174db6c390656e7821.png"
+cover_alt: "Illustration: Two agents can look nearly identical on accuracy while carrying radically different human-review burdens — the hidden cost of deployment reliability."
+published: true
 ---
 
 ## 📊 The Headline Number
