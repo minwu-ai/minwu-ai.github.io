@@ -5,9 +5,10 @@ slug: the-fleet-that-outlived-its-emperor-by-exactly-one-generatio
 tag: History & People
 excerpt: "Zheng He's treasure fleets were among the largest naval forces of their age — until the bureaucratic institutions their imperial sponsor had repeatedly overridden dismantled the machinery that sustained them."
 takeaway: "A leader can repeatedly defeat a bureaucracy in individual decisions and still lose institutionally. The bureaucracy does not have to win today if it controls the budgets, records, staffing, and implementation after the leader is gone."
-cover: "/assets/75d16117fc3080917621c6449457a1e5c79b34594442a34cbc96ee119e20a4fa.png"
+cover: "/assets/75d16117fc3080917621c6449457a1e5c79b34594442a34cbc96ee119e20a4fa.jpg"
+cover_fit: full
 cover_alt: "Illustration: Zheng He’s treasure fleet — imperial power projected across the seas, but sustained by an institutional order that would not outlive its patrons."
-published: false
+published: true
 ---
 
 In 1405, the Yongle Emperor sent an extraordinary fleet out of Nanjing bearing imperial letters to the countries of the "Western Ocean." The expedition carried roughly 27,800 men and 62 treasure ships; one influential reconstruction puts the entire fleet at roughly 255 vessels.
@@ -26,7 +27,10 @@ It happened inside a political system in which an unusually powerful emperor had
 
 ## 👑 A usurper's workaround
 
-assets/images_the Yongle Emperor .jpeg
+<figure class="full">
+  <img src="/assets/yongle-emperor.jpeg" alt="Court portrait of the Yongle Emperor seated on a throne in yellow imperial robes.">
+  <figcaption>The Yongle Emperor. He took the throne by force in 1402, and spent the reign building channels that ran around the officials who doubted him.</figcaption>
+</figure>
 
 Yongle took the throne by force, overthrowing his nephew, the Jianwen Emperor, in 1402.
 
