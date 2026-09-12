@@ -5,8 +5,8 @@ slug: the-fleet-that-outlived-its-emperor-by-exactly-one-generatio
 tag: History & People
 excerpt: "Zheng He's treasure fleets were among the largest naval forces of their age — until the bureaucratic institutions their imperial sponsor had repeatedly overridden dismantled the machinery that sustained them."
 takeaway: "A leader can repeatedly defeat a bureaucracy in individual decisions and still lose institutionally. The bureaucracy does not have to win today if it controls the budgets, records, staffing, and implementation after the leader is gone."
-cover: "/assets/"
-cover_alt: "Illustration: "
+cover: "/assets/75d16117fc3080917621c6449457a1e5c79b34594442a34cbc96ee119e20a4fa.png"
+cover_alt: "Illustration: Zheng He’s treasure fleet — imperial power projected across the seas, but sustained by an institutional order that would not outlive its patrons."
 published: false
 ---
 
