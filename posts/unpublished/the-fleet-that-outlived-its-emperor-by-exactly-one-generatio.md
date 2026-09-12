@@ -26,6 +26,8 @@ It happened inside a political system in which an unusually powerful emperor had
 
 ## 👑 A usurper's workaround
 
+assets/images_the Yongle Emperor .jpeg
+
 Yongle took the throne by force, overthrowing his nephew, the Jianwen Emperor, in 1402.
 
 The Confucian scholar-official establishment did not universally accept his legitimacy. The reprisals were severe. [Fang Xiaoru, the scholar who famously refused to legitimize Yongle's accession, was executed](https://www.worldhistory.org/Yongle_Emperor/), and the new regime carried out a broader purge of Jianwen loyalists.
