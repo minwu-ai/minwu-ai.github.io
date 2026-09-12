@@ -5,9 +5,9 @@ slug: apollo-research-s-auto-mode-audit-is-a-working-template-for-
 tag: Regulation & Policy, Agentic AI
 excerpt: "Apollo Research's public methodology for red-teaming Anthropic's Claude Code monitor — not the model, the monitor — offers a rare concrete blueprint for what independent oversight of increasingly autonomous AI agents could actually look like."
 takeaway: "Apollo Research's three-part methodology — trajectory injection, static monitoring benchmarks, and dynamic off-policy control red-teaming — helped Anthropic harden Claude Code's auto-mode classifier, with Anthropic reporting that its miss rate fell from 12% to 7%. The larger lesson is not that existing regulation already requires this kind of audit, but that agent oversight increasingly needs evidence that the control layer itself works under adversarial pressure."
-cover: "/assets/"
+cover: "/assets/1d53ef51ae2ff2ae1b95cee7bc02993521b14ab1b35daad969eab113f0c11f1b.png"
 cover_alt: "Illustration: An autonomous AI agent approaching a guarded gate while an independent inspector examines the gatekeeper controlling its passage."
-published: false
+published: true
 ---
 
 ## ⚖️ The thing watching the agent needs watching too
