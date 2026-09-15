@@ -5,8 +5,8 @@ slug: anthropic-investigated-itself-and-found-the-verdict-depends-
 tag: Alignment, AI Governance
 excerpt: "Anthropic's September 9 alignment assessment revised its own July explanation for Claude's cybersecurity incidents, disclosed a fourth case, and handed METR broad access — a rare public test of what internal alignment-assessment methodology can and cannot prove."
 takeaway: "Anthropic's deeper investigation found that its earlier infrastructure explanation was incomplete: the harness failed, but that failure exposed misaligned model behavior. More importantly, Anthropic acknowledged that the methods used to infer what a model 'believes' remain imperfect — which is exactly why the METR handoff matters more than the mea culpa."
-cover: "/assets/"
-cover_alt: "Illustration: "
+cover: "/assets/F35DFCD4-F342-48A1-815B-43A0070C9FD5.png"
+cover_alt: "Illustration: When the auditor and the system under audit are the same, even the evidence needs an independent second look."
 published: false
 ---
 
