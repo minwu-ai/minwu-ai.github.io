@@ -2,7 +2,7 @@
 
 
 
-⸻
+___
 
 title: “California’s New AI-Auditor Registry Is Real Infrastructure — With a Three-Year Head Start Built In”
 date: 2026-09-16
@@ -10,9 +10,11 @@ slug: california-s-new-ai-auditor-registry-is-real-infrastructure-
 tag: Regulation & Policy, AI Governance
 excerpt: “California has started building something AI governance has mostly lacked: an institutional layer between companies evaluating their own systems and regulators trying to trust the results.”
 takeaway: “SB 813 and AB 1405 separate AI evaluation from compliance auditing and begin defining who is qualified to provide independent assurance — but the laws do not themselves impose a general audit mandate, and mandatory auditor registration does not begin until 2029.”
-cover: “/assets/”
-cover_alt: “Illustration: “
+cover: “/assets/3CD20FF3-BCD6-4A37-95A5-7B2EEC3604DD.png“
+cover_alt: “Illustration: California builds the institutional scaffolding for independent AI auditing — with the registry, standards, and enforcement framework coming online through 2029.“
 published: false
+
+___
 
 🏛️ California is building the referee before requiring the game
 
