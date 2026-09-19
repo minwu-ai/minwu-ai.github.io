@@ -1,0 +1,27 @@
+---
+title: "The Secret That Had to Be Wasted on Purpose"
+date: 2026-09-19
+slug: the-secret-that-had-to-be-wasted-on-purpose
+tag: History & People
+excerpt: "Britain's Enigma decrypts were so valuable that commanders were sometimes kept in the dark, attacks were allowed to proceed unwarned, and the program's existence was hidden for thirty years — because the moment the enemy suspected the code was broken, the advantage disappeared."
+takeaway: "An information advantage that is used too visibly stops being an advantage — which is why the best-run intelligence and security operations often look, from outside, a little dumber than they actually are."
+cover: "/assets/"
+cover_alt: "Illustration: "
+published: false
+---
+
+On 21 October 1941, four cryptanalysts at Bletchley Park did something that could have ended their careers. They went around their own chain of command and wrote directly to the Prime Minister.
+
+The letter was polite, almost apologetic. Alan Turing, Gordon Welchman, Hugh Alexander, and Stuart Milner-Barry explained that they were breaking into German military traffic, but that the work was "being held up, and in some cases is not being done at all, principally because we cannot get sufficient staff to deal with it." They needed typists. Trained clerks. Unglamorous people, in unglamorous numbers, and Whitehall's ordinary bureaucracy wasn't delivering them.
+
+Milner-Barry carried the letter to London himself. He described [in a 1986 recollection](https://www.academia.edu/113233701/Letter_to_Winston_Churchill_1941_) that he had been sent essentially because he could be spared. He walked to Downing Street, told the doorman he had an urgent secret letter, and handed it to Churchill's private secretary.
+
+Churchill read it and acted immediately. His minute to his chief of staff read: "action this day Make sure they have all they want on extreme priority and report to me that this had been done." Within weeks, the bottleneck was gone. The episode later acquired the nickname "Action This Day," and the [National Archives](https://www.nationalarchives.gov.uk/explore-the-collection/stories/a-dramatic-plea-for-churchills-help/) still holds the original letter — four scientists, bypassing every layer of military hierarchy, because the normal channels were about to lose the war one clerical vacancy at a time.
+
+What makes the story worth retelling isn't the bureaucratic fix. It's what the fix protected. By 1941 Bletchley was reading German naval Enigma traffic well enough to help route Atlantic convoys around U-boat wolf packs. That intelligence, codenamed Ultra, was arguably the single most valuable asset Britain possessed. And its value depended entirely on the Germans never finding out it existed.
+
+This produced a strange discipline. Ultra intercepts weren't distributed like ordinary intelligence. They went through Special Liaison Units — small teams attached to major commands, whose job was to hand decrypts personally to a commander, watch him read them, and then take them back and destroy them. A key part of the solution was arranging for the secure delivery of information from Ultra to the various commanders, and making sure that they did nothing to give away the secret that Enigma was being read. No commander could act on Ultra directly. Every order that followed from it had to be dressed up as though it came from a reconnaissance flight, a captured document, a lucky guess — anything but a broken cipher.
+
+That constraint sometimes cost lives. The most famous version of this claim — that Churchill knew in advance that Coventry would be bombed in November 1940 and let the city burn to protect the secret — comes from Winterbotham's own 1974 memoir, but it has been [challenged by other Ultra veterans and historians](https://en.wikipedia.org/wiki/Bodyguard_of_Lies) who note the decrypts pointed to a major raid without confirming the target, and that Churchill's own movements that day suggest he expected London. Historians still disagree about exactly what Churchill knew and when. But the underlying mechanism the story dramatizes was real and undisputed: Ultra intelligence about Axis Mediterranean convoys in 1942–43 was so precise that a German officer, in a message the British then also decoded, complained that "the enemy activity today in the air and on the sea must in the view of Fliegerkorps Tunis, lead to the conclusion that the course envisaged for convoy D and C was betrayed to the enemy." Britain's answer, always, was to arrange a cover story — a shadowing aircraft, a reconnaissance patrol — something the enemy could blame instead.
+
+The secrecy didn't end with victory. Most wartime programs got declassified within years, on the ordinary rhythm of peacetime archives. Ultra didn't. The government kept the entire operation hidden for another thirty years, and the veterans who had run it — bound, many felt, for life — largely kept quiet even after 1945. It took until 1974, when [F. W. Winterbotham published *The Ultra Secret*](https://www.britannica.com/place/Bletchley-Park) with official permission, for the public to learn Bletchley Park had existed at all. The government did not prosecute; instead, the Cabinet Office agreed to commission and then publish an official history of wartime intelligence, turning to F.H. Hinsley, a Cambridge historian who had himself worked in the naval section at Bletchley Park during the war. Winterbotham's account was riddled with errors — he wr
