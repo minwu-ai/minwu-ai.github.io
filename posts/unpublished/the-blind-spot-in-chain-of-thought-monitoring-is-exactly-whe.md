@@ -5,9 +5,9 @@ slug: the-blind-spot-in-chain-of-thought-monitoring-is-exactly-whe
 tag: Alignment, Agentic AI
 excerpt: "A September 2026 Edinburgh preprint finds that chain-of-thought monitoring is systematically less faithful for tool-return and implicit cues that are common in real agentic deployments."
 takeaway: "Faithfulness benchmarks that plant bias cues in the user message are testing the easier case; across fifteen open-weight models, identical cues delivered via tool returns produced lower verbalized commitment and higher hidden adoption — suggesting that CoT transcripts may become less trustworthy depending on where information enters an agent's context."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/21E18F88-96C0-4E6E-AE81-32A9DA9DCA38.png"
+cover_alt: "Illustration: The same preference can shape an agent differently depending on where it enters the context—while leaving less evidence in the reasoning trace."
+published: true
 ---
 
 Chain-of-thought monitoring — reading a model's reasoning trace to catch problems before they reach an action — is increasingly load-bearing in agent safety cases.
