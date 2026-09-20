@@ -7,7 +7,7 @@ excerpt: "Britain's Enigma decrypts were so valuable that commanders could not s
 takeaway: "An information advantage that is exploited perfectly may destroy itself. The hardest intelligence problem is therefore not acquiring secret information, but deciding how much of it you can afford to use without revealing that you have it."
 cover: "/assets/BCD30B5A-4986-42CF-87CE-ECC268D7A028.png"
 cover_alt: "Illustration: Churchill confronts the paradox of Ultra — intelligence so valuable that Britain sometimes had to conceal how much it knew in order to keep knowing more."
-published: false
+published: true
 ---
 
 ## 📜 The letter that broke the chain of command
@@ -139,6 +139,9 @@ The British intercepted that too.
 This was why cover mattered.
 
 If Ultra indicated where an Axis convoy would be, reconnaissance aircraft could be sent into the area so that German observers had another explanation for the subsequent attack.
+
+![A Short Sunderland GR.Mk.III, the kind of Coastal Command flying boat used for convoy escort and maritime reconnaissance — the visible cover story for intelligence that actually came from Ultra](/assets/IMG_0066.jpeg)
+*Short Sunderland GR.Mk.III. Source: [ww2aircraft.net](https://ww2aircraft.net/)*
 
 The aircraft was not necessarily discovering the convoy.
 
