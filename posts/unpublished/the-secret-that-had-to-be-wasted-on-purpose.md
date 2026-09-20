@@ -5,8 +5,8 @@ slug: the-secret-that-had-to-be-wasted-on-purpose
 tag: History & People
 excerpt: "Britain's Enigma decrypts were so valuable that commanders could not simply act on everything they learned. Intelligence had to be underused, disguised, and sometimes left unexploited — because the moment the enemy suspected the code was broken, the advantage could disappear."
 takeaway: "An information advantage that is exploited perfectly may destroy itself. The hardest intelligence problem is therefore not acquiring secret information, but deciding how much of it you can afford to use without revealing that you have it."
-cover: "/assets/"
-cover_alt: "Illustration: "
+cover: "/assets/BCD30B5A-4986-42CF-87CE-ECC268D7A028.png"
+cover_alt: "Illustration: Churchill confronts the paradox of Ultra — intelligence so valuable that Britain sometimes had to conceal how much it knew in order to keep knowing more."
 published: false
 ---
 
