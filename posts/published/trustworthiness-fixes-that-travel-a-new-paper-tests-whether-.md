@@ -1,28 +1,26 @@
-
-⸻
-
-title: “Trustworthiness Fixes That Travel: A New Paper Tests Whether Agent Safety Generalizes Across Model Families”
+---
+title: "Trustworthiness Fixes That Travel: A New Paper Tests Whether Agent Safety Generalizes Across Model Families"
 date: 2026-09-21
 slug: trustworthiness-fixes-that-travel-a-new-paper-tests-whether-
 tag: Agentic AI, Evaluation
-excerpt: “A new agent-evaluation framework does something most benchmarks stop short of: find failures, engineer controls against them, and then test whether those controls still work when the underlying model changes.”
-takeaway: “HAAF’s most interesting contribution isn’t another taxonomy of trustworthy AI. It’s closing the loop between evaluation and engineering: two controls derived from one Qwen3-8B failure study improved all 13 tested systems across seven model families without model-specific tuning. If that result eventually survives real deployment environments, agent safety controls could become infrastructure rather than model-specific patches.”
-cover: “/assets/A8F63551-0A6C-449D-91A2-CE01BD8F8AFF.png”
-cover_alt: “Illustration: Agent safety becomes infrastructure when the controls survive the model swap.“
-published: false
+excerpt: "A new agent-evaluation framework does something most benchmarks stop short of: find failures, engineer controls against them, and then test whether those controls still work when the underlying model changes."
+takeaway: "HAAF's most interesting contribution isn't another taxonomy of trustworthy AI. It's closing the loop between evaluation and engineering: two controls derived from one Qwen3-8B failure study improved all 13 tested systems across seven model families without model-specific tuning. If that result eventually survives real deployment environments, agent safety controls could become infrastructure rather than model-specific patches."
+cover: "/assets/A8F63551-0A6C-449D-91A2-CE01BD8F8AFF.png"
+cover_alt: "Illustration: Agent safety becomes infrastructure when the controls survive the model swap."
+published: true
+---
 
-
-🔄 The Missing Step After Evaluation
+# 🔄 The Missing Step After Evaluation
 
 Over the past several months, a recurring theme on this site has been that an agent benchmark score answers increasingly little by itself.
 
-OSWorld 2.0 showed that an agent can look capable on short tasks while performance collapses across long, stateful workflows.
+[OSWorld 2.0](https://minwu-ai.github.io/the-long-horizon-wall-why-osworld-2-0-makes-short-horizon-be/) showed that an agent can look capable on short tasks while performance collapses across long, stateful workflows.
 
-Execution-trace research showed that even a correct outcome can conceal dangerous intermediate actions, benchmark shortcuts, or flawed evaluation infrastructure.
+[Execution-trace research](https://minwu-ai.github.io/agent-benchmark-scores-are-lying-to-you-and-log-analysis-is-/) showed that even a correct outcome can conceal dangerous intermediate actions, benchmark shortcuts, or flawed evaluation infrastructure.
 
-Princeton’s reliability work added another distinction: capability tells us whether an agent can do something; reliability asks whether we can depend on it to keep doing it.
+[Princeton's reliability work](https://minwu-ai.github.io/the-reliability-gap-your-agent-passed-the-benchmark/) added another distinction: capability tells us whether an agent can do something; reliability asks whether we can depend on it to keep doing it.
 
-And Scale AI’s READY framework moved the unit of evaluation beyond the autonomous agent entirely, asking how much human oversight and cost are required to reach a specified reliability level.
+And [Scale AI's READY framework](https://minwu-ai.github.io/ready-or-not-scale-ai-s-new-benchmark-puts-a-price-tag-on-ag/) moved the unit of evaluation beyond the autonomous agent entirely, asking how much human oversight and cost are required to reach a specified reliability level.
 
 Together, those papers progressively deepen the evaluation question:
 
@@ -40,9 +38,9 @@ A March 2026 preprint from researchers at the Chinese University of Hong Kong, M
 
 Once evaluation discovers a failure and we engineer a control against it, does that control survive when the underlying model changes?
 
-That may be the paper’s most useful contribution.
+That may be the paper's most useful contribution.
 
-🧩 First, Define What You’re Trying to Fix
+# 🧩 First, Define What You're Trying to Fix
 
 The paper proposes the Holographic Agent Assessment Framework (HAAF).
 
@@ -66,7 +64,7 @@ But a five-dimensional trustworthiness taxonomy is not, by itself, what makes th
 
 What HAAF does after finding the failures is more consequential.
 
-🛠️ From Evaluation to Engineering
+# 🛠️ From Evaluation to Engineering
 
 Most benchmarks effectively end here:
 
@@ -88,7 +86,7 @@ Neither intervention requires changing the underlying model weights.
 
 That distinction matters.
 
-As I discussed in Before You Blame the Model, agent failures can originate not only in the LLM but in the surrounding machinery — orchestration, tools, memory, permissions, retrieval, and execution infrastructure.
+As I discussed in [Before You Blame the Model](https://minwu-ai.github.io/before-you-blame-the-model-a-314-page-audit-of-coding-agent-reliability/), agent failures can originate not only in the LLM but in the surrounding machinery — orchestration, tools, memory, permissions, retrieval, and execution infrastructure.
 
 HAAF suggests the complementary proposition:
 
@@ -96,7 +94,7 @@ Some safety improvements may belong in that surrounding machinery too.
 
 And if they do, they may be portable.
 
-🧪 The Experiment That Makes This Interesting
+# 🧪 The Experiment That Makes This Interesting
 
 The researchers freeze those two interventions and apply them to 13 systems from seven model families:
 
@@ -104,17 +102,17 @@ Llama, Mistral, Kimi, GLM, Qwen, GPT, and DeepSeek.
 
 There is no model-specific tuning.
 
-The validation suite contains 100 scenarios, including 76 additional adversarial scenarios that weren’t part of the original 24-scenario design study.
+The validation suite contains 100 scenarios, including 76 additional adversarial scenarios that weren't part of the original 24-scenario design study.
 
-All 13 systems improve on the paper’s risk-weighted failure measure.
+All 13 systems improve on the paper's risk-weighted failure measure.
 
 Two — GPT-oss-120B and Llama-3.1-8B — reach RWF = 0.000 on this synthetic suite.
 
-That’s a more interesting result than simply showing that a mitigation improves the model on which it was developed.
+That's a more interesting result than simply showing that a mitigation improves the model on which it was developed.
 
 It asks whether an agent-safety intervention can behave more like an architectural control than a model-specific patch.
 
-🔧 A Safety Control That Survives the Model Swap
+# 🔧 A Safety Control That Survives the Model Swap
 
 Consider what this means operationally.
 
@@ -136,7 +134,7 @@ Foundation models may change several times during the life of an application. Sa
 
 A control that survives the model swap begins to look less like a patch and more like infrastructure.
 
-📉 Transfer Doesn’t Mean Universal Protection
+# 📉 Transfer Doesn't Mean Universal Protection
 
 The results also show why that claim needs boundaries.
 
@@ -156,13 +154,13 @@ It provides evidence for something narrower and more useful:
 
 Some system-level controls can generalize across model families against the classes of failure those controls were designed to address.
 
-“Works across models” is not the same as “solves every model’s problems.”
+"Works across models" is not the same as "solves every model's problems."
 
-⚠️ Cross-Model Is Not Cross-Domain
+# ⚠️ Cross-Model Is Not Cross-Domain
 
 There is another important limitation.
 
-The intervention-design study and validation suite contain different scenarios, so this isn’t simply a case of designing fixes against 100 tests and replaying those same tests.
+The intervention-design study and validation suite contain different scenarios, so this isn't simply a case of designing fixes against 100 tests and replaying those same tests.
 
 But both experiments still operate inside the same synthetic environment and tool ecosystem.
 
@@ -180,7 +178,7 @@ Real deployment claims would require genuinely held-out environments, broader to
 
 The evidence is therefore meaningfully cross-model, but not yet convincingly cross-domain.
 
-🏗️ The Evaluation Stack Gets One Layer Deeper
+# 🏗️ The Evaluation Stack Gets One Layer Deeper
 
 Seen alongside the evaluation work covered here over the past few months, HAAF fills a useful gap.
 
@@ -202,9 +200,9 @@ Evaluation is no longer only a mechanism for deciding whether a model is good en
 
 That is a considerably more mature conception of what an evaluation program should do.
 
-🎯 From Patches to Infrastructure
+# 🎯 From Patches to Infrastructure
 
-HAAF doesn’t prove that portable agent-safety infrastructure exists in the general case.
+HAAF doesn't prove that portable agent-safety infrastructure exists in the general case.
 
 Its environment is synthetic. Its scenario distribution is limited. And the uneven improvements across models show that no small set of controls substitutes for model-specific evaluation.
 
@@ -220,7 +218,7 @@ Which risks belong to the model, which belong to the system around it, and which
 
 That changes what evaluation is for.
 
-A benchmark tells you something about today’s model.
+A benchmark tells you something about today's model.
 
 A mature evaluation program should also help you build controls that remain useful tomorrow.
 
