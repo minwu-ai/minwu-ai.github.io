@@ -1,7 +1,4 @@
 
-
-
-
 ⸻
 
 title: “Trustworthiness Fixes That Travel: A New Paper Tests Whether Agent Safety Generalizes Across Model Families”
@@ -10,8 +7,8 @@ slug: trustworthiness-fixes-that-travel-a-new-paper-tests-whether-
 tag: Agentic AI, Evaluation
 excerpt: “A new agent-evaluation framework does something most benchmarks stop short of: find failures, engineer controls against them, and then test whether those controls still work when the underlying model changes.”
 takeaway: “HAAF’s most interesting contribution isn’t another taxonomy of trustworthy AI. It’s closing the loop between evaluation and engineering: two controls derived from one Qwen3-8B failure study improved all 13 tested systems across seven model families without model-specific tuning. If that result eventually survives real deployment environments, agent safety controls could become infrastructure rather than model-specific patches.”
-cover: “/assets/”
-cover_alt: “Illustration: “
+cover: “/assets/A8F63551-0A6C-449D-91A2-CE01BD8F8AFF.png”
+cover_alt: “Illustration: Agent safety becomes infrastructure when the controls survive the model swap.“
 published: false
 
 
