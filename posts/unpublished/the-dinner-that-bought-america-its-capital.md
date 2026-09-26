@@ -1,0 +1,27 @@
+---
+title: "The Dinner That Bought America Its Capital"
+date: 2026-09-26
+slug: the-dinner-that-bought-america-its-capital
+tag: History & People
+excerpt: "In June 1790, Hamilton, Jefferson, and Madison traded the nation's capital city for the votes that saved federal assumption of state debts — a private bargain between men who had just finished writing the Federalist Papers together."
+takeaway: "Foundational legislation rarely passes on the strength of its arguments alone; it passes when someone finds a side payment large enough to move the last few votes, and that mechanism — unglamorous, personal, and slightly embarrassing in retrospect — is still how most hard bills get unstuck."
+cover: "/assets/"
+cover_alt: "Illustration: "
+published: false
+---
+
+On June 20, 1790, Thomas Jefferson set a dinner table at his rented house on Maiden Lane in New York City and invited two men who could barely stand each other's politics anymore. One was Alexander Hamilton, Secretary of the Treasury, who had spent the winter watching his signature financial program collapse in Congress. The other was James Madison, the House member most responsible for killing it.
+
+Hamilton's plan was audacious for its time: have the new federal government assume the unpaid Revolutionary War debts of the individual states, bundle them with the existing national debt, and fund the whole package through tariffs and excise taxes. It would give the young United States real credit in the eyes of European lenders. It would also, not incidentally, tie wealthy bondholders' fortunes to the survival of the federal government — a feature Hamilton considered a benefit and Madison considered the whole point of his objection.
+
+The bill had already failed twice in the House. Shortly after the Assumption Bill failed for a second time in June in the House, Hamilton, despairing that his financial plan would be scuttled, appealed to the newly appointed Jefferson to apply his influence on the matter. As [the Richmond Fed's account](https://www.richmondfed.org/publications/research/econ_focus/2019/q1/economic_history) tells it, Jefferson later recalled running into Hamilton in New York in June of 1790, just a few months after the House rejected his plan, and to Jefferson, Hamilton appeared "somber, haggard, and dejected beyond description," so Jefferson invited him and Madison to his home the next day for a "friendly discussion" of their differences.
+
+The other unresolved fight in Congress was where the permanent capital would sit. Northern merchants wanted it near the commercial centers of Philadelphia or New York. Southerners, Virginians especially, wanted it on the Potomac, close to their own plantations and political base. As the [American Battlefield Trust](https://www.battlefields.org/learn/articles/compromise-1790) notes, there were no obvious common threads between the issues of the location of the capital and the question of debt assumption; however, they became intertwined because both issues resulted in a firm divide mainly between the North and South, and each side wanted to advance their own interest such that there was an opportunity to negotiate.
+
+Over dinner, the trade got made. Madison agreed to stop opposing the debt assumption plan, and even to round up votes in favor of it, if Hamilton would help him deliver the capital to Virginia. Jefferson's own account, written years later, has Madison agreeing not to vote for assumption outright but simply to stand down: "It ended in Mr. Madison's acquiescence in a proposition that the question [i.e., assumption of state debts] should be again brought before the house by way of amendment from the Senate, that he would not vote for it, nor entirely withdraw his opposition, yet he would not be strenuous, but leave it to its fate." Jefferson recorded the underlying logic plainly: "It was observed … that as the pill [of debt assumption] would be a bitter one to the Southern states, something should be done to soothe them," Jefferson wrote.
+
+The sequence played out almost exactly as scripted. The House passed the [Residence Act](https://en.wikipedia.org/wiki/Residence_Act) fixing the capital on the Potomac, with a ten-year interim stop in Philadelphia. Weeks later, enough southern votes materialized to pass the Funding Act. As [PBS's American Experience](https://www.pbs.org/wgbh/americanexperience/features/hamilton-dinner-table-bargain-june-1790) summarizes: this "dinner table bargain" played out in July; first the House voted on the 10th to approve the Potomac location, and then on the 26th, four Representatives from states bordering the Potomac switched their votes and Hamilton's assumption plan narrowly passed.
+
+What makes the episode more than a footnote is who was at the table. Fewer than three years earlier, Hamilton and Madison had co-written most of [the Federalist Papers](https://en.wikipedia.org/wiki/The_Federalist_Papers), arguing side by side for the Constitution's ratification. By 1790 they were already hardening into the leaders of rival visions of the republic — Hamilton toward centralized finance and manufacturing, Madison and Jefferson toward agrarian, decentralized power. The dinner sits at the hinge: the June 20, 1790, dinner hosted by Jefferson at his New York residence exemplified the personal negotiations masking deeper rifts that accelerated party formation.
+
+Jefferson himself came to regret his role as broker. Writing later and with evident bitterness, he described debt assumption as "un
