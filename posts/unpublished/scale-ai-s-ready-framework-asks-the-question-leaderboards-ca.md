@@ -5,8 +5,8 @@ slug: scale-ai-s-ready-framework-asks-the-question-leaderboards-ca
 tag: Industry, Evaluation
 excerpt: “A September 2026 Scale AI preprint shows that two agents separated by just 0.3 accuracy points can require a nearly 10-percentage-point difference in human review to qualify at the same reliability target under the paper’s assumptions — turning ‘which agent scores best’ into ‘what will this agent cost to operate reliably?’”
 takeaway: “Accuracy and routing quality are different capabilities: an agent can be good at the task without being good at identifying when it needs help. READY makes that distinction economically visible by translating agent performance into oversight burden and deployment cost.”
-cover: “/assets/”
-cover_alt: “Illustration: “
+cover: “/assets/F6BB15BB-4BB8-45C6-B6B6-4EB01B9171FE.png”
+cover_alt: “Illustration:  Two nearly identical AI agents can deliver similar accuracy while imposing radically different human-review burdens—the deployment cost that leaderboards don’t show.“
 published: false
 ---
 
