@@ -5,9 +5,9 @@ slug: anthropic-s-economic-scenario-explorer-turns-ai-labor-foreca
 tag: Industry, AI Governance
 excerpt: "Anthropic's new interactive model doesn't predict AI's economic impact — it forces every stakeholder to argue over the same six parameters, and that design choice may matter more than any GDP number it outputs."
 takeaway: "The Econ Scenario Explorer's real innovation isn't its GDP range (1.6%–32.4% by 2030) but its task-based, parameter-explicit architecture — a design template that makes assumptions contestable rather than a forecast to be believed, and one every lab and regulator building an economic case for or against AI policy will now have to reckon with."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/24EFE48B-BAF7-4EC6-86D1-62791F2A9A6C.png"
+cover_alt: "Illustration:Anthropic’s Econ Scenario Explorer turns assumptions about AI capability, adoption, productivity, and worker adjustment into radically different economic futures."
+published: true
 ---
 
 ## 📊 The headline number is the least interesting part
