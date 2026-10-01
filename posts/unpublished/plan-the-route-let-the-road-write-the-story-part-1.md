@@ -118,19 +118,25 @@ Without that prize, I almost certainly would not have routed the trip through Ne
 
 That would have been a mistake.
 
-I met a friend there, and Saturday became almost entirely unstructured.
+Saturday became almost entirely unstructured.
 
-We walked through the boat show in the morning, explored boats, spent some time in the lounge, and then drove around Newport later in the afternoon.
+I walked through the boat show in the morning, explored boats, spent some time in the lounge, and then drove around Newport later in the afternoon.
 
-We stopped along the coast, flew drones, took photos and videos, and eventually returned downtown for dinner by the water.
+There were stops along the coast, drone flights, photos and videos, and eventually dinner by the water downtown.
 
-Then, at the end of a pier, we encountered a wedding.
+Then, at the end of a pier, I encountered a wedding.
 
-It was a private event, and we obviously weren't guests. But rather than being treated like intruders, we were welcomed into the edges of the celebration for a little while.
+It was a private event, and I obviously wasn't a guest. But rather than being treated like an intruder, I was welcomed into the edges of the celebration for a little while.
 
 The setting was beautiful. The timing was accidental.
 
 And once again, one of the strongest memories came from something that had never appeared on the itinerary.
+
+But Newport ultimately came to mean more to me than a boat show, a beautiful coastal town, or another unexpected stop on a long road trip.
+
+Some memories become important for reasons that don't need to be explained to everyone. They simply become attached to a particular place and time, and you know that returning there years later will bring something back.
+
+**Newport became one of those places for me—a memory I know I will cherish for the rest of my life.**
 
 # 🧭 Solo Doesn't Mean Isolated
 
@@ -159,8 +165,6 @@ You can't really plan who you'll meet there.
 # 🇨🇦 North
 
 On Sunday, Newport ended.
-
-My friend headed back toward New York.
 
 I pointed the BMW north.
 
