@@ -1,6 +1,6 @@
 ---
 title: "Plan the Route. Let the Road Write the Story — Part I"
-date: 2026-09-20
+date: 2026-10-01
 slug: plan-the-route-let-the-road-write-the-story-part-1
 tag: Life
 excerpt: "I left New Jersey with a carefully planned route through New England and Atlantic Canada. A week later, the best parts of the trip were increasingly the things I hadn't planned."
