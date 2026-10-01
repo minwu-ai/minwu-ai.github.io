@@ -1,10 +1,12 @@
 ---
-title: "Plan the Route. Let the Road Write the Story - Part I"
+title: "Plan the Route. Let the Road Write the Story — Part I"
 date: 2026-09-20
-tag: Travel
+slug: plan-the-route-let-the-road-write-the-story-part-1
+tag: Life
 excerpt: "I left New Jersey with a carefully planned route through New England and Atlantic Canada. A week later, the best parts of the trip were increasingly the things I hadn't planned."
 takeaway: "Preparation creates the structure that lets improvisation remain an adventure instead of becoming a crisis."
-cover image: assets/IMG_6392.jpeg
+cover: "/assets/IMG_6392.jpeg"
+cover_alt: "Sunset over a harbor full of moored boats, the sky breaking orange beneath the clouds"
 published: false
 ---
 
@@ -20,9 +22,9 @@ There were hotel reservations, golf tee times, charging stops, work meetings, an
 
 But there was no scorecard for the trip itself.
 
-## 🚗 The First Lesson Arrived at 1%
+# 🚗 The First Lesson Arrived at 1%
 
-assets/IMG_6181.jpeg [Monster Glof Club]
+![Monster Golf Club, in the Catskills](/assets/IMG_6181.jpeg)
 
 The first day should have been straightforward.
 
@@ -52,9 +54,9 @@ Planning matters.
 
 But so does knowing what to do when the plan stops mattering.
 
-## ⛳ Vermont: Returning to the Route
+# ⛳ Vermont: Returning to the Route
 
-assets/IMG_6216.jpeg[Green Moutain National]
+![Green Mountain National, with the Green Mountains behind the green](/assets/IMG_6216.jpeg)
 
 After getting charged and recovering on very little sleep, I continued toward Vermont.
 
@@ -74,7 +76,7 @@ Maybe clearing the mind isn't about finding answers at all.
 
 Maybe it's simply creating enough quiet to hear the questions properly.
 
-## 🚵 New Hampshire: The Day That Refused the Itinerary
+# 🚵 New Hampshire: The Day That Refused the Itinerary
 
 The White Mountains were supposed to be relatively structured.
 
@@ -104,9 +106,9 @@ That was when a pattern started becoming obvious.
 
 The itinerary was increasingly useful not because I followed it perfectly, but because it put me in places where I could make good decisions when something unexpected appeared.
 
-## ⛵ Newport Wasn't Supposed to Be on the Route
+# ⛵ Newport Wasn't Supposed to Be on the Route
 
-assets/IMG_6359.jpeg [International Boat Show at Newport]
+![The Newport International Boat Show, yachts moored along the dock under a bright afternoon sky](/assets/IMG_6359.jpeg)
 
 The biggest detour wasn't really my decision at all.
 
@@ -130,7 +132,7 @@ The setting was beautiful. The timing was accidental.
 
 And once again, one of the strongest memories came from something that had never appeared on the itinerary.
 
-## 🧭 Solo Doesn't Mean Isolated
+# 🧭 Solo Doesn't Mean Isolated
 
 This was fundamentally a solo road trip.
 
@@ -154,7 +156,7 @@ You can plan where you're going.
 
 You can't really plan who you'll meet there.
 
-## 🇨🇦 North
+# 🇨🇦 North
 
 On Sunday, Newport ended.
 
