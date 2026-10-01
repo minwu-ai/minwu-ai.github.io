@@ -7,7 +7,7 @@ excerpt: "I left New Jersey with a carefully planned route through New England a
 takeaway: "Preparation creates the structure that lets improvisation remain an adventure instead of becoming a crisis."
 cover: "/assets/IMG_6392.jpeg"
 cover_alt: "Sunset over a harbor full of moored boats, the sky breaking orange beneath the clouds"
-published: false
+published: true
 ---
 
 Sometimes life gives you a reason to put a little distance between yourself and the familiar.
