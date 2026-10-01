@@ -134,7 +134,7 @@ And once again, one of the strongest memories came from something that had never
 
 But Newport ultimately came to mean more to me than a boat show, a beautiful coastal town, or another unexpected stop on a long road trip.
 
-Some memories become important for reasons that don't need to be explained to everyone. They simply become attached to a particular place, a person and time, and you know that returning there years later will bring something back.
+Some memories become important for reasons that don't need to be explained to everyone. They simply become attached to a particular place, a person, and a time, and you know that returning there years later will bring something back.
 
 **Newport became one of those places for me—a memory I know I will cherish for the rest of my life.**
 
@@ -148,15 +148,9 @@ There is a particular freedom in traveling alone. You can change direction witho
 
 But solo travel doesn't necessarily mean isolation.
 
-Newport reminded me of that.
-
 I've increasingly come to think that **people are part of the geography of travel too**.
 
-A place is not only its coastline, mountains, architecture, or restaurants. It is also the people who happen to occupy the same small piece of the world at the same time you do.
-
-Some are people you already know.
-
-Others you haven't met yet.
+A place is not only its coastline, mountains, architecture, or restaurants. It is also the people who happen to occupy the same small piece of the world at the same time you do, even briefly, even as strangers.
 
 You can plan where you're going.
 
