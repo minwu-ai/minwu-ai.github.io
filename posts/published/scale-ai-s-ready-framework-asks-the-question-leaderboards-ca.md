@@ -12,21 +12,23 @@ published: true
 
 # 📊 The number that doesn't show up on any leaderboard
 
+Two weeks ago, this site [covered Scale AI's READY framework](https://minwu-ai.github.io/ready-or-not-scale-ai-s-new-benchmark-puts-a-price-tag-on-ag/) — Reliable Enterprise Agent Deployment — and its headline finding: two enterprise agents nearly tied on accuracy can require wildly different amounts of human oversight to hit the same reliability bar.
+
+That piece focused on the size of the gap. This one is about why it exists.
+
 Two agentic systems score 72.8% and 72.5% accuracy on the same clinical-audit benchmark — a gap so small it would round to a tie on most vendor comparison sheets.
 
 Yet under the paper's evaluated oversight policy, and assuming human review successfully resolves 90% of escalated cases, one system requires 39.2% of cases routed to human review while the other requires only 29.6% to statistically qualify at the same 76% reliability target.
 
 That's a nearly 10-percentage-point difference in human-review burden between systems that look almost identical on accuracy.
 
-That gap, buried inside a September 2026 arXiv preprint from researchers at Scale AI, UC Santa Cruz, and Vanderbilt University Medical Center, is the empirical center of an evaluation framework called READY — Reliable Enterprise Agent Deployment.
+That gap, buried inside a September 2026 arXiv preprint from researchers at Scale AI, UC Santa Cruz, and Vanderbilt University Medical Center, is the empirical center of READY.
 
 The framing is deceptively simple but genuinely changes the buyer's question. Existing benchmarks primarily ask whether an agent can complete realistic professional work. Enterprise deployment asks something downstream: can the agent meet a required reliability level under an acceptable oversight policy and at tolerable operating cost?
 
 READY doesn't replace accuracy scores.
 
 It asks what happens after the benchmark.
-
-This site [covered that headline review-gap number when the preprint first surfaced](https://minwu-ai.github.io/ready-or-not-scale-ai-s-new-benchmark-puts-a-price-tag-on-ag/) two weeks ago. Revisiting it here is deliberate: the more consequential finding isn't the 10-point gap itself, but why it exists — which requires a second result that first pass didn't cover.
 
 # ⚙️ How READY actually works
 
