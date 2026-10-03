@@ -1,13 +1,13 @@
 ---
 title: "A Competing-Hazards Model Finally Gives 'Loss of Control' a Shared Vocabulary"
-date: 2026-10-01
+date: 2026-10-02
 slug: a-competing-hazards-model-finally-gives-loss-of-control-a-sh
 tag: Agentic AI, Evaluation
 excerpt: "A September 29 arXiv preprint audits 22 real incidents and 102 agent-safety evaluations and finds the field has no shared language for loss-of-control events — then proposes one, with uncomfortable implications for how much evaluators can currently claim to measure."
 takeaway: "The field cannot yet estimate the loss-of-control risk it most wants to quantify: in 20 of 22 audited incidents an out-of-scope effect actually occurred, while today's evaluation artifacts usually lack the execution-level data needed to separate agent persistence from the boundaries that allowed it to succeed."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/1C9C49ED-CBFC-4305-B035-45B18F521F8E.png"
+cover_alt: "Illustration: Loss of control emerges when persistent agent behavior meets boundaries that fail to hold."
+published: true 
 ---
 
 ## 🔍 The problem beneath the problem
