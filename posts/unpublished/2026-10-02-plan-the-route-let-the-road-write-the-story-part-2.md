@@ -43,6 +43,8 @@ By this point, I was beginning to recognize the pattern.
 
 ## 🏡 The Place I Almost Never Found
 
+assets/IMG_6460.jpeg [Caption: Little Shemogue Inn]
+
 The next destination was supposed to be Pugwash, Nova Scotia.
 
 That didn't work either.
