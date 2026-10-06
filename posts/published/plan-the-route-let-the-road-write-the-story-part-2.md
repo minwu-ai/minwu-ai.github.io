@@ -7,7 +7,7 @@ excerpt: "The farther north I drove, the less the trip seemed to be about reachi
 takeaway: "The places we remember are often inseparable from the people, accidents, and small decisions we could never have put on an itinerary."
 cover: "/assets/IMG_2786.jpeg"
 cover_fit: full
-cover_alt: "The cliffs at Cabot, green fairway falling away to the sea under an open sky"
+cover_alt: "A golfer finishing a swing against the setting sun, the ocean beyond the fairway at Cabot"
 published: true
 ---
 
