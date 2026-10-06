@@ -1,6 +1,6 @@
 ---
 title: "Plan the Route. Let the Road Write the Story. — Part II"
-date: 2026-10-02
+date: 2026-10-05
 slug: plan-the-route-let-the-road-write-the-story-part-2
 tag: Life
 excerpt: "The farther north I drove, the less the trip seemed to be about reaching Cape Breton. Failed reservations led somewhere better, strangers became part of the journey, and the road home gave me time to understand what the trip had actually become."
