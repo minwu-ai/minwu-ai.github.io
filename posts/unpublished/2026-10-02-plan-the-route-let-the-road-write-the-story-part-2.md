@@ -17,6 +17,8 @@ Canada was about to test that idea almost immediately.
 
 ## 🏨 The Hotel That Wasn't There
 
+assets/IMG_6429.jpeg [caption: The Algonquin Golf Course]
+
 My first night in New Brunswick was supposed to be simple.
 
 I had booked a small place in St. Stephen, just across the border. Because I knew I would arrive late, I had called ahead.
