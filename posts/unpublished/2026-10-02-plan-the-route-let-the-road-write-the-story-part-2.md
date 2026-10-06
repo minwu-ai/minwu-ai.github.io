@@ -4,6 +4,8 @@ date: 2026-10-02
 tag: Travel
 excerpt: "The farther north I drove, the less the trip seemed to be about reaching Cape Breton. Failed reservations led somewhere better, strangers became part of the journey, and the road home gave me time to understand what the trip had actually become."
 takeaway: "The places we remember are often inseparable from the people, accidents, and small decisions we could never have put on an itinerary."
+cover: assets/IMG_2786.jpeg 
+caption: Cabot Cliff 
 published: false
 ---
 
