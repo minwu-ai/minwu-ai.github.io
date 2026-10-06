@@ -6,7 +6,6 @@ tag: Life
 excerpt: "The farther north I drove, the less the trip seemed to be about reaching Cape Breton. Failed reservations led somewhere better, strangers became part of the journey, and the road home gave me time to understand what the trip had actually become."
 takeaway: "The places we remember are often inseparable from the people, accidents, and small decisions we could never have put on an itinerary."
 cover: "/assets/IMG_2786.jpeg"
-cover_fit: full
 cover_alt: "A golfer finishing a swing against the setting sun, the ocean beyond the fairway at Cabot"
 published: true
 ---
@@ -19,7 +18,7 @@ Canada was about to test that idea almost immediately.
 
 ## 🏨 The Hotel That Wasn't There
 
-<figure class="full">
+<figure>
   <img src="/assets/IMG_6429.jpeg" alt="A fairway at the Algonquin Golf Course running toward the water.">
   <figcaption>The Algonquin Golf Course</figcaption>
 </figure>
@@ -36,7 +35,7 @@ A failed reservation had turned into a night at a historic resort and an unexpec
 
 ## 🏡 The Place I Almost Never Found
 
-<figure class="full">
+<figure>
   <img src="/assets/IMG_6460.jpeg" alt="The Little Shemogue Inn, a white clapboard country house set back from the road.">
   <figcaption>Little Shemogue Inn</figcaption>
 </figure>
@@ -89,7 +88,7 @@ What I remember most clearly isn't a shot. It's the company.
 
 ## 🌊 A Course Can Be a Destination. People Make It a Memory.
 
-<figure class="full">
+<figure>
   <img src="/assets/od_photo-13811_singular_display_fullPicture.jpeg" alt="A hole at Cabot Links, the fairway running along the coastline.">
   <figcaption>Cabot Links</figcaption>
 </figure>
@@ -126,7 +125,7 @@ I had gone back to St. Andrews because I felt I hadn't properly seen the town. I
 
 ## 🍂 Maine, Again
 
-<figure class="full">
+<figure>
   <img src="/assets/IMG_6655.jpeg" alt="Kebo Valley Golf Club, fairway framed by autumn trees.">
   <figcaption>Kebo Valley Golf Club</figcaption>
 </figure>
