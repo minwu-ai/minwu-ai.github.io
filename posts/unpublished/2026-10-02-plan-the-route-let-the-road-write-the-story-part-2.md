@@ -107,6 +107,8 @@ It's the company.
 
 ## 🌊 A Course Can Be a Destination. People Make It a Memory.
 
+assets/od_photo-13811_singular_display_fullPicture.jpeg [Caption: Cabot Links]
+
 That realization stayed with me.
 
 Golf courses are unusually good places for strangers to spend several hours together.
