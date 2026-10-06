@@ -24,27 +24,15 @@ Canada was about to test that idea almost immediately.
   <figcaption>The Algonquin Golf Course</figcaption>
 </figure>
 
-My first night in New Brunswick was supposed to be simple.
+My first night in New Brunswick was supposed to be simple. I had booked a small place in St. Stephen, just across the border, and because I knew I would arrive late, I had called ahead.
 
-I had booked a small place in St. Stephen, just across the border. Because I knew I would arrive late, I had called ahead.
+When I got there after midnight, nobody was there to check me in.
 
-But when I finally got there after midnight, nobody was there to check me in.
+After a long day of driving from Newport, this was not the kind of spontaneity I was looking for. I started searching for somewhere—anywhere—to sleep, and ended up half an hour farther down the road at **The Algonquin Resort in St. Andrews**, a historic hotel overlooking Passamaquoddy Bay.
 
-After a long day of driving from Newport, this was not the kind of spontaneity I was looking for.
+The next morning I discovered the resort also had a golf course, so before a noon meeting I went out for an early round.
 
-I started searching for somewhere—anywhere—to sleep.
-
-That search took me about half an hour farther down the road to **The Algonquin Resort in St. Andrews**, a historic resort overlooking Passamaquoddy Bay.
-
-I checked in well after midnight.
-
-The next morning, I discovered that the resort also had a golf course.
-
-So before a noon meeting, I went out for an early round.
-
-A failed hotel reservation had somehow turned into a night at a historic Canadian resort and an unexpected morning of golf.
-
-By this point, I was beginning to recognize the pattern.
+A failed reservation had turned into a night at a historic resort and an unexpected morning of golf.
 
 ## 🏡 The Place I Almost Never Found
 
@@ -59,11 +47,7 @@ That didn't work either.
 
 With the lodging I wanted unavailable, I found a small inn in a place I had never heard of: **Little Shemogue, New Brunswick**.
 
-I arrived late again.
-
-An envelope with my name and a room key had been left for me at the front desk.
-
-It was dark, so I couldn't really see where I was.
+I arrived late again, to an envelope with my name and a room key left at the front desk. It was too dark to see where I was.
 
 Then morning arrived.
 
@@ -97,21 +81,11 @@ Maddie worked at Cabot and knew the course extraordinarily well. She effectively
 
 Sarah was visiting, and together they turned what could easily have been a solitary twilight round into something completely different.
 
-We played together until around the sixteenth hole.
+We played together until around the sixteenth. Then the light went quickly.
 
-Then daylight began disappearing quickly.
+I kept going. By the final holes, finishing eighteen had less to do with the score than with completing the course before I could no longer see it. Somehow I did, walking off Cabot Links having played all eighteen.
 
-I kept going.
-
-By the final holes, finishing eighteen had become less about the score than simply completing the course before I could no longer see it.
-
-Somehow, I did.
-
-I walked off Cabot Links having played all eighteen.
-
-But what I remember most clearly isn't a particular shot.
-
-It's the company.
+What I remember most clearly isn't a shot. It's the company.
 
 ## 🌊 A Course Can Be a Destination. People Make It a Memory.
 
@@ -120,49 +94,21 @@ It's the company.
   <figcaption>Cabot Links</figcaption>
 </figure>
 
-That realization stayed with me.
+Golf courses are unusually good places for strangers to spend several hours together. You meet on the first tee knowing almost nothing about one another, then walk the same ground, solve the same small problems, celebrate good shots, laugh at bad ones, and gradually talk about things that have nothing to do with golf. Four hours later you know something real about people you hadn't met that morning.
 
-Golf courses are unusually good places for strangers to spend several hours together.
+Then everyone leaves. There is something beautiful about how temporary that is.
 
-You meet on the first tee knowing almost nothing about one another. Then you walk the same ground, solve the same little problems, celebrate good shots, laugh at bad ones, and gradually talk about things that have nothing to do with golf.
-
-Four hours later, you may know something meaningful about people you had never met that morning.
-
-Then everyone leaves.
-
-There is something beautiful about how temporary that can be.
-
-I had driven thousands of miles partly because I wanted to experience places like Cabot.
-
-Yet once I arrived, the course itself was only part of what made the day memorable.
-
-The people had become part of the geography too.
-
-## 🛣️ Turning South
-
-Eventually, every road trip reaches the moment when the direction changes.
-
-For days, I had been driving north and east.
-
-Now the compass turned south.
-
-There was no need to race home. I still had work during the week, and I wanted the return journey to remain part of the trip rather than become a long commute back to New Jersey.
-
-That eventually brought me back to **St. Andrews**.
-
-The first time I had been there, I had arrived after midnight because another hotel had failed.
-
-I slept at the Algonquin, played golf, worked, ate lunch and left.
-
-Technically, I had visited St. Andrews.
-
-But I hadn't really experienced it.
-
-So this time I stayed downtown.
+I had driven thousands of miles to play places like Cabot. Once I arrived, the course was only part of what made the day. The people had become part of the geography too.
 
 ## 🦞 Returning Somewhere Changes It
 
-I checked into the **Kennedy House**, right on Water Street.
+Eventually every road trip reaches the moment when the direction changes. For days I had been driving north and east; now the compass turned south. There was no need to race home — I still had work during the week, and I wanted the return to stay part of the trip rather than become a long commute back to New Jersey.
+
+That brought me back to **St. Andrews**.
+
+The first time, I had arrived after midnight because another hotel had failed. I slept at the Algonquin, played golf, worked, ate lunch and left. Technically I had visited St. Andrews. I hadn't experienced it.
+
+So this time I stayed downtown, at the **Kennedy House** on Water Street.
 
 That evening I had an excellent seafood dinner.
 
@@ -172,21 +118,11 @@ But once again, the food and the town became secondary to something I hadn't pla
 
 At dinner, I met **Paul and Susie**, two retired high-school history teachers who had moved to St. Andrews.
 
-We started talking.
+We started talking. History led to technology, technology to AI, and travel entered somewhere along the way. What could have been an ordinary solo dinner became a long conversation with two people I had never expected to meet.
 
-History led to technology. Technology led to AI. Travel entered the conversation somewhere along the way.
+Paul emailed afterwards. He sent essays he had written over the years and recommended Neil Postman's *Technopoly: The Surrender of Culture to Technology*, on the complicated relationship between technology and culture.
 
-And what could have been an ordinary solo dinner became a long conversation with two people I had never expected to meet.
-
-Later, Paul emailed me.
-
-He sent several essays he had written over the years and recommended Neil Postman's *Technopoly: The Surrender of Culture to Technology*, a book about the complicated relationship between technology and culture.
-
-I had gone back to St. Andrews because I felt I hadn't properly seen the town the first time.
-
-I left remembering two people.
-
-That distinction seems important.
+I had gone back to St. Andrews because I felt I hadn't properly seen the town. I left remembering two people.
 
 ## 🍂 Maine, Again
 
@@ -195,27 +131,13 @@ That distinction seems important.
   <figcaption>Kebo Valley Golf Club</figcaption>
 </figure>
 
-Crossing back into the United States felt different from crossing into Canada.
+Crossing back into the United States felt different. I was no longer heading toward something; I was heading home. But there were still a few days of road left.
 
-I was no longer heading toward something.
+In Bar Harbor I stayed near downtown and worked while rain moved through. The weather cleared the next day, just enough for one more round at **Kebo Valley Golf Club**, one of the oldest courses in the country.
 
-I was heading home.
+Fall had become visible by then — green giving way to yellow, orange and red.
 
-But there were still a few days of road left.
-
-In Bar Harbor, I stayed close to downtown and worked while rain moved through the area.
-
-The weather cleared the following day, just enough for one more round at **Kebo Valley Golf Club**, one of the oldest golf courses in the country.
-
-By then, fall had become visible.
-
-Across the course, green was giving way to yellow, orange and red.
-
-I couldn't quite finish all eighteen before the light began disappearing, but that didn't bother me much.
-
-Several weeks earlier, I might have cared more about completing the scorecard.
-
-By then, I had learned something about unfinished plans.
+I couldn't finish all eighteen before the light went, and it didn't bother me. A few weeks earlier I might have cared more about the scorecard.
 
 Sometimes you get eighteen holes.
 
@@ -229,55 +151,19 @@ The trip keeps going either way.
 
 ## 🧭 What the Road Actually Wrote
 
-When I left New Jersey, I had a remarkably detailed itinerary.
+When I left New Jersey, I had a remarkably detailed itinerary, and I'm glad I did. Planning made the trip possible while continuing to work — an electric car across thousands of miles, hotels and tee times, a bike and camping equipment across two countries, and enough structure to know roughly where I needed to be.
 
-And I'm glad I did.
+But the itinerary isn't what I will remember.
 
-Planning made a trip like this possible while continuing to work. It helped manage an electric car across thousands of miles, coordinate hotels and tee times, carry a bike and camping equipment across two countries, and still leave enough structure to know roughly where I needed to be.
+I'll remember sleeping in the BMW at 1% battery, and the unexpected nine holes after mountain biking in New Hampshire. A sweepstakes that sent me to Newport and created a memory I will cherish for the rest of my life. The hotel that failed in St. Stephen and accidentally sent me to the Algonquin. Karen's breakfast in Little Shemogue. Racing darkness around Cabot Links with Maddie and Sarah. A seafood dinner in St. Andrews that introduced me to Paul and Susie. And the first real colors of fall across Kebo Valley as the trip approached its end.
 
-But the itinerary isn't what I will remember most.
+None of it could have been planned. Maybe that was the point.
 
-I'll remember sleeping in the BMW at 1% battery.
+I started out partly wanting some distance from ordinary life — enough space to clear my mind and think. I don't know that I found answers. I'm less convinced now that answers were what I needed.
 
-The unexpected nine holes after mountain biking in New Hampshire.
+Travel changes the scale of things. For a while the questions get simpler: where am I sleeping tonight, how much battery do I have, can I finish before dark, who is sitting beside me at dinner, where does this road go next.
 
-A sweepstakes that sent me to Newport and created a memory I will cherish for the rest of my life.
-
-The hotel that failed in St. Stephen and accidentally sent me to the Algonquin.
-
-Karen's breakfast in Little Shemogue.
-
-Racing darkness around Cabot Links with Maddie and Sarah.
-
-A seafood dinner in St. Andrews that introduced me to Paul and Susie.
-
-And the first real colors of fall appearing across Kebo Valley as the trip approached its end.
-
-None of those things could have been completely planned.
-
-Maybe that was the point.
-
-I started this journey partly because I wanted some distance from ordinary life—enough space to clear my mind and think.
-
-I don't know that I found answers.
-
-I'm less convinced now that answers were what I needed.
-
-Travel changes the scale of things. For a while, the immediate questions become simpler:
-
-Where am I sleeping tonight?
-
-How much battery do I have?
-
-Can I finish before dark?
-
-Who is sitting beside me at dinner?
-
-Where does this road go next?
-
-And somewhere inside those smaller questions, the larger ones become a little quieter.
-
-Perhaps that is enough.
+And somewhere inside those smaller questions, the larger ones get quieter.
 
 The route got me to Cape Breton and back.
 
