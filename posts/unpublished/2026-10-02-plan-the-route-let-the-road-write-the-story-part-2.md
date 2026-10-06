@@ -171,6 +171,8 @@ That distinction seems important.
 
 ## 🍂 Maine, Again
 
+assets/IMG_6655.jpeg [Kebo Valley Golf Club]
+
 Crossing back into the United States felt different from crossing into Canada.
 
 I was no longer heading toward something.
