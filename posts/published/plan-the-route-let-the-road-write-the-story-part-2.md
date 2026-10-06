@@ -1,12 +1,14 @@
 ---
 title: "Plan the Route. Let the Road Write the Story. — Part II"
 date: 2026-10-02
-tag: Travel
+slug: plan-the-route-let-the-road-write-the-story-part-2
+tag: Life
 excerpt: "The farther north I drove, the less the trip seemed to be about reaching Cape Breton. Failed reservations led somewhere better, strangers became part of the journey, and the road home gave me time to understand what the trip had actually become."
 takeaway: "The places we remember are often inseparable from the people, accidents, and small decisions we could never have put on an itinerary."
-cover: assets/IMG_2786.jpeg 
-caption: Cabot Cliff 
-published: false
+cover: "/assets/IMG_2786.jpeg"
+cover_fit: full
+cover_alt: "The cliffs at Cabot, green fairway falling away to the sea under an open sky"
+published: true
 ---
 
 Part I ended with me crossing the Canadian border late at night.
@@ -17,7 +19,10 @@ Canada was about to test that idea almost immediately.
 
 ## 🏨 The Hotel That Wasn't There
 
-assets/IMG_6429.jpeg [caption: The Algonquin Golf Course]
+<figure class="full">
+  <img src="/assets/IMG_6429.jpeg" alt="A fairway at the Algonquin Golf Course running toward the water.">
+  <figcaption>The Algonquin Golf Course</figcaption>
+</figure>
 
 My first night in New Brunswick was supposed to be simple.
 
@@ -43,7 +48,10 @@ By this point, I was beginning to recognize the pattern.
 
 ## 🏡 The Place I Almost Never Found
 
-assets/IMG_6460.jpeg [Caption: Little Shemogue Inn]
+<figure class="full">
+  <img src="/assets/IMG_6460.jpeg" alt="The Little Shemogue Inn, a white clapboard country house set back from the road.">
+  <figcaption>Little Shemogue Inn</figcaption>
+</figure>
 
 The next destination was supposed to be Pugwash, Nova Scotia.
 
@@ -107,7 +115,10 @@ It's the company.
 
 ## 🌊 A Course Can Be a Destination. People Make It a Memory.
 
-assets/od_photo-13811_singular_display_fullPicture.jpeg [Caption: Cabot Links]
+<figure class="full">
+  <img src="/assets/od_photo-13811_singular_display_fullPicture.jpeg" alt="A hole at Cabot Links, the fairway running along the coastline.">
+  <figcaption>Cabot Links</figcaption>
+</figure>
 
 That realization stayed with me.
 
@@ -179,7 +190,10 @@ That distinction seems important.
 
 ## 🍂 Maine, Again
 
-assets/IMG_6655.jpeg [Kebo Valley Golf Club]
+<figure class="full">
+  <img src="/assets/IMG_6655.jpeg" alt="Kebo Valley Golf Club, fairway framed by autumn trees.">
+  <figcaption>Kebo Valley Golf Club</figcaption>
+</figure>
 
 Crossing back into the United States felt different from crossing into Canada.
 
