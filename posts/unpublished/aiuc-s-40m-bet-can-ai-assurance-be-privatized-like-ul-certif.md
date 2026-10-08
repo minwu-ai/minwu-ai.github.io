@@ -103,7 +103,7 @@ Unlike mature certification ecosystems, there is not yet an ANSI-, UKAS-, regula
 
 That creates an obvious governance question:
 
-**Who assures the assurer?**
+>**Who assures the assurer?**
 
 The UL analogy therefore cuts both ways.
 
@@ -127,7 +127,7 @@ Bad testing can become bad underwriting.
 
 That creates the possibility of a feedback loop:
 
-**testing → certification → underwriting → losses → better testing**
+>**testing → certification → underwriting → losses → better testing**
 
 Over time, claims data could reveal which evaluations actually predict real-world failures. Tests that look impressive but fail to predict losses become less valuable. Controls that correlate with fewer incidents become economically important.
 
@@ -153,7 +153,7 @@ AIUC may therefore be building something more consequential than another volunta
 
 Its real experiment is whether four functions can be connected:
 
-**standard → technical evidence → independent audit → financial risk**
+>**standard → technical evidence → independent audit → financial risk**
 
 If that loop works, certification stops being merely a trust badge. It becomes information that has a price.
 
@@ -167,7 +167,7 @@ Will insurers actually price coverage differently based on AIUC-1 results? Will 
 
 Those developments would tell us whether AIUC is creating another compliance framework or an institution.
 
-**AIUC has copied an important part of the beginning of the UL story: insurers, testing, and private certification. It has not yet reproduced the institutional ecosystem that eventually made the UL mark authoritative.**
+>**AIUC has copied an important part of the beginning of the UL story: insurers, testing, and private certification. It has not yet reproduced the institutional ecosystem that eventually made the UL mark authoritative.**
 
 That may be the real $40 million bet.
 
