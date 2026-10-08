@@ -5,9 +5,9 @@ slug: aiuc-s-40m-bet-can-ai-assurance-be-privatized-like-ul-certif
 tag: Industry, AI Governance
 excerpt: "AIUC's Series A — and its explicit Underwriters Laboratories analogy — tests whether a private certifier linking technical testing to insurance can become a de facto safety bar for AI before regulators write one."
 takeaway: "AIUC is testing whether standards, technical evaluation, independent audits, and insurance pricing can form a private feedback loop for AI assurance — but the UL analogy cuts both ways, because UL's authority took decades of codes, regulatory recognition, and institutional scaffolding to earn."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/f9bf0ffd3b12a15104d986d9d72ee8d500a16fc468c358a77c81e22acf3015e6.png"
+cover_alt: "Illustration: AIUC’s bet that rigorous testing, certification, and insurance can turn AI assurance into an enforceable market standard."
+published: true
 ---
 
 ## 💰 The bottleneck has moved
