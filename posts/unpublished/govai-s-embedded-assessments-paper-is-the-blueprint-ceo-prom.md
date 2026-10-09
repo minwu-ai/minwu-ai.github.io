@@ -5,9 +5,9 @@ slug: govai-s-embedded-assessments-paper-turns-ceo-safety-pledges
 tag: Regulation & Policy, AI Governance
 excerpt: "A September 2026 GovAI paper turns frontier labs' embedded-evaluator commitments into seven concrete design questions — just as Anthropic moves from pledge to implementation and California considers whether embedded oversight should become mandatory."
 takeaway: "Embedding an evaluator solves the access problem, not necessarily the independence problem. GovAI's framework exposes the choices — scope, access, duration, disclosure, and escalation — that will determine whether evaluators inside frontier labs become meaningful oversight or merely unusually well-informed observers."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/df2e0f59fb0bff691c2090372aa90a021846a62bcb65f6008b6c0ff4c2bae97b.png"
+cover_alt: "Illustration: Embedded evaluators may gain unprecedented access inside frontier AI labs — but access alone does not guarantee independence, authority, or meaningful oversight."
+published: true
 ---
 
 ## 🔍 From pledge to blueprint
