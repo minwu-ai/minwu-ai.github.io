@@ -6,6 +6,7 @@ tag: Alignment, Evaluation
 excerpt: "A UK AISI preprint argues that even perfectly cooperative AI research agents could generate catastrophically misleading safety verdicts — because the hardest alignment research may lack the objective evaluation criteria that make automated research verifiable."
 takeaway: "Scaling the production of alignment research is not the same as scaling our ability to verify it: correlated AI-generated errors could turn a large volume of apparently favorable research into an overconfident safety case, especially when no objective benchmark can adjudicate whether the research is actually right."
 cover: "/assets/84cb8efaa3b3b9b674a1d2d040b0296f782b95eb955308368ac1442d50301c65.png"
+cover_fit: full
 cover_alt: "Illustration: Automated alignment can generate mountains of passing evidence, but the foundation of verification may still be fragile."
 published: true
 ---
