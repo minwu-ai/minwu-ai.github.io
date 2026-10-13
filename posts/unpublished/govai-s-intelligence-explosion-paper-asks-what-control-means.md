@@ -5,9 +5,9 @@ slug: govai-s-intelligence-explosion-paper-asks-what-control-means
 tag: Alignment, AI Governance
 excerpt: "A late-September working paper co-signed by Hinton, Bengio, Pachocki, Horvitz, and Jack Clark puts concrete policy options — speed limits, shutdown capability, isolation, incident-sharing — on a scenario most governance frameworks still treat as speculative."
 takeaway: "The paper's real argument isn't that an intelligence explosion is imminent — it's that visibility, oversight, and control are different capabilities, and governance mechanisms built for steady progress may stop working if AI R&D itself accelerates beyond human reaction time."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/85d48cd7a365dc8b7f96ba119a2f1b6d7108c261f386d3d0502143fad90c1330.png"
+cover_alt: "Illustration: AI R&D accelerates faster than human oversight, turning governance from a question of visibility into one of control."
+published: true
 ---
 
 On September 28, twenty-two authors — among them Geoffrey Hinton, Yoshua Bengio, OpenAI chief scientist Jakub Pachocki, Anthropic co-founder Jack Clark, and Microsoft's Eric Horvitz — published a [working paper](https://www.governance.ai/research-paper/what-if-automating-ai-r-d-triggers-an-intelligence-explosion) asking what happens if AI automating AI research compresses years of progress into months.
