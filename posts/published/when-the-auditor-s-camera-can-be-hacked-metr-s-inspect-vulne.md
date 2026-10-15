@@ -5,6 +5,8 @@ slug: when-the-auditor-s-camera-can-be-hacked-metr-s-inspect-vulne
 tag: Evaluation, AI Safety
 excerpt: "METR has disclosed a proof-of-concept exploit that would let an agent silently rewrite what a human reviewer sees in Inspect's transcript viewer. The bug was patched in a day — the assumption it broke is the part worth keeping."
 takeaway: "Evaluation methodology has quietly assumed the viewer showing a reviewer what an agent did is itself trustworthy. METR's proof of concept shows that assumption is an engineering choice rather than a given — and the fix that matters is not the patch, but designing review tooling so agent output can never execute in the reviewer's browser."
+cover: "/assets/314e3a3e9ddfd89e7121226946531c84749a662f97456734c11cae84ba26f7c9.png"
+cover_alt: "A reviewer at a monitor showing an Inspect transcript; a robotic hand peels the clean page back to reveal a falsified red copy beneath, with a Download Transcript button"
 published: true
 ---
 
