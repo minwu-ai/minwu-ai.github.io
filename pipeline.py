@@ -651,6 +651,46 @@ def _text_of(resp):
     return "".join(b.text for b in resp.content if b.type == "text").strip()
 
 
+# Returning to a story is good journalism; re-reporting it is not. The site
+# kept producing near-identical articles on one event (four on METR's Inspect
+# vulnerability, five on its Frontier Risk Report) because the only guidance
+# was "avoid redundancy" — a binary test the model satisfied by changing the
+# headline. This replaces that with a test it has to answer concretely.
+DEVELOPMENTAL_RULE = (
+    "PRIOR COVERAGE — DEVELOPMENTAL, NOT DUPLICATIVE:\n"
+    "Two lists are provided below: posts already PUBLISHED, and posts already "
+    "DRAFTED but unpublished. Both count. A draft is already written, so "
+    "re-proposing its subject wastes the slot just as much as repeating a "
+    "published post.\n"
+    "Returning to a subject this site has covered is WELCOME when the new post "
+    "ADVANCES it. It is not welcome when the new post merely restates it with a "
+    "different headline.\n"
+    "Before proposing anything that touches a subject in either list, answer "
+    "this in the 'angle' field: what is TRUE NOW that was not true, or not "
+    "known, when the earlier post was written?\n"
+    "A valid developmental angle is one of:\n"
+    "  • NEW EVIDENCE — a result, dataset, incident or disclosure that post "
+    "could not have cited.\n"
+    "  • CONSEQUENCE — something that has since happened BECAUSE of it: a "
+    "response, an adoption, a reversal, an enforcement action.\n"
+    "  • SYNTHESIS — it connects to a second, independent development in a way "
+    "neither prior post could, and the connection is the point.\n"
+    "  • CORRECTION — later work contradicts or qualifies what the earlier post "
+    "concluded.\n"
+    "NOT valid, and these are the patterns that have actually gone wrong here: "
+    "a different framing of the same finding; the same event told from another "
+    "stakeholder's view; 'what this means for X' where X is new but the "
+    "underlying material is not; a fresh metaphor or sharper headline over "
+    "identical substance.\n"
+    "When your angle IS developmental, say so explicitly in that field, in this "
+    "shape: 'Follows <exact prior title>. New since then: <the specific thing>.' "
+    "If you cannot name the prior post and the specific new thing, the topic is "
+    "duplicative — drop it and propose something else.\n"
+    "Hard limit: propose AT MOST ONE candidate touching any single underlying "
+    "event, paper or incident."
+)
+
+
 def _discovery_prompt(count, focus=None, plan=None):
     plan = plan or coverage_plan()
     focus_line = "; ".join(focus or FOCUS_TOPICS)
@@ -679,11 +719,8 @@ def _discovery_prompt(count, focus=None, plan=None):
         + _sources_preference() + "\n\n"
         + _researchers_preference() + "\n\n"
         + CORROBORATION_RULE + " Only propose topics that clear this bar.\n\n"
-        "AVOID REDUNDANCY: a list of posts already published on this site is provided "
-        "below. Do NOT propose a topic that merely repeats one of them. Revisiting a "
-        "topic is fine ONLY if there's a genuine new development or new angle — if so, "
-        "note in the angle what's new and which prior post it follows up.\n\n"
-        "For each topic, set 'category' to one of the REQUIRED categories listed "
+        + DEVELOPMENTAL_RULE + "\n\n"
+        + "For each topic, set 'category' to one of the REQUIRED categories listed "
         "above: " + ", ".join(plan["required"]) + ". "
         "Return ONLY a JSON array, no markdown:\n"
         '[{"topic": "...", "angle": "...", "category": "..."}]'
@@ -719,23 +756,67 @@ def _read_frontmatter(path):
     return meta
 
 
-def published_posts_context(limit=25):
-    """A list of already-published posts the model can reference and link."""
-    items = []
-    for path in sorted(glob.glob(os.path.join(POSTS_DIR, "**", "*.md"), recursive=True)):
-        meta = _read_frontmatter(path)
-        if str(meta.get("published", "true")).lower() == "false":
+def _post_inventory():
+    """Every post on the site, newest first, split into published and drafts.
+
+    Drafts count for redundancy purposes. A topic already sitting in
+    posts/unpublished/ has been researched and written once; drafting it again
+    is how this site ends up with four articles on one METR release. The old
+    version of this function skipped drafts entirely, so discovery never saw
+    the backlog it was duplicating.
+    """
+    pub, drafts = [], []
+    for path in glob.glob(os.path.join(POSTS_DIR, "**", "*.md"), recursive=True):
+        if os.sep + "archive" + os.sep in path:
             continue
+        meta = _read_frontmatter(path)
         title = meta.get("title", "")
-        slug = meta.get("slug") or os.path.basename(path)[:-3]
-        if title:
-            items.append("- [{}](https://minwu-ai.github.io/{}/) — {}".format(
-                title, slug, meta.get("excerpt", "")))
-    if not items:
-        return ""
-    return ("\n\nAlready published on this site — reference and LINK any that are "
-            "relevant (use the FULL absolute URL shown) to build a throughline:\n"
-            + "\n".join(items[:limit]))
+        if not title:
+            continue
+        rec = {
+            "title": title,
+            "slug": meta.get("slug") or os.path.basename(path)[:-3],
+            "date": meta.get("date", ""),
+            "excerpt": meta.get("excerpt", ""),
+        }
+        if str(meta.get("published", "true")).lower() == "false":
+            drafts.append(rec)
+        else:
+            pub.append(rec)
+    # Sort by DATE, not by file path. Sorting by path meant the "25 most
+    # recent" were really the first 25 alphabetically, which silently hid the
+    # newest posts -- the ones most likely to be duplicated.
+    pub.sort(key=lambda r: r["date"], reverse=True)
+    drafts.sort(key=lambda r: r["date"], reverse=True)
+    return pub, drafts
+
+
+def published_posts_context(limit=40, draft_limit=50):
+    """Prior coverage shown to the model: published posts plus the draft backlog."""
+    pub, drafts = _post_inventory()
+    out = []
+
+    if pub:
+        out.append(
+            "\n\nALREADY PUBLISHED on this site (newest first). Reference and LINK "
+            "any that are relevant (use the FULL absolute URL shown) to build a "
+            "throughline:\n"
+            + "\n".join(
+                "- [{}](https://minwu-ai.github.io/{}/) — {}".format(
+                    r["title"], r["slug"], r["excerpt"])
+                for r in pub[:limit]))
+
+    if drafts:
+        out.append(
+            "\n\nALREADY DRAFTED but not yet published (newest first). These are "
+            "NOT live, so you must NOT link to them — but they are already written, "
+            "so treat them exactly like published posts when judging redundancy. "
+            "Proposing a topic that merely repeats one of these wastes a draft:\n"
+            + "\n".join(
+                "- {} ({})".format(r["title"], r["date"] or "undated")
+                for r in drafts[:draft_limit]))
+
+    return "".join(out)
 
 
 def draft_article(instruction, system=None):
@@ -975,9 +1056,8 @@ def _history_discovery_prompt(count, plan=None):
         "Use web search to confirm each subject is real, well documented, and not "
         "misremembered popular history before proposing it. Order candidates "
         "best-first.\n\n"
-        "AVOID REDUNDANCY: a list of posts already published on this site is provided "
-        "below. Do not propose a subject that repeats one of them.\n\n"
-        "Set 'area' to one of the REQUIRED areas listed above: "
+        + DEVELOPMENTAL_RULE + "\n\n"
+        + "Set 'area' to one of the REQUIRED areas listed above: "
         + ", ".join(plan["required"]) + ".\n"
         "Return ONLY a JSON array, no markdown:\n"
         '[{"topic": "...", "angle": "...", "parallel": "...", "area": "..."}]'
@@ -1060,6 +1140,20 @@ def _force_primary_tag(article, cat):
     return article
 
 
+# Discovery can hand the writer a developmental angle ("Follows X. New since
+# then: Y."), but the writer then has to honour it. Without this, it re-explains
+# the earlier post from scratch and the result reads as a duplicate even though
+# the angle was sound.
+DEVELOPMENTAL_DRAFTING = (
+    "BUILDING ON PRIOR COVERAGE: if the angle says this piece follows an earlier "
+    "post, write it as a continuation, not a standalone retelling. Summarise what "
+    "that post established in at most two sentences, LINK to it, and spend the "
+    "piece on what is new. Do not re-argue its case or re-explain its evidence at "
+    "length — assume the reader can follow the link. The new material is the "
+    "article; the earlier post is context."
+)
+
+
 def _select_and_draft(candidates, target, plan=None):
     """Save `target` drafts, preferring the categories the balancer asked for.
 
@@ -1083,7 +1177,8 @@ def _select_and_draft(candidates, target, plan=None):
             f"The PRIMARY category is '{cat}' — the piece must genuinely be about "
             f"that, and TAG must start with '{cat}'. Add at most one more category, "
             "and only if the piece truly spans two. "
-            "Research it with web search first, cross-referencing multiple sources."
+            "Research it with web search first, cross-referencing multiple sources. "
+            + DEVELOPMENTAL_DRAFTING
         )
         article = draft_with_sourcing(instruction)
         if not has_sources(article):
