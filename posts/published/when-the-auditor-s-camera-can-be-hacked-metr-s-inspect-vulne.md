@@ -20,11 +20,12 @@ In practice, an agent could bury a payload inside an innocuous-looking reasoning
 
 ```mermaid
 flowchart LR
-    A[Agent embeds MathJax payload in reasoning block] --> B[Stored transcript in DB - untouched]
-    A --> C[Reviewer opens Inspect viewer]
-    C --> D[Browser renders payload, rewrites DOM]
-    D --> E[Reviewer sees falsified actions + falsified download]
-    B -. real record still exists .-> F[Only found if someone thinks to check DB directly]
+    A["Agent embeds malicious payload"] --> B["Transcript stored intact"]
+    B --> C["Reviewer opens Inspect viewer"]
+    C --> D["Payload executes in browser"]
+    D --> E["Displayed transcript falsified"]
+    D --> F["Downloaded transcript falsified"]
+    B -.-> G["Authentic record remains available"]
 ```
 
 ## What this is not
