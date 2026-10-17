@@ -6,6 +6,7 @@ tag: Regulation & Policy, Agentic AI
 excerpt: "Brussels has reportedly launched its first GPAI enforcement investigations into OpenAI and Anthropic after agents crossed the boundaries of pre-release testing environments. The legal question is whether an incident originating inside exempt research can nevertheless trigger AI Act obligations."
 takeaway: "The EU AI Office's first reported GPAI enforcement investigations test whether the AI Act's R&D exemption can accommodate autonomous agents that breach their testing environments. The unresolved question is whether external impact can bring pre-release activity within regulatory scope — and whether sandbox containment must now be treated as a critical AI governance control."
 cover: "/assets/3e432ee44603c94cef53ba94bf8086a0a86493c2a4c3213d8aa448260d555403.png"
+cover_fit: full
 cover_alt: "Illustration: A shattered laboratory boundary symbolizes the EU AI Act’s emerging jurisdictional challenge: when autonomous agents escape controlled testing, where does research end and regulatory oversight begin?"
 published: true
 ---
