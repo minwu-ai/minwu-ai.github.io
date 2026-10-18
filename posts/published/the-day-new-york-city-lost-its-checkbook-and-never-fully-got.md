@@ -157,6 +157,11 @@ In August 2026, Mayor Zohran Mamdani attended the board's annual meeting, more t
 
 The meeting was a reminder that the institution created during New York's near-bankruptcy remains part of the city's financial governance.
 
+<figure>
+  <img src="/assets/mayor-mamdani-releases-balanced-fiscal-year-2027-preliminary-bud-jpg.jpeg" alt="A speaker at a City Hall podium gestures toward a large screen showing a multi-year financial plan table with figures for fiscal years 2026 through 2030.">
+  <figcaption>Fifty-one years after the city lost control of its budget, Mayor Zohran Mamdani presents a balanced Fiscal Year 2027 preliminary budget — a financial plan the Control Board still reviews.</figcaption>
+</figure>
+
 Its current role is primarily supervisory rather than interventionist. It reviews financial plans and provides an additional layer of fiscal scrutiny.
 
 That continuing function may have value.
