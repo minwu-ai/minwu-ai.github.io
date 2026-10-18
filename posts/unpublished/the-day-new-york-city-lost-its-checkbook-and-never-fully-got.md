@@ -5,7 +5,7 @@ slug: new-york-city-got-its-checkbook-back-in-1986-the-watchdog-never-left
 tag: History & People
 excerpt: "In 1975, New York City's financial collapse forced Albany to transfer extraordinary budget powers to a state-created control board. The city regained fiscal autonomy in 1986, but the institution established to supervise the emergency still exists half a century later."
 takeaway: "Financial emergencies can create oversight institutions that outlive the powers that justified them. New York recovered control of its budget in 1986, but the supervisory architecture established during the 1975 crisis remains part of its financial governance five decades later."
-cover: "/assets/"
+cover: "/assets/8cbfd91139e2e041ffb7f238b6697c1d1a006ca9ee0575f690200622e1ac9b56.png"
 cover_alt: "Illustration: New York City's financial autonomy restored, while the institutional watchdog created during the 1975 fiscal crisis remains."
 published: false
 ---
