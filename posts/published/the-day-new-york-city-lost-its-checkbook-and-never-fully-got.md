@@ -6,8 +6,9 @@ tag: History & People
 excerpt: "In 1975, New York City's financial collapse forced Albany to transfer extraordinary budget powers to a state-created control board. The city regained fiscal autonomy in 1986, but the institution established to supervise the emergency still exists half a century later."
 takeaway: "Financial emergencies can create oversight institutions that outlive the powers that justified them. New York recovered control of its budget in 1986, but the supervisory architecture established during the 1975 crisis remains part of its financial governance five decades later."
 cover: "/assets/8cbfd91139e2e041ffb7f238b6697c1d1a006ca9ee0575f690200622e1ac9b56.png"
+cover_fit: full
 cover_alt: "Illustration: New York City's financial autonomy restored, while the institutional watchdog created during the 1975 fiscal crisis remains."
-published: false
+published: true
 ---
 
 In the spring of 1975, the banks stopped lending to New York City.
@@ -81,6 +82,11 @@ As [Donna Shalala and Carol Bellamy](https://scholarship.law.duke.edu/cgi/viewco
 The underlying trade-off was straightforward: the city needed external financing, and restoring investor confidence required constraints on its fiscal discretion.
 
 **New York did not formally surrender its municipal government. It surrendered a significant portion of its financial autonomy.**
+
+<figure class="full">
+  <img src="/assets/hugh_carey_ap_img2.jpg" alt="Governor Hugh Carey, gesturing at right behind a nameplate reading GOV. CAREY, testifies beside Felix Rohatyn at a congressional hearing table in 1975.">
+  <figcaption>Gov. Hugh L. Carey, right, and Felix Rohatyn, chairman of the Municipal Assistance Corporation, press members of a House subcommittee in Washington to aid deficit-ridden New York City, October 21, 1975. (AP Photo/Charles Gorry, File)</figcaption>
+</figure>
 
 ## 🏙️ The Social Cost of Restoring Confidence
 
