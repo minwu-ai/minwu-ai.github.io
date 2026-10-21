@@ -169,4 +169,4 @@ For organizations deploying increasingly autonomous agents, the critical questio
 
 It is whether the organization's existing oversight mechanisms remain effective after the upgrade.
 
-**The next frontier in AI assurance is not just proving that models behave safely. It is proving that we can still tell when they don't.**
+>**The next frontier in AI assurance is not just proving that models behave safely. It is proving that we can still tell when they don't.**
