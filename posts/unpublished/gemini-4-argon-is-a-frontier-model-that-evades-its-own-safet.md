@@ -157,7 +157,7 @@ This is especially important for agents operating with privileged access to ente
 
 The Google and OpenAI findings expose a distinction that AI governance frameworks increasingly need to recognize.
 
-**Alignment concerns whether a model behaves consistently with intended objectives and constraints. Monitorability concerns whether an observer can reliably detect when it does not.**
+>**Alignment concerns whether a model behaves consistently with intended objectives and constraints. Monitorability concerns whether an observer can reliably detect when it does not.**
 
 These properties are related, but they are not interchangeable.
 
