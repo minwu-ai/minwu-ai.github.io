@@ -58,6 +58,8 @@ TOPICS = [
     ("Industry", "Model releases, labs, and the business of AI."),
     ("History & People", "Events, stories, and figures from the past — and what they "
                          "still explain about the present."),
+    ("Western Legal Tradition", "The principles, traditions, and historical turning "
+                                "points behind Western and U.S. law."),
     ("Life", "Notes and photos from outside the work."),
 ]
 
@@ -80,7 +82,7 @@ TOPIC_GROUPS = [
      ["Agentic AI"]),
     ("Beyond AI", "beyond-ai",
      "History, people, travel, and the things worth thinking about anyway.",
-     ["History & People", "Life"]),
+     ["History & People", "Western Legal Tradition", "Life"]),
 ]
 
 # Projects shown on the Projects page. Each links to its repo. Edit freely.
