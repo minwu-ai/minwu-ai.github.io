@@ -10,7 +10,7 @@ cover_alt: "Illustration: California builds the institutional scaffolding for in
 published: true
 ---
 
-# 🏛️ California is building the referee before requiring the game
+## 🏛️ California is building the referee before requiring the game
 
 On September 9, 2026, Governor Gavin Newsom signed Senate Bill 813 and Assembly Bill 1405, creating what his office called a "first-in-the-nation framework" for independent organizations assessing AI systems and models.
 
@@ -28,7 +28,7 @@ Neither law creates a universal requirement that AI developers or deployers subm
 
 California is building the referee system first.
 
-# 🔍 The important thing the laws don't do
+## 🔍 The important thing the laws don't do
 
 Some early coverage emphasized the potential reach beyond frontier labs. TechTimes focused on applications such as hiring and other consequential decisions, while ByteIota highlighted implications for developers and deployers.
 
@@ -46,7 +46,7 @@ California isn't yet saying every important AI system must be independently audi
 
 It is saying something closer to: when California law calls for an AI audit, not everyone gets to call themselves an independent auditor.
 
-# ⚖️ Audit is not evaluation
+## ⚖️ Audit is not evaluation
 
 This may be the most important idea in the legislation.
 
@@ -68,7 +68,7 @@ And you can audit a company's controls without proving that the underlying model
 
 Those are different assurance problems.
 
-# 🧾 The accounting analogy is becoming literal
+## 🧾 The accounting analogy is becoming literal
 
 Assemblymember Rebecca Bauer-Kahan explained the concept to KQED using financial auditing: financial institutions do not simply declare themselves compliant; independent professionals examine the evidence.
 
@@ -88,7 +88,7 @@ AI governance has largely lacked an equivalent institution.
 
 California is starting to build one.
 
-# 🏭 Industry support doesn't erase the substance
+## 🏭 Industry support doesn't erase the substance
 
 The political framing around these laws diverged sharply.
 
@@ -104,7 +104,7 @@ A regulatory framework can establish meaningful infrastructure while also being 
 
 The better question is what the final law actually requires — and when.
 
-# ⏳ The three-year runway is real
+## ⏳ The three-year runway is real
 
 Startup Fortune highlighted AB 1405's creation of California's first AI-auditor registry.
 
@@ -124,7 +124,7 @@ But three years is also an unusually long period in AI.
 
 The models, agent architectures and deployment patterns auditors encounter in 2029 may look substantially different from those legislators were debating in 2026.
 
-# 🧩 Adam's Law shows how the pieces could connect
+## 🧩 Adam's Law shows how the pieces could connect
 
 The sequencing became clearer one day later.
 
@@ -138,7 +138,7 @@ One set of laws can create substantive obligations. Another can define the indep
 
 That is much closer to how established regulatory systems work than asking AI companies to grade their own homework.
 
-# 🎯 The governance question is moving up a layer
+## 🎯 The governance question is moving up a layer
 
 For the past several years, much of the AI-safety debate has focused on models and evaluations:
 

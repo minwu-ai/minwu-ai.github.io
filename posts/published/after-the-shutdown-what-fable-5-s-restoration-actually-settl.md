@@ -10,7 +10,7 @@ cover_alt: "Illustration: When AI advances in months but governance evolves over
 published: true
 ---
 
-# 🏛️ What the Negotiated Outcome Actually Created
+## 🏛️ What the Negotiated Outcome Actually Created
 
 The nearly three-week shutdown of Fable 5 and Mythos 5 ended on June 30 when the [U.S. Department of Commerce lifted its export controls](https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html) — but what came back is structurally different from what went offline.
 
@@ -32,7 +32,7 @@ The negotiated outcome produced a clear two-tier structure:
 
 The restoration therefore demonstrated something important: access to frontier models may become differentiated according to technical safeguards, operational commitments, and trusted-user categories rather than simply "available" or "unavailable."
 
-# 🤝 The Commitments Anthropic Made to Get Back Online
+## 🤝 The Commitments Anthropic Made to Get Back Online
 
 Restoration was not free.
 
@@ -46,7 +46,7 @@ As [TechPolicy.Press](https://www.techpolicy.press/did-the-us-government-just-se
 
 Whether intentional or not, that observation captures the broader significance of this episode.
 
-# 🔄 The OpenAI Parallel — and Where It Diverges
+## 🔄 The OpenAI Parallel — and Where It Diverges
 
 The Fable 5 restoration coincided almost exactly with [OpenAI's limited preview of GPT-5.6 Sol](https://openai.com/index/previewing-gpt-5-6-sol/), which was initially released only to a small group of trusted partners at the government's request. OpenAI also stated that it does "not believe this kind of government access process should become the long-term default."
 
@@ -62,7 +62,7 @@ More broadly, the Fable restoration illustrates a mismatch between the pace of t
 
 Previous technological revolutions—electricity, automobiles, aviation, even the internet—required years or decades of physical infrastructure before becoming globally pervasive. AI is different. A new frontier model can become available worldwide almost immediately through cloud infrastructure while governments are still determining how it should be governed. That compression leaves policymakers relying on legal authorities built for earlier eras until AI-specific governance matures.
 
-# 🏢 Enterprise Vendor Risk: Beyond Traditional SLAs
+## 🏢 Enterprise Vendor Risk: Beyond Traditional SLAs
 
 Three durable operational lessons emerged.
 
@@ -72,7 +72,7 @@ Three durable operational lessons emerged.
 
 3. **Differentiated access is becoming operationally meaningful.** Mythos 5 returned first to a limited group of approved organizations before broader availability. Meanwhile, [Microsoft's MAI family](https://minwu-ai.github.io/microsoft-s-mai-family-is-a-vendor-risk-hedge-disguised-as-a/) increasingly looks less like a product diversification strategy and more like a hedge against vendor concentration and regulatory disruption.
 
-# 🕰️ The Bigger Governance Lesson
+## 🕰️ The Bigger Governance Lesson
 
 The closest historical analogy is not that AI is identical to encryption or any previous technology. Rather, it is that governments often respond to rapidly emerging strategic technologies using legal authorities that already exist.
 

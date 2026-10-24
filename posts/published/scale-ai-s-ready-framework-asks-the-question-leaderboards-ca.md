@@ -10,7 +10,7 @@ cover_alt: "Illustration: Two nearly identical AI agents can deliver similar acc
 published: true
 ---
 
-# 📊 The number that doesn't show up on any leaderboard
+## 📊 The number that doesn't show up on any leaderboard
 
 Two weeks ago, this site [covered Scale AI's READY framework](https://minwu-ai.github.io/ready-or-not-scale-ai-s-new-benchmark-puts-a-price-tag-on-ag/) — Reliable Enterprise Agent Deployment — and its headline finding: two enterprise agents nearly tied on accuracy can require wildly different amounts of human oversight to hit the same reliability bar.
 
@@ -30,7 +30,7 @@ READY doesn't replace accuracy scores.
 
 It asks what happens after the benchmark.
 
-# ⚙️ How READY actually works
+## ⚙️ How READY actually works
 
 Given an agent, a workflow, and candidate oversight policies, READY measures the reliability and operating cost of the combined human-AI system, selects a minimum-cost policy that satisfies a specified reliability target, and statistically qualifies that operating point on held-out cases.
 
@@ -56,7 +56,7 @@ The clinical experiment also makes an important modeling assumption: human revie
 
 That distinction matters. READY is a framework for estimating and qualifying deployment policies, not a prediction of exactly how many reviewers a company will need.
 
-# 🏥 It starts from a benchmark that already distrusts the headline score
+## 🏥 It starts from a benchmark that already distrusts the headline score
 
 The empirical testbed is CliniCARE-Bench, a retrospective clinical-audit benchmark built from 25 clinician-authored scenarios instantiated into 750 patient-specific cases using MIMIC-IV data, evaluated across 16 agentic systems.
 
@@ -76,7 +76,7 @@ READY asks what it costs to operate that agent at a required reliability level.
 
 Those are three different questions.
 
-# 🎯 The more important result: accuracy and self-knowledge aren't the same capability
+## 🎯 The more important result: accuracy and self-knowledge aren't the same capability
 
 The 10-point review gap is striking, but the deeper result may be the reason it exists.
 
@@ -99,7 +99,7 @@ That is how two systems separated by only 0.3 accuracy points can produce materi
 
 And that is why the framework matters for procurement.
 
-# 🔍 Why this complements, not duplicates, the trace-level critique
+## 🔍 Why this complements, not duplicates, the trace-level critique
 
 Readers of [this site's earlier piece on agent benchmark log analysis](https://minwu-ai.github.io/agent-benchmark-scores-are-lying-to-you-and-log-analysis-is-/) will recognize the family resemblance.
 
@@ -123,7 +123,7 @@ Outcome → execution trace → failure detectability → oversight burden → d
 
 READY's contribution is pushing evaluation further down that stack.
 
-# ⚠️ What READY still doesn't solve
+## ⚠️ What READY still doesn't solve
 
 An independent critique of the underlying CliniCARE-Bench results points to a limitation that READY does not itself eliminate.
 
@@ -141,7 +141,7 @@ The deployment profile belongs to a particular combination of agent, workflow, o
 
 That is a limitation — but also arguably the point.
 
-# 💡 The procurement question is changing
+## 💡 The procurement question is changing
 
 Enterprise AI procurement has spent much of the last few years asking:
 

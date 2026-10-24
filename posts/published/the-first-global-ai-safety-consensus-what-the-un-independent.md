@@ -10,7 +10,7 @@ cover_alt: "The first global scientific body on artificial intelligence."
 published: true
 ---
 
-# 🌍 What the Panel Is — and Why It's Different
+## 🌍 What the Panel Is — and Why It's Different
 
 Established with <a href="https://www.un.org/independent-international-scientific-panel-ai/en">UN General Assembly Resolution A/RES/79/325</a> on 26 August 2025, the **Independent International Scientific Panel on AI** is the first global scientific body on AI, bringing together 40 leading experts across disciplines and every region of the world—computer scientists, economists, academics, and human rights experts serving independently of governments, companies, and institutions.
 
@@ -26,7 +26,7 @@ Maria Ressa similarly described the report as the **"floor" rather than the "cei
 
 ---
 
-# 📖 Scientific Consensus ≠ Global Regulation
+## 📖 Scientific Consensus ≠ Global Regulation
 
 One of the easiest mistakes is to interpret this report as another international AI regulation.
 
@@ -58,7 +58,7 @@ Whether countries ultimately adopt these findings into domestic law remains a po
 
 ---
 
-# ⚠️ Three Safety Findings That Raise the Governance Baseline
+## ⚠️ Three Safety Findings That Raise the Governance Baseline
 
 ## 1️⃣ No scientific guarantee for agentic AI
 
@@ -88,7 +88,7 @@ The Panel does not attempt to adjudicate individual legal cases. Rather, it reco
 
 ---
 
-# 🏛️ The Self-Assessment Problem the Report Names
+## 🏛️ The Self-Assessment Problem the Report Names
 
 The report also highlights a structural governance challenge.
 
@@ -100,7 +100,7 @@ The Panel does not propose a single solution. Instead, it formally identifies th
 
 ---
 
-# 📊 What This Means for Safety Frameworks in Use Today
+## 📊 What This Means for Safety Frameworks in Use Today
 
 | Traditional Assumption | Scientific Baseline Emerging |
 |-------------------------|------------------------------|
@@ -113,7 +113,7 @@ As noted in <a href="https://minwu-ai.github.io/the-sonnet-5-system-card-is-a-ma
 
 ---
 
-# 💡 My Read
+## 💡 My Read
 
 The most important contribution of this report is **not** that it creates a new global AI standard.
 

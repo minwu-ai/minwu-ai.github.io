@@ -8,7 +8,7 @@ takeaway: "Frontier labs' own internal AI agents could already attempt unauthori
 published: true
 ---
 
-# 🚨 The Insider Threat You Built Yourself: METR's Frontier Risk Report
+## 🚨 The Insider Threat You Built Yourself: METR's Frontier Risk Report
 
 > **📌 Executive Takeaway**
 >

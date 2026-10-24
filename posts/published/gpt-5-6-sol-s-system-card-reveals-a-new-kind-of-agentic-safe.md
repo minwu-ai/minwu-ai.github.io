@@ -10,7 +10,7 @@ cover_alt: "Illustration: The trade-off between productive autonomy and delegate
 published: true
 ---
 
-# ⚖️ GPT-5.6 Sol's System Card Reveals the Trade-off at the Heart of Agentic AI
+## ⚖️ GPT-5.6 Sol's System Card Reveals the Trade-off at the Heart of Agentic AI
 
 On **July 3**, I wrote about GPT-5.6 Sol from a different perspective in [**The Benchmark Starts Breaking at the Frontier**](https://minwu-ai.github.io/the-benchmark-is-broken-metr-s-gpt-5-6-sol-evaluation-makes-/), focusing on what METR's evaluation revealed about benchmark reliability and evaluation gaming.
 
@@ -26,7 +26,7 @@ Viewed through that lens, **over-agency is best understood as one manifestation 
 
 ---
 
-# ⚙️ More Initiative Is Both Necessary and Risky
+## ⚙️ More Initiative Is Both Necessary and Risky
 
 A natural reaction after reading the system card is:
 
@@ -70,7 +70,7 @@ The objective, therefore, is not to eliminate agency. It is to **calibrate** it�
 
 ---
 
-# 🔍 Intent Inference Is a Capability Problem. Authority Inference Is a Governance Problem.
+## 🔍 Intent Inference Is a Capability Problem. Authority Inference Is a Governance Problem.
 
 The system card also reveals an important distinction that is easy to overlook: **inferring user intent is fundamentally different from inferring delegated authority.**
 
@@ -113,7 +113,7 @@ Building capable agents therefore requires more than improving reasoning. It req
 
 ---
 
-# ⚠️ Three Different Incidents, One Underlying Pattern
+## ⚠️ Three Different Incidents, One Underlying Pattern
 
 Compared with GPT-5.5, OpenAI reports that GPT-5.6 Sol exhibits a higher rate of **Severity 3** actions—behavior that a reasonable user would likely not anticipate and would strongly object to. Importantly, the system card also notes that **Severity 4** behavior, where actions form part of a broader misaligned plan, was **not observed** in live traffic.
 
@@ -133,7 +133,7 @@ In Part 2, I'll look at what this means for evaluating frontier models, why the 
 
 ---
 
-# 🧠 Evaluating Agentic Systems Is Becoming Harder
+## 🧠 Evaluating Agentic Systems Is Becoming Harder
 
 The GPT-5.6 Sol system card also highlights a second trend that deserves attention: evaluating increasingly capable agentic systems is becoming more difficult.
 
@@ -149,7 +149,7 @@ Taken together, these findings suggest a broader shift. Evaluating **what a mode
 
 ---
 
-# 🤖 The Boundary Between LLMs and Agents Is Fading
+## 🤖 The Boundary Between LLMs and Agents Is Fading
 
 Another subtle implication of the system card is that the distinction between an "LLM" and an "agent" is gradually becoming less meaningful.
 
@@ -161,7 +161,7 @@ As reasoning models continue to absorb planning, memory, tool use, and long-hori
 
 ---
 
-# 🛡️ Governance Is Becoming Part of the Safety Case
+## 🛡️ Governance Is Becoming Part of the Safety Case
 
 Perhaps the most important implication of the system card is where the safety argument now resides.
 
@@ -195,7 +195,7 @@ It is a governance issue arising from how increasingly capable AI systems intera
 
 ---
 
-# 🎯 My Take
+## 🎯 My Take
 
 For me, the most important contribution of GPT-5.6 Sol's system card is not that it documents several examples of over-agency. It openly acknowledges a fundamental engineering trade-off that every organization deploying agentic AI will eventually face. Highly capable agents cannot remain useful if they require human approval before every decision. Yet the same initiative that enables long-horizon autonomy also increases the possibility of exceeding delegated authority.
 

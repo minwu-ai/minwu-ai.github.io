@@ -10,7 +10,7 @@ cover_alt: "Illustration: Can AI Modularize its Knowledge"
 published: true
 ---
 
-# 🔬 What GRAM Actually Does
+## 🔬 What GRAM Actually Does
 
 Anthropic's most interesting research announcement of the year landed on July 8—the same day Reuters reported that the Trump administration had approved OpenAI's broad GPT-5.6 rollout following additional testing. While much of the attention focused on export controls and frontier model deployment, [Anthropic and AE Studio published GRAM](https://www.anthropic.com/research/off-switch-dual-use), a pretraining architecture asking a different question:
 
@@ -26,7 +26,7 @@ That is the critical distinction from previous safety approaches. Refusal traini
 
 Anthropic's experiments also suggest an encouraging security property. According to the accompanying GitHub repository, removing a GRAM module proved substantially more resistant to recovery through adversarial fine-tuning than conventional post-hoc unlearning approaches.
 
-# ⚠️ The Honest Limitations
+## ⚠️ The Honest Limitations
 
 This remains early-stage research. GRAM has not been demonstrated on production Claude models or other frontier-scale systems. The published experiments evaluated models up to 5 billion parameters—orders of magnitude smaller than today's largest foundation models.
 
@@ -34,7 +34,7 @@ There is also a deeper scientific question. Knowledge inside large language mode
 
 That uncertainty is precisely what makes GRAM interesting. For years, researchers have largely assumed that once knowledge is learned, it becomes inseparable from the rest of the model. GRAM challenges that assumption by asking whether certain capabilities can remain modular from the beginning. Whether that modularity survives frontier-scale training is still unknown.
 
-# 📋 The Governance Signal Is the Story
+## 📋 The Governance Signal Is the Story
 
 What makes GRAM significant is not simply the research result—it is the model for AI governance that it implies.
 
@@ -57,7 +57,7 @@ This possibility maps naturally onto several emerging governance trends.
 
 **Vendor risk management** also gains a new due-diligence question. Instead of asking only which foundation model a vendor uses, organizations may eventually ask which capability modules are present, which have been removed, and how those claims can be independently verified. That connects naturally to the model supply-chain questions raised in [Microsoft's MAI family analysis](https://minwu-ai.github.io/microsoft-s-mai-family-is-a-vendor-risk-hedge-disguised-as-a/) and the containment-oriented governance discussed in [DeepMind's AI Control Roadmap](https://minwu-ai.github.io/deepmind-s-ai-control-roadmap-from-trust-the-model-to-contai/).
 
-# 💭 My Read
+## 💭 My Read
 
 > GRAM does not solve AI safety—and it does not claim to. What it does is introduce a fundamentally different way to think about one of the field's hardest problems.
 

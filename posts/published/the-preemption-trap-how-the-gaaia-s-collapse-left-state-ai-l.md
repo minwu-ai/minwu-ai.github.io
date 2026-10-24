@@ -10,7 +10,7 @@ cover_alt: "Illustration: The challenge is no longer writing a federal AI framew
 published: true
 ---
 
-# ⚖️ The Preemption Trap: How the FRONTIER Act Inherited GAAIA's Hardest Political Problem
+## ⚖️ The Preemption Trap: How the FRONTIER Act Inherited GAAIA's Hardest Political Problem
 
 When Representatives Jay Obernolte (R-CA) and Lori Trahan (D-MA) released the [**Great American Artificial Intelligence Act (GAAIA)**](https://trahan.house.gov/uploadedfiles/gaaia_discussion_draft_section-by-section.pdf) discussion draft on June 4, 2026, the proposal immediately attracted attention—not because it attempted to regulate frontier AI, but because it attempted something even more ambitious: temporarily **preempt state regulation of AI development** while constructing a comprehensive federal framework.
 

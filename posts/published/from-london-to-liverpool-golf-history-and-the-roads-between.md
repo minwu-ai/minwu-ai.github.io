@@ -14,7 +14,7 @@ I came to the UK primarily for golf and The Open, but the first few days of the 
 
 There has been modern London and maritime London, championship golf and traditional links golf, Shakespeare’s England and the birthplace of the Industrial Revolution. Between them were long drives, late dinners, unexpected conversations, and the kind of small decisions that gradually turn an itinerary into a personal story.
 
-# 🇬🇧 Beginning in London
+## 🇬🇧 Beginning in London
 
 My arrival at Heathrow was not especially glamorous.
 
@@ -36,7 +36,7 @@ That contrast stayed with me.
 
 London is not one story. It is a city built from layers of power, trade, empire, finance, culture, and reinvention.
 
-# ⛳ The Grove: A Modern Championship Experience
+## ⛳ The Grove: A Modern Championship Experience
 
 The next afternoon, I played The Grove.
 
@@ -60,7 +60,7 @@ At midnight, Soho was still alive. The streets around Chinatown, Old Compton Str
 
 Greenwich had shown me London's history. Soho showed me its celebration.
 
-# 🌊 Prince’s: Discovering Links Golf Properly
+## 🌊 Prince’s: Discovering Links Golf Properly
 
 On Sunday, I drove to the Kent coast to play Prince’s Golf Club.
 
@@ -88,7 +88,7 @@ By the time I finished, most nearby restaurants were already closed. That led to
 
 Still, the golf was worth it.
 
-# 🚗 Northbound: Stratford and Ironbridge
+## 🚗 Northbound: Stratford and Ironbridge
 
 On Monday, I checked out of my hotel and began the drive north toward Liverpool.
 
@@ -123,7 +123,7 @@ By then, the trip had already connected several different historical narratives:
 
 None of these were planned as a single theme, but together they began to form one.
 
-# 🛣️ The Journey So Far
+## 🛣️ The Journey So Far
 
 The first four days of the trip have made me think about the difference between visiting places and experiencing them.
 

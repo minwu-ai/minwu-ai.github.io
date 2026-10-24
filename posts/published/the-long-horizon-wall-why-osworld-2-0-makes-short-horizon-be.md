@@ -10,7 +10,7 @@ cover_alt: "Illustration: Long-horizon workflows expose the widening gap between
 published: true
 ---
 
-# 📏 The Long-Horizon Wall: Why OSWorld 2.0 Makes Short-Horizon Benchmarks an Evaluation Integrity Problem
+## 📏 The Long-Horizon Wall: Why OSWorld 2.0 Makes Short-Horizon Benchmarks an Evaluation Integrity Problem
 
 ## 📐 What OSWorld 2.0 Actually Measures
 

@@ -10,7 +10,7 @@ cover_alt: "Illustration: Agent safety becomes infrastructure when the controls 
 published: true
 ---
 
-# 🔄 The Missing Step After Evaluation
+## 🔄 The Missing Step After Evaluation
 
 Over the past several months, a recurring theme on this site has been that an agent benchmark score answers increasingly little by itself.
 
@@ -40,7 +40,7 @@ Once evaluation discovers a failure and we engineer a control against it, does t
 
 That may be the paper's most useful contribution.
 
-# 🧩 First, Define What You're Trying to Fix
+## 🧩 First, Define What You're Trying to Fix
 
 The paper proposes the Holographic Agent Assessment Framework (HAAF).
 
@@ -64,7 +64,7 @@ But a five-dimensional trustworthiness taxonomy is not, by itself, what makes th
 
 What HAAF does after finding the failures is more consequential.
 
-# 🛠️ From Evaluation to Engineering
+## 🛠️ From Evaluation to Engineering
 
 Most benchmarks effectively end here:
 
@@ -94,7 +94,7 @@ Some safety improvements may belong in that surrounding machinery too.
 
 And if they do, they may be portable.
 
-# 🧪 The Experiment That Makes This Interesting
+## 🧪 The Experiment That Makes This Interesting
 
 The researchers freeze those two interventions and apply them to 13 systems from seven model families:
 
@@ -112,7 +112,7 @@ That's a more interesting result than simply showing that a mitigation improves 
 
 It asks whether an agent-safety intervention can behave more like an architectural control than a model-specific patch.
 
-# 🔧 A Safety Control That Survives the Model Swap
+## 🔧 A Safety Control That Survives the Model Swap
 
 Consider what this means operationally.
 
@@ -134,7 +134,7 @@ Foundation models may change several times during the life of an application. Sa
 
 A control that survives the model swap begins to look less like a patch and more like infrastructure.
 
-# 📉 Transfer Doesn't Mean Universal Protection
+## 📉 Transfer Doesn't Mean Universal Protection
 
 The results also show why that claim needs boundaries.
 
@@ -156,7 +156,7 @@ Some system-level controls can generalize across model families against the clas
 
 "Works across models" is not the same as "solves every model's problems."
 
-# ⚠️ Cross-Model Is Not Cross-Domain
+## ⚠️ Cross-Model Is Not Cross-Domain
 
 There is another important limitation.
 
@@ -178,7 +178,7 @@ Real deployment claims would require genuinely held-out environments, broader to
 
 The evidence is therefore meaningfully cross-model, but not yet convincingly cross-domain.
 
-# 🏗️ The Evaluation Stack Gets One Layer Deeper
+## 🏗️ The Evaluation Stack Gets One Layer Deeper
 
 Seen alongside the evaluation work covered here over the past few months, HAAF fills a useful gap.
 
@@ -200,7 +200,7 @@ Evaluation is no longer only a mechanism for deciding whether a model is good en
 
 That is a considerably more mature conception of what an evaluation program should do.
 
-# 🎯 From Patches to Infrastructure
+## 🎯 From Patches to Infrastructure
 
 HAAF doesn't prove that portable agent-safety infrastructure exists in the general case.
 

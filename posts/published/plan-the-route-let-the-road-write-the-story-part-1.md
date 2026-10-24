@@ -22,7 +22,7 @@ There were hotel reservations, golf tee times, charging stops, work meetings, an
 
 But there was no scorecard for the trip itself.
 
-# 🚗 The First Lesson Arrived at 1%
+## 🚗 The First Lesson Arrived at 1%
 
 ![Monster Golf Club, in the Catskills](/assets/IMG_6181.jpeg)
 
@@ -54,7 +54,7 @@ Planning matters.
 
 But so does knowing what to do when the plan stops mattering.
 
-# ⛳ Vermont: Returning to the Route
+## ⛳ Vermont: Returning to the Route
 
 ![Green Mountain National, with the Green Mountains behind the green](/assets/IMG_6216.jpeg)
 
@@ -76,7 +76,7 @@ Maybe clearing the mind isn't about finding answers at all.
 
 Maybe it's simply creating enough quiet to hear the questions properly.
 
-# 🚵 New Hampshire: The Day That Refused the Itinerary
+## 🚵 New Hampshire: The Day That Refused the Itinerary
 
 The White Mountains were supposed to be relatively structured.
 
@@ -106,7 +106,7 @@ That was when a pattern started becoming obvious.
 
 The itinerary was increasingly useful not because I followed it perfectly, but because it put me in places where I could make good decisions when something unexpected appeared.
 
-# ⛵ Newport Wasn't Supposed to Be on the Route
+## ⛵ Newport Wasn't Supposed to Be on the Route
 
 ![The Newport International Boat Show, yachts moored along the dock under a bright afternoon sky](/assets/IMG_6359.jpeg)
 
@@ -138,7 +138,7 @@ Some memories become important for reasons that don't need to be explained to ev
 
 **Newport became one of those places for me—a memory I know I will cherish for the rest of my life.**
 
-# 🧭 Solo Doesn't Mean Isolated
+## 🧭 Solo Doesn't Mean Isolated
 
 This was fundamentally a solo road trip.
 
@@ -156,7 +156,7 @@ You can plan where you're going.
 
 You can't really plan who you'll meet there.
 
-# 🇨🇦 North
+## 🇨🇦 North
 
 On Sunday, Newport ended.
 

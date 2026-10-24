@@ -10,7 +10,7 @@ cover_alt: "Illustration: The future of AI regulation may be shaped as much by t
 published: true
 ---
 
-# ⚖️ Colorado's AI Governance Retreat Didn't End the Story
+## ⚖️ Colorado's AI Governance Retreat Didn't End the Story
 
 Last month I wrote about **[Colorado's AI Governance Retreat: What SB 26-189 Means for Enterprises](/colorado-s-ai-governance-retreat-what-sb-26-189-means-for-ev/)**, focusing on why Colorado replaced its original AI Act (SB 24-205) with the much narrower **[SB 26-189](https://leg.colorado.gov/bills/sb26-189)** and what that meant for enterprise compliance programs.
 
@@ -24,7 +24,7 @@ It is increasingly *whether states will ultimately be allowed to regulate fronti
 
 ---
 
-# 🏛️ A Different Kind of Regulatory Challenge
+## 🏛️ A Different Kind of Regulatory Challenge
 
 Colorado's original AI Act was widely viewed as the nation's first comprehensive state framework governing high-risk AI systems used in consequential decisions such as employment, housing, lending, healthcare, insurance, education, and government services under **[SB 24-205](https://leg.colorado.gov/bills/sb24-205)**.
 
@@ -48,7 +48,7 @@ Its replacement has also been paused before enforcement.
 
 ---
 
-# 🧭 The Story Is Bigger Than Colorado
+## 🧭 The Story Is Bigger Than Colorado
 
 Viewed individually, these events could be dismissed as ordinary litigation.
 
@@ -70,7 +70,7 @@ But Colorado demonstrates that litigation itself may become an increasingly impo
 
 ---
 
-# ⚖️ Governance Must Survive Regulatory Volatility
+## ⚖️ Governance Must Survive Regulatory Volatility
 
 One lesson stands out.
 
@@ -96,7 +96,7 @@ Good governance increasingly needs to survive **regulatory uncertainty**, not me
 
 ---
 
-# 🌎 Colorado May Be the First—Not the Last
+## 🌎 Colorado May Be the First—Not the Last
 
 Colorado is unlikely to be unique.
 
@@ -116,7 +116,7 @@ For practitioners, understanding the statute is becoming only the beginning.
 
 ---
 
-# 🔍 What I'm Watching
+## 🔍 What I'm Watching
 
 To me, the most interesting question is no longer whether SB 24-205 or SB 26-189 represents better policy.
 

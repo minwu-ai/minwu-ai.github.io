@@ -10,7 +10,7 @@ cover_alt: "Illustration: As safety evaluations increasingly influence developme
 published: true
 ---
 
-# 📏 What Actually Happened
+## 📏 What Actually Happened
 
 On August 7, 2026, OpenAI announced that preliminary evaluations of its unreleased Astra model showed advances in agentic coding and cybersecurity significant enough that the company could not rule out the model possessing **Critical** cybersecurity capabilities. The exact language from the [OpenAI announcement](https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/) is carefully hedged: *"our preliminary evaluations indicate strong enough performance that we cannot rule out Critical capability level at this time."*
 
@@ -20,7 +20,7 @@ This is the first time OpenAI has publicly associated the possibility of a **Cri
 
 Axios, which [broke the story](https://www.axios.com/2026/08/07/openai-astra-model-delay-cybersecurity-risks), confirmed the government dimension: *"OpenAI voluntarily informed the administration of their plans to delay the release,"* a White House official said. Importantly, the strengthened containment measures arise from OpenAI's Preparedness Framework, whereas the White House notification appears to have been an additional voluntary governance action rather than a formal framework requirement.
 
-# 🛡️ The High–Critical Contrast
+## 🛡️ The High–Critical Contrast
 
 Earlier frontier releases, including GPT-5.6 Sol, were publicly assessed as **High** under OpenAI's cybersecurity preparedness taxonomy. Those disclosures generally paired a model launch with a substantially completed capability assessment and safeguards calibrated to that resulting designation.
 
@@ -31,7 +31,7 @@ Earlier frontier releases, including GPT-5.6 Sol, were publicly assessed as **Hi
 
 The table captures something structurally new: the Astra response applies strengthened governance **during** evaluation rather than after evaluation concludes. Rather than waiting for a definitive capability determination, OpenAI chose to apply stronger controls while uncertainty remained.
 
-# ⚖️ Preliminary Evals as Governance — the Missing Audit Trail
+## ⚖️ Preliminary Evals as Governance — the Missing Audit Trail
 
 OpenAI has **not** formally declared Astra to possess Critical cybersecurity capabilities. Instead, it concluded that its **preliminary evaluations and expert assessments** were strong enough that a Critical capability level could not yet be ruled out.
 
@@ -43,7 +43,7 @@ The difficulty is auditability.
 
 No Astra benchmark scores, capability report, external evaluation, or safeguards case has been published, so the threshold judgment cannot yet be independently examined outside OpenAI. This creates a genuine tension: the framework's precautionary logic is sound, but a public safety disclosure backed almost entirely by private evidence inevitably raises questions that only subsequent external evaluation and greater transparency can resolve.
 
-# 📏 The METR Shadow
+## 📏 The METR Shadow
 
 This is where the [METR GPT-5.6 Sol findings](https://minwu-ai.github.io/the-benchmark-is-broken-metr-s-gpt-5-6-sol-evaluation-makes-/) become directly relevant—not because they evaluate Astra's cybersecurity capabilities, but because they illustrate the growing difficulty of interpreting capability measurements for increasingly agentic frontier models.
 
@@ -59,7 +59,7 @@ Instead, METR provides a broader methodological warning. Once frontier models be
 
 If preliminary capability measurements are now becoming governance triggers, confidence in the underlying measurement process becomes just as important as confidence in the governance framework built upon it.
 
-# 🤖 A Governance Instrument — or a Governance Gap?
+## 🤖 A Governance Instrument — or a Governance Gap?
 
 OpenAI originally designed the Preparedness Framework with a Critical capability tier as a contingency for future frontier models. Astra is now the first public example showing how that framework can influence development before a final capability determination has been reached.
 

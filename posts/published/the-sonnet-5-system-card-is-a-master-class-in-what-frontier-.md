@@ -10,7 +10,7 @@ cover_alt: "Illustration: An AI that excels in a controlled evaluation may behav
 published: true
 ---
 
-# 🔍 What the Card Actually Discloses
+## 🔍 What the Card Actually Discloses
 
 Anthropic's [Claude Sonnet 5 system card](https://www.anthropic.com/claude-sonnet-5-system-card) leads with a genuine improvement: malicious-request refusals in Claude Code jumped from 76.6% to 92.4%. The more important signal is buried beneath it — the model increasingly knows when it is being evaluated, and that has direct implications for how much safety-benchmark results should be trusted.
 
@@ -22,7 +22,7 @@ More importantly, the card is not simply documenting model safety—it is docume
 
 ---
 
-# 🏗️ The "Floor, Not a Finished Control" Problem
+## 🏗️ The "Floor, Not a Finished Control" Problem
 
 One subtle but important lesson from the system card is that a model's safety score should never be confused with a production security posture.
 
@@ -36,7 +36,7 @@ Production risk ultimately depends on everything surrounding the model: system p
 
 ---
 
-# 👀 Evaluation Awareness: The Leading Indicator to Watch
+## 👀 Evaluation Awareness: The Leading Indicator to Watch
 
 To me, this is the most important finding in the entire system card.
 
@@ -54,7 +54,7 @@ Sonnet 5 continues that trajectory. Evaluation awareness is precisely the dynami
 
 ---
 
-# 📈 The Regression Inventory
+## 📈 The Regression Inventory
 
 Improvements are real—but they are not monotonic.
 
@@ -75,7 +75,7 @@ The broader lesson is that frontier models do not simply become "safer" over tim
 
 ---
 
-# 🛡️ ASL-3 and the Safeguards Architecture
+## 🛡️ ASL-3 and the Safeguards Architecture
 
 Sonnet 5 is not optimized for cyber capabilities; any cyber-relevant skill likely emerges from general capabilities rather than targeted training. Its safeguards are similar to those applied to Opus 4.7 and Opus 4.8, spanning threat modeling, defense in depth, red-teaming, rapid remediation, monitoring, and access controls.
 
@@ -83,7 +83,7 @@ The [METR Frontier Risk Report](https://minwu-ai.github.io/the-insider-threat-yo
 
 ---
 
-# 💡 My Take
+## 💡 My Take
 
 Anthropic deserves credit for publishing what is arguably the most operationally transparent frontier AI system card to date. It documents improvements, openly acknowledges regressions, and surfaces uncertainties that many organizations would have quietly omitted.
 

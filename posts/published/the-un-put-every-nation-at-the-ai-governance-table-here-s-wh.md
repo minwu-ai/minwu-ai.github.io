@@ -10,7 +10,7 @@ cover_alt: "Illustration: A new global forum for AI governance: creating common 
 published: true
 ---
 
-# 🌐 Two New UN Institutions, Two Different Jobs
+## 🌐 Two New UN Institutions, Two Different Jobs
 
 In my previous article, **<a href="https://minwu-ai.github.io/the-first-global-scientific-baseline-for-ai-safety-what-the-un-independent/">The First Global Scientific Baseline for AI Safety</a>**, I examined the work of the UN's Independent International Scientific Panel on AI. Its role is to synthesize the best available scientific evidence on frontier AI risks—not to regulate AI.
 
@@ -24,7 +24,7 @@ Understanding that distinction helps explain both the Dialogue's strengths and i
 
 ---
 
-# 🏛️ What Was Actually Built?
+## 🏛️ What Was Actually Built?
 
 The Dialogue is the first **UN General Assembly-convened** global platform where all 193 UN Member States, alongside the private sector, civil society, academia, and the technical community, participate in discussions on AI governance.
 
@@ -38,7 +38,7 @@ Its first session was co-chaired by Egriselda López (El Salvador) and Rein Tamm
 
 ---
 
-# 📌 Scientific Consensus ≠ Global Regulation
+## 📌 Scientific Consensus ≠ Global Regulation
 
 One misconception is that the Dialogue represents the beginning of a global AI regulator.
 
@@ -59,7 +59,7 @@ That may sound modest—but history suggests such institutions can become surpri
 
 ---
 
-# 🎯 What Guterres Actually Asked For
+## 🎯 What Guterres Actually Asked For
 
 Secretary-General António Guterres identified four priorities:
 
@@ -76,7 +76,7 @@ Pre-consultation data also revealed an interesting divide. Governments ranked ca
 
 ---
 
-# 🔬 The Scientific Track Becomes a Diplomatic Conversation
+## 🔬 The Scientific Track Becomes a Diplomatic Conversation
 
 The Dialogue itself did not produce new scientific findings.
 
@@ -90,7 +90,7 @@ What changed in Geneva was not the science itself—it was the audience. A techn
 
 ---
 
-# 📊 What the Dialogue Produced vs. What Some Expected
+## 📊 What the Dialogue Produced vs. What Some Expected
 
 | Dimension | Initial expectations | What was delivered |
 |---|---|---|
@@ -107,7 +107,7 @@ That outcome reinforces the Dialogue's role as a forum for consensus-building ra
 
 ---
 
-# 🌍 The IGF Precedent: Non-Binding Can Still Matter
+## 🌍 The IGF Precedent: Non-Binding Can Still Matter
 
 The closest historical comparison is the **Internet Governance Forum (IGF)**.
 
@@ -119,7 +119,7 @@ The Dialogue may ultimately play a similar role for AI.
 
 ---
 
-# ⚖️ The Regulatory Counterweight: August 2 Is Not Waiting
+## ⚖️ The Regulatory Counterweight: August 2 Is Not Waiting
 
 The Dialogue operates on diplomatic timelines.
 
@@ -131,7 +131,7 @@ As I discussed in my <a href="https://minwu-ai.github.io/council-vote-this-week-
 
 ---
 
-# 💡 My Read
+## 💡 My Read
 
 The most important outcome of the first Global Dialogue was not a treaty.
 

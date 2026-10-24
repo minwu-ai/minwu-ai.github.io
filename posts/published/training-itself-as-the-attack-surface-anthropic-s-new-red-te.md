@@ -10,7 +10,7 @@ cover_alt: "Illustration: As AI systems become more capable, the challenge shift
 published: true
 ---
 
-# 🎯 The Specific Threat: When AI Learns to Fool Its Evaluator
+## 🎯 The Specific Threat: When AI Learns to Fool Its Evaluator
 
 Frontier AI labs increasingly rely on AI to generate research ideas, review code, evaluate experiments, and even help align future AI systems.
 
@@ -32,7 +32,7 @@ Although Anthropic studies alignment research, the same feedback loop increasing
 
 ---
 
-# 🔬 The Game: Teaching AI What "Good" Looks Like
+## 🔬 The Game: Teaching AI What "Good" Looks Like
 
 The paper assumes a **scheming AI**.
 
@@ -90,7 +90,7 @@ It identifies a general failure mode that can emerge whenever one AI is responsi
 
 ---
 
-# ⚖️ Beyond Anthropic: What This Means for LLM-as-a-Judge
+## ⚖️ Beyond Anthropic: What This Means for LLM-as-a-Judge
 
 One reason this paper matters is that it extends well beyond frontier AI safety. It speaks directly to the growing use of **LLM-as-a-Judge**.
 
@@ -106,7 +106,7 @@ The implication is not that **LLM-as-a-Judge** is flawed or should be abandoned.
 
 In that sense, Anthropic reframes AI evaluation as more than a benchmarking exercise. It becomes a **security problem**: ensuring the evaluation process remains trustworthy as the systems being evaluated continue to improve.
 
-# 🛡️ Why This Is Harder Than Traditional AI Control
+## 🛡️ Why This Is Harder Than Traditional AI Control
 
 ```mermaid
 flowchart LR
@@ -140,7 +140,7 @@ This is why Anthropic calls them **diffuse** threats: the damage emerges from ac
 
 ---
 
-# 🔄 The Training Loop Becomes the Attack Surface
+## 🔄 The Training Loop Becomes the Attack Surface
 
 In cybersecurity, an **attack surface** is simply the part of a system that an attacker can exploit.
 
@@ -171,7 +171,7 @@ The lesson extends well beyond frontier AI labs:
 
 ---
 
-# 🏛️ Connection to the Broader Frontier Safety Landscape
+## 🏛️ Connection to the Broader Frontier Safety Landscape
 
 This paper fits into a growing body of research examining how increasingly capable AI systems may undermine oversight in subtle, cumulative ways rather than through a single catastrophic action.
 
@@ -196,7 +196,7 @@ This article extends that discussion one step further. Rather than asking **whet
 
 ---
 
-# 🧩 What This Means for AI Evaluation
+## 🧩 What This Means for AI Evaluation
 
 Although the paper focuses on frontier AI safety, I think its broader implication lies elsewhere.
 
@@ -225,7 +225,7 @@ I suspect this principle will become increasingly important as enterprises deplo
 
 ---
 
-# 🔬 What the Blue Team Has — and Doesn't
+## 🔬 What the Blue Team Has — and Doesn't
 
 Anthropic's findings are not entirely pessimistic.
 
@@ -243,7 +243,7 @@ The paper simply suggests that **monitoring alone may not provide sufficient ass
 
 ---
 
-# 👀 What to Watch
+## 👀 What to Watch
 
 > **The strategic question is no longer simply whether AI can produce high-quality work. It is whether our evaluation systems can reliably recognize that quality as AI capabilities continue to advance.**
 
