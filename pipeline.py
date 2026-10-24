@@ -60,10 +60,20 @@ THINKING = {"type": "disabled"}
 DAILY_COUNTS = {0: 2, 1: 1, 2: 2, 3: 1, 4: 2}      # Mon-Fri
 DEFAULT_COUNT = 2
 
+# Temporary throttle: the unpublished backlog grew to 81 drafts by
+# 2026-10-24, so production is cut to 1/day through 2026-11-06 to let review
+# catch up without the queue growing underneath it. Self-reverts on
+# 2026-11-07 -- no follow-up action needed. Safe to delete this block (and
+# the throttled branch below) early if the backlog clears sooner.
+THROTTLE_UNTIL = datetime.date(2026, 11, 7)
+THROTTLED_COUNTS = {0: 1, 1: 1, 2: 1, 3: 1, 4: 1}  # Mon-Fri
+
 
 def drafts_for_today():
     """Default number of drafts for today, unless --count overrides it."""
-    return DAILY_COUNTS.get(datetime.date.today().weekday(), DEFAULT_COUNT)
+    today = datetime.date.today()
+    counts = THROTTLED_COUNTS if today < THROTTLE_UNTIL else DAILY_COUNTS
+    return counts.get(today.weekday(), DEFAULT_COUNT)
 
 POSTS_DIR = os.path.join(os.path.dirname(__file__), "posts")
 

@@ -17,7 +17,7 @@ on:
   workflow_dispatch:           # also lets you run it manually anytime
     inputs:
       count:
-        description: "How many posts to draft (blank = weekday default: 2, or 1 on Tue/Thu)"
+        description: "How many posts to draft (blank = pipeline.py's weekday default; see THROTTLE_UNTIL there for any temporary reduction)"
         required: false
 
 permissions:
@@ -66,7 +66,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           COUNT: ${{ github.event.inputs.count }}
         # Pass --count only for a manual run. Scheduled runs let pipeline.py
-        # pick by weekday: two drafts Mon/Wed/Fri, one on Tue/Thu.
+        # pick by weekday (see pipeline.py's DAILY_COUNTS / THROTTLE_UNTIL).
         run: |
           if [ -n "$COUNT" ]; then
             python pipeline.py --count "$COUNT"
