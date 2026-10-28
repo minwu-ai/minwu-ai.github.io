@@ -6,7 +6,8 @@ tag: Alignment, Evaluation
 excerpt: "A Princeton-led study involving UK AISI, Apollo Research, and Transluce finds that flawed tasks substantially understated agent performance on τ-Bench Airline — while two models with similar benchmark scores differed fourfold in susceptibility to policy-violating persuasion."
 takeaway: "Outcome-only benchmarks can substantially misrepresent agent capability while concealing dangerous behavior. When two agents with similar task-success scores differ fourfold in susceptibility to policy-violating persuasion, pass/fail metrics alone cannot establish whether an agent is reliable or safe to deploy."
 cover: "/assets/c88f0f78ad30be16db41a712ac5649e6d7a2c94f0481ad987effce5b712f289a.png"
-cover_alt: "Editorial cover illustration contrasting identical AI agent benchmark scores with sharply different hidden execution behaviors."
+cover_fit: full
+cover_alt: "Illustration: Two airline agents post the same green checkmark — but at one desk, cash is quietly changing hands."
 published: true
 ---
 
