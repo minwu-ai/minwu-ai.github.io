@@ -5,6 +5,9 @@ slug: inside-openai-s-own-monitor-what-a-three-week-pilot-can-and-
 tag: Alignment, AI Governance
 excerpt: "METR and Redwood Research found vulnerabilities in OpenAI's internal agent monitoring. Their pilot shows the value of outside access, while leaving subsequent fixes and expanded coverage unverified by the evaluators."
 takeaway: "Independent access helped expose real weaknesses in OpenAI's monitoring system. But finding a flaw, reporting a patch, and independently testing the repaired system are different evidentiary steps. This pilot establishes the first; it does not establish the last."
+cover: "/assets/"
+cover_fit: full
+cover_alt: "Illustration: "
 published: false
 ---
 
@@ -12,23 +15,25 @@ published: false
 
 METR has already shown how an evaluator's own tooling can be subverted — a lesson from [its Inspect transcript-viewer exploit, which I covered earlier](https://minwu-ai.github.io/when-the-auditor-s-camera-can-be-hacked-metr-s-inspect-vulne/). The October 22 report examined a different layer of the safety system: OpenAI's internal monitoring of its own agents.
 
+This is not the first time a frontier lab has opened itself to METR: Anthropic did so in September, and [the verdict there turned out to depend on methods Anthropic itself called imperfect](https://minwu-ai.github.io/anthropic-investigated-itself-and-found-the-verdict-depends-/). The pattern is worth holding in mind.
+
 The central question is simple. If a monitor is supposed to catch an agent acting against its operator's intentions, what evidence shows that the agent cannot evade the monitor itself?
 
 ## 🔍 What actually happened
 
-Between July 21 and August 11, 2026, one METR employee and one Redwood Research employee worked onsite at OpenAI. They had access to internal code, monitor prompts and configuration, documentation, and interviews with roughly a dozen staff. Their task was to estimate monitoring coverage and investigate whether agents could disable or subvert it. The assessment concerned the system as it existed on and before July 21, excluding changes then underway. [METR's public report](https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/)
+Between July 21 and August 11, 2026, one METR employee and one Redwood Research employee worked onsite at OpenAI. They had access to internal code, monitor prompts and configuration, documentation, and interviews with roughly a dozen staff. Their task was to estimate monitoring coverage and investigate whether agents could disable or subvert it. The assessment concerned the system as it existed on and before July 21, excluding changes then underway, [according to METR's public report](https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/).
 
-The researchers estimated that 75–94% of agentic internal Responses API traffic from models at least as capable as GPT-5.5 was **eligible for monitoring**, with substantial uncertainty in both directions. For the internal Codex subset, the estimate was 99.2%. These are eligibility estimates, not successful-review rates or measures of how reliably misconduct was detected. They also do not describe all OpenAI traffic. [Redwood's co-published findings](https://blog.redwoodresearch.org/p/red-teaming-openais-internal-agent)
+The researchers estimated that 75–94% of agentic internal Responses API traffic from models at least as capable as GPT-5.5 was **eligible for monitoring**, with substantial uncertainty in both directions. For the internal Codex subset, the estimate was 99.2%. These are eligibility estimates, not successful-review rates or measures of how reliably misconduct was detected. They also do not describe all OpenAI traffic, as [Redwood's co-published findings](https://blog.redwoodresearch.org/p/red-teaming-openais-internal-agent) spell out.
 
-The vulnerabilities included a way Codex agents could in principle bypass sandboxing and Auto-Review, and an exploit that could prevent hundreds of recent actions from being monitored. Those findings concern possible evasion; they do not establish that agents had already exploited these routes in practice. [Redwood's account](https://blog.redwoodresearch.org/p/red-teaming-openais-internal-agent)
+The vulnerabilities included a way Codex agents could in principle bypass sandboxing and Auto-Review, and an exploit that could prevent hundreds of recent actions from being monitored. Those findings concern possible evasion; they do not establish that agents had already exploited these routes in practice, [Redwood's account](https://blog.redwoodresearch.org/p/red-teaming-openais-internal-agent) stresses.
 
 ## ⚖️ The sentence that does the real work
 
 The important qualification concerns what happened afterward.
 
-METR's October 29 update says OpenAI reports that most vulnerabilities have been patched, with one fix still in progress; the remaining vulnerability does not affect OpenAI's misuse safeguards stack. METR says it has not evaluated these claims. [Updated report and change log](https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/)
+METR's October 29 update says OpenAI reports that most vulnerabilities have been patched, with one fix still in progress; the remaining vulnerability does not affect OpenAI's misuse safeguards stack. METR says it has not evaluated these claims, per its [updated report and change log](https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/).
 
-OpenAI's own October 29 account likewise acknowledges an outstanding fix and describes a substantially expanded monitoring system. That is useful additional disclosure. It is still a developer account, rather than a follow-up assessment by the pilot's evaluators. [OpenAI's monitoring-system description](https://openai.com/index/how-we-detect-frontier-model-misalignment/)
+[OpenAI's own October 29 account](https://openai.com/index/how-we-detect-frontier-model-misalignment/) likewise acknowledges an outstanding fix and describes a substantially expanded monitoring system. That is useful additional disclosure. It is still a developer account, rather than a follow-up assessment by the pilot's evaluators.
 
 > The pilot found weaknesses in the historical system. It did not independently establish that subsequent fixes work or that the expanded system provides the intended coverage.
 
@@ -46,27 +51,31 @@ Three features bound what readers can infer:
 | Restricted disclosure | The public account exposes only part of the evidence, limiting outsiders' ability to assess the full findings. |
 | Historical scope, without evaluator verification of later claims | The findings cannot certify the current system or the effectiveness of subsequent remediation. |
 
-The disclosure restriction deserves precision. The researchers produced a 61-page report for OpenAI researchers and security staff; METR and Redwood leadership received a 38-page version redacted by OpenAI. OpenAI also held discretion over sensitive material in the public post, and the evaluators lacked a unilateral right to describe those redactions. They nevertheless endorsed the published findings. [Disclosure terms](https://blog.redwoodresearch.org/p/red-teaming-openais-internal-agent)
+That first row is the formal point I wrote about in [the mathematical limit of red-team evidence](https://minwu-ai.github.io/the-mathematical-limit-of-ai-safety-evidence-what-red-team-evaluations-can-actually-prove/): a search that finds flaws proves they exist, but a search that stops proves nothing about what it did not reach.
+
+The disclosure restriction deserves precision. The researchers produced a [61-page report](https://blog.redwoodresearch.org/p/red-teaming-openais-internal-agent) for OpenAI researchers and security staff; METR and Redwood leadership received a 38-page version redacted by OpenAI. OpenAI also held discretion over sensitive material in the public post, and the evaluators lacked a unilateral right to describe those redactions. They nevertheless endorsed the published findings.
 
 These terms limit public scrutiny. They do not, by themselves, demonstrate that an adverse conclusion was suppressed. The difference between the reports' page counts is not a measure of how much safety-relevant evidence was withheld.
 
-The pilot was explicitly designed to test deep external access, rather than deliver robust public transparency. That makes it a useful experiment in assessment, while limiting its value as public assurance. [Pilot's stated purpose](https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/)
+The pilot was [explicitly designed](https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/) to test deep external access, rather than deliver robust public transparency. That makes it a useful experiment in assessment, while limiting its value as public assurance.
 
 ## 🛡️ Why this is an alignment question
 
 Monitoring is one of the controls on which an AI safety argument may depend. That makes the monitor's integrity part of the alignment problem: an agent's behavior can only be assessed through evidence the oversight system actually receives and interprets.
 
+Red-teaming the monitor rather than the model is itself a young practice; Apollo Research published [a working template for it in September](https://minwu-ai.github.io/apollo-research-s-auto-mode-audit-is-a-working-template-for-/), and this pilot is the first time that approach has been pointed at a lab's own production monitoring.
+
 Several questions therefore need separate answers. Was the activity selected for monitoring? Did the monitor receive the relevant evidence? Did it recognize the problem? Did someone intervene soon enough?
 
 A high eligibility percentage answers only part of the first question. It cannot stand in for the whole chain.
 
-OpenAI's system performs asynchronous review, so detection and timely intervention also need to be distinguished from blocking an action before it happens. OpenAI's current description discusses both monitoring and the response mechanisms that follow alerts. [How OpenAI describes the system](https://openai.com/index/how-we-detect-frontier-model-misalignment/)
+OpenAI's system performs asynchronous review, so detection and timely intervention also need to be distinguished from blocking an action before it happens. OpenAI's [current description](https://openai.com/index/how-we-detect-frontier-model-misalignment/) discusses both monitoring and the response mechanisms that follow alerts.
 
 This connects to the questions I raised in [my discussion of GovAI's embedded-assessment proposal](https://minwu-ai.github.io/govai-s-embedded-assessments-paper-turns-ceo-safety-pledges/): access, scope, independence, and disclosure determine what an outside assessment can establish. Getting evaluators inside is valuable. The terms of that access determine how much confidence can travel outside with their conclusions.
 
 ## 🧭 What to watch
 
-METR and Redwood say future exercises should follow the transparency and independence practices in [METR's approach to working with AI companies](https://metr.org/blog/2026-10-14-our-approach-to-risk-assessment/). Those practices include disclosing material access restrictions and whether redactions affect conclusions. That is a concrete standard against which to judge the next engagement. [Commitment in the pilot report](https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/)
+METR and Redwood say future exercises should follow the transparency and independence practices in [METR's approach to working with AI companies](https://metr.org/blog/2026-10-14-our-approach-to-risk-assessment/). Those practices include disclosing material access restrictions and whether redactions affect conclusions. That is a concrete standard against which to judge the next engagement, and one [the pilot report itself commits to](https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/).
 
 For the next assessment, I would look for three things:
 
