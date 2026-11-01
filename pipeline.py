@@ -52,12 +52,12 @@ MODEL = "claude-sonnet-5"
 # structured output within a fixed budget, not reasoning, so thinking is off.
 THINKING = {"type": "disabled"}
 
-# Drafts per weekday (Monday is 0). Tuesdays and Thursdays are deliberately
-# lighter: one draft instead of two. That trims API spend and leaves room to
-# revisit the unpublished backlog and reuse a draft already paid for, rather
-# than always producing something new. Saturday is handled separately
-# (History & People) and Sunday does not run.
-DAILY_COUNTS = {0: 2, 1: 1, 2: 2, 3: 1, 4: 2}      # Mon-Fri
+# Drafts per weekday (Monday is 0). AI topics run Mon/Wed/Fri only; Tue, Thu
+# and Sun draft nothing. Fewer, better-reviewed drafts beat a queue that grows
+# faster than it can be read, and it trims API spend.
+# Saturday's 'History & People' post is a separate path (run_history) and is
+# unaffected by this table.
+DAILY_COUNTS = {0: 2, 2: 2, 4: 2}                  # Mon, Wed, Fri
 DEFAULT_COUNT = 2
 
 # Temporary throttle: the unpublished backlog grew to 81 drafts by
@@ -66,14 +66,17 @@ DEFAULT_COUNT = 2
 # 2026-11-07 -- no follow-up action needed. Safe to delete this block (and
 # the throttled branch below) early if the backlog clears sooner.
 THROTTLE_UNTIL = datetime.date(2026, 11, 7)
-THROTTLED_COUNTS = {0: 1, 1: 1, 2: 1, 3: 1, 4: 1}  # Mon-Fri
+THROTTLED_COUNTS = {0: 1, 2: 1, 4: 1}              # Mon, Wed, Fri
 
 
 def drafts_for_today():
     """Default number of drafts for today, unless --count overrides it."""
     today = datetime.date.today()
     counts = THROTTLED_COUNTS if today < THROTTLE_UNTIL else DAILY_COUNTS
-    return counts.get(today.weekday(), DEFAULT_COUNT)
+    # A weekday missing from the table is a no-draft day, so the fallback is 0
+    # rather than DEFAULT_COUNT -- otherwise dropping Tue/Thu from the table
+    # would silently give them the default instead of skipping them.
+    return counts.get(today.weekday(), 0)
 
 POSTS_DIR = os.path.join(os.path.dirname(__file__), "posts")
 
@@ -948,6 +951,12 @@ def _dump_prompt(label, instruction):
 
 
 def run_scheduled(count, focus=None, dry_run=False):
+    # Tue/Thu/Sun draft nothing. The cron no longer fires on those days, but a
+    # manual dispatch still can, and discovery costs a search-heavy API call
+    # before it would notice it had nothing to produce.
+    if count <= 0:
+        print("No drafts scheduled for today - nothing to do.")
+        return 0
     plan = coverage_plan()
     if dry_run:
         print("=" * 70)
