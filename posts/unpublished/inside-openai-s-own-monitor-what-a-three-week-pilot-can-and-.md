@@ -5,10 +5,10 @@ slug: inside-openai-s-own-monitor-what-a-three-week-pilot-can-and-
 tag: Alignment, AI Governance
 excerpt: "METR and Redwood Research found vulnerabilities in OpenAI's internal agent monitoring. Their pilot shows the value of outside access, while leaving subsequent fixes and expanded coverage unverified by the evaluators."
 takeaway: "Independent access helped expose real weaknesses in OpenAI's monitoring system. But finding a flaw, reporting a patch, and independently testing the repaired system are different evidentiary steps. This pilot establishes the first; it does not establish the last."
-cover: "/assets/"
+cover: "/assets/exec-73fa6ef2-c98a-4f68-b170-1c7d567d7ae7.png"
 cover_fit: full
-cover_alt: "Illustration: "
-published: false
+cover_alt: "Illustration: Independent access reveals flaws. Retesting establishes whether the fixes work."
+published: true
 ---
 
 *Updated November 1 to incorporate METR's October 29 clarification and OpenAI's monitoring-system description published that day.*
