@@ -5,9 +5,9 @@ slug: agent-leaderboard-rank-system-versus-model
 tag: Industry, Evaluation
 excerpt: "A Stanford/UIUC preprint finds that agent evaluations can reliably rank model–scaffold systems while providing much weaker evidence about the underlying models. Adding tasks helps only with the uncertainty those tasks can resolve."
 takeaway: "Before using a leaderboard rank to justify a model choice, specify the claim: are you comparing complete systems, models across scaffolds, or performance across different kinds of tasks? Each requires a different evaluation design."
-cover: "/assets/agent-leaderboard-system-model-cover-v2.png"
-cover_alt: "Cover image titled Which Part Won?, showing a mechanic inspecting two racing cars with similar engines and different chassis, beside a trophy—a metaphor for evaluating complete agent systems."
-published: false
+cover: "/assets/exec-212327b4-7b3c-4938-91fd-042eaf820644.png" 
+cover_alt: "Illustration: The whole system wins the race. The engine alone doesn’t explain the ranking. "
+publish: true
 ---
 
 ## 🔍 The new result
