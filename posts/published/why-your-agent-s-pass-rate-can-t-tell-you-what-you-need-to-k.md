@@ -6,7 +6,8 @@ tag: Agentic AI, Evaluation
 excerpt: "A Princeton-led paper explains three ways outcome-only agent evaluation can mislead. Its τ-Bench Airline case study shows how task flaws suppress scores and how similar pass rates can conceal different policy-violation risks."
 takeaway: "A pass rate tells you how often an agent satisfied a grader. Assessing capability, deployment relevance, and safety also requires evidence about how it acted. The paper offers four principles for collecting and interpreting that evidence through log analysis."
 cover: "/assets/exec-c183fbd7-904f-4390-b0a2-1e9877331af3.png"
-cover_alt: ""
+cover_fit: full
+cover_alt: "Illustration: A row of transcripts, each flagged and circled in red, standing behind a single green PASS stamp."
 published: true
 ---
 
@@ -54,7 +55,7 @@ The paper's practical contribution is a set of guiding principles for moving fro
 3. **Develop and validate a rubric.** Turn an initial question into explicit criteria, refine them against examples, and check the resulting judgments through human review, preferably on held-out examples.
 4. **Relate behavior labels to outcomes.** Examine where a behavior occurs and how it relates to success or failure. An observed association can guide investigation without establishing causation.
 
-These principles provide a reusable starting point. Each new benchmark still requires appropriate logging, criteria, and validation. [Principles and supporting discussion](https://arxiv.org/html/2605.08545v1#S3)
+These principles provide a reusable starting point. Each new benchmark still requires appropriate logging, criteria, and validation, as the paper's [supporting discussion](https://arxiv.org/html/2605.08545v1#S3) sets out.
 
 ## 📊 What the τ-Bench case study establishes
 
@@ -66,7 +67,7 @@ Pass^5 measures success across five repeated attempts. It differs from pass@5, w
 
 The increase is **19.2 percentage points**, or approximately **92% relative to the original score**. It demonstrates how strongly the task set can affect measured performance. It does not establish that half of every model's failures—or half of some general capability deficit—were artifacts.
 
-The case study also found that Gemini 2.5 Flash and GPT-4 Turbo had roughly similar pass^5 scores, while GPT-4 Turbo was roughly four times as likely to be persuaded into a policy violation in the analyzed setting. This is evidence of different behavior under the study's simulated conditions. The implications for production risk require validation in the intended deployment. [Case study](https://arxiv.org/html/2605.08545v1#S4)
+The case study also found that Gemini 2.5 Flash and GPT-4 Turbo had roughly similar pass^5 scores, while GPT-4 Turbo was roughly four times as likely to be persuaded into a policy violation in the analyzed setting. This is evidence of different behavior under the study's simulated conditions. The implications for production risk require validation in the intended deployment ([case study](https://arxiv.org/html/2605.08545v1#S4)).
 
 ## 🧭 Earlier evidence and industry response
 
@@ -80,7 +81,7 @@ Logs only expose what the system records. Missing instructions, omitted actions,
 
 Inspection can reveal a plausible explanation for an outcome. Establishing that explanation as causal may require a controlled intervention or rerun. Likewise, observing a policy violation in simulation does not quantify its frequency or consequences in production.
 
-The authors explicitly argue that log analysis is necessary but insufficient for trustworthy evaluation. [Limitations and alternative views](https://arxiv.org/html/2605.08545v1#S5)
+The authors explicitly argue that log analysis is necessary but insufficient for trustworthy evaluation, and set out the [limitations and alternative views](https://arxiv.org/html/2605.08545v1#S5) themselves.
 
 ## 🧱 The procurement implication
 
