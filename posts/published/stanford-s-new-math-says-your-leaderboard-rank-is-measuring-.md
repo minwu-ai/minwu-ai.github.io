@@ -5,9 +5,10 @@ slug: agent-leaderboard-rank-system-versus-model
 tag: Industry, Evaluation
 excerpt: "A Stanford/UIUC preprint finds that agent evaluations can reliably rank model–scaffold systems while providing much weaker evidence about the underlying models. Adding tasks helps only with the uncertainty those tasks can resolve."
 takeaway: "Before using a leaderboard rank to justify a model choice, specify the claim: are you comparing complete systems, models across scaffolds, or performance across different kinds of tasks? Each requires a different evaluation design."
-cover: "/assets/exec-212327b4-7b3c-4938-91fd-042eaf820644.png" 
-cover_alt: "Illustration: The whole system wins the race. The engine alone doesn’t explain the ranking. "
-publish: true
+cover: "/assets/exec-212327b4-7b3c-4938-91fd-042eaf820644.png"
+cover_fit: full
+cover_alt: "Illustration: The whole system wins the race. The engine alone doesn’t explain the ranking."
+published: true
 ---
 
 ## 🔍 The new result
@@ -62,7 +63,7 @@ Two projections should be kept separate:
 - **At the same task budget**, distributing evaluation across the nine-benchmark HAL battery raises projected cross-task model-ranking reliability from approximately **0.44 to 0.75**.
 - **For an illustrative reliability target of approximately 0.71**, a smaller allocation across that battery costs an estimated **$8,144**, about **83% less** than the full HAL battery.
 
-These are model-based design projections, not measured savings from a production rollout. Benchmark breadth also requires relevant tasks and enough shared models and scaffolds to connect the comparisons. Adding arbitrary benchmarks is not automatically better evaluation. [Methods, results, and scope conditions](https://arxiv.org/html/2610.00651v1)
+These are model-based design projections, not measured savings from a production rollout. Benchmark breadth also requires relevant tasks and enough shared models and scaffolds to connect the comparisons. Adding arbitrary benchmarks is not automatically better evaluation, as the paper's [methods and scope conditions](https://arxiv.org/html/2610.00651v1) make clear.
 
 ## 🧭 Where this sits against prior coverage
 
