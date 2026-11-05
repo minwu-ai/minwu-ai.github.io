@@ -5,9 +5,9 @@ slug: why-your-agents-pass-rate-alone-isnt-enough
 tag: Agentic AI, Evaluation
 excerpt: "A Princeton-led paper explains three ways outcome-only agent evaluation can mislead. Its τ-Bench Airline case study shows how task flaws suppress scores and how similar pass rates can conceal different policy-violation risks."
 takeaway: "A pass rate tells you how often an agent satisfied a grader. Assessing capability, deployment relevance, and safety also requires evidence about how it acted. The paper offers four principles for collecting and interpreting that evidence through log analysis."
-cover: ""
+cover: "/assets/exec-c183fbd7-904f-4390-b0a2-1e9877331af3.png"
 cover_alt: ""
-published: false
+published: true
 ---
 
 ## 🔍 The problem outcome scores can't name
