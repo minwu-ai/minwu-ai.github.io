@@ -1,0 +1,29 @@
+---
+title: "The Ditch New York Bet Its Treasury On"
+date: 2026-11-07
+slug: the-ditch-new-york-bet-its-treasury-on
+tag: History & People
+excerpt: "When Madison vetoed federal funding in 1817, New York financed the Erie Canal with a new instrument — bonds backed not by taxing power but by tolls that didn't exist yet — and it worked."
+takeaway: "The revenue bond solved a real problem — funding infrastructure without taxing everyone for a project that benefits some — but it does this by moving the risk of wrong usage forecasts from the public treasury onto investors and, eventually, onto whoever has to explain why the tolls fell short."
+cover: "/assets/"
+cover_alt: "Illustration: "
+published: false
+---
+
+On March 3, 1817, his last full day in office, President James Madison sat down with a bill that would have sent federal money to build roads and canals across the country — the Erie included — and vetoed it. His reasoning was narrow and specific: the Constitution contained no expressed power for Congress to fund roads and canals, and the federal government should not encroach on matters left to the states. He had favored infrastructure spending in principle. He simply couldn't find the authority for it in the document he'd helped write.
+
+That left New York holding a problem it had spent a decade trying to solve. A canal connecting the Hudson River to Lake Erie — 363 miles across largely unsettled country — had been under study since 1810, with [DeWitt Clinton](https://www.tourcayuga.com/blog/the-vindication-of-dewitt-clinton/), then mayor of New York City, as its most persistent advocate. The estimated cost was $7 million, a staggering sum for the era, and critics were unsparing: the project was derided as "Clinton's Folly" and "Clinton's Big Ditch." Private capital wasn't interested either — the payoff was too distant and too uncertain.
+
+So New York built something new instead. In April 1817, the state legislature authorized $7 million in bonds to finance construction — but not bonds backed by the state's general taxing power the way a government usually borrows. These were secured by projected toll revenue from a canal that didn't yet exist. As one historian's account of the period puts it, the 1817 legislation envisioned paying for construction through special taxes on canal beneficiaries, land sales along the route, and new bonds backed by canal tolls — among America's first use of "revenue bonds," government bonds that pay interest and principal from the specific asset they're funding rather than from the state's general funds. It was a genuine bet: total lending under the program would eventually run to roughly $200 million in today's dollars, almost three-quarters the size of the entire 1817 federal budget, and New York could only cover it if the canal actually sparked the commercial growth its backers promised.
+
+The state hedged the bet with a dedicated fund and more than one revenue source. The Canal Fund, as it was called, drew not just on tolls but on earmarked revenues including Onondaga salt duties, auction duties, and a steamboat passenger tax, with a property tax within 25 miles held in reserve in case it was needed. That structure mattered as much as the bond itself: it insulated the project's finances from the ordinary churn of state budgeting and gave bondholders something more concrete than a politician's promise.
+
+Construction began at Rome, New York, on July 4, 1817 — a date chosen for the symbolism — and the full canal opened on October 26, 1825, when Clinton, by then governor, rode the packet boat *Seneca Chief* from Buffalo down to New York Harbor. The wager paid off almost immediately. Toll revenue covered the state's construction debt within the first year of operation, and the bonds themselves were retired within about a decade — historians differ slightly on the exact year, with figures ranging from 1836 to 1837, which is itself a reminder that even a triumphant public-finance story accumulates some disagreement about its own ledger over two centuries. The commercial effects were not subtle: freight costs between Buffalo and New York collapsed, and the canal became, in the words of one retrospective, the foundation on which New York's status as the Empire State was cemented for the rest of the century.
+
+**What the structure actually did**
+
+It's worth being precise about what New York invented here, because the word "bond" obscures a real distinction. A general obligation bond is a promise backed by the issuer's power to tax — if revenue falls short, the government can raise money some other way to make bondholders whole. A revenue bond is a promise backed by one specific income stream and nothing else. If the tolls don't come in, there is no broader claim on the treasury to fall back on. The risk of a wrong forecast sits with the people who bought the bonds, not with taxpayers generally.
+
+This is the structure that now underwrites most of the physical infrastructure Americans use without noticing: toll roads, bridges, airports, water and sewage treatment facilities, hospitals, and subsidized housing are commonly financed this way. The [municipal bond market's own retrospectives](https://www.visualcapitalist.com/municipal-bonds-build-nation/) trace a more or less straight line from the Erie Canal's 42 separate bond issues through the Port Authority's first formal revenue bond to the $2.5 billion Denver International Airport issuance of 2018 — same logic, three different centuries.
+
+The appeal to governments is obvious: you can build something large without asking every taxpayer, including those who will never use it, to underwrite it. The appeal to investors is a genuine yield in exchange for genuine risk, priced against a usage forecast someone made years before the asset existed. Most of the time, as with the Erie Canal, the forecast is roughly right, or wrong in
