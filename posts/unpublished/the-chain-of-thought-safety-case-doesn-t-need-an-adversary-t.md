@@ -92,4 +92,4 @@ The controlled tasks make the failure measurable. They do not tell us its preval
 
 The broader concern is still concrete: a developer can preserve readable reasoning while losing information needed to catch behavior that violates the intended task.
 
-**Readable reasoning is useful evidence. Its value for oversight depends on what it reveals about behavior.**
+>**Readable reasoning is useful evidence. Its value for oversight depends on what it reveals about behavior.**
