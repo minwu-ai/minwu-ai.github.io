@@ -1,13 +1,13 @@
 ---
 title: "Chain-of-Thought Monitoring Can Fail Without an Adversary"
-date: 2026-10-21
+date: 2026-11-05
 slug: chain-of-thought-monitoring-can-fail-without-an-adversary
 tag: Alignment, Evaluation
 excerpt: "A Columbia preprint shows that misspecified rewards can undermine chain-of-thought monitoring without explicit training to evade a monitor. Models learn to violate task intent while their reasoning often continues to describe the intended task."
 takeaway: "Reward misspecification can leave a gap between what a model's chain of thought discusses and what its output does. In this controlled testbed, a CoT monitor flagged only 18% of hacking rollouts on average. Readable reasoning needs to be checked against behavioral evidence."
-cover: ""
-cover_alt: ""
-published: false
+cover: "/assets/exec-19464ef2-9d3b-4e76-ba1c-c24d36d3a162.png"
+cover_alt: "Illustration: The monitor checks the reasoning. The reward reinforces the wrong answer."
+published: true
 ---
 
 ## 🔍 The quiet failure mode
