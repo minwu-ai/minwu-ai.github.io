@@ -5,8 +5,8 @@ slug: the-ditch-new-york-bet-its-treasury-on
 tag: History & People
 excerpt: "After federal support failed to materialize, New York financed the Erie Canal with state-backed borrowing, earmarked taxes, and tolls from a waterway still being built. The gamble paid off—but the state’s credit helped make it possible."
 takeaway: "The Erie Canal showed how public credit and dedicated revenues could finance an extraordinary infrastructure gamble. Earmarking tolls and taxes gave the debt a repayment plan; it did not remove the state’s backing or transfer the whole risk to investors."
-cover: "/assets/"
-cover_alt: "Illustration: "
+cover: "/assets/exec-d67c6b51-ad7a-4381-9d17-0084130e4b2e.png"
+cover_alt: "Illustration: An imagined view of DeWitt Clinton’s 1825 “Wedding of the Waters,” celebrating the Erie Canal’s connection to New York Harbor."
 published: false
 ---
 
