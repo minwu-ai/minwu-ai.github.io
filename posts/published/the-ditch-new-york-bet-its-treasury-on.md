@@ -5,9 +5,10 @@ slug: the-ditch-new-york-bet-its-treasury-on
 tag: History & People
 excerpt: "Before the Erie Canal could earn a dollar in tolls, New York had to persuade lenders to trust the state with their money. Future tolls were part of the plan. The state’s own credit stood behind the loans."
 takeaway: "A plan tells people what you intend to do. Your record gives them reason to believe you’ll do it. Once that trust breaks, rebuilding it takes repeated follow-through, and even that may never be enough."
-cover: "/assets/eexec-d67c6b51-ad7a-4381-9d17-0084130e4b2e.png"
+cover: "/assets/exec-d67c6b51-ad7a-4381-9d17-0084130e4b2e.png"
+cover_fit: full
 cover_alt: "Illustration: An imagined view of DeWitt Clinton’s 1825 “Wedding of the Waters,” celebrating the Erie Canal’s connection to New York Harbor."
-published: false
+published: true
 ---
 
 In 1817, Albany banks lent New York $200,000 to help build a canal that had yet to carry a single boat. The state could tell the banks what it hoped to collect in tolls. What it could offer that day was its own credit. Why would anyone lend on a promise that big?
@@ -15,6 +16,11 @@ In 1817, Albany banks lent New York $200,000 to help build a canal that had yet 
 ## 📜 A Federal Veto, a State Gamble
 
 On March 3, 1817, his last full day in office, President James Madison [vetoed a bill](https://cf-test.millercenter.org/the-presidency/presidential-speeches/march-3-1817-veto-message-internal-improvements-bill) that would have set aside federal funds for roads, canals, and improvements to navigation. His reasoning was specific: he argued that the Constitution did not authorize the proposed federal role. He favored internal improvements, but believed a constitutional amendment was needed to support such a national program. He simply couldn’t find the authority for it in the document he’d helped write.
+
+<figure>
+  <img src="/assets/james-madison-bill-of-rights-gettyimages-530194201.avif" alt="Portrait of President James Madison in a dark coat against a red curtain.">
+  <figcaption>James Madison vetoed the internal-improvements bill on his last full day in office, March 3, 1817 — not because he opposed canals, but because he could not find the authority for them in the Constitution he had helped write.</figcaption>
+</figure>
 
 For New York, the veto closed off another prospect of federal support for a project it had spent years pursuing. A canal connecting the Hudson River to Lake Erie—363 miles across upstate New York—had been under official study since 1810. [DeWitt Clinton](https://www.canals.ny.gov/About/History), a former New York City mayor who would become governor in 1817, emerged as its most famous advocate. The undertaking would cost about $7 million, a staggering sum for the era, and critics derided it as “Clinton’s Folly” and “Clinton’s Ditch.”
 
@@ -38,9 +44,20 @@ Think of someone who takes out a loan in their own name to open a shop. They exp
 
 [Construction began at Rome, New York, on July 4, 1817](https://www.eriecanal.org/texts/NYS1961/chap1.html). On October 26, 1825, Governor Clinton departed Buffalo aboard the *Seneca Chief* for the inaugural journey along the completed canal. The celebrations culminated in New York on November 4, when he poured Lake Erie water into the Atlantic in the symbolic [“Wedding of the Waters.”](https://www2.census.gov/prod2/decennial/documents/1880a_v18-08.pdf)
 
+<figure class="full">
+  <img src="/assets/new-york-battery-castle-garden.jpeg" alt="Hand-coloured print of Castle Garden at the Battery, with figures promenading along the waterfront.">
+  <figcaption>Castle Garden at the Battery, where the canal celebrations reached salt water. Clinton poured Lake Erie water into the Atlantic here on November 4, 1825.</figcaption>
+</figure>
+
 The wager paid off. Toll earnings helped cover the annual payments. Paying back the principal took longer. By June 1835, the Canal Fund commissioners [announced that funds were available](https://vanburenpapers.org/document-mvb06858) to redeem Erie and Champlain Canal stock due in 1837, offering premiums to holders who surrendered it early. The notice specified that interest on that stock would cease on July 1, 1837.
 
 The canal’s commercial success also created pressure to expand it. By 1835, the legislature had [approved enlargement of the original channel](https://www.eriecanal.org/texts/NYS1961/chap1.html). New York had built a transportation link whose growing traffic soon demanded more capacity.
+
+<figure class="full">
+  <img src="/assets/erie-canal-boats-syracuse-1900.jpeg" alt="Sepia photograph of canal boats moored along a snow-lined Erie Canal at Syracuse, with warehouses behind.">
+  <figcaption>The Erie Canal at Syracuse around 1900 — still working traffic some seventy-five years after the first boat, and long after the original loans were repaid.</figcaption>
+</figure>
+
 
 ## ⚖️ Who Actually Bore the Risk?
 
