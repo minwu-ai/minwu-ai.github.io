@@ -5,9 +5,9 @@ slug: what-695-ai-incidents-reveal-about-human-control
 tag: Agentic AI, AI Governance
 excerpt: "A Carnegie Mellon preprint identifies 12 ways human–agent interactions break down and asks what people can see, stop, and undo when agents act on their behalf."
 takeaway: "All 12 interaction failure modes appeared in both low- and high-autonomy incidents. How they played out varied with how much work the agent completed between points of human involvement."
-cover: "/assets/"
-cover_alt: "Illustration: "
-published: false
+cover: "/assets/exec-0268714a-b606-4ff5-8d3a-d93598322572.png"
+cover_alt: "Illustration: Can a person still stop the agent once it starts acting?"
+published: true
 ---
 
 ## 🔍 The new evidence
