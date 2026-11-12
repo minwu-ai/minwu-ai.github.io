@@ -20,9 +20,23 @@ On October 2, this site covered Mohamed Aly Bouke’s [Competing-Hazards systema
 
 The authors adapted [Amershi et al.’s guidelines for human–AI interaction](https://www.microsoft.com/en-us/research/project/guidelines-for-human-ai-interaction/). They folded the guidelines’ initial stage into *During Interaction* because questions about the agent’s role, capabilities, and sources can recur while it works. They retained *When Wrong* and *Over Time*.
 
-- **During Interaction.** Boundary violation was the most frequently coded mode (261/695). The agent exceeded what the user understood they had delegated. Unclear provenance (224/695) covered uncertainty about where information came from or whether anyone had checked it. Unclear agent role (88/695) covered uncertainty about whether the user was interacting with AI or what role it was playing.
-- **When Wrong.** In 152 incidents, an error went undetected until it affected later actions or other people. In 42, an attempted stop, override, escalation, or handoff failed to restore human control.
-- **Over Time.** Failures included changes in the agent’s behavior that built up across interactions, delegated authority carrying over into new contexts, and unhealthy emotional or cognitive dependency.
+The flowchart groups selected failure modes by the paper’s three stages.
+
+```mermaid
+flowchart LR
+    A["Human–agent interaction"] --> B["During Interaction"]
+    A --> C["When Wrong"]
+    A --> D["Over Time"]
+    B --> B1["Boundary violation (261/695)"]
+    B --> B2["Unclear provenance (224/695)"]
+    B --> B3["Unclear agent role (88/695)"]
+    C --> C1["Failure goes undetected (152/695)"]
+    C --> C2["Intervention or handoff failure (42/695)"]
+    D --> D1["Accumulated behavioral drift (56/695)"]
+    D --> D2["Overextension of delegated authority (44/695)"]
+```
+
+Boundary violation was the most frequently coded mode. It describes an agent exceeding what the user understood they had delegated. Intervention or handoff failure describes an attempted stop, override, escalation, or transfer that failed to restore human control.
 
 An incident could receive more than one label. The [counts in Figure 2](https://arxiv.org/html/2611.00291v1#S4) describe the documented cases. The repositories supply no denominator for estimating how frequently each mode occurs in deployment.
 
