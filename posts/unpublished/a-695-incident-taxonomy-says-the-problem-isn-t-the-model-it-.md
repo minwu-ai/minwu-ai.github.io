@@ -1,10 +1,10 @@
 ---
-title: "A 695-Incident Taxonomy Says the Problem Isn't the Model — It's the Handoff"
+title: "What 695 AI Incidents Reveal About Human Control"
 date: 2026-11-11
-slug: a-695-incident-taxonomy-says-the-problem-isn-t-the-model-it-
+slug: what-695-ai-incidents-reveal-about-human-control
 tag: Agentic AI, AI Governance
-excerpt: "A CMU paper builds a 12-failure-mode taxonomy from 695 documented AI agent incidents and argues the field is safeguarding the wrong layer, treating interaction breakdowns as model or autonomy problems that current controls don't actually reach."
-takeaway: "Across 695 real-world incidents, every one of 12 interaction-failure modes — unclear agent roles, undetected errors, failed interventions — showed up at both low and high autonomy, meaning that dialing autonomy down or adding approval checkpoints does not eliminate these failures; it only changes their shape."
+excerpt: "A Carnegie Mellon preprint identifies 12 ways human–agent interactions break down and asks what people can see, stop, and undo when agents act on their behalf."
+takeaway: "All 12 interaction failure modes appeared in both low- and high-autonomy incidents. How they played out varied with how much work the agent completed between points of human involvement."
 cover: "/assets/"
 cover_alt: "Illustration: "
 published: false
@@ -12,33 +12,30 @@ published: false
 
 ## 🔍 The new evidence
 
-A Carnegie Mellon team has built the largest documented taxonomy yet of how AI agents fail the people they act for — and its central finding cuts against a comfortable assumption in agent safety work. In [When AI Agents Act on Our Behalf](https://arxiv.org/abs/2611.00291), submitted October 30, Canwen Wang, Qing Xiao, Haiyi Zhu, and Hong Shen analyzed 695 incidents from the AI, Algorithmic, and Automation Incident and Controversy (AIAAIC) repository and the AI Incident Database (AIID) and derived 12 failure modes bottom-up within three interaction stages adapted from Amershi et al.'s guidelines, coding the autonomy at which each arose.
+An AI agent can make the same kind of mistake whether it answers one question at a time or carries out a series of actions on its own. What changes is what a person can do about it. In [When AI Agents Act on Our Behalf](https://arxiv.org/abs/2611.00291), an October 30 preprint, Carnegie Mellon researchers Canwen Wang, Qing Xiao, Haiyi Zhu, and Hong Shen analyzed 695 documented incidents from the AI, Algorithmic, and Automation Incident and Controversy repository (AIAAIC) and the AI Incident Database (AIID). They identified 12 ways human–agent interactions break down, and found examples of every mode at both low and high autonomy.
 
-This site covered a related but distinct effort a month earlier: the September 29 [Competing-Hazards systematization](https://minwu-ai.github.io/a-competing-hazards-model-finally-gives-loss-of-control-a-sh/), which audited 22 incidents and 102 evaluations to build shared vocabulary for loss-of-control events. That paper's unit of analysis was the scope-escape outcome. This one's is different in kind: the breakdown in the human-agent relationship itself, and it arrives with roughly 30 times the incident base.
+On October 2, this site covered Mohamed Aly Bouke’s [Competing-Hazards systematization](https://minwu-ai.github.io/a-competing-hazards-model-finally-gives-loss-of-control-a-sh/), which audited 22 incident reports and 102 evaluations to build a shared vocabulary for loss of control. Bouke tracks how an agent’s attempts end, including whether it stops safely or acts outside its approved scope. Wang and colleagues ask what people could understand, observe, control, or repair as the interaction unfolded.
 
 ## ⚙️ How the taxonomy is built
 
-The authors organize failures around when, relative to an agent's action, a person could plausibly intervene. They started from Amershi et al.'s four stages of user involvement — initially, during interaction, when wrong, and over time — then folded initially into during interaction, leaving three stages that map cleanly to before, during, and after an agent acts.
+The authors adapted [Amershi et al.’s guidelines for human–AI interaction](https://www.microsoft.com/en-us/research/project/guidelines-for-human-ai-interaction/). They folded the guidelines’ initial stage into *During Interaction* because questions about the agent’s role, capabilities, and sources can recur while it works. They retained *When Wrong* and *Over Time*.
 
-Within "during interaction," the leading failure mode is **unclear agent role** — users not knowing that they are interacting with an AI, or what role the agent is playing — found in 88 of 695 incidents. The largest single category by volume is unclear provenance, at 224 of 695. Moving to the "when wrong" stage, **failure goes undetected** appears in 152 incidents, defined as cases where an error is not noticed before it affects subsequent actions or people. A smaller but telling category, **intervention or handoff failure** (42/695), captures incidents where intervention or handoff failure refers to cases in which the user's objection did reach the agent — the person did the right thing, and the system still didn't stop.
+- **During Interaction.** Boundary violation was the most frequently coded mode (261/695). The agent exceeded what the user understood they had delegated. Unclear provenance (224/695) covered uncertainty about where information came from or whether anyone had checked it. Unclear agent role (88/695) covered uncertainty about whether the user was interacting with AI or what role it was playing.
+- **When Wrong.** In 152 incidents, an error went undetected until it affected later actions or other people. In 42, an attempted stop, override, escalation, or handoff failed to restore human control.
+- **Over Time.** Failures included changes in the agent’s behavior that built up across interactions, delegated authority carrying over into new contexts, and unhealthy emotional or cognitive dependency.
 
-```mermaid
-flowchart LR
-    A[Before: agent is assigned a role] --> B[During: agent acts]
-    B --> C[When wrong: error occurs]
-    C --> D[Over time: consequences accumulate]
-    A -.->|Unclear agent role 88/695| B
-    B -.->|Unclear provenance 224/695| C
-    C -.->|Failure goes undetected 152/695| D
-    C -.->|Intervention/handoff failure 42/695| D
-```
+An incident could receive more than one label. The [counts in Figure 2](https://arxiv.org/html/2611.00291v1#S4) describe the documented cases. The repositories supply no denominator for estimating how frequently each mode occurs in deployment.
 
-## 🧱 Why current safeguards miss the target
+## 🧱 Where safeguards can fall short
 
-The paper's sharpest claim is architectural, not empirical: the standard risk-mitigation toolkit — dialing autonomy down, inserting approval checkpoints, running safety benchmarks — operates on the model or the autonomy *level*, while the incidents it catalogs occur in the interaction layer those controls don't reach. The abstract states it directly: what a person can do when an agent fails depends on how much the agent completes between points of user involvement — a property fixed at deployment. Therefore, the same model on the same task can fail differently under different configurations. Crucially, the authors report that all 12 modes appear at both low and high autonomy, and rising autonomy changes the form each failure takes — it doesn't make the failure mode disappear.
+The authors classified 453 incidents as low autonomy, where a person was involved in each contribution, and 242 as high autonomy, where the agent did some work independently between points of human involvement. Consider an undetected error. At lower autonomy, a person might act on a plausible but incorrect output. At higher autonomy, the agent can carry an error into later steps before the person sees an intermediate result.
 
-That is a direct challenge to the industry's default lever. A recurring theme on this site's incident-based work — from the [Competing-Hazards](https://minwu-ai.github.io/a-competing-hazards-model-finally-gives-loss-of-control-a-sh/) paper to the [Cyera audit](https://minwu-ai.github.io/the-cyera-audit-most-2026-agent-damage-had-no-attacker-it-had-permission/) finding most 2026 agent damage traced to permission, not attack — is that lowering autonomy or adding a human checkpoint reshapes risk rather than eliminating it. This paper gives that pattern a name and a much bigger sample.
+This is a distinction about deployment design. An approval checkpoint can give users time to intervene before a consequential action. Its value depends on what they can see at that point, what they can change, and whether they can still stop the action. The [qualitative comparison](https://arxiv.org/html/2611.00291v1#S3.SS3) shows how those opportunities differed across reported incidents. Measuring the effect of a checkpoint would require a separate study.
+
+The earlier [Competing-Hazards audit](https://arxiv.org/abs/2609.38411) found that the environment allowed an out-of-scope effect in 20 of its 22 incident reports. In a separate [Cyera audit](https://www.cyera.com/research/agent-inflicted-damage-inside-the-real-world-failures-of-enterprise-ai-systems), 188 of 344 enterprise-relevant cases from September 2023 through May 2026 involved direct harm without an attacker. Both findings put the conditions under which an agent can act at the center of the investigation.
 
 ## 🧭 Where this leaves practitioners
 
-The authors' closing judgment is blunt: users need controls between full delegation and full manual work, and neither incident records nor agent benchmarks reach the interaction where these failures occur. That is a direct rebuke to benchm
+The authors call for controls that let people keep an agent working while retaining the ability to constrain its scope, pause or redirect it, and recover when an action goes wrong. For a feature that can make purchases, that means asking what the user can see before the order is placed, whether they can stop it in time, and what recourse they have afterward.
+
+The [paper’s critique of incident records and benchmarks](https://arxiv.org/html/2611.00291v1#S5.SS3) follows from those questions. The repositories often leave out whether the user had a checkpoint or could undo an action. The benchmarks discussed in the paper seldom exercise the user’s ability to intervene or recover. A team evaluating the purchase feature could give a user an order that goes beyond the original request and see whether they can spot the change, stop the purchase, or reverse it. That exercise tests what the deployment actually lets a person do when the agent gets something wrong.
