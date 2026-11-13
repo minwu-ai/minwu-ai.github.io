@@ -89,6 +89,12 @@ TOPIC_GROUPS = [
 # (name, short description, repo URL). The shared avatar is assets/axiom-avatar.svg.
 PROJECT_AVATAR = "/assets/axiom-avatar.svg"
 PROJECTS = [
+    ("Axiom Agent Platform",
+     "A governed multi-agent platform for commercial lending — specialist agents "
+     "draft a cited credit memo behind a versioned API, with layered guardrails, "
+     "deterministic calculations, a human approval gate, and an append-only "
+     "evidence bundle for every job.",
+     "https://github.com/minw0607/axiom_agent_platform"),
     ("AI Governance & Assurance Library",
      "A versioned library of governance and assurance artifacts — frameworks, "
      "assessments, testing procedures, checklists, and evidence templates — organized "
