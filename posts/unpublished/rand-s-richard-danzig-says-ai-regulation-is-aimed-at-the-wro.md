@@ -5,9 +5,9 @@ slug: rand-s-richard-danzig-says-ai-regulation-is-aimed-at-the-wro
 tag: Regulation & Policy, Agentic AI
 excerpt: "A new RAND Perspective argues that frontier-model oversight misses risks from a rapidly expanding ecosystem of open-weight models, proprietary systems, and autonomous agents — and that governing this ecosystem requires more than conventional regulation."
 takeaway: "Danzig's warning is not that frontier AI oversight is unnecessary, but that it is insufficient. As capabilities spread through decentralized models and agents, effective governance must combine stronger public oversight with deployment controls, legal accountability, professional standards, and market-based safeguards."
-cover: "/assets/"
-cover_alt: "Editorial cover illustration: A heavily guarded frontier AI laboratory overlooks a vast network of autonomous systems spreading beyond its walls."
-published: false
+cover: "/assets/Beyond the Frontier_ AI’s Expanding Horizon.png"
+cover_alt: "Illustration: A heavily guarded frontier AI laboratory overlooks a vast network of autonomous systems spreading beyond its walls."
+published: true
 ---
 
 ## 🎯 The frontier is not the whole battlefield
