@@ -5,10 +5,10 @@ slug: sr-26-2-s-carve-out-collides-with-banking-s-own-survey-data-
 tag: Regulation & Policy, AI Governance
 excerpt: "Federal banking regulators have excluded generative and agentic AI from their revised model risk management guidance, even as industry survey data identifies model governance and validation as the leading perceived barrier to safely scaling AI."
 takeaway: "SR 26-2 creates a gap in dedicated model risk management guidance, not an exemption from regulatory oversight. With banking professionals identifying governance and validation as their greatest AI scaling challenge, institutions must develop credible internal assurance frameworks that extend beyond traditional model risk management."
-cover: "/assets/"
+cover: "/assets/Bridging AI Governance and Accountability.png"
 cover_fit: full
-cover_alt: "Illustration: "
-published: false
+cover_alt: "Illustration: SR 26-2 narrows the scope of federal model risk guidance, leaving banks to bridge the governance gap for generative and agentic AI."
+published: true
 ---
 
 ## 🔍 What banks are telling us
