@@ -1,70 +1,183 @@
 ---
-title: "SR 26-2's Carve-Out Collides With Banking's Own Survey Data on What Actually Blocks AI"
+title: "SR 26-2's AI Carve-Out Collides With What Banks Say Is Their Biggest Scaling Barrier"
 date: 2026-11-16
 slug: sr-26-2-s-carve-out-collides-with-banking-s-own-survey-data-
 tag: Regulation & Policy, AI Governance
-excerpt: "Multiple independent compliance analyses now confirm that the Fed, OCC, and FDIC's rewritten model-risk guidance names generative and agentic AI only to exclude them — just as banks' own survey data identifies model governance and validation, not fairness or explainability, as the top barrier to scaling AI."
-takeaway: "SR 26-2 explicitly excludes generative and agentic AI from US banks' federal model-validation mandate, pushing their fastest-growing AI risk category onto voluntary internal frameworks — right as industry survey data shows model governance and validation, not fairness or explainability, is the top barrier banks report to scaling AI."
+excerpt: "Federal banking regulators have excluded generative and agentic AI from their revised model risk management guidance, even as industry survey data identifies model governance and validation as the leading perceived barrier to safely scaling AI."
+takeaway: "SR 26-2 creates a gap in dedicated model risk management guidance, not an exemption from regulatory oversight. With banking professionals identifying governance and validation as their greatest AI scaling challenge, institutions must develop credible internal assurance frameworks that extend beyond traditional model risk management."
 cover: "/assets/"
 cover_fit: full
 cover_alt: "Illustration: "
 published: false
 ---
 
-## 🔍 What has actually changed since June
+## 🔍 What banks are telling us
 
-This site has covered the SR 26-2 carve-out twice: [when the rewrite first landed](https://minwu-ai.github.io/sr-26-2-s-genai-carve-out-creates-a-structured-governance-ga/), and again [when the shape of the gap banks have to fill themselves became clearer](https://minwu-ai.github.io/sr-26-2-s-genai-carve-out-is-the-governance-gap-banks-must-n/). The mechanism has not changed, and this post does not re-argue it.
+This site has covered the SR 26-2 carve-out twice: [when the rewrite first landed](https://minwu-ai.github.io/sr-26-2-s-genai-carve-out-creates-a-structured-governance-ga/), and again [when the shape of the governance gap became clearer](https://minwu-ai.github.io/sr-26-2-s-genai-carve-out-is-the-governance-gap-banks-must-n/).
 
-What is new is evidence from the other side of the problem. Banks have now been asked, at scale, what actually blocks them from scaling AI. Their answer lands exactly on the part the regulation declines to cover.
+There is another way to examine that gap: through the eyes of the institutions expected to manage it.
 
-## ⚙️ The carve-out in one paragraph
+Wolters Kluwer's H1 2026 US Banking AI Risk and Governance Index identifies model governance and validation as the leading perceived barrier to safely scaling AI. Meanwhile, federal banking regulators have explicitly excluded generative and agentic AI from their revised model risk management guidance.
 
-On April 17, 2026, the Federal Reserve, OCC, and FDIC jointly issued [SR 26-2](https://www.enz.ai/glossary/sr-26-2), superseding SR 11-7 — the guidance banks had operated under for fifteen years — and the 2021 BSA/AML model statement, SR 21-8. The guidance states that generative and agentic AI models "are novel and rapidly evolving" and "are not within the scope of this guidance," while confirming that its principles do apply to traditional statistical and quantitative models and to non-generative, non-agentic AI.
+And on November 4, the OCC introduced a new AI supervisory framework for its own examiners.
 
-This is not a prohibition. It is a scope decision, and the destination for everything outside that scope is voluntary: the FS AI RMF or the NIST AI RMF, supported by an AI inventory covering both populations. Neither carries SR 26-2's supervisory weight. The guidance is explicit that it "does not set forth enforceable standards or prescriptive requirements; accordingly, non-compliance with this guidance will not result in supervisory criticism."
+Together, these developments reveal an emerging tension between regulatory flexibility and institutional readiness.
+
+## ⚙️ The carve-out: What it does and does not mean
+
+On April 17, 2026, the Federal Reserve, OCC, and FDIC jointly issued [SR 26-2](https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm), superseding SR 11-7 and the 2021 BSA/AML model statement, SR 21-8.
+
+The [revised guidance](https://www.federalreserve.gov/frrs/guidance/supervisory-guidance-on-model-risk-management.htm) describes generative and agentic AI models as "novel and rapidly evolving" and states that they are "not within the scope of this guidance."
+
+Its principles continue to apply to traditional statistical and quantitative models and non-generative, non-agentic AI models, subject to the guidance's definition of a model and institutional applicability.
+
+However, exclusion from SR 26-2 does not mean exemption from regulatory oversight. Broader risk management responsibilities remain, and supervisory action is still possible when inadequate controls contribute to legal violations or unsafe or unsound banking practices.
+
+Banks can draw on voluntary resources such as the [Financial Services AI Risk Management Framework (FS AI RMF)](https://home.treasury.gov/news/press-releases/sb0401) and the [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework), although neither is formally designated as a replacement for SR 26-2.
 
 ```mermaid
-flowchart LR
-    A[Bank AI model] --> B{Generative or agentic?}
-    B -->|No| C[SR 26-2: inventory, independent validation, supervisory expectation]
-    B -->|Yes| D[Excluded from SR 26-2 formal scope]
-    D --> E[Voluntary: FS AI RMF / NIST AI RMF]
-    E --> F[No federal validation mandate; no supervisory criticism for non-compliance]
+flowchart TD
+    A[Bank AI Systems] --> B[Traditional and Non-generative AI]
+    A --> C[Generative and Agentic AI]
+
+    B --> D[SR 26-2 Where Applicable]
+    C --> E[Internal AI Risk Management Framework]
+    F[FS AI RMF and NIST AI RMF] -.-> E
+
+    D --> G[Broader Regulatory and Risk Management Obligations]
+    E --> G
+
+    classDef traditional fill:#e1edf8,stroke:#4376a1,color:#183b56
+    classDef emerging fill:#fff0dc,stroke:#c58a35,color:#704200
+    classDef common fill:#e4f1e7,stroke:#50865d,color:#244b2e
+
+    class B,D traditional
+    class C,E,F emerging
+    class G common
 ```
 
-## 📊 What banks say actually blocks them
+*Figure 1. The scope of SR 26-2 and the continuing applicability of broader risk management obligations. Author's interpretation.*
 
-The [Trusted AI Survey](https://assets.contenthub.wolterskluwer.com/api/public/content/3333242-us-banking-ai-risk-and-governance-index-3e8245da37) (April 2026, 230 banking professionals) asked which trusted-AI risk factor represents the greatest challenge to safely scaling AI across banking functions. The answers:
+The distinction matters: the agencies have narrowed the scope of dedicated model risk guidance, not eliminated responsibility for managing AI risk.
 
-| Barrier | Share of respondents |
-|---|---|
+## 📊 What banking professionals say actually blocks them
+
+The [US Banking AI Risk and Governance Index](https://assets.contenthub.wolterskluwer.com/api/public/content/3333242-us-banking-ai-risk-and-governance-index-3e8245da37), based on an April 2026 survey of 230 US banking professionals, asked respondents to identify their greatest challenge to safely scaling AI.
+
+The results are revealing.
+
+| Greatest challenge to safely scaling AI | Share of respondents |
+|---|---:|
 | **Model governance and validation** | **36.09%** |
 | Data quality and privacy | 25.65% |
 | Transparency and explainability | 23.04% |
 | Fairness and non-discrimination | 15.22% |
 
-Governance leads decisively — cited by more than one in three respondents, and nearly **double** the share naming fairness and non-discrimination, the risk category a decade of regulatory attention and vendor tooling has been built around.
+```mermaid
+xychart-beta horizontal
+    title "Greatest Challenge to Safely Scaling AI"
+    x-axis ["Governance & Validation", "Data & Privacy", "Explainability", "Fairness"]
+    y-axis "Respondents (%)" 0 --> 40
+    bar [36.09, 25.65, 23.04, 15.22]
+```
 
-This is not practitioners saying fairness does not matter. It is practitioners saying governance mechanics come first: you cannot meaningfully assess a model's fairness before you can inventory it, validate it, and show your work.
+*Figure 2. Perceived barriers to safely scaling AI. Source: Wolters Kluwer, Trusted AI Survey, April 2026, p. 4.*
 
-## 🧭 The collision
+Governance and validation lead by more than 10 percentage points over data quality and privacy, and receive approximately 2.37 times the share of responses identifying fairness and non-discrimination.
 
-Put the two findings next to each other.
+These results represent practitioners' perceptions rather than independently measured constraints. Nevertheless, they suggest that institutional governance capabilities are an important limiting factor in AI adoption.
 
-The barrier banks name most often is model governance and validation. That is the precise function SR 26-2 governs — and the precise function it removes from formal scope for generative and agentic AI, which is the category banks are deploying fastest.
+## ⚖️ Governance comes first, but fairness still matters
 
-So the federal validation mandate covers the models where governance is a solved problem, and declines to cover the models where banks themselves say governance is the binding constraint. The guidance is strongest exactly where it is needed least.
+The same survey asked a different question: which controls most urgently need strengthening to reduce AI-related risk?
 
-That inversion is the story. It is not an accusation of bad drafting: the agencies' stated reason — that these systems are novel and rapidly evolving — is a defensible basis for not writing prescriptive rules you would have to rewrite within a year. But a defensible reason for declining to prescribe is not the same as an answer to the problem, and the survey makes the size of the unanswered part measurable for the first time.
+The ranking changes.
+
+| Most urgent control investment | Share of respondents |
+|---|---:|
+| **Enhanced fairness and bias controls** | **28.63%** |
+| Continuous monitoring and performance management | 26.87% |
+| Model governance and validation | 22.91% |
+| Data controls and privacy assurance | 21.59% |
+
+*Source: Wolters Kluwer, Trusted AI Survey, April 2026, p. 6.*
+
+These findings are not contradictory. Governance can be the greatest structural barrier to scaling AI, while fairness represents the most urgent area of control improvement.
+
+An institution needs the ability to identify its AI systems, evaluate their behavior, establish accountability, and monitor changes before it can reliably demonstrate that individual risk controls work.
+
+Governance is not an alternative to fairness, explainability, or privacy. It is the infrastructure through which those objectives become operational and auditable.
+
+## 🤖 Where agentic AI makes the problem harder
+
+The survey also examines where agentic AI introduces the greatest risk when automation operates without sufficient human oversight.
+
+| Business function | Share of respondents |
+|---|---:|
+| Lending and underwriting | 33.04% |
+| Collections and recovery | 30.43% |
+| Fraud and payments | 23.91% |
+| No deployment yet | 12.61% |
+
+*Source: Wolters Kluwer, Trusted AI Survey, April 2026, p. 10.*
+
+Nearly two-thirds of responses identify lending, underwriting, or collections and recovery.
+
+These are consequential customer-facing activities where an inappropriate action can create financial, legal, and reputational exposure.
+
+Unlike a conventional predictive model, an AI agent may interpret instructions, access external information, select tools, and execute multiple actions before producing a final outcome.
+
+Validating the accuracy of that outcome alone may not establish whether the underlying actions were authorized, appropriate, or compliant.
+
+The object of validation is no longer just a model. It is an entire system of behavior.
+
+## 🏛️ The OCC's November framework: A shift in supervision
+
+On November 4, 2026, the OCC issued [Bulletin 2026-54](https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-54.html) and an accompanying [supervisory framework](https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-97a.pdf) to help examiners assess banks' use of AI, referred to in the publication as Super Intelligence (SI).
+
+The framework does not establish new regulatory requirements or require banks to create a separate AI risk category.
+
+Instead, it directs examiners toward risk-based assessments that consider:
+
+- The potential consequences of AI failure or misuse.
+- The degree of autonomy delegated to an AI system.
+- The extent of human oversight.
+- The materiality and complexity of individual use cases.
+
+This is consistent with the direction Federal Reserve Vice Chair for Supervision Michelle Bowman outlined in her [May 1 remarks](https://www.federalreserve.gov/newsevents/speech/bowman20260501a.htm) on adapting supervision to evolving AI technologies.
+
+The regulatory direction is becoming clearer: integrate AI risks into existing risk management disciplines, while adapting supervisory assessments to the characteristics of the technology.
+
+The November framework does not reverse SR 26-2's carve-out. But it makes clear that exclusion from traditional model risk guidance should not be interpreted as exclusion from supervisory attention.
 
 ## 🧱 What follows for practitioners
 
-Three consequences, in rough order of how soon they bite.
+Four practical implications stand out.
 
-**The voluntary framework is now the operative one.** For the fastest-growing AI population in a bank, the FS AI RMF or NIST AI RMF is not a supplement to the supervisory baseline — it *is* the baseline. It should be resourced accordingly, not treated as a side document.
+**1. Establish a common AI inventory.**  
+Maintain visibility across traditional models, foundation models, copilots, and autonomous agents. Document classification decisions, ownership, materiality, autonomy, and system dependencies.
 
-**Scope boundaries become a control.** If a model's treatment depends on whether it is "generative or agentic," then the classification decision deserves the same rigor as a validation: written criteria, a named owner, and a record of borderline calls. An unexamined label is now load-bearing.
+**2. Extend validation beyond model outputs.**  
+Independent assessment should consider hallucination, adversarial robustness, tool-use behavior, authorization boundaries, policy compliance, and human intervention, proportionate to the risks of each use case.
 
-**Absence of supervisory criticism is not absence of risk.** SR 26-2 says non-compliance will not draw criticism. That is a statement about examiner behavior, not about whether a model fails in production. The institutions that read it as relief and the ones that read it as a delegation will diverge slowly, then visibly.
+**3. Treat foundation model changes as risk events.**  
+Third-party model upgrades can alter system behavior without corresponding changes to the bank's application code. Version tracking, regression testing, controlled rollout, and rollback capabilities should become part of the assurance lifecycle.
 
-Banks have told their own industry what is hardest. The guidance that governs that exact discipline has drawn its boundary just short of where the hard part now lives. Closing that distance is no longer a regulatory question. It is a choice each institution makes on its own.
+**4. Integrate AI governance into existing accountability structures.**  
+Model risk management, operational risk, technology risk, compliance, and internal audit should operate through coordinated responsibilities rather than fragmented or duplicative assessments.
+
+The objective is not necessarily to create another risk management silo. It is to ensure that existing disciplines collectively address risks they were not originally designed to evaluate.
+
+## 💡 The real governance gap
+
+There is a defensible reason for regulators to avoid imposing a rigid validation methodology on rapidly evolving technologies.
+
+But regulatory flexibility is not the same as institutional readiness.
+
+The April survey shows that banking professionals already perceive governance and validation as a leading constraint on AI expansion. The November OCC framework reinforces that AI remains a subject of supervisory attention, even without a dedicated interagency validation standard for generative and agentic systems.
+
+The challenge for banks is therefore not whether to govern AI, but how to demonstrate that their governance is effective.
+
+SR 26-2 gives institutions greater flexibility to answer that question. It does not answer it for them.
+
+**The absence of a common supervisory blueprint makes credible internal assurance more important, not less.**
