@@ -1,4 +1,3 @@
-
 ---
 title: "A 27-Author Survey Challenges AI Interpretability's Biggest Assumption: Does Understanding Models Make Them Safer?"
 date: 2026-11-16
