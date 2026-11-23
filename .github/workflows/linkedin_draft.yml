@@ -1,0 +1,50 @@
+name: Draft LinkedIn post for new publishes
+
+# Whenever a post goes live (published: true) that wasn't live before, draft a
+# short LinkedIn post and open a GitHub Issue for review. This never posts to
+# LinkedIn itself — it only prepares text for you to copy and post by hand.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'posts/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install python-frontmatter
+
+      - name: Draft LinkedIn posts for newly published articles
+        id: draft
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/linkedin_draft.py
+
+      - name: Commit updated state
+        run: |
+          git config user.name "LinkedIn Draft Bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add .github/state/linkedin_drafted_slugs.json
+          if git diff --cached --quiet; then
+            echo "No state change"
+          else
+            git commit -m "Update LinkedIn draft state"
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin main && git push && break
+              echo "push attempt $i failed; retrying..."; sleep 5
+            done
+          fi
