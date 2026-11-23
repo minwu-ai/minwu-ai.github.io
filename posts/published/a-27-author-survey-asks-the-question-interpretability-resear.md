@@ -1,6 +1,6 @@
 ---
 title: "A 27-Author Survey Challenges AI Interpretability's Biggest Assumption: Does Understanding Models Make Them Safer?"
-date: 2026-11-16
+date: 2026-11-20
 slug: a-27-author-survey-asks-the-question-interpretability-resear
 tag: Alignment, AI Safety
 excerpt: "A 27-author survey led by Fazl Barez and Tung-Yu Wu, with contributors including Yoshua Bengio and Stella Biderman, proposes a five-dimensional framework for evaluating mechanistic interpretability — and questions whether understanding model internals actually translates into safer AI."
