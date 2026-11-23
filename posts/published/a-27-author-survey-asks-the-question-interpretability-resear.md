@@ -5,9 +5,10 @@ slug: a-27-author-survey-asks-the-question-interpretability-resear
 tag: Alignment, AI Safety
 excerpt: "A 27-author survey led by Fazl Barez and Tung-Yu Wu, with contributors including Yoshua Bengio and Stella Biderman, proposes a five-dimensional framework for evaluating mechanistic interpretability — and questions whether understanding model internals actually translates into safer AI."
 takeaway: "Mechanistic interpretability is making progress in revealing how AI models work, but the safety benefits of that understanding remain insufficiently demonstrated. The survey exposes the gap between plausible explanations, causal evidence, and reliable safety interventions — and argues for evaluating interpretability against simpler baselines and measurable safety outcomes."
-cover: "/assets/"
-cover_alt: "Editorial cover illustration contrasting the ability to see inside an AI model with the ability to control its behavior."
-published: false
+cover: "/assets/D7B49971-0173-479F-B7C4-A36620FF613E.png"
+cover_fit: full
+cover_alt: "Illustration: A magnifying glass reveals the gears turning inside the machine — but the locked gate beyond the maze still waits to be opened."
+published: true
 ---
 
 ## 🔍 Does opening the black box actually make AI safer?
