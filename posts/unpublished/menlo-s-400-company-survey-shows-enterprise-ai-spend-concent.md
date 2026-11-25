@@ -1,4 +1,3 @@
-
 ---
 title: "Enterprise AI Spending Grew Fivefold. Adoption Didn't. Three Frontier Labs Are Capturing Most of the Growth."
 date: 2026-11-23
