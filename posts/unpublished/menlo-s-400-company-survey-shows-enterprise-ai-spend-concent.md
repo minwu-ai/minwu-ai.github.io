@@ -184,4 +184,4 @@ It is the combination of rapidly increasing spending intensity, uneven expenditu
 
 An enterprise can become substantially more dependent on AI without adding a single new AI application to its inventory.
 
-**The next challenge for AI governance is not simply keeping pace with adoption. It is keeping pace with the depth of dependency that adoption creates.**
+>**The next challenge for AI governance is not simply keeping pace with adoption. It is keeping pace with the depth of dependency that adoption creates.**
