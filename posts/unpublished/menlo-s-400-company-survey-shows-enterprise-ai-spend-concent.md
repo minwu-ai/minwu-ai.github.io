@@ -5,9 +5,9 @@ slug: menlo-s-400-company-survey-shows-enterprise-ai-spend-concent
 tag: Industry, AI Governance
 excerpt: "Menlo Ventures' fourth annual enterprise AI report estimates that three frontier labs now capture 69% of a $177 billion market, while the share of enterprises paying for AI increased by only ten percentage points — revealing a growing gap between adoption breadth, spending intensity, and provider concentration."
 takeaway: "Enterprise AI spending grew more than fivefold in a year, while adoption expanded by only ten percentage points. Combined with the widening gap between average and median expenditure and rising concentration across model and application providers, Menlo's estimates suggest that enterprise AI risk is increasingly about the depth of operational dependency, not simply the breadth of adoption."
-cover: "/assets/"
+cover: "/assets/DB1AE0EE-1F7D-48F8-893E-B51C6A346727.png"
 cover_alt: "Editorial illustration of enterprise AI spending flowing through an increasingly concentrated ecosystem of frontier model providers."
-published: false
+published: true
 ---
 
 ## 🔍 A different number, a bigger story
